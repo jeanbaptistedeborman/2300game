@@ -21,6 +21,7 @@ export interface Ability {
 export interface Handicap {
     name: string,
     family: Family,
+    text: string,
     value:number,
 }
 
