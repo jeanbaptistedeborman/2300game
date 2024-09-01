@@ -33,16 +33,6 @@ export const cards: Card[] = [
 
     {
         type: Type.TRIBE,
-        title: "Marchands Marins",
-        text: '',
-        abilities: [marine, trade],
-        handicap: [],
-        backTerrain: Terrain.DESERT,
-        allowedTerrain: Terrain.SEA,
-    },
-
-    {
-        type: Type.TRIBE,
         title: "Marchands marins volants",
         text: '',
         abilities: [marine, trade, flight],
@@ -96,7 +86,6 @@ export const cards: Card[] = [
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.TEMPERATE
     },
-    ,
     {
         type: Type.TRIBE,
         title: "Purification du monde",
@@ -143,7 +132,6 @@ export const cards: Card[] = [
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA,
     },
-    ,
     {
         type: Type.TRIBE,
         title: "Khmers verts technologiques",

@@ -16,7 +16,7 @@ export const flight: Ability = {
     name: 'Volants',
     family: Family.TECHNO,
     value: 1,
-    text: "Cette carte exerce aussi ses abilités en diagonale"
+    text: "Exerce aussi ses abilités sur carte adjacentes en diagonale"
 }
 
 export const military: Ability = {
@@ -26,7 +26,7 @@ export const military: Ability = {
     text: "Votre adversaire ne peut réaliser d'action sur un emplacement adjacent à cette carte"
 }
 
-export const exileTehnology: Ability = {
+export const exileTechnology: Ability = {
     name: 'Exiler la technologie',
     family: Family.CLEAN_EARTH,
     value: 1,
@@ -51,15 +51,15 @@ export const research: Ability = {
     name: 'Restaurer la connaissance',
     family: Family.TECHNO,
     value: 1,
-    text: "Au moment de placer cette carte, ajouter deux populations pour chaque carte 'Restaurer la connnaissance' que vous avez déjà placée"
+    text: "Au moment de placer cette carte, ajouter deux populations pour chaque carte 'Restaurer la connaissance' que vous avez déjà placée"
 }
 
 
 export const bewareOfTechno: Ability = {
-    name: 'Restaurer la connaissance',
+    name: 'Garder la connaissance enfouie',
     family: Family.CLEAN_EARTH,
     value: 2,
-    text: "AU début de votre tour, ajouter une population si carte adjacente technologique non révélée"
+    text: "Au début de votre tour, ajouter une population si carte adjacente technologique non révélée"
 }
 
 export const longTravel: Ability = {
