@@ -1,6 +1,18 @@
 import { Card, Terrain, Type } from "../model";
 
-import { bewareOfTechno, cleanContinent, cleanHand, flight, marine, military, oil, trade } from './abilities'
+import {
+    archeolog,
+    bewareOfTechno, cartographer,
+    cleanContinent,
+    cleanHand,
+    flight,
+    marine,
+    militaryUnit,
+    oil,
+    reuse, terraformer,
+    trade, worldCompany
+} from './abilities'
+import {oilDependent, technoDependent} from "./handicaps";
 
 export const cards: Card[] = [
     {
@@ -45,7 +57,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Simples militaires",
         text: '',
-        abilities: [military],
+        abilities: [militaryUnit],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SAVANNA
@@ -54,7 +66,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Marine militaire",
         text: '',
-        abilities: [military, marine],
+        abilities: [militaryUnit, marine],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SEA,
@@ -63,7 +75,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Marine militaire volante",
         text: '',
-        abilities: [military, marine, flight],
+        abilities: [militaryUnit, marine, flight],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SEA
@@ -72,7 +84,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Militaires volants",
         text: '',
-        abilities: [military, flight],
+        abilities: [militaryUnit, flight],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SAVANNA
@@ -100,7 +112,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Khmers verts",
         text: '',
-        abilities: [bewareOfTechno, military],
+        abilities: [bewareOfTechno, militaryUnit],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.TEMPERATE
@@ -109,7 +121,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Khmers verts",
         text: '',
-        abilities: [bewareOfTechno, military],
+        abilities: [bewareOfTechno, militaryUnit],
         handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.TEMPERATE
@@ -127,7 +139,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Khmers verts marins",
         text: '',
-        abilities: [bewareOfTechno, military, marine],
+        abilities: [bewareOfTechno, militaryUnit, marine],
         handicap: [],
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA,
@@ -136,7 +148,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Khmers verts technologiques",
         text: '',
-        abilities: [bewareOfTechno, military, flight],
+        abilities: [bewareOfTechno, militaryUnit, flight],
         handicap: [],
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA,
@@ -158,5 +170,66 @@ export const cards: Card[] = [
         handicap: [],
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA,
+    },
+    {
+        type: Type.TRIBE,
+        title: "Renoncer au passé",
+        text: '',
+        abilities: [reuse],
+        handicap: [],
+        backTerrain: Terrain.SAVANNA,
+        allowedTerrain: Terrain.TEMPERATE,
+    },
+    {
+        type: Type.TRIBE,
+        title: "OGMs",
+        text: '',
+        abilities: [],
+        handicap: [technoDependent],
+        backTerrain: Terrain.SAVANNA,
+        allowedTerrain: Terrain.SCORCHED,
+    },
+    {
+        type: Type.TRIBE,
+        title: "MAD-MECS",
+        text: '',
+        abilities: [militaryUnit, technoDependent],
+        handicap: [oilDependent,technoDependent],
+        backTerrain: Terrain.DESERT,
+        allowedTerrain: Terrain.DESERT,
+    },
+    {
+        type: Type.TRIBE,
+        title: "Recyclage intensif",
+        text: '',
+        abilities: [archeolog],
+        handicap: [oilDependent,technoDependent],
+        backTerrain: Terrain.DESERT,
+        allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        type: Type.TRIBE,
+        title: "Terraformers",
+        text: '',
+        abilities: [terraformer],
+        handicap: [technoDependent],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        type: Type.TRIBE,
+        title: "World company",
+        text: '',
+        abilities: [worldCompany],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        type: Type.TRIBE,
+        title: "World cartographer",
+        text: '',
+        abilities: [cartographer],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
     },
 ];

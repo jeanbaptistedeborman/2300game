@@ -14,11 +14,9 @@ export const styles = `
     padding: 10px;
     font-size: 12px;
 }
-body {
-
-}
 
 .page {
+    padding:.4cm;
     background-color: lightgoldenrodyellow;
     height: 100%;
     display: flex;
@@ -30,4 +28,15 @@ body {
 .page.verso {
     background-color: aliceblue;
     flex-direction: row-reverse;
-}`
+}
+
+ul {
+ padding:0
+}
+
+ul>li {
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+`

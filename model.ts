@@ -1,18 +1,24 @@
 export enum Terrain {
-    'SCORCHED', 'DESERT', 'SAVANNA', 'TEMPERATE', 'SEA'
+    'SCORCHED', 'DESERT', 'SAVANNA', 'TEMPERATE', 'SEA', 'ANY'
 }
 
 export enum Type {
-    'TRIBE', 
+    'TRIBE',
     'BASE',
 }
 
-export enum Family {
+export enum FamilyName {
     "TECHNO",  "MILITARY", "EXPLORER", "CLEAN_EARTH" , "MERCHANT"
 }
 
+
+export interface Family {
+    familyName:FamilyName,
+    icon:string,
+}
+
 export interface Ability {
-  family: Family,  
+  family: Family,
   name: string,
   text: string,
   value:number,
@@ -30,7 +36,7 @@ export interface Card {
     text:string,
     type: Type,
     abilities: Ability[],
-    handicap: Handicap[],
+    handicap?: Handicap[],
     backTerrain:Terrain,
     allowedTerrain: Terrain,
 }
