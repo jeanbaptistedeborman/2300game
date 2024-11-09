@@ -1,12 +1,23 @@
 export const styles = `
+body{
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important;
+}
+
+h1, h2, h3, h4 {
+margin:0; 
+}
+
 .card {
+    padding: .5cm 0;
     font-family: arial, sans-serif;
     font-size: 10px;
     height: 33.33333%;
     width: 33.33333%;
     border: 1px solid black;
     box-sizing: border-box;
-    display: inline-block;
+    display: flex;
+    flex-direction:column;
     overflow: hidden;
 }
 .title {
@@ -16,19 +27,18 @@ export const styles = `
 }
 
 .page {
-    padding:.4cm;
-    background-color: lightgoldenrodyellow;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     page-break-after: always;
-
+    overflow:hidden;
+    height: 28cm;
 }
 
 .page.verso {
-    background-color: aliceblue;
     flex-direction: row-reverse;
 }
+page:before::{}
+
 
 ul {
  padding:0
@@ -38,5 +48,22 @@ ul>li {
  list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+svg {
+ margin:5px;
+}
+
+div {
+ print-color-adjust: exact;
+}
+
+.terrain-icon {
+    height:8mm;
+    width:8mm;
+    margin-right:
+    1mm;padding:1mm;
+    border:2px solid grey;
+    border-radius:50%;
 }
 `

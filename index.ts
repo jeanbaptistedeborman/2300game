@@ -1,17 +1,20 @@
 import * as fs from 'fs';
-import {Card } from "./model";
+import {Card, Terrain} from "./model";
 
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {backTemplate, cardTemplate} from "./layout/templates";
 
+console.log (cards.length);
+
+export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
+
 const CARDS_PER_PAGE:number = 9;
 
+const completedCards: Card[] =cards.map (card => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] }));
 
-
-const cardChunks:Card[][] = cards.reduce((acc, card, index) => {
+const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {
-        console.log('new page');
         acc.push([]);
     }
     acc[acc.length - 1].push(card);
@@ -33,6 +36,12 @@ const getPage = (cards: Card[]): string => {
 fs.writeFile('output/cards.html',
     `
   <HTML lang="fr">
+  <head>
+  <title>2300 game card generator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+</head>
+  
   <style>
     ${styles}
     </style>

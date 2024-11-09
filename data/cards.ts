@@ -1,21 +1,23 @@
 import { Card, Terrain, Type } from "../model";
 
 import {
+    airForce,
     archeolog,
     bewareOfTechno, cartographer,
     cleanContinent,
-    cleanHand,
-    flight,
+    cleanHand, cleanTerritory,
+    flight, flyingMerchants, invasion,
     marine,
     militaryUnit,
     oil,
-    reuse, terraformer,
+    reuse, scout, terraformer, terraformer_take_cards,
     trade, worldCompany
 } from './abilities'
-import {oilDependent, technoDependent} from "./handicaps";
+import {militaryDependant, oilDependent, technoDependent} from "./handicaps";
 
 export const cards: Card[] = [
     {
+        number:3,
         title: "Simple tradesman",
         text: '',
         type: Type.TRIBE,
@@ -25,15 +27,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {
-        type: Type.TRIBE,
-        title: "Marchant Simple",
-        text: '',
-        abilities: [marine, trade],
-        handicap: [],
-        backTerrain: Terrain.DESERT,
-        allowedTerrain: Terrain.SEA,
-    },
-    {
+        number:2,
         type: Type.TRIBE,
         title: "Marchand Marin",
         text: '',
@@ -45,6 +39,7 @@ export const cards: Card[] = [
 
     {
         type: Type.TRIBE,
+        number:1,
         title: "Marchands marins volants",
         text: '',
         abilities: [marine, trade, flight],
@@ -54,6 +49,7 @@ export const cards: Card[] = [
     },
 
     {
+        number:5,
         type: Type.TRIBE,
         title: "Simples militaires",
         text: '',
@@ -63,6 +59,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "Marine militaire",
         text: '',
@@ -72,6 +69,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "Marine militaire volante",
         text: '',
@@ -81,6 +79,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "Militaires volants",
         text: '',
@@ -90,6 +89,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "Continent propre",
         text: '',
@@ -99,6 +99,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "Purification du monde",
         text: '',
@@ -107,8 +108,8 @@ export const cards: Card[] = [
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.TEMPERATE
     },
-
     {
+        number:1,
         type: Type.TRIBE,
         title: "Khmers verts",
         text: '',
@@ -118,15 +119,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE
     },
     {
-        type: Type.TRIBE,
-        title: "Khmers verts",
-        text: '',
-        abilities: [bewareOfTechno, militaryUnit],
-        handicap: [],
-        backTerrain: Terrain.TEMPERATE,
-        allowedTerrain: Terrain.TEMPERATE
-    },
-    {
+        number:1,
         type: Type.TRIBE,
         title: "Laissez le passé au passé",
         text: '',
@@ -136,6 +129,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "Khmers verts marins",
         text: '',
@@ -144,7 +138,7 @@ export const cards: Card[] = [
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA,
     },
-    {
+    {   number:1,
         type: Type.TRIBE,
         title: "Khmers verts technologiques",
         text: '',
@@ -154,6 +148,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        number:3,
         type: Type.TRIBE,
         title: "Exploitation pétrolière",
         text: '',
@@ -163,6 +158,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "Exploitation pétrolière marine",
         text: '',
@@ -172,8 +168,9 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        number:2,
         type: Type.TRIBE,
-        title: "Renoncer au passé",
+        title: "Effacer les erreurs du passé",
         text: '',
         abilities: [reuse],
         handicap: [],
@@ -181,6 +178,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {
+        number:4,
         type: Type.TRIBE,
         title: "OGMs",
         text: '',
@@ -190,33 +188,37 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SCORCHED,
     },
     {
+        number:2,
         type: Type.TRIBE,
         title: "MAD-MECS",
         text: '',
-        abilities: [militaryUnit, technoDependent],
+        abilities: [militaryUnit],
         handicap: [oilDependent,technoDependent],
         backTerrain: Terrain.DESERT,
         allowedTerrain: Terrain.DESERT,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "Recyclage intensif",
         text: '',
         abilities: [archeolog],
         handicap: [oilDependent,technoDependent],
         backTerrain: Terrain.DESERT,
-        allowedTerrain: Terrain.SAVANNA,
+        allowedTerrain: Terrain.DESERT,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "Terraformers",
         text: '',
         abilities: [terraformer],
-        handicap: [technoDependent],
+        handicap: [],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "World company",
         text: '',
@@ -225,11 +227,68 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        number:1,
         type: Type.TRIBE,
         title: "World cartographer",
         text: '',
         abilities: [cartographer],
         backTerrain: Terrain.TEMPERATE,
         allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        number:1,
+        type: Type.TRIBE,
+        title: "Terraformeur recycleur",
+        text: '',
+        abilities: [terraformer_take_cards],
+        handicap: [technoDependent],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        number:1,
+        type: Type.TRIBE,
+        title: "Eliminer les erreurs du passé",
+        text: '',
+        abilities: [cleanTerritory],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.ANY,
+    },
+    {
+        number:1,
+        type: Type.TRIBE,
+        title: "Invasion",
+        text: '',
+        abilities: [invasion],
+        handicap: [militaryDependant],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.ANY,
+    },
+    {
+        number:6,
+        type: Type.TRIBE,
+        title: "Scouts",
+        text: '',
+        abilities: [scout],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.DESERT,
+    },
+    {
+        number:1,
+        type: Type.TRIBE,
+        title: "Marchands du ciel",
+        text: '',
+        abilities: [flyingMerchants],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.TEMPERATE,
+    },
+    {
+        number:1,
+        type: Type.TRIBE,
+        title: "Force aérienne",
+        text: '',
+        abilities: [airForce],
+        backTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.TEMPERATE,
     },
 ];

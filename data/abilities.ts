@@ -1,5 +1,6 @@
 import { Ability} from "../model";
 import {explorer, merchant, techno, military, cleanEarth} from "./families";
+import {getBlimpIcon, getOilIcon, getShipIcon} from "../layout/icons";
 
 export const trade: Ability = {
     name: 'Commerçants',
@@ -11,12 +12,14 @@ export const marine: Ability = {
     name: 'Marins',
     family: explorer,
     value: 1,
+    icon:getShipIcon(),
     text: "Placez cette carte le long des côtes adverses en repectant les règles de marines"
 }
 export const flight: Ability = {
     name: 'Volants',
     family: techno,
     value: 1,
+    icon: getBlimpIcon(),
     text: "Exerce aussi ses abilités sur carte adjacentes en diagonale"
 }
 
@@ -25,13 +28,6 @@ export const militaryUnit: Ability = {
     family: military,
     value: 1,
     text: "Votre adversaire ne peut réaliser d'action sur un emplacement adjacent à cette carte"
-}
-
-export const exileTechnology: Ability = {
-    name: 'Exiler la technologie',
-    family: cleanEarth,
-    value: 1,
-    text: "Ajouter une population sur cette carte à chaque fois que vous défaussez une carte technologique"
 }
 
 export const cleanHand: Ability = {
@@ -51,7 +47,7 @@ export const cleanContinent: Ability = {
 export const research: Ability = {
     name: 'Restaurer la connaissance',
     family: cleanEarth,
-    value: 1,
+    value: 4,
     text: "Au moment de placer cette carte, ajouter deux populations pour chaque carte 'Restaurer la connaissance' que vous avez déjà placée"
 }
 
@@ -60,21 +56,23 @@ export const bewareOfTechno: Ability = {
     name: 'Garder la connaissance enfouie',
     family: cleanEarth,
     value: 2,
-    text: "Au début de votre tour, ajouter une population si carte adjacente technologique non révélée"
+    text: "Une population pour chaque carte technologique adjacente non révélée"
 }
 
 export const longTravel: Ability = {
-    name: 'Restaurer la connaissance',
-    family: cleanEarth,
+    name: 'Navigateur au long cours',
+    family: explorer,
     value: 2,
-    text: "Ajouter une population suppléméntaire si la carte est posée sur l'équateur"
+    text: "Ajouter une population supplémentaire si la carte est posée sur l'équateur"
 }
 
 export const oil: Ability = {
     name: 'Exploitation pétrolière',
-    family: cleanEarth,
+    family: techno,
     value: 2,
-    text: "Le joueur dispose à présent de pétrole"
+    text: "Le joueur dispose à présent de pétrole",
+    icon: getOilIcon(),
+
 }
 export const reuse: Ability = {
     name: 'Renoncer au passé',
@@ -94,17 +92,64 @@ export const terraformer: Ability = {
     value: 2,
     text: "Les territoires non colonisés adjacents à cette carte sont plus froids de 1 (Par exemple: désert devient savane)"
 }
+export const terraformer_take_cards: Ability = {
+    name: 'Terraformers recycleurs',
+    family: techno,
+    value: 3,
+    text: "Le joueur prend une carte sur chaque territoire non colonisé adjacent et la met dans sa main"
+}
 export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,
-    value: 2,
-    text: "+ 1 population par joueur avec qui vous avez un comptoir. Ensuite doublez toutes les populations cette carte si vous avez un comptoir chez tous les joueurs."
+    value: 4,
+    text: "+ 1 population par joueur avec qui vous avez un comptoir. + 1 si comptoir chez tous les joueurs"
 }
 export const cartographer: Ability = {
     name: 'World cartographers',
     family: explorer,
-    value: 2,
-    text: "+ 1 population par joueur avec qui vous avez un territoire adjacent."
+    value: 3,
+    text: "Ajoutez 1 population par joueur avec qui vous avez un territoire adjacent."
 }
+
+export const cleanTerritory: Ability = {
+    name: 'Recyclage',
+    family: cleanEarth,
+    value: 2,
+    text: "Posez cette carte sur l'un de vos territoire. Vous récupérez les populations de ce territoire X 2"
+}
+
+export const invasion: Ability = {
+    name: 'Invasion',
+    family:military,
+    value: 4,
+    text: "Posez cette carte sur un territoire adverse. Les pions adverses qui occupent ce territoire sont perdus"
+}
+
+export const scout: Ability = {
+    name: 'Scout',
+    family:explorer,
+    value: 1,
+    text: "Vous pouvez consulter les cartes de la pile supérieure"
+}
+
+export const airForce: Ability = {
+    name: 'explorateurs',
+    family:military,
+    value: 5,
+    text: `Toutes vos cartes militaires gagnent la propriété "volant".`,
+    icon: getBlimpIcon()
+}
+
+export const flyingMerchants: Ability = {
+    name: 'Marchands aériens',
+    family:merchant,
+    value: 5,
+    icon: getBlimpIcon(),
+    text: `Toutes vos cartes marchands gagnent la propriété "volant".`
+}
+
+
+
+
 
 

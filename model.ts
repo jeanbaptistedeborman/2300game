@@ -1,6 +1,8 @@
 export enum Terrain {
-    'SCORCHED', 'DESERT', 'SAVANNA', 'TEMPERATE', 'SEA', 'ANY'
+    'TEMPERATE' = 'TEMPERATE','SAVANNA' = 'SAVANNA', 'DESERT' = 'DESERT', 'SCORCHED'='SCORCHED', 'SEA' = 'SEA', 'ANY' = 'ANY'
 }
+
+export const terrains:Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 
 export enum Type {
     'TRIBE',
@@ -8,13 +10,14 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO",  "MILITARY", "EXPLORER", "CLEAN_EARTH" , "MERCHANT"
+    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Retour à la terre", "MERCHANT" = "Marchands"
 }
 
 
 export interface Family {
     familyName:FamilyName,
     icon:string,
+    color:string,
 }
 
 export interface Ability {
@@ -22,16 +25,18 @@ export interface Ability {
   name: string,
   text: string,
   value:number,
+    icon?: string,
 }
 
 export interface Handicap {
     name: string,
-    family: Family,
+    icon?: string,
     text: string,
     value:number,
 }
 
 export interface Card {
+    number:number;
     title: string,
     text:string,
     type: Type,
