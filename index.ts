@@ -11,7 +11,11 @@ export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.
 
 const CARDS_PER_PAGE:number = 9;
 
-const completedCards: Card[] =cards.map (card => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] }));
+const completedCards: Card[] =
+    cards
+        .map(( card) => Array(card.number).fill(card)).flat().map (card => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] }))
+        .sort(() => .5 -Math.random());
+
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {

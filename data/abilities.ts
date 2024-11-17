@@ -1,16 +1,16 @@
 import { Ability} from "../model";
-import {explorer, merchant, techno, military, cleanEarth} from "./families";
+import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
 import {getBlimpIcon, getOilIcon, getShipIcon} from "../layout/icons";
 
 export const trade: Ability = {
     name: 'Commerçants',
     family: merchant    ,
     value: 1,
-    text: 'Placez une population sur chaque côté de cette carte adjacent à une carte adverse.'
+    text: 'Placez 2 populations sur chaque côté de cette carte adjacent à une carte adverse.'
 }
 export const marine: Ability = {
     name: 'Marins',
-    family: explorer,
+    family: navigators,
     value: 1,
     icon:getShipIcon(),
     text: "Placez cette carte le long des côtes adverses en repectant les règles de marines"
@@ -41,22 +41,14 @@ export const cleanContinent: Ability = {
     name: 'Purifiez votre continent',
     family: cleanEarth,
     value: 1,
-    text: "Ajouter 1 population sur cette carte à chaque tour si vous n'avez aucune icône technologie sur votre continent"
+    text: "Ajouter 3 population sur cette carte à chaque tour si vous n'avez aucune icône technologie sur votre continent. Retirez ces populations si cette condition n'est plus respectée"
 }
-
-export const research: Ability = {
-    name: 'Restaurer la connaissance',
-    family: cleanEarth,
-    value: 4,
-    text: "Au moment de placer cette carte, ajouter deux populations pour chaque carte 'Restaurer la connaissance' que vous avez déjà placée"
-}
-
 
 export const bewareOfTechno: Ability = {
     name: 'Garder la connaissance enfouie',
     family: cleanEarth,
     value: 2,
-    text: "Une population pour chaque carte technologique adjacente non révélée"
+    text: "Deux populations pour chaque carte technologique adjacente non révélée"
 }
 
 export const longTravel: Ability = {
@@ -111,6 +103,13 @@ export const cartographer: Ability = {
     text: "Ajoutez 1 population par joueur avec qui vous avez un territoire adjacent."
 }
 
+export const knowledge: Ability = {
+    name: 'Restaurer la connaissance',
+    family: knowledgeGatherer,
+    value: 3,
+    text: "Ajoutez 1 population par carte connaissance que vous avez déjà posée"
+}
+
 export const cleanTerritory: Ability = {
     name: 'Recyclage',
     family: cleanEarth,
@@ -128,8 +127,8 @@ export const invasion: Ability = {
 export const scout: Ability = {
     name: 'Scout',
     family:explorer,
-    value: 1,
-    text: "Vous pouvez consulter les cartes de la pile supérieure"
+    value: 2,
+    text: "Vous pouvez consulter le dos toutes les cartes de la même colonne"
 }
 
 export const airForce: Ability = {

@@ -10,7 +10,7 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Retour à la terre", "MERCHANT" = "Marchands"
+    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Retour à la terre", "MERCHANT" = "Marchands", "KNOWLEDGE" = "Connaissance", "NAVIGATOR" = "Navigateur"
 }
 
 
@@ -31,6 +31,7 @@ export interface Ability {
 export interface Handicap {
     name: string,
     icon?: string,
+    iconNumber?:number,
     text: string,
     value:number,
 }
@@ -41,7 +42,7 @@ export interface Card {
     text:string,
     type: Type,
     abilities: Ability[],
-    handicap?: Handicap[],
+    handicaps?: Handicap[],
     backTerrain:Terrain,
     allowedTerrain: Terrain,
 }
