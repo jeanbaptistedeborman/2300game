@@ -10,7 +10,7 @@ margin:0;
 }
 
 .card {
-    padding: 2mm;
+    padding: 8mm 2mm;
     font-family: arial, sans-serif;
     font-size: 10px;
     height: 33.33333%;
@@ -20,6 +20,7 @@ margin:0;
     display: flex;
     flex-direction:column;
     overflow: hidden;
+    position:relative;
 }
 
 .card.back {
@@ -28,7 +29,7 @@ margin:0;
 
 .title {
     text-align:center;
-    padding: 10px;
+    padding: 0 1mmm 1mmm 1mm;
     font-size: 12px;
 }
 
@@ -71,5 +72,10 @@ div {
     1mm;padding:1mm;
     border:2px solid grey;
     border-radius:50%;
+}
+
+.negative {
+    mix-blend-mode:multiply;
+    filter:invert(1)
 }
 `

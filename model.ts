@@ -21,7 +21,8 @@ export interface Family {
 }
 
 export interface Ability {
-  family: Family,
+    effect?:Effect,
+    family: Family,
   name: string,
   text: string,
   value:number,
@@ -45,4 +46,9 @@ export interface Card {
     handicaps?: Handicap[],
     backTerrain:Terrain,
     allowedTerrain: Terrain,
+}
+
+export interface Effect {
+    icon:string,
+    color?:string,
 }

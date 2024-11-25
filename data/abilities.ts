@@ -1,8 +1,10 @@
 import { Ability} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
-import {getBlimpIcon, getOilIcon, getShipIcon} from "../layout/icons";
+import {getBlimpIcon, getOilIcon} from "../layout/icons";
+import {addPopulation, forbid, takeCard} from "./effects";
 
 export const trade: Ability = {
+    effect:addPopulation,
     name: 'Commerçants',
     family: merchant    ,
     value: 1,
@@ -12,18 +14,18 @@ export const marine: Ability = {
     name: 'Marins',
     family: navigators,
     value: 1,
-    icon:getShipIcon(),
-    text: "Placez cette carte le long des côtes adverses en repectant les règles de marines"
+    text: "Placez cette carte le long des côtes adverses en repectant les règles des expéditions marines"
 }
 export const flight: Ability = {
     name: 'Volants',
     family: techno,
     value: 1,
     icon: getBlimpIcon(),
-    text: "Exerce aussi ses abilités sur carte adjacentes en diagonale"
+    text: "Les cartes en diagonale sont considérées comme adjacentes."
 }
 
 export const militaryUnit: Ability = {
+    effect:forbid,
     name: 'militaire',
     family: military,
     value: 1,
@@ -31,6 +33,7 @@ export const militaryUnit: Ability = {
 }
 
 export const cleanHand: Ability = {
+    effect: addPopulation,
     name: 'Purifiez votre main',
     family: cleanEarth,
     value: 1,
@@ -41,10 +44,11 @@ export const cleanContinent: Ability = {
     name: 'Purifiez votre continent',
     family: cleanEarth,
     value: 1,
-    text: "Ajouter 3 population sur cette carte à chaque tour si vous n'avez aucune icône technologie sur votre continent. Retirez ces populations si cette condition n'est plus respectée"
+    text: "Ajouter 5 population sur cette carte si vous n'avez aucune icône technologie sur votre continent. Retirez ces populations si cette condition n'est plus respectée"
 }
 
 export const bewareOfTechno: Ability = {
+    effect:addPopulation,
     name: 'Garder la connaissance enfouie',
     family: cleanEarth,
     value: 2,
@@ -55,7 +59,7 @@ export const longTravel: Ability = {
     name: 'Navigateur au long cours',
     family: explorer,
     value: 2,
-    text: "Ajouter une population supplémentaire si la carte est posée sur l'équateur"
+    text: "Ajouter deux populations supplémentaires si la carte est posée sur l'équateur"
 }
 
 export const oil: Ability = {
@@ -85,8 +89,9 @@ export const terraformer: Ability = {
     text: "Les territoires non colonisés adjacents à cette carte sont plus froids de 1 (Par exemple: désert devient savane)"
 }
 export const terraformer_take_cards: Ability = {
+    effect:takeCard,
     name: 'Terraformers recycleurs',
-    family: techno,
+    family: cleanEarth,
     value: 3,
     text: "Le joueur prend une carte sur chaque territoire non colonisé adjacent et la met dans sa main"
 }
@@ -114,7 +119,7 @@ export const cleanTerritory: Ability = {
     name: 'Recyclage',
     family: cleanEarth,
     value: 2,
-    text: "Posez cette carte sur l'un de vos territoire. Vous récupérez les populations de ce territoire X 2"
+    text: "Posez cette carte sur l'un de vos territoire. Vous récupérez les populations de ce territoire X 1.5 (arrondi à l'inférieur)"
 }
 
 export const invasion: Ability = {
@@ -128,7 +133,7 @@ export const scout: Ability = {
     name: 'Scout',
     family:explorer,
     value: 2,
-    text: "Vous pouvez consulter le dos toutes les cartes de la même colonne"
+    text: "Vous pouvez consulter le dos toutes les cartes de cette colonne"
 }
 
 export const airForce: Ability = {

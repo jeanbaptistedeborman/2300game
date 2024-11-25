@@ -13,12 +13,12 @@ import {
     reuse, scout, terraformer, terraformer_take_cards,
     trade, worldCompany
 } from './abilities'
-import {militaryDependant, oilDependent, technoDependent} from "./handicaps";
+import { militaryDependant, oilDependent, technoDependent} from "./handicaps";
 
 export const cards: Card[] = [
     {
         number:3,
-        title: "Simple tradesman",
+        title: "Marchand",
         text: '',
         type: Type.TRIBE,
         abilities: [trade],
@@ -51,7 +51,7 @@ export const cards: Card[] = [
     {
         number:3,
         type: Type.TRIBE,
-        title: "Simples militaires",
+        title: "Militaires",
         text: '',
         abilities: [militaryUnit],
         handicaps: [],
@@ -71,7 +71,7 @@ export const cards: Card[] = [
     {
         number:1,
         type: Type.TRIBE,
-        title: "Marine militaire volante",
+        title: "Task force amphibie",
         text: '',
         abilities: [militaryUnit, marine, flight],
         handicaps: [],
@@ -91,7 +91,7 @@ export const cards: Card[] = [
     {
         number:1,
         type: Type.TRIBE,
-        title: "Continent propre",
+        title: "Purificateurs",
         text: '',
         abilities: [cleanContinent],
         handicaps: [],
@@ -101,7 +101,7 @@ export const cards: Card[] = [
     {
         number:2,
         type: Type.TRIBE,
-        title: "Purification du monde",
+        title: "Main propre",
         text: '',
         abilities: [cleanHand],
         handicaps: [],
@@ -150,7 +150,7 @@ export const cards: Card[] = [
     {
         number:3,
         type: Type.TRIBE,
-        title: "Exploitation pétrolière",
+        title: "Derrick",
         text: '',
         abilities: [oil],
         handicaps: [],
@@ -160,7 +160,7 @@ export const cards: Card[] = [
     {
         number:1,
         type: Type.TRIBE,
-        title: "Exploitation pétrolière marine",
+        title: "Pateforme pétrolière",
         text: '',
         abilities: [oil, marine],
         handicaps: [],
@@ -170,7 +170,7 @@ export const cards: Card[] = [
     {
         number:2,
         type: Type.TRIBE,
-        title: "Effacer les erreurs du passé",
+        title: "Effacer un errement passé",
         text: '',
         abilities: [reuse],
         handicaps: [],
@@ -276,7 +276,7 @@ export const cards: Card[] = [
     {
         number:1,
         type: Type.TRIBE,
-        title: "Marchands du ciel",
+        title: "Abondance des cieux",
         text: '',
         abilities: [flyingMerchants],
         backTerrain: Terrain.TEMPERATE,
