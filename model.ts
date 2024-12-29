@@ -10,7 +10,7 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Retour à la terre", "MERCHANT" = "Marchands", "KNOWLEDGE" = "Connaissance", "NAVIGATOR" = "Navigateur"
+    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Ecologistes", "MERCHANT" = "Marchands", "KNOWLEDGE" = "Connaissance", "NAVIGATOR" = "Navigateur"
 }
 
 
@@ -21,6 +21,7 @@ export interface Family {
 }
 
 export interface Ability {
+    isVisible?:boolean,
     effect?:Effect,
     family: Family,
   name: string,
@@ -38,6 +39,7 @@ export interface Handicap {
 }
 
 export interface Card {
+    illustration?:string;
     number:number;
     title: string,
     text:string,

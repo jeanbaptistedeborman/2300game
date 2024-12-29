@@ -1,36 +1,34 @@
 import {Family, FamilyName} from "../model";
 import {
     getCogIcon,
-    getEcologyIcon,
-    getMilitaryIcon,
     getMoneyIcon,
     getKnowledgeIcon,
-    getShipIcon, getSpyGlassIcon
+    getShipIcon, getSpyGlassIcon, getTreeIcon, getStarIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
 export const techno:Family = {
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
-    color: "#e3b6fa"
+    color: "#8a2f8b"
 }
 
 export const military:Family = {
     familyName:FamilyName.MILITARY,
-    icon:getMilitaryIcon(),
-    color: "#fa98b2"
+    icon:getStarIcon(),
+    color: "#a12c2e"
 }
 
 export const knowledgeGatherer:Family = {
     familyName:FamilyName.KNOWLEDGE,
     icon:getKnowledgeIcon(),
-    color: "#9eefff"
+    color: "#00a6ff"
 }
 
 export const explorer:Family = {
     familyName:FamilyName.EXPLORER,
     icon:getSpyGlassIcon(),
-    color: '#e8fb95'
+    color: '#c9704e'
 }
 
 export const navigators:Family = {
@@ -40,12 +38,12 @@ export const navigators:Family = {
 
 export const cleanEarth:Family = {
     familyName:FamilyName.CLEAN_EARTH,
-    icon:getEcologyIcon(),
-    color: "#bdffa1"
+    icon:getTreeIcon(),
+    color: "#5e915b"
 }
 
 export const merchant:Family = {
     familyName:FamilyName.MERCHANT,
     icon:getMoneyIcon(),
-    color: "#ffe16f"
+    color: "#f08636"
 }

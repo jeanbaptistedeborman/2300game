@@ -1,11 +1,11 @@
 import { Ability} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
 import {getBlimpIcon, getOilIcon} from "../layout/icons";
-import {addPopulation, forbid, takeCard} from "./effects";
+import {addPopulation, forbid, makeCold, takeCard} from "./effects";
 
 export const trade: Ability = {
     effect:addPopulation,
-    name: 'Commerçants',
+    name: 'Comptoirs',
     family: merchant    ,
     value: 1,
     text: 'Placez 2 populations sur chaque côté de cette carte adjacent à une carte adverse.'
@@ -33,33 +33,32 @@ export const militaryUnit: Ability = {
 }
 
 export const cleanHand: Ability = {
-    effect: addPopulation,
-    name: 'Purifiez votre main',
+    name: 'Exilez les mécréants',
     family: cleanEarth,
     value: 1,
     text: "Ajouter une population sur cette carte à chaque fois que vous défaussez une carte technologique"
 }
 
 export const cleanContinent: Ability = {
-    name: 'Purifiez votre continent',
+    name: 'Terre pure',
     family: cleanEarth,
     value: 1,
-    text: "Ajouter 5 population sur cette carte si vous n'avez aucune icône technologie sur votre continent. Retirez ces populations si cette condition n'est plus respectée"
+    text: "+ 5 populations si vous n'avez aucune icône technologie sur votre continent"
 }
 
 export const bewareOfTechno: Ability = {
     effect:addPopulation,
-    name: 'Garder la connaissance enfouie',
+    name: 'Garder la technologie oubliée',
     family: cleanEarth,
     value: 2,
-    text: "Deux populations pour chaque carte technologique adjacente non révélée"
+    text: "2 populations pour chaque carte technologique ADJACENTE non révélée"
 }
 
 export const longTravel: Ability = {
     name: 'Navigateur au long cours',
     family: explorer,
     value: 2,
-    text: "Ajouter deux populations supplémentaires si la carte est posée sur l'équateur"
+    text: "+ 2 populations si la carte est posée sur l'équateur"
 }
 
 export const oil: Ability = {
@@ -78,11 +77,12 @@ export const reuse: Ability = {
 }
 export const archeolog: Ability = {
     name: 'Archeologues',
-    family: cleanEarth,
+    family: techno,
     value: 4,
     text: "Au lieu de les laisser sous sa carte, le joueur prend dans sa main toutes les cartes du territoire où il pose cette carte."
 }
 export const terraformer: Ability = {
+    effect: makeCold,
     name: 'Terraformers',
     family: cleanEarth,
     value: 2,
@@ -105,21 +105,21 @@ export const cartographer: Ability = {
     name: 'World cartographers',
     family: explorer,
     value: 3,
-    text: "Ajoutez 1 population par joueur avec qui vous avez un territoire adjacent."
+    text: "Ajoutez 1 population par continent sur lequel vous occupez une région"
 }
 
 export const knowledge: Ability = {
-    name: 'Restaurer la connaissance',
+    name: 'Datacenter',
     family: knowledgeGatherer,
     value: 3,
-    text: "Ajoutez 1 population par carte connaissance que vous avez déjà posée"
+    text: "+ 1 population par carte connaissance que vous occupez"
 }
 
 export const cleanTerritory: Ability = {
     name: 'Recyclage',
     family: cleanEarth,
     value: 2,
-    text: "Posez cette carte sur l'un de vos territoire. Vous récupérez les populations de ce territoire X 1.5 (arrondi à l'inférieur)"
+    text: "Posez cette carte sur l'un de vos territoire. Vous ajoutez les populations de ce territoire s'il s'agit d'un territoire technologique"
 }
 
 export const invasion: Ability = {
@@ -133,7 +133,7 @@ export const scout: Ability = {
     name: 'Scout',
     family:explorer,
     value: 2,
-    text: "Vous pouvez consulter le dos toutes les cartes de cette colonne"
+    text: "Vous pouvez consulter consulter le première carte de chaque pile de cette colonne"
 }
 
 export const airForce: Ability = {
@@ -151,6 +151,46 @@ export const flyingMerchants: Ability = {
     icon: getBlimpIcon(),
     text: `Toutes vos cartes marchands gagnent la propriété "volant".`
 }
+
+export const simpleSettlement: Ability = {
+    name: 'Pionniers',
+    family: cleanEarth,
+    value: 1,
+    text: '+1 population si posée sur un terrain savane, + 2 populations si posée sur un terrain tempéré'
+}
+
+export const goodOldWorld: Ability = {
+    name: 'Au bon vieux temps',
+    family: techno,
+    value: 2,
+    text: "+ 1 population par installation pétrolière"
+}
+
+export const merchantNetwork: Ability = {
+    effect: addPopulation,
+    name: 'Réseau marchand',
+    family: merchant,
+    value: 2,
+    text: "+ 1 population par carte ADJACENTE marchande"
+}
+
+export const cleanHearthNetwork: Ability = {
+    effect: addPopulation,
+    name: 'Réseau écologiste',
+    family: cleanEarth,
+    value: 2,
+    text: "+ 1 population par carte ADJACENTE écologiste"
+}
+
+export const militaryNetwork: Ability = {
+    effect: addPopulation,
+    name: 'Ligue militaire',
+    family: military,
+    value: 2,
+    text: "+ 1 population par carte ADJACENTE militaire"
+}
+
+
 
 
 

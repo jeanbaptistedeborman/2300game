@@ -1,17 +1,17 @@
 export const styles = `
-body{
-  font-face:
+body {
+    font-family: calibri, arial, sans-serif;
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
+  line-height:.65em;
 }
 
 h1, h2, h3, h4 {
-margin:0; 
+    margin:0; 
 }
 
 .card {
-    padding: 8mm 2mm;
-    font-family: arial, sans-serif;
+    padding: 7.5mm;
     font-size: 10px;
     height: 33.33333%;
     width: 33.33333%;
@@ -23,13 +23,36 @@ margin:0;
     position:relative;
 }
 
-.card.back {
-  padding:6mm;
+.backX {
+        background: repeating-linear-gradient(#FFFFFF, transparent 10%);
+        background-blend-mode:overlay;
+        opacity: 0.2;
+        padding:6mm;
+}
+
+.DESERT {
+    background-size: 4em 4em;
+        opacity: 1;
+}
+
+.SEA {
+   background-size: 1.5em 1.5em;
+        opacity: 1;
+}
+
+.SAVANNA {
+   background-size: 4em 4em;
+        opacity: 1;
+}
+
+.SCORCHED {
+        background-size: 4em 4em;
+        opacity: 1
 }
 
 .title {
     text-align:center;
-    padding: 0 1mmm 1mmm 1mm;
+    padding:0 1mm 2mm 1mm;
     font-size: 12px;
 }
 
@@ -43,12 +66,14 @@ margin:0;
 
 .page.verso {
     flex-direction: row-reverse;
+    opacity: 0.8;
 }
 page:before::{}
 
 
 ul {
- padding:0
+ padding:0;
+ margin:1mm 0 0  0;
 }
 
 ul>li {
@@ -57,8 +82,8 @@ ul>li {
   padding: 0;
 }
 
-svg {
- margin:5px;
+svg.ivcon {
+ margin:.5mm;
 }
 
 div {
@@ -70,8 +95,8 @@ div {
     width:5mm;
     margin-right:
     1mm;padding:1mm;
-    border:2px solid grey;
-    border-radius:50%;
+    border:1px solid grey;
+    border-radius:20%;
 }
 
 .negative {

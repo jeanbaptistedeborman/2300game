@@ -13,9 +13,17 @@ const CARDS_PER_PAGE:number = 9;
 
 const completedCards: Card[] =
     cards
-        .map(( card) => Array(card.number).fill(card)).flat().map (card => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] }))
+        .map(( card:Card) => Array(card.number).fill(card)).flat()// duplicate cards by cardNumber
+        .map ((card:Card) => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] })) // attribute backterrain randomly
+        .map((card:Card)=>  ({ //set ability visibility
+            ...card,
+            abilities:card.abilities.map(ability=> ({
+                ...ability,
+                isVisible: Math.random() > .4,
+            })
+            )
+        }))
         .sort(() => .5 -Math.random());
-
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {
