@@ -1,15 +1,16 @@
 import * as fs from 'fs';
-import {Card, Terrain} from "./model";
+import {Card, FamilyName, Terrain} from "./model";
 
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {backTemplate, cardTemplate} from "./layout/templates";
+import {logStats} from "./services";
 
-console.log (cards.length);
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
-
 const CARDS_PER_PAGE:number = 9;
+
+logStats(cards)
 
 const completedCards: Card[] =
     cards
@@ -19,7 +20,8 @@ const completedCards: Card[] =
             ...card,
             abilities:card.abilities.map(ability=> ({
                 ...ability,
-                isVisible: Math.random() > .4,
+                isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
+                    Math.random() > .6,
             })
             )
         }))
@@ -32,6 +34,9 @@ const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     acc[acc.length - 1].push(card);
     return acc;
 }, [] as Card[][]);
+
+console.log ('', 'GENERATED CARDS', '---------------------------------------------------------');
+logStats(completedCards);
 
 const getPage = (cards: Card[]): string => {
     const faces: string[] = cards.map((card) => cardTemplate(card));

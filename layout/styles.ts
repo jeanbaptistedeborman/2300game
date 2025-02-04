@@ -23,11 +23,11 @@ h1, h2, h3, h4 {
     position:relative;
 }
 
-.backX {
-        background: repeating-linear-gradient(#FFFFFF, transparent 10%);
-        background-blend-mode:overlay;
-        opacity: 0.2;
-        padding:6mm;
+.back {
+        background: repeating-linear-gradient(#FFFFFF, #000000, 20%);
+        background-blend-mode:soft-light;
+        background-size: 2cm 2cm;
+       border:none;      
 }
 
 .DESERT {
@@ -93,8 +93,8 @@ div {
 .terrain-icon {
     height:5mm;
     width:5mm;
-    margin-right:
-    1mm;padding:1mm;
+    margin-right:1mm;
+    position:relative;
     border:1px solid grey;
     border-radius:20%;
 }

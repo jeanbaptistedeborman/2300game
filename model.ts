@@ -1,5 +1,7 @@
+export const getEnumKey = (enumObject: any, value:string) => Object.keys(enumObject)[Object.values(enumObject).indexOf(value)];
+
 export enum Terrain {
-    'TEMPERATE' = 'TEMPERATE','SAVANNA' = 'SAVANNA', 'DESERT' = 'DESERT', 'SCORCHED'='SCORCHED', 'SEA' = 'SEA', 'ANY' = 'ANY'
+    'TEMPERATE' = 'Tempéré','SAVANNA' = 'Savanne', 'DESERT' = 'Désert', 'SCORCHED'='Calciné', 'SEA' = 'mer', 'ANY' = 'tous'
 }
 
 export const terrains:Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -10,9 +12,8 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Technologie",  "MILITARY" = "Militaire", "EXPLORER" = "Eplorateurs", "CLEAN_EARTH"  = "Ecologistes", "MERCHANT" = "Marchands", "KNOWLEDGE" = "Connaissance", "NAVIGATOR" = "Navigateur"
+    "TECHNO"= "Techno",  "MILITARY" = "Milice", "EXPLORER" = "scouts", "CLEAN_EARTH"  = "Purs", "MERCHANT" = "Marchand", "KNOWLEDGE" = "savant", "NAVIGATOR" = "Marins", "PEOPLE" = 'People'
 }
-
 
 export interface Family {
     familyName:FamilyName,
@@ -46,7 +47,7 @@ export interface Card {
     type: Type,
     abilities: Ability[],
     handicaps?: Handicap[],
-    backTerrain:Terrain,
+    backTerrain?:Terrain,
     allowedTerrain: Terrain,
 }
 

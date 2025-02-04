@@ -1,42 +1,37 @@
 import { Handicap } from '../model';
-import {getCogIcon, getEcologyIcon, getMilitaryIcon, getOilIcon, getStarIcon} from "../layout/icons";
+import {getCogIcon, getEcologyIcon, getOilIcon, getStarIcon, getTreeIcon} from "../layout/icons";
+import {oil} from "./abilities";
+import {cleanEarth, military, techno} from "./families";
 
-const ICON_SIZE = '4mm';
+const ICON_SIZE = '3mm';
 
 export const oilDependent: Handicap = {
     name: 'Dépendant du pétrole',
     value: 2,
     iconNumber:1,
     icon: getOilIcon(ICON_SIZE),
-    text: "Le joueur doit disposer de pétrole pour poser cette carte"
+    text: `Occuper une ${oil.name.toUpperCase()}`
 }
 export const technoDependent: Handicap = {
     name: 'Dépendant de la technologie',
-    value: 2,
+    value: 1,
     iconNumber:1,
     icon: getCogIcon(ICON_SIZE),
-    text: "Le joueur doit disposer de 1 région technologique pour poser cette carte"
+    text: `Occuper 1 région de la tribu ${techno.familyName.toUpperCase()}`
 }
 export const technoNeighbour: Handicap = {
     name: 'Voisin de la technologie',
     value: 3,
     iconNumber:2,
     icon: getCogIcon(ICON_SIZE),
-    text: "N cartes technologie adjacentes pour être posée"
+    text:  `2 régions ${techno.familyName.toUpperCase()} ADJACENTES`
 }
 export const cleanHearthNeighbour: Handicap = {
     name: "Voisin de l'écologie",
     value: 3,
     iconNumber:2,
-    icon: getEcologyIcon(ICON_SIZE),
-    text: "N cartes écologie ADJACENTES pour être posée"
-}
-export const ecologyNeighbour: Handicap = {
-    name: "Voisin de l'écologie",
-    value: 3,
-    iconNumber:2,
-    icon: getEcologyIcon(ICON_SIZE),
-    text: "N cartes militaires adjacentes pour être posée"
+    icon: getTreeIcon(ICON_SIZE),
+    text: `2 régions de la tribu ${cleanEarth.familyName.toUpperCase()} ADJACENTES`
 }
 
 export const cleanHearthDependant: Handicap = {
@@ -44,12 +39,12 @@ export const cleanHearthDependant: Handicap = {
     iconNumber:2,
     icon:getEcologyIcon(ICON_SIZE),
     value: 2,
-    text: "Occuper au moins 2 régions écologistes pour poser cette carte"
+    text: `Occuper 2 régions de la famille ${cleanEarth.familyName.toUpperCase()}`
 }
 export const militaryDependant: Handicap = {
     name: 'Dépendant du militaire',
     icon: getStarIcon(ICON_SIZE),
     iconNumber:2,
     value: 2,
-    text: "Occuper au moins 2 territoires militaires pour poser cette carte"
+    text: `Occuper 2 régions de la famille ${military.familyName.toUpperCase()}`
 }

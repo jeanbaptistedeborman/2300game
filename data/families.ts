@@ -3,7 +3,7 @@ import {
     getCogIcon,
     getMoneyIcon,
     getKnowledgeIcon,
-    getShipIcon, getSpyGlassIcon, getTreeIcon, getStarIcon
+    getShipIcon, getSpyGlassIcon, getTreeIcon, getStarIcon, getVillageIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
@@ -16,7 +16,13 @@ export const techno:Family = {
 export const military:Family = {
     familyName:FamilyName.MILITARY,
     icon:getStarIcon(),
-    color: "#a12c2e"
+    color: "#c60003"
+}
+
+export const people:Family = {
+    familyName:FamilyName.PEOPLE,
+    icon:getVillageIcon(),
+    color: "#99999a"
 }
 
 export const knowledgeGatherer:Family = {
@@ -28,22 +34,23 @@ export const knowledgeGatherer:Family = {
 export const explorer:Family = {
     familyName:FamilyName.EXPLORER,
     icon:getSpyGlassIcon(),
-    color: '#c9704e'
+    color: '#002fc8'
 }
 
 export const navigators:Family = {
     familyName:FamilyName.NAVIGATOR,
     icon:getShipIcon(),
-    color: terrainColors.SEA}
+    color: terrainColors.SEA
+}
 
 export const cleanEarth:Family = {
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
-    color: "#5e915b"
+    color: "#099300"
 }
 
 export const merchant:Family = {
     familyName:FamilyName.MERCHANT,
     icon:getMoneyIcon(),
-    color: "#f08636"
+    color: "#df8100"
 }
