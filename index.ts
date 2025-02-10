@@ -21,7 +21,7 @@ const completedCards: Card[] =
             abilities:card.abilities.map(ability=> ({
                 ...ability,
                 isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
-                    Math.random() > .6,
+                    Math.random() > .55,
             })
             )
         }))

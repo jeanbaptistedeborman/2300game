@@ -1,6 +1,7 @@
 export const styles = `
 body {
-    font-family: calibri, arial, sans-serif;
+  margin: 0;
+  font-family: calibri, arial, sans-serif;
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
   line-height:.65em;
@@ -15,7 +16,7 @@ h1, h2, h3, h4 {
     font-size: 10px;
     height: 33.33333%;
     width: 33.33333%;
-    border: 1px solid black;
+    border: .1mm solid black;
     box-sizing: border-box;
     display: flex;
     flex-direction:column;

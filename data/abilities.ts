@@ -1,5 +1,5 @@
 import {Ability, Family} from "../model";
-import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer, people} from "./families";
+import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
 import {getWingIcon, getOilIcon} from "../layout/icons";
 import {addPopulation, forbid, makeCold, takeCard} from "./effects";
 
@@ -8,20 +8,20 @@ export const trade: Ability = {
     name: 'Comptoirs',
     family: merchant,
     value: 1,
-    text: 'Placez 2 populations su r chaque côté de cette carte ADJACENT à une région occupée par un adversaire.'
+    text: 'Placez 2 populations sur chaque côté de cette région ADJACENTE à une région occupée par un adversaire.'
 }
 export const marine: Ability = {
     name: 'Navigation',
     family: navigators,
     value: 1,
-    text: "Placez cette carte le long d'un continent adverse en appliquant les règles de navigation"
+    text: "Placez cette région le long d'un continent adverse en suivant les règles de navigation"
 }
 export const flight: Ability = {
     name: 'Volants',
     family: techno,
     value: 1,
     icon: getWingIcon(),
-    text: "Les cartes en diagonale sont considérées comme ADJACENTES."
+    text: "Le pouvoir cette de cette région a la propriété vol."
 }
 
 export const militaryUnit: Ability = {
@@ -29,7 +29,7 @@ export const militaryUnit: Ability = {
     name: 'militaire',
     family: military,
     value: 1,
-    text: "Vos adversaires ne peuvent réaliser d'action sur un emplacement ADJACENT."
+    text: "Vos adversaires ne peuvent réaliser d'action sur une région ADJACENTE."
 }
 
 export const cleanHand: Ability = {
@@ -43,7 +43,7 @@ export const cleanContinent: Ability = {
     name: 'Terre pure',
     family: cleanEarth,
     value: 1,
-    text: `+ 1 population par tour. Maximum: 5 ou 0 si vous avez une région de la tribu ${techno.familyName} sur votre continent`
+    text: `+ 1 population à la fin chaque tour si vous n'avez pas de tribu ${techno.familyName} sur votre continent. Dans le cas contraire -1 population à chaque tour (minimum 0)`
 }
 
 export const bewareOfTechno: Ability = {
@@ -93,7 +93,7 @@ export const terraformer_take_cards: Ability = {
     name: 'Terraformers recycleurs',
     family: cleanEarth,
     value: 3,
-    text: "Au moment où il pose cette carte, Le joueur prend une carte sur chaque région non occupée adjacente et la met dans sa main"
+    text: "Au moment où il pose cette carte, Le joueur pioche une carte sur chaque région non occupée adjacente et la met dans sa main"
 }
 export const worldCompany: Ability = {
     name: 'World company',
@@ -105,21 +105,21 @@ export const cartographer: Ability = {
     name: 'World cartographers',
     family: explorer,
     value: 3,
-    text: "Ajoutez 1 population par continent où vous occupez une région. Populations supplémentaires x2 si Vous occupez une région de tous les continents"
+    text: "Ajoutez 1 population par continent adverse où vous occupez une région. Populations supplémentaires x2 si Vous occupez une région de tous les continents"
 }
 
 export const knowledge: Ability = {
     name: 'Connaissance',
     family: knowledgeGatherer,
     value: 3,
-    text: "+ 1 population par carte connaissance que vous occupez déjà."
+    text: "+ 1 population par région connaissance que vous occupez déjà."
 }
 
 export const invasion: Ability = {
     name: 'Invasion',
     family:military,
     value: 4,
-    text: "Posez cette carte sur une région occupée par un adversaire. Les pions adverses qui occupent ce territoire sont perdus"
+    text: "Posez cette région sur une région occupée par un adversaire. Les pions adverses qui occupent ce territoire sont perdus"
 }
 
 export const scout: Ability = {
@@ -129,7 +129,7 @@ export const scout: Ability = {
     text: "Vous pouvez consulter les premières cartes de la colonne de cette région de votre continent"
 }
 
-const getFlightText  = (family: Family) => `Toutes vos cartes de la tribu ${family.familyName}  gagnent la propriété "volant"`;
+const getFlightText  = (family: Family) => `Tous les pouvoirs de la tribu ${family.familyName} gagnent la propriété "volant"`;
 
 export const airForce: Ability = {
     name: 'Force aérienne',
@@ -155,9 +155,15 @@ export const flyingMerchants: Ability = {
     text: getFlightText(merchant),
 }
 
-export const simpleSettlement: Ability = {
-    name: 'Pionniers',
-    family: people,
+export const simpleMerchantSettlement: Ability = {
+    name: 'Centre marchand',
+    family: merchant,
+    value: 1,
+    text: '+1 population si posée sur une région savane, + 2 populations si posée sur une région tempérée'
+}
+export const simplePureSettlement: Ability = {
+    name: 'Village fermiers',
+    family: cleanEarth,
     value: 1,
     text: '+1 population si posée sur une région savane, + 2 populations si posée sur une région tempérée'
 }
