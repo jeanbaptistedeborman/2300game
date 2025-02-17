@@ -3,7 +3,7 @@ import {terrainColors} from "../colors";
 import {getTerrainIllustration} from "../../services";
 
 export const getFamilyIcon = ({icon, familyName}:Family) => `<div style="text-align:center; border:1px solid white;border-radius:5%;font-size: 6px; color:white;padding:.1mm;" >
-               <div style="mix-blend-mode:lighten;">${icon}</div>
+               <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 ${String(familyName).toUpperCase()}
         </div>`;
 

@@ -4,7 +4,6 @@ import {getEyeIcon, getWingIcon} from "./icons";
 import {getFamilyIcon, getTerrainsVignettes} from "./components/components";
 import {getTerrainIllustration} from "../services";
 
-
 const addEffects = (abilities:Ability[]) => {
     const backGroundSize:string = '1.4cm';
     const backgroundMargin:string = '-7mm';
@@ -36,27 +35,28 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     ${illustration || ''}</div>
    
     <ul>
-    ${abilities.map(({name, isVisible, effect,icon:abilityIcon,text, family, family:{color}}) => `<li style="position:relative;padding:.5mm;background:${color};">
+    ${abilities.map(({name, isVisible, effect,icon:abilityIcon,text, family, family:{color}}) => `<li style="position:relative;padding:1mm;background:${color};">
         <div style="align-items:center;display:flex;flex-direction:row;">
         <div style="mix-blend-mode: color-dodge">${abilityIcon?abilityIcon:''}</div>
         <div style="color:white; flex-grow: 1;">
-        <h3>${name.toLocaleUpperCase()}</h3>
-            ${effect?`<span style="font-weight:bold;">Effet de voisinage: </span>`:''}${text}
+        <h3 style="margin-bottom: .5mm; font-family:'Cambria'">${name.toLocaleUpperCase()}</h3>
+            ${text && `<div style="padding:.5mm;border-radius:.5mm;border:1px solid white;margin-right:1mm; background-color:rgba(255, 255, 255, 0.9);color:black;" >${effect?`<span style="font-weight:bold;">Effet de voisinage: </span>`:''}${text}</div>`}
         </div>
         ${getFamilyIcon(family)}
         ${(isVisible) ?`<div style='position:absolute;right:0;top:0;clip-path:circle(40%);background-color:white;' >${getEyeIcon('4mm')}</div>`:''}
         </li>`).join('')}
     </ul>
     
-    <ul>
-    ${handicaps?handicaps.map(({name, text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:1mm 1mm 1mm 2mm;"> 
+   ${(handicaps?.length >0) ? `<ul>
+        ${
+        handicaps.map(({name, text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:1mm 1mm 1mm 2mm;"> 
         <div><h3>${name}</h3>
-            <span style="mix-blend-mode:lighten;color:white;display:flex;flex-direction:row;">${icon?Array(iconNumber).fill(icon).join(''):''}&nbsp;${text}
+            <span style="mix-blend-mode:lighten;color:white;display:flex;flex-direction:row;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}
         </div>
         </span>
-        </li>`).join(''):''}
-    </ul>
-    
+        </li>`).join('')}</ul>`: ``
+    }
+   
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: 1mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>

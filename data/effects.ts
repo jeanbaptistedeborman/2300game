@@ -1,5 +1,5 @@
 import {Effect} from "../model";
-import {getColdIcon, getCubeIcon, getGetCardIcon, getStarIcon} from "../layout/icons";
+import {getCircleIcon, getColdIcon, getGetCardIcon, getStarIcon} from "../layout/icons";
 const ICON_SIZE: string = '6mm';
 
 export const forbid:Effect ={
@@ -7,7 +7,7 @@ export const forbid:Effect ={
 }
 
 export const addPopulation:Effect ={
-    icon:getCubeIcon(ICON_SIZE)
+    icon:getCircleIcon(ICON_SIZE)
 }
 
 export const takeCard:Effect ={

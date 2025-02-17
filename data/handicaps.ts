@@ -3,7 +3,7 @@ import {getCogIcon, getEcologyIcon, getOilIcon, getStarIcon, getTreeIcon} from "
 import {oil} from "./abilities";
 import {cleanEarth, military, techno} from "./families";
 
-const ICON_SIZE = '3mm';
+const ICON_SIZE = '2.5mm';
 
 export const oilDependent: Handicap = {
     name: 'Dépendant du pétrole',
@@ -41,10 +41,11 @@ export const cleanHearthDependant: Handicap = {
     value: 2,
     text: `Occuper 2 régions de la famille ${cleanEarth.familyName.toUpperCase()}`
 }
+
 export const militaryDependant: Handicap = {
     name: 'Dépendant du militaire',
     icon: getStarIcon(ICON_SIZE),
-    iconNumber:2,
+    iconNumber:1,
     value: 2,
-    text: `Occuper 2 régions de la famille ${military.familyName.toUpperCase()}`
+    text: `Occuper 1 région de la famille ${military.familyName.toUpperCase()}`
 }

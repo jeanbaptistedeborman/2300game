@@ -8,8 +8,16 @@ export const trade: Ability = {
     name: 'Comptoirs',
     family: merchant,
     value: 1,
-    text: 'Placez 2 populations sur chaque côté de cette région ADJACENTE à une région occupée par un adversaire.'
+    text: 'Placez 2 populations sur chaque côté de cette région ADJACENT à une région occupée par un adversaire.'
 }
+export const tradeLight: Ability = {
+    effect:addPopulation,
+    name: 'Comptoirs',
+    family: merchant,
+    value: 1,
+    text: 'Placez 1 population sur chaque côté de cette région ADJACENT à une région occupée par un adversaire.'
+}
+
 export const marine: Ability = {
     name: 'Navigation',
     family: navigators,
@@ -43,7 +51,7 @@ export const cleanContinent: Ability = {
     name: 'Terre pure',
     family: cleanEarth,
     value: 1,
-    text: `+ 1 population à la fin chaque tour si vous n'avez pas de tribu ${techno.familyName} sur votre continent. Dans le cas contraire -1 population à chaque tour (minimum 0)`
+    text: `+ 1 population à la fin chaque tour (maximum 7) s'il n'y a pas de tribu ${techno.familyName} visible sur votre continent. Sinon, -1 population à chaque tour (minimum 0)`
 }
 
 export const bewareOfTechno: Ability = {
@@ -70,10 +78,10 @@ export const oil: Ability = {
 
 }
 export const reuse: Ability = {
-    name: 'Renoncer au passé',
+    name: 'Brûler le passé',
     family: cleanEarth,
     value: 2,
-    text: "Le joueur peut utiliser cette carte pour occuper une région qu'il occupe déjà. Les populations de cette région sont conservées sur cette carte."
+    text: "Le joueur peut utiliser cette carte pour occuper une région qu'il occupe déjà. Les populations de cette région sont transférées sur cette carte."
 }
 export const archeolog: Ability = {
     name: 'Archéologues',
@@ -105,14 +113,14 @@ export const cartographer: Ability = {
     name: 'World cartographers',
     family: explorer,
     value: 3,
-    text: "Ajoutez 1 population par continent adverse où vous occupez une région. Populations supplémentaires x2 si Vous occupez une région de tous les continents"
+    text: "Ajoutez 1 population par continent adverse où vous occupez une région. Populations supplémentaires x2 si Vous occupez une région sur tous les continents"
 }
 
 export const knowledge: Ability = {
     name: 'Connaissance',
     family: knowledgeGatherer,
     value: 3,
-    text: "+ 1 population par région connaissance que vous occupez déjà."
+    text: "+ 1 population par région connaissance que vous occupez (y compris celle-ci)."
 }
 
 export const invasion: Ability = {
@@ -122,14 +130,21 @@ export const invasion: Ability = {
     text: "Posez cette région sur une région occupée par un adversaire. Les pions adverses qui occupent ce territoire sont perdus"
 }
 
-export const scout: Ability = {
-    name: 'Scout',
-    family:explorer,
-    value: 2,
-    text: "Vous pouvez consulter les premières cartes de la colonne de cette région de votre continent"
+export const administrativeCenter = {
+    name: 'Administration militaire',
+    family: military,
+    value:2,
+    text: "Vous pouvez faire deux actions supplémentaires à chaque tour (mais devez toujours défausser des cartes pour chaque action)"
 }
 
-const getFlightText  = (family: Family) => `Tous les pouvoirs de la tribu ${family.familyName} gagnent la propriété "volant"`;
+export const scout: Ability = {
+    name: 'Reconnaissance',
+    family:explorer,
+    value: 2,
+    text: "Vous pouvez consulter les dos de toutes les cartes des régions inoccupées de votre continent situées sur la même ligne ou la même colonne."
+}
+
+const getFlightText  = (family: Family) => `Tous les pouvoirs de la tribu ${family.familyName} gagnent la propriété "vol"`;
 
 export const airForce: Ability = {
     name: 'Force aérienne',
@@ -165,7 +180,7 @@ export const simplePureSettlement: Ability = {
     name: 'Village fermiers',
     family: cleanEarth,
     value: 1,
-    text: '+1 population si posée sur une région savane, + 2 populations si posée sur une région tempérée'
+    text: '+2 population si posée sur une région savane, + 3 populations si posée sur une région tempérée'
 }
 
 export const goodOldWorld: Ability = {
@@ -175,7 +190,7 @@ export const goodOldWorld: Ability = {
     text: `+ 1 population par ${oil.name.toUpperCase()}`
 }
 
-const getNetworkText = ({familyName}:Family) => `1 population par carte ADJACENTE de la famille ${familyName.toUpperCase()}`
+const getNetworkText = ({familyName}:Family) => `1 population par région ADJACENTE de la famille ${familyName.toUpperCase()}`
 
 export const merchantNetwork: Ability = {
     effect: addPopulation,
@@ -187,7 +202,7 @@ export const merchantNetwork: Ability = {
 
 export const cleanHearthNetwork: Ability = {
     effect: addPopulation,
-    name: 'Réseau écologiste',
+    name: 'Réseau vert',
     family: cleanEarth,
     value: 2,
     text: getNetworkText(cleanEarth)
@@ -209,10 +224,36 @@ export const recluse: Ability = {
 }
 
 export const worldTraveler: Ability = {
-    name: 'World traveller',
+    name: 'Explorateur intrépide',
     family: explorer,
     value: 2,
     text: "+2 si sur continent adverse"
+}
+
+const getRallyFriendsText =  (family:Family) => `Prenez en main les cartes de la tribu ${family.familyName} des régions inoccupées ADJACENTES`
+
+export const rallyGreenFriends: Ability = {
+    name: 'Ralliement vert',
+    effect: takeCard,
+    family: cleanEarth,
+    value: 2,
+    text: getRallyFriendsText (cleanEarth)
+}
+
+export const rallyTechnoFriends: Ability = {
+    name: 'Ralliement Techno',
+    effect: takeCard,
+    family: techno,
+    value: 2,
+    text: getRallyFriendsText (techno)
+}
+
+export const rallyMerchantFriends: Ability = {
+    name: 'Ralliement Marchand',
+    effect: takeCard,
+    family: merchant,
+    value: 2,
+    text: getRallyFriendsText (merchant)
 }
 
 

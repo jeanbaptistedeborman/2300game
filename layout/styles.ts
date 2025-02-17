@@ -1,10 +1,11 @@
 export const styles = `
 body {
   margin: 0;
-  font-family: calibri, arial, sans-serif;
+   font-family:'Cambria';
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
-  line-height:.65em;
+  line-height:1.1em;
+   font-size: 7pt;
 }
 
 h1, h2, h3, h4 {
@@ -13,7 +14,6 @@ h1, h2, h3, h4 {
 
 .card {
     padding: 7.5mm;
-    font-size: 10px;
     height: 33.33333%;
     width: 33.33333%;
     border: .1mm solid black;
@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
 
 .title {
     text-align:center;
-    padding:0 1mm 2mm 1mm;
+    padding:1mm 1mm 1.5mm 1mm;
     font-size: 12px;
 }
 
@@ -92,11 +92,11 @@ div {
 }
 
 .terrain-icon {
-    height:5mm;
-    width:5mm;
+    height:6mm;
+    width:6mm;
     margin-right:1mm;
     position:relative;
-    border:1px solid grey;
+    border:1px solid black;
     border-radius:20%;
 }
 
