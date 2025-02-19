@@ -13,7 +13,7 @@ export const getTerrainVignette = (terrain => {
 
 export const getTerrainsVignettes = (targetTerrain) => {
     if (targetTerrain === Terrain.SEA) {
-        return `${getTerrainVignette(Terrain.TEMPERATE)}${getTerrainVignette(Terrain.SEA)}`
+        return `${getTerrainVignette(Terrain.TEMPERATE)}${getTerrainVignette(Terrain.SAVANNA)}${getTerrainVignette(Terrain.SEA)}`
     }
 
     const targetIndex = terrains.findIndex((terrain) => terrain === targetTerrain);

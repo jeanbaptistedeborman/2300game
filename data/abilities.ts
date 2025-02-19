@@ -29,7 +29,7 @@ export const flight: Ability = {
     family: techno,
     value: 1,
     icon: getWingIcon(),
-    text: "Le pouvoir cette de cette région a la propriété vol."
+    text: "Le pouvoir de cette région a la propriété vol."
 }
 
 export const militaryUnit: Ability = {
@@ -134,7 +134,7 @@ export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
     value:2,
-    text: "Vous pouvez faire deux actions supplémentaires à chaque tour (mais devez toujours défausser des cartes pour chaque action)"
+    text: "Deux actions supplémentaires au lieu d'une seule (défausser des cartes pour chaque action)"
 }
 
 export const scout: Ability = {

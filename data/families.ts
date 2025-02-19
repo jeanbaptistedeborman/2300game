@@ -28,7 +28,7 @@ export const knowledgeGatherer:Family = {
 export const explorer:Family = {
     familyName:FamilyName.EXPLORER,
     icon:getSpyGlassIcon(),
-    color: '#002fc8'
+    color: '#1400c8'
 }
 
 export const navigators:Family = {
