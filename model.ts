@@ -16,6 +16,7 @@ export enum FamilyName {
 }
 
 export interface Family {
+    flavourText?:string,
     familyName:FamilyName,
     icon:string,
     color:string,

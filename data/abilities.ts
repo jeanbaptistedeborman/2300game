@@ -1,4 +1,4 @@
-import {Ability, Family} from "../model";
+import {Ability, Family, Terrain} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
 import {getWingIcon, getOilIcon} from "../layout/icons";
 import {addPopulation, forbid, makeCold, takeCard} from "./effects";
@@ -22,7 +22,7 @@ export const marine: Ability = {
     name: 'Navigation',
     family: navigators,
     value: 1,
-    text: "Placez cette région le long d'un continent adverse en suivant les règles de navigation"
+    text: "Placez cette région en suivant les règles de navigation"
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -75,7 +75,6 @@ export const oil: Ability = {
     value: 2,
     text: "",
     icon: getOilIcon(),
-
 }
 export const reuse: Ability = {
     name: 'Brûler le passé',
@@ -120,7 +119,7 @@ export const knowledge: Ability = {
     name: 'Connaissance',
     family: knowledgeGatherer,
     value: 3,
-    text: "+ 1 population par région connaissance que vous occupez (y compris celle-ci)."
+    text: "+ 1 population par région connaissance que vous occupez déjà."
 }
 
 export const invasion: Ability = {
@@ -141,10 +140,10 @@ export const scout: Ability = {
     name: 'Reconnaissance',
     family:explorer,
     value: 2,
-    text: "Vous pouvez consulter les dos de toutes les cartes des régions inoccupées de votre continent situées sur la même ligne ou la même colonne."
+    text: "Vous pouvez consulter la première carte des régions inoccupées de votre continent situées sur la même ligne ou la même colonne."
 }
 
-const getFlightText  = (family: Family) => `Tous les pouvoirs de la tribu ${family.familyName} gagnent la propriété "vol"`;
+const getFlightText  = (family: Family) => `Les pouvoirs de la tribu ${family.familyName} des régions que vous occupez gagnent la propriété "vol"`;
 
 export const airForce: Ability = {
     name: 'Force aérienne',
@@ -202,10 +201,10 @@ export const merchantNetwork: Ability = {
 
 export const cleanHearthNetwork: Ability = {
     effect: addPopulation,
-    name: 'Réseau vert',
+    name: 'Animaux domestiqués',
     family: cleanEarth,
     value: 2,
-    text: getNetworkText(cleanEarth)
+    text: `+ 1 par région ADJACENTE de la tribu ${cleanEarth.familyName.toUpperCase()}, + 2 par région ADJACENTE inoccupée au climat ${Terrain.TEMPERATE.toUpperCase()}.`
 }
 
 export const militaryNetwork: Ability = {
@@ -216,11 +215,18 @@ export const militaryNetwork: Ability = {
     text: getNetworkText(military)
 }
 
+export const migrantTraders: Ability = {
+    name: 'Colons',
+    family: military,
+    value: 2,
+    text: '+1 population par région que vous occupez sur un continent adverse'
+}
+
 export const recluse: Ability = {
     name: 'Reclus',
     family: military,
     value: 2,
-    text: "+1 population par tour. Maximum: 7 - 1 par population adverse sur votre continent (minimum 0)"
+    text: "+1 population à la fin de votre tout tour. Maximum: 7 - 1 par population adverse sur votre continent (minimum 0)"
 }
 
 export const worldTraveler: Ability = {

@@ -36,11 +36,11 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
    
     <ul>
     ${abilities.map(({name, isVisible, effect,icon:abilityIcon,text, family, family:{color}}) => `<li style="position:relative;padding:1mm;background:${color};">
-        <div style="align-items:center;display:flex;flex-direction:row;">
-        <div style="mix-blend-mode: color-dodge">${abilityIcon?abilityIcon:''}</div>
-        <div style="color:white; flex-grow: 1;">
+        <div style="align-items:flex-end;display:flex;flex-direction:row;">
+        <div style="mix-blend-mode:color-dodge;align-self:flex-start;">${abilityIcon?abilityIcon:''}</div>
+        <div style="color:white;flex-grow:1;align-self:flex-start;">
         <h3 style="margin-bottom: .5mm; font-family:'Cambria'">${name.toLocaleUpperCase()}</h3>
-            ${text && `<div style="padding:.5mm;border-radius:.5mm;border:1px solid white;margin-right:1mm; background-color:rgba(255, 255, 255, 0.9);color:black;" >${effect?`<span style="font-weight:bold;">Effet de voisinage: </span>`:''}${text}</div>`}
+            ${text && `<div style="padding:.5mm;border-radius:.5mm;border:1px solid white;margin-right:1mm; background-color:rgba(255, 255, 255, 0.9);color:black;" >${effect?`<span style="font-weight:bold;">Pouvoir de voisinage: </span>`:''}${text}</div>`}
         </div>
         ${getFamilyIcon(family)}
         ${(isVisible) ?`<div style='position:absolute;right:0;top:0;clip-path:circle(40%);background-color:white;' >${getEyeIcon('4mm')}</div>`:''}

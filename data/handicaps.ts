@@ -39,13 +39,21 @@ export const cleanHearthDependant: Handicap = {
     iconNumber:2,
     icon:getEcologyIcon(ICON_SIZE),
     value: 2,
-    text: `Occuper 2 régions de la famille ${cleanEarth.familyName.toUpperCase()}`
+    text: `Occuper 2 régions de la tribu ${cleanEarth.familyName.toUpperCase()}`
 }
 
 export const militaryDependant: Handicap = {
     name: 'Dépendant du militaire',
     icon: getStarIcon(ICON_SIZE),
+    iconNumber:2  ,
+    value: 2,
+    text: `Occuper 1 région de la tribu ${military.familyName.toUpperCase()}`
+}
+
+export const militarySuperiority: Handicap = {
+    name: 'Suprémacie militaire',
+    icon: getStarIcon(ICON_SIZE),
     iconNumber:1,
     value: 2,
-    text: `Occuper 1 région de la famille ${military.familyName.toUpperCase()}`
+    text: `Occuper plus de régions de la tribu ${military.familyName.toUpperCase()} que l'adversaire que vous envahissez.`
 }

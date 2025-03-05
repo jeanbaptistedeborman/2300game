@@ -12,6 +12,8 @@ h1, h2, h3, h4 {
     margin:0; 
 }
 
+
+
 .card {
     padding: 7.5mm;
     height: 33.33333%;
@@ -23,6 +25,27 @@ h1, h2, h3, h4 {
     overflow: hidden;
     position:relative;
 }
+
+.presentation-box {
+    max-width:21cm;
+    margin-right:auto; 
+    margin-left:auto;
+    gap:3mm;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap; 
+    justify-content:flex-start;
+    align-content:flex-start;
+    margin-bottom:1cm;
+ }
+ 
+ .presentation-box .card {
+    break-inside: avoid;
+    flex-basis:32%;
+    flex-shrink:1;
+    height:7cm;
+    border-radius:1mm;
+ }
 
 .back {
         background: repeating-linear-gradient(#FFFFFF, #000000, 20%);
@@ -58,11 +81,13 @@ h1, h2, h3, h4 {
 }
 
 .page {
+    max-width:21cm;
     display: flex;
+    align-content: flex-start;
     flex-wrap: wrap;
     page-break-after: always;
     overflow:hidden;
-    height: 28cm;
+    height: 25cm;
 }
 
 .page.verso {
@@ -92,6 +117,7 @@ div {
 }
 
 .terrain-icon {
+    overflow: hidden;
     height:6mm;
     width:6mm;
     margin-right:1mm;
