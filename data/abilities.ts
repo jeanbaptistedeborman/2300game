@@ -56,7 +56,7 @@ export const cleanContinent: Ability = {
 
 export const bewareOfTechno: Ability = {
     effect:addPopulation,
-    name: 'Résister à la tentation',
+    name: 'Kmers verts',
     family: cleanEarth,
     value: 2,
     text: `2 populations pour chaque région de la tribu ${techno.familyName} ADJACENTE non occupée`
@@ -80,7 +80,7 @@ export const reuse: Ability = {
     name: 'Brûler le passé',
     family: cleanEarth,
     value: 2,
-    text: "Le joueur peut utiliser cette carte pour occuper une région qu'il occupe déjà. Les populations de cette région sont transférées sur cette carte."
+    text: "Le joueur peut utiliser cette carte pour occuper une région qu'il occupe déjà. Les populations de cette région sont transférées sur cette carte. Les pouvoirs recouverts par cette carte sont dorénavant ignorés."
 }
 export const archeolog: Ability = {
     name: 'Archéologues',
@@ -133,7 +133,7 @@ export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
     value:2,
-    text: "Deux actions supplémentaires au lieu d'une seule (défausser des cartes pour chaque action)"
+    text: "Deux actions supplémentaires par tour au lieu d'une seule (défausser des cartes pour chaque action)"
 }
 
 export const scout: Ability = {
@@ -201,7 +201,7 @@ export const merchantNetwork: Ability = {
 
 export const cleanHearthNetwork: Ability = {
     effect: addPopulation,
-    name: 'Animaux domestiqués',
+    name: 'Animaux apprivoisés',
     family: cleanEarth,
     value: 2,
     text: `+ 1 par région ADJACENTE de la tribu ${cleanEarth.familyName.toUpperCase()}, + 2 par région ADJACENTE inoccupée au climat ${Terrain.TEMPERATE.toUpperCase()}.`

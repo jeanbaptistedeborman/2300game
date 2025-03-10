@@ -43,7 +43,7 @@ h1, h2, h3, h4 {
     break-inside: avoid;
     flex-basis:32%;
     flex-shrink:1;
-    height:7cm;
+    height:85mm;
     border-radius:1mm;
  }
 

@@ -47,7 +47,7 @@ export const militaryDependant: Handicap = {
     icon: getStarIcon(ICON_SIZE),
     iconNumber:2  ,
     value: 2,
-    text: `Occuper 1 région de la tribu ${military.familyName.toUpperCase()}`
+    text: `Occuper 2 régions de la tribu ${military.familyName.toUpperCase()}`
 }
 
 export const militarySuperiority: Handicap = {

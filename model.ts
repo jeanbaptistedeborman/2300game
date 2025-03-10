@@ -12,11 +12,12 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Tecno",  "MILITARY" = "Ordre", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People'
+    "TECHNO"= "Tecno",  "MILITARY" = "Ordre", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
 }
 
 export interface Family {
-    flavourText?:string,
+    flavourText:string,
+    text?:string,
     familyName:FamilyName,
     icon:string,
     color:string,

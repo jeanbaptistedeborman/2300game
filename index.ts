@@ -1,11 +1,11 @@
 import * as fs from 'fs';
-import {Card, Family, FamilyName, Terrain} from "./model";
-
+import {Card, FamilyName, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {backTemplate, cardTemplate} from "./layout/templates";
 import {logStats} from "./services";
-import {families} from "./data/families";
+import {generateCardsByFamiy} from "./exports/cardsByFamily";
+import {generateCardBacks} from "./exports/cardsBack";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -28,12 +28,9 @@ const completedCards: Card[] =
         }))
         .sort(() => .5 -Math.random());
 
-const cardsByFamiy:{FamilyName:Card[]} = families.reduce ((acc, refFamily: Family) => {
-    return  {
-        ... acc,
-        [refFamily.familyName]:cards.filter((card) => card.abilities.some((ability) => ability.family.familyName === refFamily.familyName)),
-    }
-}, {} as {FamilyName:Card[]});
+generateCardsByFamiy(cards);
+
+generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {
@@ -79,25 +76,4 @@ fs.writeFile('output/cards.html',
     }
 )
 
-fs.writeFile('output/cards-by-family.html',
-  `<HTML lang="fr">
-  <head>
-  <title>2300 game: cards by families</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-</head>
-  
-  <style>
-    ${styles}
-    </style>
-  
-    <BODY>
-       ${ Object.keys (cardsByFamiy).map ((key) => `<h1 style="margin-bottom: 5mm">${key}</h1>
-        <div style="font-style:italic;">${families.find ((family) => family.familyName === key)?.flavourText}</div>
-    <div class="presentation-box">${cardsByFamiy[key].map ((card:Card) => cardTemplate(card)).join('')}</div>`) }
-   </BODY> 
-   </HTML>
-  `, () => {
-    }
-)
 

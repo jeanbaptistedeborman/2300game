@@ -212,7 +212,7 @@ export const cards: Card[] = [
         number:4,
         type: Type.TRIBE,
         illustration:getLizardManIllustration(),
-        title: "OGM: l'homme du futur!",
+        title: "OGM&#8482;: l'humain du futur!",
         text: '',
         abilities: [],
         handicaps: [],
@@ -301,7 +301,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        title: "Compagnie du retour du Père Noël",
+        title: "Compagnie du traineau de Père Noël",
         illustration:getBlimpIllustration(),
         number:1,
         type: Type.TRIBE,
