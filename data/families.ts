@@ -58,7 +58,7 @@ export const merchant:Family = {
 }
 
 export const none:Family = {
-    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis; mais dans leurs coeurs de reptiles brûle unne certitude: un jour, ils seront maîtres du monde.`,
+    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Et dans leurs coeurs de reptiles brûle un regret amer: encore quelques degrés de plus et ils étaient maîtres du monde.`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
     color: "#b8b8b8"
