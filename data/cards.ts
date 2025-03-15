@@ -260,7 +260,7 @@ export const cards: Card[] = [
         illustration:getWorldCompanyIllustration(),
         number:1,
         type: Type.TRIBE,
-        title: "World Company",
+        title: "Kristmas International",
         text: '',
         abilities: [worldCompany],
         allowedTerrain: Terrain.SAVANNA,
@@ -301,7 +301,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        title: "Compagnie du traineau de Père Noël",
+        title: "Joyeuse société du Kristmas traîneau",
         illustration:getBlimpIllustration(),
         number:1,
         type: Type.TRIBE,
