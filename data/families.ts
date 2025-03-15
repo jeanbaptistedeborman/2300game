@@ -22,7 +22,7 @@ export const military:Family = {
 
 export const knowledgeGatherer:Family = {
     text: `La tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de la carte.`,
-    flavourText: `Les lieux qui ont préservé le savoir des anciens son vénérés par les érudits. Les premiers déchiffrages sont lents. Mais les savants sont convaincus: le savoir, c'est le pouvoir.`,
+    flavourText: `Les lieux qui ont préservé le savoir des anciens son vénérés par les érudits. Les premiers déchiffrages sont lents. Mais les savants en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
     color: "#00a6ff"
@@ -43,21 +43,21 @@ export const navigators:Family = {
 }
 
 export const cleanEarth:Family = {
-    flavourText:"Vous trouvez que les écologistes d'aujourd'hui sont pénibles? Attendez voir les écologistes de 2200 tout vénères parce que le climat vient de détruire 99% de l'humanité",
+    flavourText:"Vous trouvez que les écologistes d'aujourd'hui sont un peu pénibles? Attendez de voir les écologistes en 2200, bien vénères parce que le climat vient de détruire le monde.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
     color: "#099300"
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leur dehors rapaces, les marchands cachent leur rêve fou: ramener sur terre le Grand Père Noël, qui, jadis, a apporté la prospérité à l'humanité en nourrissant les petits et les grands.",
+    flavourText:"Sous leur dehors rapaces, les marchands cachent leur rêve fou: ramener sur terre le Grand Père Noël, qui, jadis, apportait bonheur et prospérité en nourrissant les petits et les grands.",
     familyName:FamilyName.MERCHANT,
     icon:getMoneyIcon(),
     color: "#ff6a00"
 }
 
 export const none:Family = {
-    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Mais dans leurs coeurs de reptiles brûle un espoir tenace: encore quelques degrés de plus et ils sont maîtres du monde !`,
+    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Mais dans leurs coeurs de reptiles brûle un regret cuisant: encore quelques degrés de plus et ils étaient maître du monde !`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
     color: "#b8b8b8"

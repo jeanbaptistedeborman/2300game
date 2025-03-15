@@ -1,5 +1,5 @@
 import {Ability, Family, Terrain} from "../model";
-import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer} from "./families";
+import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer, families} from "./families";
 import {getWingIcon, getOilIcon} from "../layout/icons";
 import {addPopulation, forbid, makeCold, takeCard} from "./effects";
 
@@ -93,7 +93,7 @@ export const terraformer: Ability = {
     name: 'Terraformers',
     family: cleanEarth,
     value: 2,
-    text: "Les régions non occupées adjacentes à cette région sont plus froides de 1 (Par exemple: désert devient savane)"
+    text: "Lorsque vous posez cette carte, vous pouvez défausser la première carte des régions inoccupées adjacentes"
 }
 export const terraformer_take_cards: Ability = {
     effect:takeCard,
@@ -143,7 +143,7 @@ export const scout: Ability = {
     text: "Vous pouvez consulter la première carte des régions inoccupées de votre continent situées sur la même ligne ou la même colonne."
 }
 
-const getFlightText  = (family: Family) => `Les pouvoirs de la tribu ${family.familyName} des régions que vous occupez gagnent la propriété "vol"`;
+const getFlightText  = (family: Family) => `Les pouvoirs de la tribu ${family.familyName} des régions que vous occupez ont la propriété "vol"`;
 
 export const airForce: Ability = {
     name: 'Force aérienne',
@@ -260,6 +260,27 @@ export const rallyMerchantFriends: Ability = {
     family: merchant,
     value: 2,
     text: getRallyFriendsText (merchant)
+}
+
+export const cosmopoliteContinent: Ability = {
+    name: 'Acceuil intéressé',
+    family: merchant,
+    value: 2,
+    text: '+ 1 population par région de votre continent occupée par un adversaire'
+}
+
+export const continentOfDiversity: Ability = {
+    name: 'Continent Diversifié',
+    family: explorer,
+    value: 2,
+    text: `+ 1 population par tribu différente présente sur votre continent, +3 si toutes les ${families.length -1} tribus sont présentes`
+}
+
+export const realmOfDiversity: Ability = {
+    name: 'Empire Diversifié',
+    family: explorer,
+    value: 2,
+    text: `+ 1 population par tribu différente dans des régions que vous occupez, +3 si toutes les ${families.length -1} tribus sont présentes`
 }
 
 
