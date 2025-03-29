@@ -27,6 +27,7 @@ h1, h2, h3, h4 {
 }
 
 .presentation-box {
+    margin-top:5mm;
     max-width:21cm;
     margin-right:auto; 
     margin-left:auto;

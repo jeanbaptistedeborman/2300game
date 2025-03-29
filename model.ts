@@ -12,7 +12,7 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Tecno",  "MILITARY" = "Ordre", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
+    "TECHNO"= "Tecno",  "MILITARY" = "Milice", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
 }
 
 export interface Family {
@@ -42,7 +42,7 @@ export interface Handicap {
 }
 
 export interface Card {
-    illustration?:string;
+    illustration:string;
     number:number;
     title: string,
     text:string,

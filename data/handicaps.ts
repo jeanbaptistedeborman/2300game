@@ -1,9 +1,17 @@
 import { Handicap } from '../model';
-import {getCogIcon, getEcologyIcon, getOilIcon, getStarIcon, getTreeIcon} from "../layout/icons";
+import {
+    getCogIcon,
+    getEcologyIcon,
+    getFistIcon,
+    getMilitaryIcon,
+    getOilIcon,
+    getStarIcon,
+    getTreeIcon
+} from "../layout/icons";
 import {oil} from "./abilities";
 import {cleanEarth, military, techno} from "./families";
 
-const ICON_SIZE = '2.5mm';
+const ICON_SIZE = '3mm';
 
 export const oilDependent: Handicap = {
     name: 'Dépendant du pétrole',
@@ -37,14 +45,14 @@ export const cleanHearthNeighbour: Handicap = {
 export const cleanHearthDependant: Handicap = {
     name: "Dépendant de l'écologie",
     iconNumber:2,
-    icon:getEcologyIcon(ICON_SIZE),
+    icon:getTreeIcon(ICON_SIZE),
     value: 2,
     text: `Occuper 2 régions de la tribu ${cleanEarth.familyName.toUpperCase()}`
 }
 
 export const militaryDependant: Handicap = {
     name: 'Dépendant du militaire',
-    icon: getStarIcon(ICON_SIZE),
+    icon: getFistIcon(ICON_SIZE),
     iconNumber:2  ,
     value: 2,
     text: `Occuper 2 régions de la tribu ${military.familyName.toUpperCase()}`
@@ -52,7 +60,7 @@ export const militaryDependant: Handicap = {
 
 export const militarySuperiority: Handicap = {
     name: 'Suprémacie militaire',
-    icon: getStarIcon(ICON_SIZE),
+    icon: getFistIcon(ICON_SIZE),
     iconNumber:1,
     value: 2,
     text: `Occuper plus de régions de la tribu ${military.familyName.toUpperCase()} que l'adversaire que vous envahissez.`

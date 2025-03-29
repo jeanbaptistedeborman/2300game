@@ -6,6 +6,7 @@ import {backTemplate, cardTemplate} from "./layout/templates";
 import {logStats} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
+import {DECK_NUMBER} from "./constants";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -19,6 +20,7 @@ const completedCards: Card[] =
         .map ((card:Card) => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] })) // attribute backterrain randomly
         .map((card:Card)=>  ({ //set ability visibility
             ...card,
+            number: card.number * DECK_NUMBER,
             abilities:card.abilities.map(ability=> ({
                 ...ability,
                 isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
