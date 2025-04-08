@@ -12,7 +12,7 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Tecno",  "MILITARY" = "Milice", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
+    "TECHNO"= "Tekno",  "MILITARY" = "Milice", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
 }
 
 export interface Family {

@@ -1,11 +1,8 @@
 import { Handicap } from '../model';
 import {
     getCogIcon,
-    getEcologyIcon,
     getFistIcon,
-    getMilitaryIcon,
     getOilIcon,
-    getStarIcon,
     getTreeIcon
 } from "../layout/icons";
 import {oil} from "./abilities";
@@ -59,9 +56,9 @@ export const militaryDependant: Handicap = {
 }
 
 export const militarySuperiority: Handicap = {
-    name: 'Suprémacie militaire',
+    name: 'Suprémacie',
     icon: getFistIcon(ICON_SIZE),
     iconNumber:1,
     value: 2,
-    text: `Occuper plus de régions de la tribu ${military.familyName.toUpperCase()} que l'adversaire que vous envahissez.`
+    text: `Occuper plus de régions comportant la tribu ${military.familyName.toUpperCase()} que l'adversaire que vous envahissez.`
 }

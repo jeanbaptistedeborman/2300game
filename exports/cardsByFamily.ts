@@ -44,7 +44,7 @@ export const generateCardsByFamiy = (cards) => {
         <p style="font-style:italic;margin-bottom: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
         <p>${families.find((family) => family.familyName === key)?.text || ''}</p>
         </div>
-    <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div>`)}
+    <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div>`).join('')}
    </BODY> 
    </HTML>
   `, () => {
