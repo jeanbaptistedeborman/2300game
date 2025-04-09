@@ -4,6 +4,7 @@ import {families} from "../data/families";
 import {Card, Family, FamilyName} from "../model";
 import {cardTemplate} from "../layout/templates";
 import {DECK_NUMBER} from "../constants";
+import {countCards} from "../services";
 
 export const generateCardsByFamiy = (cards) => {
 
@@ -34,13 +35,13 @@ export const generateCardsByFamiy = (cards) => {
     </style>
   
     <BODY style="padding:1cm;">
-        <h1>Cartes par tribu</h1>
+        <h1>Cartes par tribu (${cards.reduce(countCards, 0)*3})</h1>
         <ul style="margin:1cm 0">
         <li>Les cartes qui comprennent plusieurs tribus sont reprises dans chaque tribu.</li>
         <li>Les tribus visibles au dos ne sont pas indiquées car celles-ci changent à chaque carte</li>
         </ul>
        ${Object.keys(cardsByFamiy).map((key) => `<div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 5mm">${key} (${cardsByFamiy[key]
-            .reduce ((acc, {number}) => acc+number, 0)})</h2>
+            .reduce (countCards, 0)})</h2>
         <p style="font-style:italic;margin-bottom: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
         <p>${families.find((family) => family.familyName === key)?.text || ''}</p>
         </div>

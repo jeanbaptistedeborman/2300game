@@ -4,10 +4,8 @@ import {
     getWingIcon,
     getOilIcon,
     getBalloonIcon,
-    getCoinsIcon,
     getArmyIcon,
-    getWarriorIcon,
-    getLeagueIcon, getRallyIcon, getWheatIcon, getReceiveMoneyIcon, getReplaceIcon, getCarIcon
+    getLeagueIcon, getRallyIcon, getWheatIcon, getReceiveMoneyIcon, getReplaceIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, makeCold, takeCard} from "./effects";
 
@@ -96,8 +94,8 @@ export const reuse: Ability = {
     text: "Vous pouvez utiliser cette carte pour occuper une région que vous occupez déjà. Les populations de cette dernière sont transférées sur cette carte en tant que populations supplémentaires."
 }
 export const archeolog: Ability = {
-    name: 'Archéologues',
-    family: techno,
+    name: 'Green tech',
+    family: cleanEarth,
     value: 4,
     text: "Au lieu de les laisser sous sa carte, le joueur prend en main toutes les cartes du territoire où il pose cette carte."
 }
@@ -119,20 +117,20 @@ export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,
     value: 4,
-    text: "+ 1 population par joueur avec qui vous avez un COMPTOIR. x 2 si COMPTOIR chez tous les joueurs."
+    text: "+ 1 population par joueur avec qui vous avez un COMPTOIR. X 2 si COMPTOIR chez tous les joueurs."
 }
 export const cartographer: Ability = {
-    name: 'World cartographers',
+    name: 'Cartographers',
     family: explorer,
     value: 3,
-    text: "+ 1 population par continent adverse dont vous occupez une région. Populations supplémentaires x2 si région sur tous les continents"
+    text: "+ 1 population par continent adverse dont vous occupez au moins une région. X 2 tous les continents."
 }
 
 export const knowledge: Ability = {
     name: 'Connaissance',
     family: knowledgeGatherer,
     value: 3,
-    text: `+ 1 population par région de la tribu ${FamilyName.KNOWLEDGE.toUpperCase()} que vous occupez déjà.`
+    text: `Lors de la pose de cette carte: + 1 population par région de la tribu ${FamilyName.KNOWLEDGE.toUpperCase()} que vous occupez déjà.`
 }
 
 export const invasion: Ability = {
@@ -160,7 +158,7 @@ export const scout: Ability = {
 const getFlightText  = (family: Family) => `Vos pouvoirs de la tribu ${family.familyName.toUpperCase()} ont la propriété VOL`;
 
 export const airForce: Ability = {
-    name: 'Force aérienne',
+    name: 'Vol',
     family:military,
     value: 5,
     text: getFlightText (military),
@@ -168,7 +166,7 @@ export const airForce: Ability = {
 }
 
 export const natureFlight: Ability = {
-    name: 'Ailes',
+    name: 'VOl',
     family:cleanEarth,
     value: 5,
     text: getFlightText(cleanEarth),
@@ -176,7 +174,7 @@ export const natureFlight: Ability = {
 }
 
 export const flyingMerchants: Ability = {
-    name: 'Marchands aériens',
+    name: 'Vol',
     family:merchant,
     value: 5,
     icon: getWingIcon(ICON_SIZE),
@@ -235,7 +233,6 @@ export const militaryNetwork: Ability = {
     value: 2,
     text: getNetworkText(military)
 }
-
 
 export const migrantTraders: Ability = {
     name: 'Empire colonial',
@@ -307,11 +304,3 @@ export const realmOfDiversity: Ability = {
     value: 2,
     text: `+ 1 population par tribu différente que vous occupez; + 9 si vous occupez les ${families.length -1} tribus.`
 }
-
-
-
-
-
-
-
-

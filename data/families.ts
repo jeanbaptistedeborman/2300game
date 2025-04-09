@@ -43,7 +43,7 @@ export const navigators:Family = {
 }
 
 export const cleanEarth:Family = {
-    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes vénères de 2200 quand l'espérance de vie sera ramenée à 25 ans.",
+    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes vénères de 2200 quand l'espérance de vie sera passée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
     color: "#099300"
@@ -57,7 +57,7 @@ export const merchant:Family = {
 }
 
 export const none:Family = {
-    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Mais dans leurs coeurs de reptiles brûle un regret cuisant: quelques degrés de plus et ils étaient maîtres du monde !`,
+    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Mais dans leurs coeurs de reptiles brûle un regret cuisant: encore quelques degrés de plus et ils étaient maîtres du monde !`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
     color: "#b8b8b8"

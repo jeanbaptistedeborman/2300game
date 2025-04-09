@@ -18,6 +18,8 @@ export const logStats =  (cards:Card[]) =>
 
 }
 
+export const countCards = (acc, {number}) => acc+number;
+
 export const getTerrainIllustration = (terrain:Terrain) =>
     terrain === Terrain.SCORCHED? getScorchedIllustration() :
         terrain === Terrain.DESERT?getDesertIllustration():
