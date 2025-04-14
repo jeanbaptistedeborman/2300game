@@ -1,8 +1,7 @@
 import {Family, FamilyName} from "../model";
 import {
     getCogIcon,
-    getMoneyIcon,
-    getShipIcon, getSpyGlassIcon, getTreeIcon, getBookIcon, getFistIcon
+    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, getReceiveMoneyIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
@@ -31,8 +30,8 @@ export const knowledgeGatherer:Family = {
 export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
-    icon:getSpyGlassIcon(),
-    color: '#473bb5'
+    icon:getBalloonIcon(),
+    color: '#ff5bb2'
 }
 
 export const navigators:Family = {
@@ -43,7 +42,7 @@ export const navigators:Family = {
 }
 
 export const cleanEarth:Family = {
-    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes vénères de 2200 quand l'espérance de vie sera passée à 25 ans.",
+    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes bien vénères de 2200 quand l'espérance de vie sera passée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
     color: "#099300"
@@ -52,7 +51,7 @@ export const cleanEarth:Family = {
 export const merchant:Family = {
     flavourText:"Sous leurs dehors froids, les marchands suivent une prophétie touchante: un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité.",
     familyName:FamilyName.MERCHANT,
-    icon:getMoneyIcon(),
+    icon:getReceiveMoneyIcon(),
     color: "#ff6a00"
 }
 

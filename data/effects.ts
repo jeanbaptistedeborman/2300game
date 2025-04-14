@@ -1,21 +1,17 @@
 import {Effect} from "../model";
 import {
-    getArmyIcon,
-    getColdIcon,
-    getCubeIcon,
     getFistIcon,
-    getGetCardIcon,
-    getStarIcon,
-    getTrashCardIcon, getWarriorIcon
+    getGetCardIcon, getPopulationIcon,
+    getTrashCardIcon,
 } from "../layout/icons";
 const ICON_SIZE: string = '6mm';
 
 export const forbid:Effect ={
-    icon:getArmyIcon(ICON_SIZE),
+    icon:getFistIcon(ICON_SIZE),
 }
 
 export const addPopulation:Effect ={
-    icon:getCubeIcon()
+    icon:getPopulationIcon()
 }
 
 export const takeCard:Effect ={

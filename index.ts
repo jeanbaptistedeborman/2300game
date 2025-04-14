@@ -16,7 +16,7 @@ logStats(cards)
 
 const completedCards: Card[] =
     cards
-        .map(( card:Card) => Array(card.number).fill(card)).flat()// duplicate cards by cardNumber
+        .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
         .map ((card:Card) => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] })) // attribute backterrain randomly
         .map((card:Card)=>  ({ //set ability visibility
             ...card,
@@ -24,7 +24,7 @@ const completedCards: Card[] =
             abilities:card.abilities.map(ability=> ({
                 ...ability,
                 isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
-                    Math.random() > .55,
+                    Math.random() > .60,
             })
             )
         }))
