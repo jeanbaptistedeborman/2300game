@@ -19,10 +19,10 @@ const addEffects = (abilities:Ability[]) => {
     const getMiddlePositions = (margin:string)=>  [`top:${margin};left:calc(50% + (${margin}))`,`bottom:${margin};left:calc(50% + (${margin}));`, `left:${margin};top:calc(50% + (${margin}));`, `right:${margin};top:calc(50% + (${margin}));`];
     const getpositions = (margin) => [... getCornerPositions(margin), ...getMiddlePositions(margin)];
     return [
-        ... getMiddlePositions(backgroundMargin).map (position => `<div style ="background-color:${color};border-radius:20%;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
-        ... getCornerPositions(cornerBackgroundMargin).map (position => `<div style ="background-color:${color};border-radius:20%;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
+        ... getMiddlePositions(backgroundMargin).map (position => `<div style ="background-color:${color};border-radius:10%;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
+        ... getCornerPositions(cornerBackgroundMargin).map (position => `<div style ="background-color:${color};border-radius:10%;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
         ... getpositions(iconMargin).map (position => `<div style="position:absolute;mix-blend-mode: lighten;${position}">${effect.icon}</div>`),
-        ... getCornerPositions('4.5mm').map(position =>  `<div style="mix-blend-mode:lighten; position: absolute;background-color: black;overflow: hidden;${position}">${get4DirectionIcon('3mm')}</div>`)].join('');
+        ... getCornerPositions('5mm').map(position =>  `<div style="mix-blend-mode:lighten; position: absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('');
 }
 
 export const cardTemplate = ({title, illustration, abilities, handicaps, number, allowedTerrain}: Card): string => `<div class="card">
@@ -38,7 +38,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
         <div style="align-items:flex-end;display:flex;flex-direction:row;">
         <div style="color:white;flex-grow:1;align-self:flex-start;">
         <h3 style="margin-bottom: .5mm; font-family:'Cambria'">${name.toLocaleUpperCase()}</h3>
-           ${text && `<div style="padding:.5mm;border-radius:.5mm;border:1px solid white;margin-right:1mm; background-color:rgba(255, 255, 255, 0.9);color:black;" > <span style="float: left;filter: invert(1);mix-blend-mode: darken;margin: 0 .5mm .5mm 0;">${abilityIcon?abilityIcon:''}</span> ${effect?`<div style="font-weight:bold;">Pouvoir de voisinage: </div>`:''}${text}</div>`}
+           ${text && `<div style="vertical-align:bottom;padding:.5mm;border-radius:.5mm;border:1px solid white;margin-right:1mm; background-color:rgba(255, 255, 255, 0.9);color:black;" >${abilityIcon?`<span style="float: left;margin: 0 .8mm .8mm 0;">${abilityIcon}</span>`:''}${effect?`<div style="font-weight:bold;">Pouvoir de voisinage</div>`:''}${text}</div>`}
         </div>
         ${getFamilyIcon(family)}
         ${(isVisible) ?`<div style='position:absolute;right:0;top:0;clip-path:circle(40%);background-color:white;border:1px solid black' >${getEyeIcon('5mm')}</div>`:''}

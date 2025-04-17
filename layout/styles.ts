@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
     padding: 7.5mm;
     height: 33.33333%;
     width: 33.33333%;
-    border: .1mm solid black;
+    border: .1mm solid lightgrey;
     box-sizing: border-box;
     display: flex;
     flex-direction:column;

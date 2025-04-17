@@ -27,7 +27,13 @@ import {
     rallyMerchantFriends,
     rallyGreenFriends,
     migrantTraders,
-    continentOfDiversity, realmOfDiversity, cosmopoliteContinent, simpleSettlement, livestock, shortGame,
+    continentOfDiversity,
+    realmOfDiversity,
+    cosmopoliteContinent,
+    simpleSettlement,
+    livestock,
+    shortGame,
+    promoteGMOsMilitary, promoteGMOsMerchant,
 } from './abilities'
 import {cleanHearthDependant, militaryDependant, militarySuperiority} from "./handicaps";
 import {
@@ -67,6 +73,7 @@ import {
     getPrisonerIllustration, getHumanPyramidIllustration,
 
 } from "../layout/illustrations";
+import {GMO_CARD_TITLE} from "../constants";
 
 export const cards: Card[] = [
     {
@@ -165,7 +172,7 @@ export const cards: Card[] = [
         illustration: getHandIllustration(),
         number:1,
         type: Type.TRIBE,
-        title: "Leave Mother Earth Alone !",
+        title: "On arrête le progrès !",
         text: '',
         abilities: [shortGame],
         handicaps: [],
@@ -225,7 +232,7 @@ export const cards: Card[] = [
         number:5,
         type: Type.TRIBE,
         illustration:getLizardManIllustration(),
-        title: "L'humain du futur",
+        title: GMO_CARD_TITLE,
         text: '',
         abilities: [],
         handicaps: [],
@@ -250,6 +257,25 @@ export const cards: Card[] = [
         abilities: [recluse, militaryUnit],
         allowedTerrain: Terrain.TEMPERATE,
     },
+    {
+        illustration: getLizardManIllustration(),
+        number:1,
+        type: Type.TRIBE,
+        title: "Promotion des lézards",
+        text: '',
+        abilities: [promoteGMOsMilitary,militaryUnit],
+        allowedTerrain: Terrain.TEMPERATE,
+    },
+    {
+        illustration: getLizardManIllustration(),
+        number:1,
+        type: Type.TRIBE,
+        title: "Société inclusive",
+        text: '',
+        abilities: [promoteGMOsMerchant, trade],
+        allowedTerrain: Terrain.TEMPERATE,
+    },
+
     {
         illustration: getCrownIllustration(),
         number:1,
