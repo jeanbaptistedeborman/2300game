@@ -2,11 +2,12 @@ import * as fs from 'fs';
 import {Card, FamilyName, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
-import {backTemplate, cardTemplate} from "./layout/templates";
+import {backTemplate} from "./layout/templates";
 import {logStats} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
 import {DECK_NUMBER} from "./constants";
+import {cardTemplate} from "./layout/templates/cardTemplate";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]

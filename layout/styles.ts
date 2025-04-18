@@ -77,7 +77,7 @@ h1, h2, h3, h4 {
 
 .title {
     text-align:center;
-    padding:1mm 1mm 1.5mm 1mm;
+    padding:1mm 1mm .5mm 1mm;
     font-size: 12px;
 }
 

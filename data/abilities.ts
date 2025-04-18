@@ -21,7 +21,7 @@ export const trade: Ability = {
     name: 'Comptoir',
     family: merchant,
     value: 1,
-    text: `${populationIcon}${populationIcon} par région adjacente occupée par un adversaire.`
+    text: `${populationIcon}${populationIcon} par région ADJACENTE occupée par un adversaire.`
 }
 
 export const marine: Ability = {
@@ -43,7 +43,7 @@ export const militaryUnit: Ability = {
     name: "Hommes d'armes",
     family: military,
     value: 1,
-    text: "Vos adversaires ne peuvent réaliser d'action sur les régions adjacentes."
+    text: "Vos adversaires ne peuvent réaliser d'action sur les régions ADJACENTES."
 }
 
 export const cleanHand: Ability = {
@@ -64,8 +64,8 @@ export const cleanContinent: Ability = {
     name: 'Terre pure',
     family: cleanEarth,
     value: 1,
-    text: `A toutes vos phases de résolution:<br/>
-    Pas de tribu ${techno.familyName} sur votre continent: + 1 ${populationIcon}. Sinon: -1 ${populationIcon}.`
+    text: `A toutes vos phases de résolution&nbsp;:<br/>
+    Si pas de tribu ${techno.familyName.toUpperCase()} sur votre continent: + 1 ${populationIcon}. Sinon: -1 ${populationIcon}.`
 }
 
 export const promoteGMOsMilitary: Ability = {
@@ -87,7 +87,7 @@ export const bewareOfTechno: Ability = {
     name: 'Khmers verts',
     family: cleanEarth,
     value: 2,
-    text: `${populationIcon}${populationIcon} pour chaque région adjacente inoccupée comportant une tribu ${techno.familyName.toUpperCase()}.`
+    text: `${populationIcon}${populationIcon} pour chaque région ADJACENTE inoccupée comportant une tribu ${techno.familyName.toUpperCase()}.`
 }
 
 export const longTravel: Ability = {
@@ -117,17 +117,17 @@ export const archeolog: Ability = {
 }
 export const terraformer: Ability = {
     effect: makeCold,
-    name: 'Terraforming earth !',
+    name: 'Terraformer sans même quitter la terre !',
     family: cleanEarth,
     value: 2,
-    text: `${WHEN_PLAYING_THIS_CARD} défaussez la première carte des régions inoccupées adjacentes.`
+    text: `${WHEN_PLAYING_THIS_CARD} défaussez la première carte des régions inoccupées ADJACENTES.`
 }
 export const terraformer_take_cards: Ability = {
     effect:takeCard,
     name: 'Terraformers recycleurs',
     family: cleanEarth,
     value: 3,
-    text: "Au moment où il pose cette carte, Le joueur pioche une carte sur chaque région  adjacente non occupée  et la met dans sa main"
+    text: "Au moment où il pose cette carte, Le joueur pioche une carte sur chaque région ADJACENTE non occupée et la met dans sa main"
 }
 export const worldCompany: Ability = {
     name: 'World company',
@@ -160,14 +160,14 @@ export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
     value:2,
-    text: "Deux actions supplémentaires par tour au lieu d'une (défausser pour chaque action)"
+    text: "Deux actions supplémentaires par tour au lieu d'une seule (défausser à chaque action)"
 }
 
 export const scout: Ability = {
     name: 'Reconnaissance',
     family:explorer,
     value: 2,
-    text: "A tout moment, consultez la première carte des régions inoccupées situées sur la même ligne ou la même colonne."
+    text: "A tout moment, consultez la première carte des régions inoccupées sur la même rangée ou colonne."
 }
 
 const getFlightText  = (family: Family) => `Tout vos pouvoirs de la tribu ${family.familyName.toUpperCase()} gagnent la compétence VOL`;
@@ -224,9 +224,7 @@ export const livestock:Ability = {
     family: cleanEarth,
     value: 2,
     text: `Par région ADJACENTE inoccupée&nbsp;:<br/>
-    Si ${Terrain.SAVANNA.toUpperCase()}&nbsp;: ${populationIcon}.<br/>
-    Si ${Terrain.TEMPERATE.toUpperCase()}&nbsp;: 
-${populationIcon}${populationIcon}.`
+    Si ${Terrain.SAVANNA.toUpperCase()}&nbsp&nbsp;: ${populationIcon}. Si ${Terrain.TEMPERATE.toUpperCase()}&nbsp;:${populationIcon}${populationIcon}.`
 }
 
 export const cleanHearthNetwork: Ability = {
@@ -266,7 +264,7 @@ export const worldTraveler: Ability = {
     text: "${populationIcon} ${populationIcon} si sur continent adverse."
 }
 
-const getRallyFriendsText =  ({familyName}:Family) => `Prenez en main les cartes des régions inoccupées adjacentes comportant une tribu ${familyName.toUpperCase()} .`
+const getRallyFriendsText =  ({familyName}:Family) => `Prenez en main les cartes des régions inoccupées ADJACENTES comportant une tribu ${familyName.toUpperCase()} .`
 
 export const rallyGreenFriends: Ability = {
     name: 'Ralliement vert',

@@ -318,7 +318,7 @@ export const cards: Card[] = [
         number:1,
         type: Type.TRIBE,
         text: '',
-        abilities: [invasion],
+        abilities: [invasion, militaryUnit],
         handicaps: [militarySuperiority],
         allowedTerrain: Terrain.ANY,
     },

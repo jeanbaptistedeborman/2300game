@@ -2,9 +2,9 @@ import fs from "fs";
 import {styles} from "../layout/styles";
 import {families} from "../data/families";
 import {Card, Family, FamilyName} from "../model";
-import {cardTemplate} from "../layout/templates";
 import {DECK_NUMBER} from "../constants";
 import {countCards} from "../services";
+import {cardTemplate} from "../layout/templates/cardTemplate";
 
 export const generateCardsByFamiy = (cards) => {
 
