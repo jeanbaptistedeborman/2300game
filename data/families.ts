@@ -49,7 +49,7 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors froids, les marchands suivent une prophétie touchante: un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité.",
+    flavourText:"Sous leurs dehors froids, les marchands sont animés par une prophétie naïve: un jour, le Père Noël des anciens redescendra sur Terre pour ramener bonheur et prospérité.",
     familyName:FamilyName.MERCHANT,
     icon:getReceiveMoneyIcon(),
     color: "#ff6a00"

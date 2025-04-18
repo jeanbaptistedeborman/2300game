@@ -50,7 +50,7 @@ export const cleanHand: Ability = {
     name: 'Exilez les mécréants',
     family: cleanEarth,
     value: 1,
-    text: `Lorsque vous défaussez une carte comportant la tribu ${techno.familyName.toUpperCase()}: + 1 ${populationIcon}.`
+    text: `A chaque fois que vous défaussez une carte comportant la tribu ${techno.familyName.toUpperCase()}: + 1 ${populationIcon}.`
 }
 
 export const shortGame: Ability = {
@@ -127,7 +127,7 @@ export const terraformer_take_cards: Ability = {
     name: 'Terraformers recycleurs',
     family: cleanEarth,
     value: 3,
-    text: "Au moment où il pose cette carte, Le joueur pioche une carte sur chaque région non occupée adjacente et la met dans sa main"
+    text: "Au moment où il pose cette carte, Le joueur pioche une carte sur chaque région  adjacente non occupée  et la met dans sa main"
 }
 export const worldCompany: Ability = {
     name: 'World company',
@@ -139,7 +139,7 @@ export const cartographer: Ability = {
     name: 'Cartographers',
     family: explorer,
     value: 3,
-    text: `+ 1 ${populationIcon} par continent adverse dont vous occupez au moins une région. X 2 si tous les continents.`
+    text: `1 ${populationIcon} par continent adverse dont vous occupez au moins une région. X2 si tous les continents.`
 }
 
 export const knowledge: Ability = {
@@ -223,9 +223,10 @@ export const livestock:Ability = {
     name: "Bovins rescapés",
     family: cleanEarth,
     value: 2,
-    text: `Par région ADJACENTE inoccupée :<br/>
-    ${Terrain.SAVANNA.toUpperCase()}: ${populationIcon}.<br/>
-    ${Terrain.TEMPERATE.toUpperCase()} ${populationIcon}${populationIcon}.`
+    text: `Par région ADJACENTE inoccupée&nbsp;:<br/>
+    Si ${Terrain.SAVANNA.toUpperCase()}&nbsp;: ${populationIcon}.<br/>
+    Si ${Terrain.TEMPERATE.toUpperCase()}&nbsp;: 
+${populationIcon}${populationIcon}.`
 }
 
 export const cleanHearthNetwork: Ability = {
