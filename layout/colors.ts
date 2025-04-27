@@ -1,7 +1,7 @@
 export const terrainColors =  {
-    SCORCHED:'#d60303',
-    DESERT:'#efc817',
-    SAVANNA:'#9dbb2e',
-    SEA:'#72b0b3',
+    SCORCHED:'#ce4152',
+    DESERT:'#f5d63b',
+    SAVANNA:'#8ba92b',
+    SEA:'#6fa0a3',
     TEMPERATE:'#ffffff'
 }

@@ -1,7 +1,7 @@
 import {Family, FamilyName} from "../model";
 import {
     getCogIcon,
-    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, getReceiveMoneyIcon
+    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, get2CoinsIcon, getCrownCoinIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
@@ -9,7 +9,7 @@ export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
-    color: "#a63096"
+    color: "#40265c"
 }
 
 export const military:Family = {
@@ -24,14 +24,14 @@ export const knowledgeGatherer:Family = {
     flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
-    color: "#00a6ff"
+    color: "#135699"
 }
 
 export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
     icon:getBalloonIcon(),
-    color: '#ff5bb2'
+    color: '#ba4c7e'
 }
 
 export const navigators:Family = {
@@ -45,18 +45,20 @@ export const cleanEarth:Family = {
     flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes bien vénères de 2200 quand l'espérance de vie sera passée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
-    color: "#099300"
+    color: "#3e9032"
 }
 
 export const merchant:Family = {
     flavourText:"Sous leurs dehors froids, les marchands sont animés par une prophétie naïve: un jour, le Père Noël des anciens redescendra sur Terre pour ramener bonheur et prospérité.",
     familyName:FamilyName.MERCHANT,
-    icon:getReceiveMoneyIcon(),
-    color: "#ff6a00"
+    icon:getCrownCoinIcon(),
+    color: "#ea6203"
 }
 
 export const none:Family = {
-    flavourText:`Nés dans les cuves de The Adaptive Company&#8482;, les OGM climatiques n'ont ni famille ni amis. Mais dans leurs coeurs de reptiles brûle un regret cuisant: encore quelques degrés de plus et ils étaient maîtres du monde !`,
+    flavourText:`Fabriqué dans les laboratoires de The Adaptive Company&#8482; pour leur exceptionnelle résistance à la chaleur, ces OGM climatiques sont sans famille, sans amis et sans compétences. Leurs coeurs de reptiles renferment un regret cuisant: encore quelques degrés de plus et ils étaient maîtres du monde.
+<br>... Mais leur heure viendra !`,
+    text: `L'humain du futur peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
     color: "#b8b8b8"

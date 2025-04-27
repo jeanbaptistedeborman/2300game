@@ -120,7 +120,7 @@ export const cards: Card[] = [
         illustration: getFortIllustration(),
         number:1,
         type: Type.TRIBE,
-        title: "Ville fortifiée",
+        title: "Citadelle",
         text: '',
         abilities: [simpleSettlement, militaryUnit],
         handicaps: [],
@@ -200,7 +200,7 @@ export const cards: Card[] = [
     },
     {
         illustration: getDerrick(),
-        number:3,
+        number:2,
         type: Type.TRIBE,
         title: "Make Earth Great Again",
         text: '',
@@ -331,7 +331,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        title: "Compagine du Kristmas traîneau",
+        title: "Flying Santa Company",
         illustration:getBlimpIllustration(),
         number:1,
         type: Type.TRIBE,

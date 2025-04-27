@@ -25,3 +25,8 @@ export const getTerrainIllustration = (terrain:Terrain) =>
         terrain === Terrain.DESERT?getDesertIllustration():
             terrain === Terrain.SAVANNA?getGrassIllustration():
                 terrain === Terrain.SEA?getWaveIllustration():'';
+
+
+export const isPrimaryAbility = (cards: Card[], abilityName: string, abilityFamilyName: string) =>
+    cards.filter(({abilities}) => abilities.some(({family: {familyName}}) => familyName === abilityFamilyName))
+        .every(({abilities}) => abilities.some(({name}) => name === abilityName))

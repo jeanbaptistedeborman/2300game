@@ -22,7 +22,7 @@ export const technoDependent: Handicap = {
     value: 1,
     iconNumber:1,
     icon: getCogIcon(ICON_SIZE),
-    text: `Occuper 1 région de la tribu ${techno.familyName.toUpperCase()}`
+    text: `Occuper 1 région avec la tribu ${techno.familyName.toUpperCase()}`
 }
 export const technoNeighbour: Handicap = {
     name: 'Voisin de la technologie',
@@ -36,7 +36,7 @@ export const cleanHearthNeighbour: Handicap = {
     value: 3,
     iconNumber:2,
     icon: getTreeIcon(ICON_SIZE),
-    text: `2 régions de la tribu ${cleanEarth.familyName.toUpperCase()} ADJACENTES`
+    text: `2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()} ADJACENTES`
 }
 
 export const cleanHearthDependant: Handicap = {
@@ -44,7 +44,7 @@ export const cleanHearthDependant: Handicap = {
     iconNumber:2,
     icon:getTreeIcon(ICON_SIZE),
     value: 2,
-    text: `Occuper 2 régions de la tribu ${cleanEarth.familyName.toUpperCase()}`
+    text: `Occuper 2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()}`
 }
 
 export const militaryDependant: Handicap = {
@@ -52,7 +52,7 @@ export const militaryDependant: Handicap = {
     icon: getFistIcon(ICON_SIZE),
     iconNumber:2  ,
     value: 2,
-    text: `Occuper 2 régions de la tribu ${military.familyName.toUpperCase()}`
+    text: `Occuper 2 régions comportant la tribu ${military.familyName.toUpperCase()}`
 }
 
 export const militarySuperiority: Handicap = {

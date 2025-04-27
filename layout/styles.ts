@@ -4,15 +4,21 @@ body {
    font-family:'Cambria';
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
-  line-height:1.1em;
-   font-size: 8pt;
+    line-height:1.1em;
+   font-size: 9pt;
 }
 
 h1, h2, h3, h4 {
     margin:0; 
 }
 
+p {
+    margin: 0 0 .6mm 0;
+}
 
+p:last-of-type {
+    margin:0;
+}
 
 .card {
     padding: 7.5mm;
@@ -31,7 +37,7 @@ h1, h2, h3, h4 {
     max-width:21cm;
     margin-right:auto; 
     margin-left:auto;
-    gap:3mm;
+    gap:1mm;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap; 
@@ -130,5 +136,26 @@ div {
 .negative {
     mix-blend-mode:multiply;
     filter:invert(1)
+}
+
+.ability_text {
+    overflow:hidden;
+    flex-grow:1;
+    width:100%;
+    hyphens: auto;
+    vertical-align:bottom;
+    font-family:padding:0 .3mm;
+    border-radius:.5mm;
+    border:1px solid white;
+    margin-right:.5mm;
+    background-color:rgba(255, 255, 255, 0.9);
+    color:black;    
+}
+
+.ability_text.primary {
+   background-color:rgba(0, 0, 0, 0.5); 
+   color:white;
+   mix-blend-mode: lighten; 
+   border:none; 
 }
 `
