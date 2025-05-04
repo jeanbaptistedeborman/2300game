@@ -1,12 +1,7 @@
-import {Ability, Card, Family, FamilyName, Terrain} from "../model";
+import { Card, Terrain} from "../model";
 import {terrainColors} from "./colors";
-import {get4DirectionIcon, getEyeIcon, getLaurelCrownIcon} from "./icons";
-import {getFamilyIcon, getTerrainsVignettes} from "./components/components";
+import {getFamilyIcon} from "./components/components";
 import {getTerrainIllustration} from "../services";
-import {cards} from "../data/cards";
-import {getEmblemIllustration, getFlagIllustration, getSchieldIllustration, getStarIllustration} from "./illustrations";
-import {families} from "../data/families";
-
 
 export const backTemplate = ({ abilities, backTerrain}: Card): string => `<div class="card back ${backTerrain}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]} !important;">
     <ul >

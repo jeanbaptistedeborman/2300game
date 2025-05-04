@@ -38,12 +38,12 @@ export const generateCardsByFamiy = (cards) => {
         <h1>Cartes par tribu (${cards.reduce(countCards, 0)*3})</h1>
         <ul style="margin:1cm 0">
         <li>Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
-        <li>Les tribus visibles au dos ne sont pas indiquées car celles-ci changent à chaque carte</li>
+        <li>Les tribus visibles au dos ne sont pas indiquées car elles changent à chaque carte</li>
         </ul>
        ${Object.keys(cardsByFamiy).map((key) => `<div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 5mm">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
-        <p style="font-style:italic;margin-bottom: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
-        <p>${families.find((family) => family.familyName === key)?.text || ''}</p>
+        <p style="font-size:larger;font-style:italic;margin-bottom: 5mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
+        <p style="font-size:larger;">${families.find((family) => family.familyName === key)?.text || ''}</p>
         </div>
     <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div>`).join('')}
    </BODY> 

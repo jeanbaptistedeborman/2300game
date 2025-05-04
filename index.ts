@@ -3,7 +3,7 @@ import {Card, FamilyName, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {backTemplate} from "./layout/templates";
-import {logStats} from "./services";
+import {hasPrimaryAbility, logStats} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
 import {DECK_NUMBER} from "./constants";
@@ -23,8 +23,12 @@ const completedCards: Card[] =
             number: card.number * DECK_NUMBER,
             abilities:card.abilities.map(ability=> ({
                 ...ability,
-                isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
-                    Math.random() > .60,
+                isVisible:
+                    ability.family.familyName === FamilyName.KNOWLEDGE || //knowledge is always visible
+                // only eligible for random display IF:
+                    (   !hasPrimaryAbility (cards, ability.family.familyName) || //The ability family has no primary ability OR
+                        card.abilities.some(({family:{familyName:famName}, isPrimary}) => isPrimary && famName === ability.family.familyName)) //The family primary ability is present on the card.
+                    &&  Math.random() > .60,
             })
             )
         }))

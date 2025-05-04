@@ -1,7 +1,7 @@
 import {Family, FamilyName} from "../model";
 import {
     getCogIcon,
-    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, get2CoinsIcon, getCrownCoinIcon
+    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, getCrownCoinIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
@@ -9,7 +9,7 @@ export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
-    color: "#40265c"
+    color: "#7f2aa1"
 }
 
 export const military:Family = {
@@ -31,7 +31,7 @@ export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
     icon:getBalloonIcon(),
-    color: '#ba4c7e'
+    color: '#ff5bb2'
 }
 
 export const navigators:Family = {
@@ -49,16 +49,16 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors froids, les marchands sont animés par une prophétie naïve: un jour, le Père Noël des anciens redescendra sur Terre pour ramener bonheur et prospérité.",
+    flavourText:"Sous leurs dehors intéressés, les marchands sont animés par une prophétie naïve: un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité d'antan.",
     familyName:FamilyName.MERCHANT,
     icon:getCrownCoinIcon(),
     color: "#ea6203"
 }
 
 export const none:Family = {
-    flavourText:`Fabriqué dans les laboratoires de The Adaptive Company&#8482; pour leur exceptionnelle résistance à la chaleur, ces OGM climatiques sont sans famille, sans amis et sans compétences. Leurs coeurs de reptiles renferment un regret cuisant: encore quelques degrés de plus et ils étaient maîtres du monde.
-<br>... Mais leur heure viendra !`,
-    text: `L'humain du futur peut recevoir des pouvoirs en cours de partie.`,
+    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni famille ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: quelques degrés de plus et il était maître du monde.
+<br><br>... Mais son heure viendra !`,
+    text: `Démuni mais résistant, l'humain du futur&#8482; peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
     color: "#b8b8b8"

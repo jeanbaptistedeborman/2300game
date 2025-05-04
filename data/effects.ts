@@ -1,7 +1,7 @@
 import {Effect} from "../model";
 import {
     getArmyIcon,
-    getGetCardIcon, getPopulationIcon, getQuestionIcon,
+    getGetUpCardIcon, getPopulationIcon, getQuestionIcon,
     getTrashCardIcon,
 } from "../layout/icons";
 const ICON_SIZE: string = '7mm';
@@ -19,9 +19,9 @@ export const evolving:Effect ={
 }
 
 export const takeCard:Effect ={
-    icon:getGetCardIcon(ICON_SIZE)
+    icon:getGetUpCardIcon(ICON_SIZE)
 }
 
-export const makeCold:Effect ={
+export const trashCard:Effect ={
     icon:getTrashCardIcon(ICON_SIZE)
 }

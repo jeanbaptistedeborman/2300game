@@ -106,7 +106,7 @@ page:before::{}
 
 ul {
  padding:0;
- margin:1mm 0 0  0;
+ margin:0;
 }
 
 ul>li {
@@ -125,9 +125,8 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:6mm;
-    width:6mm;
-    margin-right:1mm;
+    height:5mm;
+    width:5mm;
     position:relative;
     border:1px solid black;
     border-radius:20%;

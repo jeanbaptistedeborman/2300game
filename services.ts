@@ -1,4 +1,4 @@
-import {Card, FamilyName, Terrain} from "./model";
+import {Ability, Card, FamilyName, Terrain} from "./model";
 import {
     getDesertIllustration,
     getGrassIllustration,
@@ -30,3 +30,8 @@ export const getTerrainIllustration = (terrain:Terrain) =>
 export const isPrimaryAbility = (cards: Card[], abilityName: string, abilityFamilyName: string) =>
     cards.filter(({abilities}) => abilities.some(({family: {familyName}}) => familyName === abilityFamilyName))
         .every(({abilities}) => abilities.some(({name}) => name === abilityName))
+
+export const hasPrimaryAbility = (cards: Card[], abilityFamilyName: string):boolean =>
+    cards.map(({abilities}) => abilities).flat()
+        .some (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
+
