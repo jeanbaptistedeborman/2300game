@@ -20,7 +20,7 @@ const getPopulations = (number:number, useNumber = true):string => `<span style=
 const getPlusPopulations = (number:number)=> `<b style="white-space: nowrap">+${getPopulations(number, true)}</b>`;
 const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
 
-const WHEN_PLAYING_THIS_CARD:string =  '<p>Après la pose de cette région&nbsp;:</p>';
+const WHEN_PLAYING_THIS_CARD:string =  '<p>À la pose de cette région&nbsp;:</p>';
 const WHEN_YOUR_RESOLUTION = `Après chacune de vos actions&nbsp;:`;
 const ANY_TIME = `<p>À tout moment&nbsp;:<p>`;
 
@@ -41,7 +41,7 @@ export const marine: Ability = {
     name: 'Navigation',
     family: navigators,
     value: 1,
-    text:'Vous pouvez poser cette région en mer suivant les règles de navigation.',
+    text:'Vous pouvez poser cette région suivant les règles de navigation.',
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -87,14 +87,14 @@ export const promoteGMOsMilitary: Ability = {
     name: 'Recruteurs peu regardants',
     family: military,
     value: 1,
-    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()} gagnent le pouvoir ${militaryUnit.name.toUpperCase()} et comportent la tribu ${FamilyName.MILITARY.toUpperCase()}.`
+    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()} gagnent le pouvoir ${militaryUnit.name.toUpperCase()} et la tribu ${FamilyName.MILITARY.toUpperCase()}.`
 }
 
 export const promoteGMOsMerchant: Ability = {
     name: 'Equal opportunity',
     family: merchant,
     value: 1,
-    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()} gagnent le pouvoir ${trade.name.toUpperCase()} et comportent la tribu ${FamilyName.MERCHANT.toUpperCase()}.`
+    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()} gagnent le pouvoir ${trade.name.toUpperCase()} et la tribu ${FamilyName.MERCHANT.toUpperCase()}.`
 }
 
 export const bewareOfTechno: Ability = {
@@ -102,7 +102,7 @@ export const bewareOfTechno: Ability = {
     name: 'Khmers verts',
     family: cleanEarth,
     value: 2,
-    text: `${getPopulations(2)} si inoccupée et comportant la tribu ${techno.familyName.toUpperCase()}.`
+    text: `${getPopulations(2)} si inoccupée comportant la tribu ${techno.familyName.toUpperCase()}.`
 }
 
 export const longTravel: Ability = {
@@ -122,7 +122,7 @@ export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
     value: 2,
-    text: `<p>Vous pouvez utiliser cette région pour occuper une région que vous occupez déjà. Les populations sont conservées.</p>`
+    text: `<p>Vous pouvez utiliser cette région pour occuper une région que vous occupez déjà. Ses populations sont conservées.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
@@ -157,7 +157,7 @@ export const cartographer: Ability = {
     family: explorer,
     value: 3,
     text: `<p>${getPopulations(1)} par continent adverse dont vous occupez au moins une région.</p>
-    <p>${POPULATION_X2} si région sur tous les continents.</p>`
+    <p>${POPULATION_X2} si tous les continents.</p>`
 }
 
 export const knowledge: Ability = {
@@ -179,7 +179,7 @@ export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
     value:2,
-    text: `<p>Deux actions supplémentaires par tour au lieu d'une seule (défausser pour chaque action)</p>`
+    text: `<p>2 actions supplémentaires par tour au lieu d'une (défausser pour chaque action)</p>`
 }
 
 export const scout: Ability = {
@@ -187,10 +187,10 @@ export const scout: Ability = {
     name: 'Explorateur',
     family:explorer,
     value: 2,
-    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou de la même colonne.</p>`
+    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou colonne.</p>`
 }
 
-const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la tribu ${family.familyName.toUpperCase()} gagnent la compétence RAPIDE.</p>`;
+const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la tribu ${family.familyName.toUpperCase()} gagnent ${"rapidité".toUpperCase()}.</p>`;
 
 export const airForce: Ability = {
     name: 'Vol',
@@ -322,7 +322,7 @@ export const continentOfDiversity: Ability = {
     name: `L'union fait la force !`,
     family: explorer,
     value: 2,
-    text: `${getPopulations(3)} si ${families.length -2} tribus différentes sur votre continent.`
+    text: `${getPopulations(3)} si ${families.length -2} tribus &NotEqual; sur votre continent.`
 }
 
 export const mission: Ability = {
@@ -335,8 +335,8 @@ export const mission: Ability = {
 }
 
 export const realmOfDiversity: Ability = {
-    name: '5 tribus',
+    name: '5 tribus, 7 Merveilles',
     family: military,
     value: 2,
-    text: `<p>${getPopulations(2)} si vous occupez 5 tribus différentes.<p/><p>${getPopulations(4)} si vous occupez les ${families.length -1} tribus.</p>`
+    text: `<p>${getPopulations(2)} si vous occupez 5 tribus &NotEqual;.<p/><p>${getPopulations(4)} si vous occupez ${families.length -1} tribus &NotEqual;.</p>`
 }

@@ -5,7 +5,7 @@ body {
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
     line-height:1.1em;
-   font-size: 9pt;
+   font-size: 9.5pt;
 }
 
 h1, h2, h3, h4 {

@@ -24,7 +24,7 @@ export const knowledgeGatherer:Family = {
     flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
-    color: "#135699"
+    color: "#0c355e"
 }
 
 export const explorer:Family = {
@@ -61,7 +61,7 @@ export const none:Family = {
     text: `Démuni mais résistant, l'humain du futur&#8482; peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),
-    color: "#b8b8b8"
+    color: "#67685e"
 }
 
 export const families:Family[] = [techno, knowledgeGatherer, explorer, merchant, cleanEarth, navigators, military, none]
