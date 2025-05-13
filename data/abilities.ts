@@ -3,9 +3,9 @@ import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeG
 import {
     getWingIcon,
     getPopulationIcon,
-    get4DirectionIcon, getTrashCardIcon, getArmyIcon, getGetUpCardIcon,
+    get4DirectionIcon, getTrashCardIcon, getArmyIcon, getGetUpCardIcon, getRandomCardIcon,
 } from "../layout/icons";
-import {addPopulation, forbid, takeCard, trashCard} from "./effects";
+import {addPopulation, forbid, takeCard, takeCardFromHand, trashCard} from "./effects";
 import {GMO_CARD_TITLE} from "../constants";
 
 const ICON_SIZE = '1.1em';
@@ -175,6 +175,15 @@ export const invasion: Ability = {
     text: `<p>Posez cette région sur une région occupée par un adversaire. Les populations de cette dernière sont retirées.</p>`
 }
 
+export const spy: Ability = {
+    effect: takeCardFromHand,
+    icon: getRandomCardIcon(ICON_SIZE),
+    name: 'Spy',
+    family:military,
+    value: 4,
+    text: `${WHEN_PLAYING_THIS_CARD} Piochez maximum une carte de la main des adversaires adjacents.`
+}
+
 export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
@@ -293,6 +302,15 @@ export const rallyGreenFriends: Ability = {
     text: getRallyFriendsText (cleanEarth)
 }
 
+export const rallyMilitaryFriends: Ability = {
+    name: 'Ralliement militaire',
+    icon: getGetUpCardIcon(ICON_SIZE),
+    effect: takeCard,
+    family: military,
+    value: 2,
+    text: getRallyFriendsText (military)
+}
+
 export const rallyTechnoFriends: Ability = {
     name: 'Ralliement Techno',
     icon: getGetUpCardIcon(ICON_SIZE),
@@ -322,7 +340,7 @@ export const continentOfDiversity: Ability = {
     name: `L'union fait la force !`,
     family: explorer,
     value: 2,
-    text: `${getPopulations(3)} si ${families.length -2} tribus &NotEqual; sur votre continent.`
+    text: `${getPopulations(3)} si ${families.length -1} tribus &NotEqual; sur votre continent.`
 }
 
 export const mission: Ability = {

@@ -56,7 +56,7 @@ export const merchant:Family = {
 }
 
 export const none:Family = {
-    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni famille ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: quelques degrés de plus et il était maître du monde.
+    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni famille ni compétences. Et dans son cœur de reptile brûle un regret cuisant&nbsp;: quelques degrés de plus et il était maître du monde.
 <br><br>... Mais son heure viendra !`,
     text: `Démuni mais résistant, l'humain du futur&#8482; peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,

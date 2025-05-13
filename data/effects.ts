@@ -1,7 +1,7 @@
 import {Effect} from "../model";
 import {
     getArmyIcon,
-    getGetUpCardIcon, getPopulationIcon, getQuestionIcon,
+    getGetUpCardIcon, getPopulationIcon, getQuestionIcon, getRandomCardIcon,
     getTrashCardIcon,
 } from "../layout/icons";
 const ICON_SIZE: string = '7mm';
@@ -12,6 +12,10 @@ export const forbid:Effect ={
 
 export const addPopulation:Effect ={
     icon:getPopulationIcon()
+}
+
+export const takeCardFromHand:Effect ={
+    icon:getRandomCardIcon()
 }
 
 export const evolving:Effect ={
