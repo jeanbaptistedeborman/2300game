@@ -35,10 +35,10 @@ export const generateCardsByFamiy = (cards) => {
     </style>
   
     <BODY style="padding:1cm;">
-        <h1>Cartes par tribu (${cards.reduce(countCards, 0)*3})</h1>
+        <h1>Annexe: cartes par tribu (${cards.reduce(countCards, 0)*DECK_NUMBER})</h1>
         <ul style="margin:1cm 0">
         <li>Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
-        <li>Les tribus visibles au dos ne sont pas indiquées car elles changent à chaque carte</li>
+        <li>Les tribus visibles au dos ne sont pas indiquées car celles-ci changent à chaque carte</li>
         </ul>
        ${Object.keys(cardsByFamiy).map((key) => `<div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 5mm">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>

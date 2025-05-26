@@ -5,6 +5,14 @@ import {
     getScorchedIllustration,
     getWaveIllustration
 } from "./layout/illustrations";
+import {cards} from "./data/cards";
+import {DECK_NUMBER} from "./constants";
+import {cardTerrains} from "./index";
+
+export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
+    console.log (generateCompletedCards().length);
+    return generateCompletedCards().filter(({abilities}) => abilities.some(({family: {familyName: name}}) => familyName === name)).length;
+})
 
 export const logStats =  (cards:Card[]) =>
 {
@@ -13,7 +21,7 @@ export const logStats =  (cards:Card[]) =>
     console.log (`Cards with 2 abilities: ${cards.filter(card => card.abilities.length > 1).length}`);
     console.log (`Cards with 1 abilitie: ${cards.filter(card => card.abilities.length === 1).length}`);
     Object.values(FamilyName).forEach((familyName) => {
-        console.log(`${familyName} : ${cards.filter(({abilities}) => abilities.some(({family: {familyName: name}}) => familyName === name)).length}`);
+        console.log(`${familyName} : ${getFamilyCount(cards, familyName)}`);
     });
 
 }
@@ -35,3 +43,22 @@ export const hasPrimaryAbility = (cards: Card[], abilityFamilyName: string):bool
     cards.map(({abilities}) => abilities).flat()
         .some (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
 
+
+export const generateCompletedCards = () => cards
+    .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
+    .map((card:Card)=>  ({ //set ability visibility
+        ...card,
+        number: card.number * DECK_NUMBER,
+        abilities:card.abilities.map(ability=> ({
+                ...ability,
+                isVisible:
+                    ability.family.familyName === FamilyName.KNOWLEDGE || //knowledge is always visible
+                    // only eligible for random display IF:
+                    (   !hasPrimaryAbility (cards, ability.family.familyName) || //The ability family has no primary ability OR
+                        card.abilities.some(({family:{familyName:famName}, isPrimary}) => isPrimary && famName === ability.family.familyName)) //The family primary ability is present on the card.
+                    &&  Math.random() > .65,
+            })
+        )
+    }))
+    .sort(() => .5 -Math.random())
+    .map ((card:Card, index:number, selectedCards) => ({...card, backTerrain: cardTerrains[Math.floor((index)/selectedCards.length*3)] }));

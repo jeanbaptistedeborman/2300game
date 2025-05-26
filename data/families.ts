@@ -20,8 +20,8 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme ces lieux sont réputés, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de la carte.`,
-    flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
+    text: `Comme les lieux de savoir sont réputés, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de la carte.`,
+    flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais sous leurs dehors austères, ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
     color: "#0c355e"
@@ -49,14 +49,14 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors intéressés, les marchands sont animés par une prophétie naïve: un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité d'antan.",
+    flavourText:"Sous leurs dehors intéressés, les marchands sont animés par une prophétie naïve : un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité d'antan.",
     familyName:FamilyName.MERCHANT,
     icon:getCrownCoinIcon(),
     color: "#ea6203"
 }
 
 export const none:Family = {
-    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni famille ni compétences. Et dans son cœur de reptile brûle un regret cuisant&nbsp;: quelques degrés de plus et il était maître du monde.
+    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni amis ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: encore quelques degrés de plus et il était maître du monde.
 <br><br>... Mais son heure viendra !`,
     text: `Démuni mais résistant, l'humain du futur&#8482; peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,
@@ -64,4 +64,4 @@ export const none:Family = {
     color: "#67685e"
 }
 
-export const families:Family[] = [techno, knowledgeGatherer, explorer, merchant, cleanEarth, navigators, military, none]
+export const families:Family[] = [none, techno, knowledgeGatherer, explorer, merchant, cleanEarth, navigators, military]

@@ -43,7 +43,7 @@ export interface Ability {
     family: Family,
     name: string,
     text: string,
-    value: number,
+    inTest?:boolean;
     icon?: string,
 }
 

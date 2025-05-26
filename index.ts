@@ -1,12 +1,11 @@
 import * as fs from 'fs';
-import {Card, FamilyName, Terrain} from "./model";
+import {Card, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {backTemplate} from "./layout/templates";
-import {hasPrimaryAbility, logStats} from "./services";
+import {generateCompletedCards, logStats} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
-import {DECK_NUMBER} from "./constants";
 import {cardTemplate} from "./layout/templates/cardTemplate";
 
 
@@ -15,25 +14,7 @@ const CARDS_PER_PAGE:number = 9;
 
 logStats(cards)
 
-const completedCards: Card[] =
-    cards
-        .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
-        .map((card:Card)=>  ({ //set ability visibility
-            ...card,
-            number: card.number * DECK_NUMBER,
-            abilities:card.abilities.map(ability=> ({
-                ...ability,
-                isVisible:
-                    ability.family.familyName === FamilyName.KNOWLEDGE || //knowledge is always visible
-                // only eligible for random display IF:
-                    (   !hasPrimaryAbility (cards, ability.family.familyName) || //The ability family has no primary ability OR
-                        card.abilities.some(({family:{familyName:famName}, isPrimary}) => isPrimary && famName === ability.family.familyName)) //The family primary ability is present on the card.
-                    &&  Math.random() > .60,
-            })
-            )
-        }))
-        .sort(() => .5 -Math.random())
-        .map ((card:Card, index:number, selectedCards) => ({...card, backTerrain: cardTerrains[Math.floor((index)/selectedCards.length*3)] }))
+const completedCards: Card[] = generateCompletedCards();
 
 generateCardsByFamiy(cards);
 

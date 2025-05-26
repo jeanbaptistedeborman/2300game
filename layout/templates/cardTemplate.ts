@@ -4,7 +4,7 @@ import {getAbilityVignette, getTerrainsVignettes} from "../components/components
 import {get4DirectionIcon } from "../icons";
 import {evolving} from "../../data/effects";
 import {none} from "../../data/families";
-import {isPrimaryAbility} from "../../services";
+import {getFamilyCount, isPrimaryAbility} from "../../services";
 
 const addEffects = (abilities: Ability[]) => {
     const backGroundSize: string = '14.1mm';
@@ -49,14 +49,15 @@ ${(handicaps?.length > 0) ? `<ul>
 }
     
     <ul style="border-radius: 0  0 .5mm .5mm; overflow: hidden;">
-    ${sortedAbilities.sort(({name, family: {familyName}}) => isPrimaryAbility(cards, name, familyName) ? 1 : -1)
-     .map((ability) => getAbilityVignette(ability)).join('')}
+    ${sortedAbilities.map((ability) => getAbilityVignette(ability)).join('')}
     </ul>
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .5mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>
     
    ${addEffects(sortedAbilities)} 
-   <div style="position:absolute;bottom:0; left:13mm;">${number}</div>
+   <div style="position:absolute;bottom:0; left:11.5mm;font-size: 8pt">${number}(${sortedAbilities
+        .map((ability) => getFamilyCount(cards, ability.family.familyName))
+        .join(',')})</div>
     </div>`;
 };
