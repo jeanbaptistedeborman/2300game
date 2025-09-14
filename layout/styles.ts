@@ -5,7 +5,7 @@ body {
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
     line-height:1.1em;
-   font-size: 9.5pt;
+   font-size: 9pt;
 }
 
 h1, h2, h3, h4 {
@@ -21,15 +21,23 @@ p:last-of-type {
 }
 
 .card {
-    padding: 7.5mm;
     height: 33.33333%;
     width: 33.33333%;
-    border: .1mm solid lightgrey;
+    border: .1mm solid grey;
     box-sizing: border-box;
+    overflow: hidden;
+    position:relative;
+}
+
+.card-content {
+    width:100%;
+    height: 100%;
+    padding: 9mm;
     display: flex;
     flex-direction:column;
     overflow: hidden;
     position:relative;
+    box-sizing:border-box;
 }
 
 .presentation-box {
@@ -54,11 +62,8 @@ p:last-of-type {
     border-radius:1mm;
  }
 
-.back {
-        background: repeating-linear-gradient(#FFFFFF, #000000, 20%);
-        background-blend-mode:soft-light;
-        background-size: 2cm 2cm;
-       border:none;      
+.card.back {
+     padding:11mm;         
 }
 
 .DESERT {

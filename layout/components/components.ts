@@ -44,10 +44,10 @@ export const getAbilityVignette = (({
                   <h3 style="font-size:8pt;">${name.toLocaleUpperCase()}</h3>
             </div>     
            ${text && `<div class="ability_text ${isPrimary?'primary-':''}">
-                ${effect ? `<div style="margin-bottom:.5mm;vertical-align:baseline;width:100%;color:black;display:flex;flex-direction: row;background-color: white; justify-content: center;border-bottom:.2mm solid ${color}">
+                ${effect ? `<div style="margin-bottom:.5mm;vertical-align:baseline;width:100%;color:black;display:flex;flex-direction: row;background-color: white; justify-content: center;border-bottom:.05mm solid ${color}">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.5mm;">${getMoveIllustration()}</div>
                 REGIONS ADJACENTES&nbsp;:</div>` : ''}
-            ${abilityIcon ? `<span style="filter:invert(1);float: left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
+            ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>
         <div style="display: flex; flex-direction: column; align-items: center;">

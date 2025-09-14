@@ -1,41 +1,82 @@
-import {Ability, Card} from "../../model";
+import {Ability, Card, FamilyName, Terrain} from "../../model";
 import {cards} from "../../data/cards";
 import {getAbilityVignette, getTerrainsVignettes} from "../components/components";
-import {get4DirectionIcon } from "../icons";
+import {get4DirectionIcon} from "../icons";
 import {evolving} from "../../data/effects";
 import {none} from "../../data/families";
-import {getFamilyCount, isPrimaryAbility} from "../../services";
+import {getFamilyCount} from "../../services";
+import {terrainColors} from "../colors";
+import Color from "color";
 
 const addEffects = (abilities: Ability[]) => {
-    const backGroundSize: string = '14.1mm';
+    const backGroundSize: string = '15mm';
     const backgroundMargin: string = '-7mm';
     const cornerBackgroundMargin: string = '-3mm';
-    const iconMargin: string = '0mm';
+    const iconMargin: string = '.2mm';
     const effectAbility: Ability = abilities.find(({effect}) => effect);
 
     if (!effectAbility && abilities.length) return '';
 
     const {effect, family: {color}} = effectAbility || {effect: evolving, family: none};
 
+    const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
+    const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
+
+    const  icons = `
+    <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:color-dodge;">
+        <div style="${rowStyle}" >
+            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${effect.icon}</div>
+        </div>
+        <div style="${rowStyle}">
+            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${effect.icon}</div>
+        </div>
+        <div style="${rowStyle}">
+            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${effect.icon}</div>
+        </div>
+    </div>
+    `;
+
+
     const getCornerPositions = (margin: string) => [`top:${margin};left:${margin}`, `top:${margin};right:${margin};`, `bottom:${margin};right:${margin};`, `bottom:${margin};left:${margin};`];
     const getMiddlePositions = (margin: string) => [`top:${margin};left:calc(50% + (${margin}))`, `bottom:${margin};left:calc(50% + (${margin}));`, `left:${margin};top:calc(50% + (${margin}));`, `right:${margin};top:calc(50% + (${margin}));`];
     const getpositions = (margin) => [...getCornerPositions(margin), ...getMiddlePositions(margin)];
-    return [
-        ...getMiddlePositions(backgroundMargin).map(position => `<div style ="background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
-        ...getCornerPositions(cornerBackgroundMargin).map(position => `<div style ="background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
-        ...getpositions(iconMargin).map(position => `<div style="position:absolute;mix-blend-mode: lighten;${position}">${effect.icon}</div>`),
-        ...getCornerPositions('7mm').map(position => `<div style="mix-blend-mode:lighten; position: absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('');
+
+
+    return `${[
+        ...getMiddlePositions(backgroundMargin).map(position => `<div style ="border:.2mm solid white;background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
+        ...getCornerPositions(cornerBackgroundMargin).map(position => `<div style ="border:.2mm solid white;background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
+        ...getCornerPositions('7mm').map(position => `<div style="position:absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('')}
+        ${icons}
+        `
 }
 
-export const cardTemplate = ({title, illustration, abilities, handicaps, number, allowedTerrain}: Card): string => {
-    const sortedAbilities: Ability[] = abilities.sort(({name, family: {familyName}}) => isPrimaryAbility(cards, name, familyName) ? 1 : -1);
-    return `<div class="card">
-    <h1 class="title">${title}</h1> 
-    <div style = "flex-grow: 1; opacity:.6; overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
-    ${illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white'
+export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain}: Card): string => {
+    const sortedAbilities: Ability[] = abilities.sort((
+        {isPrimary: AisPrimary, family: {familyName: AFamilyName}},
+        {isPrimary: BisPrimary, family: {familyName: BFamilyName}}) => {
+        if (AFamilyName === FamilyName.NAVIGATOR || BFamilyName === FamilyName.NAVIGATOR) {
+            return (AFamilyName === FamilyName.NAVIGATOR)?-1: 1;
+        }
+        return AisPrimary ? -1 : 1;
+    });
 
+    const isSea: boolean = allowedTerrain === Terrain.SEA;
+
+    return `<div class="card" style="color:${isSea?'white':'black'};background-color:${isSea?terrainColors.LIGHT_SEA:'white'};background-opacity:.2;">
+    ${addEffects(sortedAbilities)} 
+    <div class="card-content">
+    <h1 class="title">${title}</h1> 
+    <div style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
+    ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white').mix(Color('#FFFFFF'), .3)
 }" >
-    ${illustration}</div>
+    ${illustration}
+    ${status?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
+       </div>
     
 ${(handicaps?.length > 0) ? `<ul>
         ${
@@ -54,10 +95,11 @@ ${(handicaps?.length > 0) ? `<ul>
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .5mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>
-    
-   ${addEffects(sortedAbilities)} 
-   <div style="position:absolute;bottom:0; left:11.5mm;font-size: 8pt">${number}(${sortedAbilities
+   <div style="position:absolute;bottom:0; left:11.5mm;font-size: 8pt">${number} (${
+        sortedAbilities
         .map((ability) => getFamilyCount(cards, ability.family.familyName))
         .join(',')})</div>
-    </div>`;
+    </div>
+</div>
+`;
 };

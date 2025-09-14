@@ -24,14 +24,14 @@ export const knowledgeGatherer:Family = {
     flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais sous leurs dehors austères, ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
-    color: "#0c355e"
+    color: '#ff5bb2'
 }
 
 export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
     icon:getBalloonIcon(),
-    color: '#ff5bb2'
+    color: "#0c355e"
 }
 
 export const navigators:Family = {
@@ -42,7 +42,7 @@ export const navigators:Family = {
 }
 
 export const cleanEarth:Family = {
-    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes bien vénères de 2200 quand l'espérance de vie sera passée à 25 ans.",
+    flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes bien vénères de 2200 quand l'espérance de vie sera tombée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
     color: "#3e9032"
@@ -64,4 +64,4 @@ export const none:Family = {
     color: "#67685e"
 }
 
-export const families:Family[] = [none, techno, knowledgeGatherer, explorer, merchant, cleanEarth, navigators, military]
+export const families:Family[] = [techno, explorer, knowledgeGatherer, navigators,  merchant, cleanEarth,   none, military ]

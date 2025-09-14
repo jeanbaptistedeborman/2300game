@@ -19,13 +19,13 @@ export enum Type {
 export enum FamilyName {
     "TECHNO" = "Techno",
     "MILITARY" = "Milice",
-    "EXPLORER" = "Scouts",
-    "CLEAN_EARTH" = "Vert",
-    "MERCHANT" = "Trader",
+    "EXPLORER" = "Scout",
+    "CLEAN_EARTH" = "Sauveur",
+    "MERCHANT" = "Marchand",
     "KNOWLEDGE" = "Savant",
     "NAVIGATOR" = "Marin",
     "PEOPLE" = 'People',
-    "NONE" = "SANS FAMILLE"
+    "NONE" = "SANS TRIBU"
 }
 
 export interface Family {
@@ -56,6 +56,7 @@ export interface Handicap {
 }
 
 export interface Card {
+    status?: 'test' | 'discarded',
     illustration: string;
     number: number;
     title: string,

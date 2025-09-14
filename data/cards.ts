@@ -3,6 +3,7 @@ import {Card, Terrain, Type} from "../model";
 import {
     administrativeCenter,
     airForce,
+    cityBonus,
     archeolog,
     bewareOfTechno,
     cartographer,
@@ -34,7 +35,7 @@ import {
     terraformer,
     trade,
     worldCompany,
-    worldTraveler,
+    worldTraveler, cheeseFactory, harbour,
 } from './abilities'
 import {cleanHearthDependant, militaryDependant, militarySuperiority} from "./handicaps";
 import {
@@ -69,13 +70,19 @@ import {
     getRevoltIllustration,
     getSailboatIllustration,
     getSailIllustration,
-    getSkullIllustration, getSpyIllustration,
+    getSkullIllustration,
+    getSpyIllustration,
     getWarBoat,
     getWarPlaneIllustration,
     getWarriorIllustration,
+    getMegapolisIllustration,
     getWorldCompanyIllustration,
+    getCowIllustration,
+    getCheeseIllustration,
+    getFishingHarbourIllustration,
+    getJellyFishIllustration,
 } from "../layout/illustrations";
-import {GMO_CARD_TITLE} from "../constants";
+import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
 export const cards: Card[] = [
     {
@@ -89,7 +96,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        number:2,
+        number:3,
         illustration: getSailIllustration(),
         type: Type.TRIBE,
         title: "Capitaine intrépide",
@@ -134,7 +141,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Navire marchand",
         text: '',
-        abilities: [marine, trade],
+        abilities: [trade,marine],
         handicaps: [],
         allowedTerrain: Terrain.SEA,
     },
@@ -185,7 +192,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         title: "Canonnière",
         text: '',
-        abilities: [militaryUnit, marine],
+        abilities: [marine, militaryUnit],
         handicaps: [militaryDependant],
         backTerrain: Terrain.SAVANNA,
         allowedTerrain: Terrain.SEA
@@ -218,10 +225,11 @@ export const cards: Card[] = [
         text: '',
         abilities: [cleanHand],
         handicaps: [],
-        allowedTerrain: Terrain.TEMPERATE
+        allowedTerrain: Terrain.SAVANNA
     },
     {
         illustration: getRevoltIllustration(),
+        status: "test",
         number:1,
         type: Type.TRIBE,
         title: "Pas touche à la Techno!",
@@ -322,7 +330,7 @@ export const cards: Card[] = [
         illustration: getFarmerIllustration(),
         number:2,
         type: Type.TRIBE,
-        title: "Terraformeurs zélés",
+        title: "Terraformeurs obtus",
         text: '',
         abilities: [terraformer],
         handicaps: [],
@@ -346,6 +354,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {    title: "Invasion",
+        status: 'test',
         illustration: getInvasionIllustration(),
         number:1,
         type: Type.TRIBE,
@@ -360,7 +369,7 @@ export const cards: Card[] = [
         type: Type.TRIBE,
         text: '',
         abilities: [spy, scout],
-        allowedTerrain: Terrain.SAVANNA,
+        allowedTerrain: Terrain.TEMPERATE,
     },
     {  title: "Aéronaute",
         illustration:getBalloonIllustration(),
@@ -398,7 +407,7 @@ export const cards: Card[] = [
     },
     {
         illustration: getKnowledgeIllustration(),
-        number:6,
+        number:2,
         type: Type.TRIBE,
         title: "Bibliothèque",
         text: '',
@@ -423,7 +432,16 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
 
-    {title: "La Hansa du Santa",
+    {title: "Clan MacFromton",
+        illustration: getCheeseIllustration(),
+        number:1,
+        type: Type.TRIBE,
+        text: '',
+        abilities: [cheeseFactory],
+        allowedTerrain: Terrain.TEMPERATE,
+    },
+
+    {title: "Hansa",
         illustration: getMerchantLigueIllustration(),
         number:1,
         type: Type.TRIBE,
@@ -431,9 +449,19 @@ export const cards: Card[] = [
         abilities: [merchantNetwork, trade],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {   title: "Front vert",
-        illustration:getMerchantLigueIllustration(),
-        number:2,
+
+    {title: "Le temps des méduses",
+        illustration: getJellyFishIllustration(),
+        number:1,
+        type: Type.TRIBE,
+        text: '',
+        abilities: [harbour],
+        allowedTerrain: Terrain.SAVANNA,
+    },
+
+    {   title: `${FLOCK_CARD_TITLE}`,
+        illustration:getCowIllustration(),
+        number:5,
         type: Type.TRIBE,
         text: '',
         abilities: [cleanHearthNetwork],
@@ -457,6 +485,7 @@ export const cards: Card[] = [
     },
 
     { title: "Missionnaire",
+        status: 'discarded',
         illustration: getEmbracedEnergyIllustration(),
         number:1,
         type: Type.TRIBE,
@@ -474,6 +503,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     { title: "Empire diversifié",
+        status: 'discarded',
         illustration: getGatheringIllustration(),
         number:1,
         type: Type.TRIBE,
@@ -482,11 +512,21 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {   title: 'Kristmas Spirit',
+        status: 'test',
         illustration: getFriendsIllustration(),
         number:1,
         type: Type.TRIBE,
         text: '',
         abilities: [cosmopoliteContinent, trade],
         allowedTerrain: Terrain.SAVANNA,
+    },
+    {
+        title: 'Babylon 3000',
+        illustration: getMegapolisIllustration(),
+        number:1,
+        type: Type.TRIBE,
+        text: '',
+        abilities: [goodOldWorld, cityBonus],
+        allowedTerrain: Terrain.TEMPERATE,
     }
 ];

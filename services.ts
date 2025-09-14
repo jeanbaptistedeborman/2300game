@@ -10,7 +10,6 @@ import {DECK_NUMBER} from "./constants";
 import {cardTerrains} from "./index";
 
 export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
-    console.log (generateCompletedCards().length);
     return generateCompletedCards().filter(({abilities}) => abilities.some(({family: {familyName: name}}) => familyName === name)).length;
 })
 
@@ -45,6 +44,7 @@ export const hasPrimaryAbility = (cards: Card[], abilityFamilyName: string):bool
 
 
 export const generateCompletedCards = () => cards
+    .filter(({status}) => status !== 'discarded')
     .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
     .map((card:Card)=>  ({ //set ability visibility
         ...card,
@@ -52,8 +52,7 @@ export const generateCompletedCards = () => cards
         abilities:card.abilities.map(ability=> ({
                 ...ability,
                 isVisible:
-                    ability.family.familyName === FamilyName.KNOWLEDGE || //knowledge is always visible
-                    // only eligible for random display IF:
+                    (ability.family.familyName === FamilyName.KNOWLEDGE && ability.isPrimary) || //knowledge primary is always visible
                     (   !hasPrimaryAbility (cards, ability.family.familyName) || //The ability family has no primary ability OR
                         card.abilities.some(({family:{familyName:famName}, isPrimary}) => isPrimary && famName === ability.family.familyName)) //The family primary ability is present on the card.
                     &&  Math.random() > .65,

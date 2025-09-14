@@ -3,15 +3,15 @@ import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeG
 import {
     getWingIcon,
     getPopulationIcon,
-    get4DirectionIcon, getTrashCardIcon, getArmyIcon, getGetUpCardIcon, getRandomCardIcon,
+    get4DirectionIcon, getTrashCardIcon, getArmyIcon, getGetUpCardIcon, getDiscsIcon, getCircleIcon, getGarageIcon,
 } from "../layout/icons";
-import {addPopulation, forbid, takeCard, takeCardFromHand, trashCard} from "./effects";
-import {GMO_CARD_TITLE} from "../constants";
+import {addPopulation, forbid, takeCard, trashCard} from "./effects";
+import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
 
 const ICON_SIZE = '1.1em';
 const LARGE_ICON_SIZE = '2.7em';
 
-const populationIcon:string = `<span style="mix-blend-mode: difference; margin-right: -.5mm;">${getPopulationIcon('.9em')}</span>`;
+const populationIcon:string = `<span style="mix-blend-mode: difference;margin:0 .5mm; vertical-align: text-bottom;">${getCircleIcon('1.1em')}</span>`;
 const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
     ${useNumber?`${number}${populationIcon}`:    
@@ -20,17 +20,18 @@ const getPopulations = (number:number, useNumber = true):string => `<span style=
 const getPlusPopulations = (number:number)=> `<b style="white-space: nowrap">+${getPopulations(number, true)}</b>`;
 const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
 
-const WHEN_PLAYING_THIS_CARD:string =  `A LA POSE DE CETTE REGION&nbsp;:`;
-const WHEN_YOUR_RESOLUTION = `APRES CHACUNE DE VOS ACTIONS&nbsp;:`;
-const ANY_TIME = `A TOUT MOMENT&nbsp;:`;
+const WHEN_PLAYING_THIS_CARD:string =  `<p></p><b>À la pose de cette région&nbsp;:</b></p>`;
+const WHEN_YOUR_RESOLUTION = `<p><b>Après chacunes de vos actions&nbsp;:</b></p>`;
+const ANY_TIME = `<p><b>À tout moment&nbsp;:</b></p>`;
 
 const getNetworkText = ({familyName}:Family) => `<p>${getPopulations(1)} si tribu ${familyName.toUpperCase()}.</p>`;
-const getRallyFriendsText = ({familyName}:Family) => `Piochez la carte des régions inoccupées comportant la tribu ${familyName.toUpperCase()}.`
+const getRallyFriendsText = ({familyName}:Family) => `Piochez la première carte des régions inoccupées comportant la tribu ${familyName.toUpperCase()}.`
+const getRallyFriendsTitle = ({familyName}:Family) => `Ralliement ${familyName.toUpperCase()}.`
 
 export const trade: Ability = {
     isPrimary: true,
     effect:addPopulation,
-    name: 'Comptoir',
+    name: MERCHANT_ABILITY_TITLE,
     family: merchant,
     text: `${getPopulations(2)} si occupée par adversaire.`
 }
@@ -60,20 +61,30 @@ export const militaryUnit: Ability = {
 export const cleanHand: Ability = {
     name: 'Exil des hérétiques',
     family: cleanEarth,
-    text: `A chaque région comportant la tribu ${techno.familyName.toUpperCase()} que vous défaussez &nbsp;:${getPlusPopulations(1)}.`
+    text: `A chaque fois que vous défaussez une carte région comportant la tribu ${techno.familyName.toUpperCase()}&nbsp;:${getPlusPopulations(1)}.`
+}
+
+export const cheeseFactory: Ability = {
+    name: 'Fromagerie',
+    family: cleanEarth,
+    effect:addPopulation,
+    text: `${getPopulations(2)} si ${FLOCK_CARD_TITLE.toUpperCase()}.`
 }
 
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p>Si moins de 5 VILLES dans votre réserve&nbsp;: vous pouvez prématurément placer une CITÉ au lieu d'une VILLE et déclencher la fin de partie.</p>`
+    text: `<p><b>Lorsque moins de 10 colonies (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément placer une CITÉ et déclencher la fin de partie.</p>`
 }
 
 export const cleanContinent: Ability = {
     name: 'Terre pure',
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
-    <p>Aucune tribu ${techno.familyName.toUpperCase()} sur votre continent &nbsp;: ${getPlusPopulations(1)}. Sinon&nbsp;: ${getMinusPopulations(1)}.</p>`
+    <p>Aucune tribu ${techno.familyName.toUpperCase()} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
+    <b>Maximum:</b>10
+`
+
 }
 
 export const promoteGMOsMilitary: Ability = {
@@ -83,7 +94,7 @@ export const promoteGMOsMilitary: Ability = {
 }
 
 export const promoteGMOsMerchant: Ability = {
-    name: 'Equal opportunity',
+    name: 'Equal opportunity policy',
     family: merchant,
     text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()} gagnent le pouvoir ${trade.name.toUpperCase()} et la tribu ${FamilyName.MERCHANT.toUpperCase()}.`
 }
@@ -109,12 +120,12 @@ export const oil: Ability = {
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
-    text: `<p>Vous pouvez utiliser cette région pour occuper une région que vous occupez déjà. Ses populations sont conservées sur cette région.</p>`
+    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Ses populations sont transférées sur cette région en tant que populations supplémentaires.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
     family: cleanEarth,
-    text: "Prenez en main toutes les cartes de la région que vous occupez à l'aide de cette carte."
+    text: "Prenez en main les cartes de la région que vous occupez à l'aide de cette carte."
 }
 export const terraformer: Ability = {
     effect: trashCard,
@@ -128,7 +139,7 @@ export const terraformer_take_cards: Ability = {
     icon: getGetUpCardIcon(ICON_SIZE),
     name: 'Terraformers recycleurs',
     family: cleanEarth,
-    text: "${WHEN_PLAYING_THIS_CARD} piochez une carte de chaque région inoccupée."
+    text: "${WHEN_PLAYING_THIS_CARD} piochez une carte de chaque région adjacente inoccupée."
 }
 export const worldCompany: Ability = {
     name: 'World company',
@@ -146,7 +157,7 @@ export const knowledge: Ability = {
     isPrimary: true,
     name: 'Lieu de savoir',
     family: knowledgeGatherer,
-    text: `<p>${WHEN_PLAYING_THIS_CARD} ${getPopulations(1)} par région comportant la tribu ${FamilyName.KNOWLEDGE.toUpperCase()} que vous occupez déjà.</p>`
+    text: `<p>${WHEN_PLAYING_THIS_CARD} ${getPopulations(2)} par région comportant un ${KNOWLEDGE_ABILITY_TITLE.toUpperCase()} que vous occupez déjà.</p>`
 }
 
 export const invasion: Ability = {
@@ -156,11 +167,19 @@ export const invasion: Ability = {
 }
 
 export const spy: Ability = {
-    icon: getRandomCardIcon(ICON_SIZE),
+    //icon: getRandomCardIcon(ICON_SIZE),
     name: `Nid d'espions`,
     family:explorer,
     text: `
-        ${WHEN_PLAYING_THIS_CARD}${getPopulations(1)}<p>${ANY_TIME}Vous pouvez Retirer ${getPopulations(1)} et piocher une carte de la main d'un adversaire</p>`
+        ${WHEN_PLAYING_THIS_CARD}${getPopulations(2)}.<p>
+        ${ANY_TIME}${getMinusPopulations(1)} pour piocher une carte dans la main d'un adversaire.</p>`
+}
+
+export const harbour: Ability = {
+    name: `Port de pêche`,
+    family:cleanEarth,
+    effect: addPopulation,
+    text: `${getPopulations(1)} si mer inoccupée`
 }
 
 export const administrativeCenter = {
@@ -174,7 +193,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou colonne.</p>`
+    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la rangée ou colonne de cette région.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la tribu ${family.familyName.toUpperCase()} gagnent ${"rapidité".toUpperCase()}.</p>`;
@@ -193,6 +212,12 @@ export const natureFlight: Ability = {
     icon: get4DirectionIcon(LARGE_ICON_SIZE),
 }
 
+export const cityBonus: Ability = {
+    name: 'Mégapole',
+    family:techno,
+    text: `${getPopulations(2)} si cette région comporte une cité.` ,
+}
+
 export const flyingMerchants: Ability = {
     name: 'Vol',
     family:merchant,
@@ -207,6 +232,7 @@ export const simpleSettlement: Ability = {
 }
 
 export const goodOldWorld: Ability = {
+    icon: getGarageIcon('2em'),
     name: "Survivalistes coriaces",
     family: techno,
     text: `<p>${getPopulations(2)} par ${oil.name.toUpperCase()} que vous occupez.</p>`
@@ -229,7 +255,7 @@ export const livestock:Ability = {
 
 export const cleanHearthNetwork: Ability = {
     effect: addPopulation,
-    name: 'Réseau Vert',
+    name: 'Bovins rescapés',
     family: cleanEarth,
     text: getNetworkText(cleanEarth),
 }
@@ -260,7 +286,7 @@ export const worldTraveler: Ability = {
 }
 
 export const rallyGreenFriends: Ability = {
-    name: 'Ralliement vert',
+    name: getRallyFriendsTitle(cleanEarth),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: cleanEarth,
@@ -268,7 +294,7 @@ export const rallyGreenFriends: Ability = {
 }
 
 export const rallyKnowledgeFriends: Ability = {
-    name: 'Ralliement savant',
+    name: getRallyFriendsTitle(knowledgeGatherer),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: knowledgeGatherer,
@@ -276,7 +302,7 @@ export const rallyKnowledgeFriends: Ability = {
 }
 
 export const rallyMilitaryFriends: Ability = {
-    name: 'Ralliement militaire',
+    name: getRallyFriendsTitle(military),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: military,
@@ -284,7 +310,7 @@ export const rallyMilitaryFriends: Ability = {
 }
 
 export const rallyTechnoFriends: Ability = {
-    name: 'Ralliement Techno',
+    name: getRallyFriendsTitle (techno),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: techno,
@@ -292,7 +318,7 @@ export const rallyTechnoFriends: Ability = {
 }
 
 export const rallyMerchantFriends: Ability = {
-    name: 'Ralliement Marchand',
+    name: getRallyFriendsTitle (merchant),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: merchant,
@@ -316,7 +342,7 @@ export const mission: Ability = {
     icon: getTrashCardIcon(ICON_SIZE),
     name: `Vade Retro !`,
     family: cleanEarth,
-    text: `Défaussez la carte des régions inoccupées comportant la tribu ${FamilyName.TECHNO.toUpperCase()}.`
+    text: `Défaussez les carte des régions inoccupées comportant la tribu ${FamilyName.TECHNO.toUpperCase()}.`
 }
 
 export const realmOfDiversity: Ability = {
