@@ -74,7 +74,7 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p><b>Lorsque moins de 10 colonies (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément placer une CITÉ et déclencher la fin de partie.</p>`
+    text: `<p><b>Lorsque moins de 10 colonies (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser une CITÉ et déclencher la fin de partie.</p>`
 }
 
 export const cleanContinent: Ability = {
@@ -120,7 +120,7 @@ export const oil: Ability = {
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
-    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Ses populations sont transférées sur cette région en tant que populations supplémentaires.</p>`
+    text: `<p>Vous pouvez poser cette région sur une autre région que vous occupez.</p><p>Ses colonies sont transférées sur ce pouvoir en tant que colonies supplémentaires.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
@@ -129,10 +129,10 @@ export const archeolog: Ability = {
 }
 export const terraformer: Ability = {
     effect: trashCard,
-    name: `Terraformer sans aller sur Mars !`,
+    name: `Terraformer sans aller sur Mars X)) !`,
     icon:getTrashCardIcon(ICON_SIZE),
     family: cleanEarth,
-    text: `${WHEN_PLAYING_THIS_CARD} Défaussez la première carte des régions inoccupées.`
+    text: `${WHEN_PLAYING_THIS_CARD} Vous devez défausser la première carte des régions inoccupées.`
 }
 export const terraformer_take_cards: Ability = {
     effect:takeCard,
@@ -163,7 +163,7 @@ export const knowledge: Ability = {
 export const invasion: Ability = {
     name: 'Invasion',
     family:military,
-    text: `<p>Posez cette région sur une région d'un adversaire. Les populations de cette dernière sont retirées.</p>`
+    text: `<p>Posez cette région sur une région d'un adversaire. Les colonies de cette dernière sont retirées.</p>`
 }
 
 export const spy: Ability = {
@@ -172,7 +172,7 @@ export const spy: Ability = {
     family:explorer,
     text: `
         ${WHEN_PLAYING_THIS_CARD}${getPopulations(2)}.<p>
-        ${ANY_TIME}${getMinusPopulations(1)} pour piocher une carte dans la main d'un adversaire.</p>`
+        ${ANY_TIME}${getMinusPopulations(1)} et piochez une carte dans la main d'un adversaire.</p>`
 }
 
 export const harbour: Ability = {
@@ -228,7 +228,7 @@ export const flyingMerchants: Ability = {
 export const simpleSettlement: Ability = {
     name: 'Cultivateurs',
     family: cleanEarth,
-    text: `<p>${getPopulations(1)} si posée sur ${Terrain.SAVANNA.toUpperCase()}.</p><p>${getPopulations(2)} si posée sur  ${Terrain.TEMPERATE.toUpperCase()}E.</p>`
+    text: `<p>${getPopulations(1)} si posée sur ${Terrain.SAVANNA.toUpperCase()}.</p><p>${getPopulations(2)} si posée sur ${Terrain.TEMPERATE.toUpperCase()}E.</p>`
 }
 
 export const goodOldWorld: Ability = {
@@ -276,7 +276,7 @@ export const recluse: Ability = {
     name: 'Defender of the Realm',
     family: military,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>Maximum&nbsp;:&nbsp;9</b> - 1 par population adverse sur votre continent`,
+    <b>Maximum&nbsp;:&nbsp;9</b> - 1 par colonie adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {

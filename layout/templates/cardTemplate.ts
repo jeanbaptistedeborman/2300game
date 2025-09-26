@@ -23,7 +23,7 @@ const addEffects = (abilities: Ability[]) => {
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
 
     const  icons = `
-    <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:color-dodge;">
+    <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:lighten;">
         <div style="${rowStyle}" >
             <div style="${cellStyle}">${effect.icon}</div>
             <div style="${cellStyle}">${effect.icon}</div>
@@ -44,8 +44,6 @@ const addEffects = (abilities: Ability[]) => {
 
     const getCornerPositions = (margin: string) => [`top:${margin};left:${margin}`, `top:${margin};right:${margin};`, `bottom:${margin};right:${margin};`, `bottom:${margin};left:${margin};`];
     const getMiddlePositions = (margin: string) => [`top:${margin};left:calc(50% + (${margin}))`, `bottom:${margin};left:calc(50% + (${margin}));`, `left:${margin};top:calc(50% + (${margin}));`, `right:${margin};top:calc(50% + (${margin}));`];
-    const getpositions = (margin) => [...getCornerPositions(margin), ...getMiddlePositions(margin)];
-
 
     return `${[
         ...getMiddlePositions(backgroundMargin).map(position => `<div style ="border:.2mm solid white;background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),

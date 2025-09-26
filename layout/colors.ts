@@ -1,6 +1,6 @@
 import Color from "color";
 
-const SEA = '#0190a8';
+const SEA = '#4c98a3';
 
 export const terrainColors =  {
     SCORCHED:'#ce4152',
