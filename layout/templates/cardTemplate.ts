@@ -12,7 +12,6 @@ const addEffects = (abilities: Ability[]) => {
     const backGroundSize: string = '15mm';
     const backgroundMargin: string = '-7mm';
     const cornerBackgroundMargin: string = '-3mm';
-    const iconMargin: string = '.2mm';
     const effectAbility: Ability = abilities.find(({effect}) => effect);
 
     if (!effectAbility && abilities.length) return '';

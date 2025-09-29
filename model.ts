@@ -34,6 +34,7 @@ export interface Family {
     familyName: FamilyName,
     icon: string,
     color: string,
+    primaryAbility?:Ability,
 }
 
 export interface Ability {

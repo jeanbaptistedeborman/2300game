@@ -47,6 +47,7 @@ export const generateCardsByFamiy = (cards) => {
             .reduce (countCards, 0)})</h2>
         <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
         <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${families.find((family) => family.familyName === key)?.text || ''}</p>
+        
         </div>
     <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`).join('')
     

@@ -3,7 +3,14 @@ import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeG
 import {
     getWingIcon,
     getPopulationIcon,
-    get4DirectionIcon, getTrashCardIcon, getArmyIcon, getGetUpCardIcon, getDiscsIcon, getCircleIcon, getGarageIcon,
+    get4DirectionIcon,
+    getTrashCardIcon,
+    getArmyIcon,
+    getGetUpCardIcon,
+    getDiscsIcon,
+    getCircleIcon,
+    getGarageIcon,
+    getOilIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, takeCard, trashCard} from "./effects";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
@@ -11,7 +18,7 @@ import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABIL
 const ICON_SIZE = '1.1em';
 const LARGE_ICON_SIZE = '2.7em';
 
-const populationIcon:string = `<span style="mix-blend-mode: difference;margin:0 .5mm; vertical-align: text-bottom;">${getCircleIcon('1.1em')}</span>`;
+const populationIcon:string = `<span style="mix-blend-mode: difference;vertical-align: text-bottom;">${getCircleIcon('1em')}</span>`;
 const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
     ${useNumber?`${number}${populationIcon}`:    
@@ -21,11 +28,11 @@ const getPlusPopulations = (number:number)=> `<b style="white-space: nowrap">+${
 const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
 
 const WHEN_PLAYING_THIS_CARD:string =  `<p></p><b>À la pose de cette région&nbsp;:</b></p>`;
-const WHEN_YOUR_RESOLUTION = `<p><b>Après chacunes de vos actions&nbsp;:</b></p>`;
+const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<p><b>À tout moment&nbsp;:</b></p>`;
 
 const getNetworkText = ({familyName}:Family) => `<p>${getPopulations(1)} si tribu ${familyName.toUpperCase()}.</p>`;
-const getRallyFriendsText = ({familyName}:Family) => `Piochez la première carte des régions inoccupées comportant la tribu ${familyName.toUpperCase()}.`
+const getRallyFriendsText = ({familyName}:Family) => `Piochez les cartes des régions inoccupées comportant la tribu ${familyName.toUpperCase()}.`
 const getRallyFriendsTitle = ({familyName}:Family) => `Ralliement ${familyName.toUpperCase()}.`
 
 export const trade: Ability = {
@@ -50,7 +57,6 @@ export const flight: Ability = {
 }
 
 export const militaryUnit: Ability = {
-    isPrimary:true,
     effect:forbid,
     icon:getArmyIcon(ICON_SIZE),
     name: "Hommes d'armes",
@@ -61,7 +67,7 @@ export const militaryUnit: Ability = {
 export const cleanHand: Ability = {
     name: 'Exil des hérétiques',
     family: cleanEarth,
-    text: `A chaque fois que vous défaussez une carte région comportant la tribu ${techno.familyName.toUpperCase()}&nbsp;:${getPlusPopulations(1)}.`
+    text: `A chaque fois que vous défaussez une carte région comportant la tribu ${techno.familyName.toUpperCase()}&nbsp;: ${getPlusPopulations(1)}.`
 }
 
 export const cheeseFactory: Ability = {
@@ -120,7 +126,7 @@ export const oil: Ability = {
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
-    text: `<p>Vous pouvez poser cette région sur une autre région que vous occupez.</p><p>Ses colonies sont transférées sur ce pouvoir en tant que colonies supplémentaires.</p>`
+    text: `<p>Vous pouvez poser cette région sur une autre région que vous occupez.</p><p>Toutes ses colonies sont transférées sur ce pouvoir.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
@@ -193,7 +199,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la rangée ou colonne de cette région.</p>`
+    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou colonne que cette région.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la tribu ${family.familyName.toUpperCase()} gagnent ${"rapidité".toUpperCase()}.</p>`;
@@ -232,7 +238,7 @@ export const simpleSettlement: Ability = {
 }
 
 export const goodOldWorld: Ability = {
-    icon: getGarageIcon('2em'),
+    icon: getOilIcon('1.2em'),
     name: "Survivalistes coriaces",
     family: techno,
     text: `<p>${getPopulations(2)} par ${oil.name.toUpperCase()} que vous occupez.</p>`

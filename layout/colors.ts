@@ -7,6 +7,6 @@ export const terrainColors =  {
     DESERT:'#f5d63b',
     SAVANNA:'#8ba92b',
     SEA,
-    LIGHT_SEA: Color(SEA).mix(Color('#000000'), .1),
+    LIGHT_SEA: Color(SEA).mix(Color('#FFFFFF'), .2),
     TEMPERATE:'#ffffff'
 }

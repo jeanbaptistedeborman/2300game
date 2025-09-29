@@ -41,22 +41,21 @@ export const getAbilityVignette = (({
         <div style="display: flex; gap:1mm;color:white;">
         <div style="align-items:flex-start;display:flex;flex-direction:column;flex-grow: 1;">
         <div style="color:white;display:flex;align-self:flex-start;flex-direction: row;">
-                  <h3 style="font-size:8pt;">${name.toLocaleUpperCase()}</h3>
+                  <h3 style="font-size:8pt;">${isPrimary ? `
+<span style="height: 3.5mm; width: 3.5mm; position: relative;display: inline-block; vertical-align: bottom; margin-right: .5mm;">
+        ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>     
            ${text && `<div class="ability_text ${isPrimary?'primary-':''}">
-                ${effect ? `<div style="margin-bottom:.5mm;vertical-align:baseline;width:100%;color:black;display:flex;flex-direction: row;background-color: white; justify-content: center;border-bottom:.05mm solid ${color}">
+                ${effect ? `<div style="margin-bottom:.5mm;vertical-align:top;width:100%;color:black;display:flex;flex-direction: row;background-color: white; justify-content: center;border-bottom:.05mm solid ${color}">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.5mm;">${getMoveIllustration()}</div>
-                REGIONS ADJACENTES&nbsp;:</div>` : ''}
+                RÉGIONS VOISINES&nbsp;:</div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>
         <div style="display: flex; flex-direction: column; align-items: center;">
-        ${isPrimary ? `
-<div style="height: 6mm; width: 6mm; margin: -1.5mm 0 -1mm 0; position: relative;">
-        ${getCrown2Illustration()}</div>` : ''}
         <div style="position:relative;">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:-1mm;background-color:white;border:.1mm solid black;border-radius: 50%;' >${getEyeIcon('2.5mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:-1mm;background-color:white;border:.1mm solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)
