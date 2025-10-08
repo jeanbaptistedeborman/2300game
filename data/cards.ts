@@ -330,7 +330,7 @@ export const cards: Card[] = [
         illustration: getFarmerIllustration(),
         number:2,
         type: Type.TRIBE,
-        title: "Terraformeurs radicaux",
+        title: "Purificateurs radicaux",
         text: '',
         abilities: [terraformer],
         handicaps: [],

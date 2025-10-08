@@ -35,7 +35,6 @@ p:last-of-type {
     padding: 9mm;
     display: flex;
     flex-direction:column;
-    overflow: hidden;
     position:relative;
     box-sizing:border-box;
 }
@@ -114,7 +113,7 @@ ul {
  margin:0;
 }
 
-ul>li {
+li {
  list-style-type: none;
   margin: 0;
   padding: 0;
@@ -143,7 +142,6 @@ div {
 }
 
 .ability_text {
-    overflow:hidden;
     flex-grow:1;
     width:100%;
     hyphens: auto;

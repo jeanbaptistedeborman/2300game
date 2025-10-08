@@ -39,9 +39,11 @@ export const isPrimaryAbility = (cards: Card[], abilityName: string, abilityFami
         .every(({abilities}) => abilities.some(({name}) => name === abilityName))
 
 export const hasPrimaryAbility = (cards: Card[], abilityFamilyName: string):boolean =>
-    cards.map(({abilities}) => abilities).flat()
-        .some (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
+    !!findPrimaryAbility(cards, abilityFamilyName);
 
+export const findPrimaryAbility = (cards: Card[], abilityFamilyName: string):Ability | undefined =>
+    cards.map(({abilities}) => abilities).flat()
+        .find (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
 
 export const generateCompletedCards = () => cards
     .filter(({status}) => status !== 'discarded')

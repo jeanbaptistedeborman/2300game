@@ -1,7 +1,7 @@
 import {Family, FamilyName} from "../model";
 import {
     getCogIcon,
-    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, getCrownCoinIcon
+    getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, getCrownCoinIcon, get2CoinsIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
 
@@ -49,9 +49,9 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors intéressés, les marchands sont animés par une prophétie naïve : un jour, le Père Noël des anciens redescendra sur Terre pour ramener la prospérité d'antan.",
+    flavourText:"Sous leurs dehors rationnels, les marchands croient fermement qu'un jour le Père Noël des anciens redescendra sur Terre pour ramener la prospérité d'antan.",
     familyName:FamilyName.MERCHANT,
-    icon:getCrownCoinIcon(),
+    icon:get2CoinsIcon(),
     color: "#ea6203"
 }
 

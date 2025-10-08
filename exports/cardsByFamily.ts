@@ -1,10 +1,11 @@
 import fs from "fs";
 import {styles} from "../layout/styles";
 import {families} from "../data/families";
-import {Card, Family, FamilyName} from "../model";
+import {Ability, Card, Family, FamilyName} from "../model";
 import {DECK_NUMBER} from "../constants";
-import {countCards} from "../services";
+import {countCards, findPrimaryAbility} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";
+import {getAbilityVignette} from "../layout/components/components";
 
 export const generateCardsByFamiy = (cards) => {
 
@@ -42,14 +43,22 @@ export const generateCardsByFamiy = (cards) => {
         </ul>
         
         </header>
-       ${Object.keys(cardsByFamiy).map((key) => `<div style="break-inside: avoid;">
-<div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 2mm;padding-top:5mm;">${key} (${cardsByFamiy[key]
+       ${Object.keys(cardsByFamiy).map((key) => { 
+           
+           const family: Family =  families.find(({familyName}) => familyName === key);
+           const primaryAbility: Ability = findPrimaryAbility (cards, family.familyName);
+          
+           return `
+           <div style="break-inside: avoid;">
+           <div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 2mm;padding-top:5mm;">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
-        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
-        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${families.find((family) => family.familyName === key)?.text || ''}</p>
-        
+        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${family?.flavourText || ''}</p>
+        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${family?.text || ''}</p>
+        ${primaryAbility?`
+                <h3>Pouvoir principal:  ${primaryAbility.name.toUpperCase()}</h3>  
+                <ul style="width:10cm;">${getAbilityVignette(primaryAbility)}</ul>`:''}   
         </div>
-    <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`).join('')
+        <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
     
     }
    </BODY> 

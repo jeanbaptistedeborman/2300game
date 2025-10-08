@@ -17,11 +17,11 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO" = "Techno",
-    "MILITARY" = "Milice",
-    "EXPLORER" = "Scout",
-    "CLEAN_EARTH" = "Sauveur",
-    "MERCHANT" = "Marchand",
+    "TECHNO" = "Tecno",
+    "MILITARY" = "Milis",
+    "EXPLORER" = "SKuts",
+    "CLEAN_EARTH" = "Purs",
+    "MERCHANT" = "Trafic",
     "KNOWLEDGE" = "Savant",
     "NAVIGATOR" = "Marin",
     "PEOPLE" = 'People',
