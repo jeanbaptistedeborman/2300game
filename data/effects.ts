@@ -1,6 +1,6 @@
 import {Effect} from "../model";
 import {
-    getArmyIcon, getCircleIcon,
+    getArmyIcon, getCardPlayIcon, getCircleIcon,
     getGetUpCardIcon, getPopulationIcon, getQuestionMarkIcon, getRandomCardIcon,
     getTrashCardIcon,
 } from "../layout/icons";
@@ -20,13 +20,13 @@ export const takeCardFromHand:Effect ={
 }
 
 export const evolving:Effect ={
-    icon:getQuestionMarkIcon(ICON_SIZE)
+    icon:getQuestionMarkIcon(LARGE_ICONSIZE)
 }
 
 export const takeCard:Effect ={
-    icon:getGetUpCardIcon(ICON_SIZE)
+    icon:getCardPlayIcon(LARGE_ICONSIZE)
 }
 
 export const trashCard:Effect ={
-    icon:getTrashCardIcon(ICON_SIZE)
+    icon:getTrashCardIcon(LARGE_ICONSIZE)
 }

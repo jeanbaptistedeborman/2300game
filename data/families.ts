@@ -20,8 +20,8 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les lieux de savoir sont réputés, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de la carte.`,
-    flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais sous leurs dehors austères, ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
+    text: `Comme les lieux de savoir sont rares et réputés, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de leur carte.`,
+    flavourText: `Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais sous leurs dehors désintéressés, ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
     color: '#ff5bb2'
@@ -31,7 +31,7 @@ export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
     icon:getBalloonIcon(),
-    color: "#0c355e"
+    color: "#0a2743"
 }
 
 export const navigators:Family = {
@@ -64,4 +64,4 @@ export const none:Family = {
     color: "#67685e"
 }
 
-export const families:Family[] = [techno, explorer, knowledgeGatherer, navigators,  merchant, cleanEarth,   none, military ]
+export const families:Family[] = [none, navigators, merchant, cleanEarth, techno, knowledgeGatherer, explorer, military ]

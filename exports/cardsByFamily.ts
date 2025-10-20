@@ -39,7 +39,7 @@ export const generateCardsByFamiy = (cards) => {
        <header style="break-after: avoid;break-inside: avoid;"> <h1>Cartes par tribu (${cards.reduce(countCards, 0)*DECK_NUMBER})</h1>
         <ul style="margin:1cm 0">
         <li>Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
-        <li>Les tribus visibles au dos ne sont pas indiquées car celles-ci changent à chaque carte</li>
+        <li>Les tribus visibles au dos ne sont pas indiquées car elles varient à chaque carte</li>
         </ul>
         
         </header>
@@ -49,14 +49,14 @@ export const generateCardsByFamiy = (cards) => {
            const primaryAbility: Ability = findPrimaryAbility (cards, family.familyName);
           
            return `
-           <div style="break-inside: avoid;">
+           <div>
            <div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 2mm;padding-top:5mm;">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
         <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${family?.flavourText || ''}</p>
         <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${family?.text || ''}</p>
         ${primaryAbility?`
-                <h3>Pouvoir principal:  ${primaryAbility.name.toUpperCase()}</h3>  
-                <ul style="width:10cm;">${getAbilityVignette(primaryAbility)}</ul>`:''}   
+                <h3>Pouvoir titulaire:</h3>  
+                <ul>${getAbilityVignette(primaryAbility)}</ul>`:''}   
         </div>
         <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
     

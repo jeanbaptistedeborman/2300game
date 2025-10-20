@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-    margin: 0 0 .6mm 0;
+    margin: 0 0 .3mm 0;
 }
 
 p:last-of-type {
@@ -40,6 +40,7 @@ p:last-of-type {
 }
 
 .presentation-box {
+    zoom:.90;
     margin-top:5mm;
     max-width:21cm;
     margin-right:auto; 
@@ -55,10 +56,14 @@ p:last-of-type {
  
  .presentation-box .card {
     break-inside: avoid;
-    flex-basis:32%;
+    flex-basis:32.5%;
     flex-shrink:1;
     height:85mm;
-    border-radius:1mm;
+    border-color:black;
+    border-width:.1mm;
+    border-bottom-width:.5mm;
+    border-left-width:.3mm;
+    border-radius:3mm;
  }
 
 .card.back {
@@ -142,6 +147,7 @@ div {
 }
 
 .ability_text {
+    z-index:1;
     flex-grow:1;
     width:100%;
     hyphens: auto;
