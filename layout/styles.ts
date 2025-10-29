@@ -21,6 +21,10 @@ p:last-of-type {
 }
 
 .card {
+
+   
+
+
     height: 33.33333%;
     width: 33.33333%;
     border: .1mm solid grey;
@@ -52,6 +56,15 @@ p:last-of-type {
     justify-content:flex-start;
     align-content:flex-start;
     margin-bottom:1cm;
+ }
+ 
+ .abilility-vignette {
+    position:relative;
+    padding:.5mm;
+ }
+ 
+ .abilility-vignette:last-of-type {
+    border-radius:0 0 1mm 1mm; 
  }
  
  .presentation-box .card {
@@ -166,4 +179,16 @@ div {
    mix-blend-mode: lighten; 
    border:none; 
 }
+
+.back-vignette {
+   padding:1mm;
+   display:flex;
+   flex-direction:row;
+   justify-content: space-between; 
+   border:2px solid black;
+   border-width: .1mm .2mm 1mm .5mm;
+   border-radius: 1mm; 
+   margin-bottom: 1mm;
+}
+
 `

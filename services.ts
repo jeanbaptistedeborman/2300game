@@ -46,7 +46,7 @@ export const findPrimaryAbility = (cards: Card[], abilityFamilyName: string):Abi
         .find (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
 
 export const generateCompletedCards = () => cards
-    .filter(({status}) => status !== 'discarded')
+    .filter(({status}) => status !== 'discarded' && status !== 'test') //exclude discarded and test cards
     .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
     .map((card:Card)=>  ({ //set ability visibility
         ...card,

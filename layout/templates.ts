@@ -7,7 +7,7 @@ export const backTemplate = ({ abilities, backTerrain}: Card): string => `<div c
     <ul >
     ${abilities
     .filter(({isVisible}) => isVisible)
-    .map(({family, family:{color}}) => `<li style="padding:1mm; display:flex; flex-direction:row;justify-content: space-between; background-color: ${color};  border:2px solid white; border-radius: 1mm; margin-bottom: 1mm;" >${getFamilyIcon(family)}${getFamilyIcon(family)}</li>`).join('')}
+    .map(({family, family:{color}}) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}${getFamilyIcon(family)}</li>`).join('')}
     </ul>
     <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0">
         <div style="color:white; position:absolute; left:1mm; bottom:3mm;" >${backTerrain.toUpperCase()}</div>

@@ -1,7 +1,7 @@
 import {Effect} from "../model";
 import {
     getArmyIcon, getCardPlayIcon, getCircleIcon,
-    getGetUpCardIcon, getPopulationIcon, getQuestionMarkIcon, getRandomCardIcon,
+    getQuestionMarkIcon, getRandomCardIcon,
     getTrashCardIcon,
 } from "../layout/icons";
 const ICON_SIZE: string = '7mm';

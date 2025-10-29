@@ -40,7 +40,6 @@ const addEffects = (abilities: Ability[]) => {
     </div>
     `;
 
-
     const getCornerPositions = (margin: string) => [`top:${margin};left:${margin}`, `top:${margin};right:${margin};`, `bottom:${margin};right:${margin};`, `bottom:${margin};left:${margin};`];
     const getMiddlePositions = (margin: string) => [`top:${margin};left:calc(50% + (${margin}))`, `bottom:${margin};left:calc(50% + (${margin}));`, `left:${margin};top:calc(50% + (${margin}));`, `right:${margin};top:calc(50% + (${margin}));`];
 
@@ -59,12 +58,12 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
         if (AFamilyName === FamilyName.NAVIGATOR || BFamilyName === FamilyName.NAVIGATOR) {
             return (AFamilyName === FamilyName.NAVIGATOR)?-1: 1;
         }
-        return AisPrimary ? -1 : 1;
+        return AisPrimary ? 1 : -1;
     });
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
 
-    return `<div class="card" style="background-color:${isSea?terrainColors.LIGHT_SEA:'white'};background-opacity:.2;">
+    return `<div class="card" style="color:${isSea?'white':'black'};background-color:${isSea?terrainColors.LIGHT_SEA:'white'};background-opacity:.2;">
     ${addEffects(sortedAbilities)} 
     <div class="card-content">
     <h2 class="title">${title}</h2> 
@@ -86,7 +85,7 @@ ${(handicaps?.length > 0) ? `<ul>
         </li>`).join('')}</ul>` : ``
 }
     
-    <ul style="border-radius: 0  0 .5mm .5mm;">
+    <ul style="border-radius: 0  0 1mm 1mm;">
     ${sortedAbilities.map((ability) => getAbilityVignette(ability)).join('')}
     </ul>
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .5mm; gap:.5mm;">

@@ -7,15 +7,12 @@ import {
     getArmyIcon,
     getGetUpCardIcon,
     getCircleIcon,
-    getOilIcon,
     getCowIcon,
-    getWheelIcon,
     getCogIcon,
     getTreeIcon,
     getBookIcon,
-    getCrownCoinIcon,
     getFistIcon,
-    getShipIcon, getMilitaryIcon, get2CoinsIcon, getBlimpIcon, getLizardManIcon, getCardPlayIcon,
+    getShipIcon, get2CoinsIcon, getBlimpIcon, getLizardManIcon, getCardPlayIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, takeCard, trashCard} from "./effects";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
@@ -23,7 +20,7 @@ import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABIL
 const ICON_SIZE = '1.1em';
 const LARGE_ICON_SIZE = '2em';
 
-const wrapIcon = (icon:string):string => `<span style="mix-blend-mode: difference;vertical-align: baseline;">${icon}</span>`
+const wrapIcon = (icon:string):string => `<span style="filter:invert(1);vertical-align: baseline;">${icon}</span>`
 
 const getTribeDescription = (familyName:FamilyName) => {
     const ICON_SIZE:string = '1em';
@@ -37,9 +34,10 @@ const getTribeDescription = (familyName:FamilyName) => {
         [FamilyName.NAVIGATOR, getShipIcon(ICON_SIZE)],
         [FamilyName.TECHNO, getCogIcon('.8em')],
     ]);
-    return `tribu <b>${familyName.toUpperCase()}</b>&nbsp;${wrapIcon(ICON_MAP.get(familyName))}`;
+    //&nbsp;${wrapIcon(ICON_MAP.get(familyName))}
+    return `tribu <b>${familyName.toUpperCase()}</b>`;
 }
-const populationIcon:string = `<span style="mix-blend-mode: difference;">${getCircleIcon('.7em')}</span>`;
+const populationIcon:string = `<span style="filter: invert()">${getCircleIcon('.7em')}</span>`;
 const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
     ${useNumber?`${number}${populationIcon}`:    
@@ -55,7 +53,7 @@ const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
 const getNetworkText = ({familyName}:Family) => `<p>${getPopulations(1)} si ${getTribeDescription(familyName)}.</p>`;
 const getRallyFriendsText = ({familyName}:Family) => `Piochez les cartes comportant la ${getTribeDescription(familyName)} des régions inoccupées.`
-const getRallyFriendsTitle = ({familyName}:Family) => `Accueil des réfugiés ${familyName.toUpperCase()}`
+const getRallyFriendsTitle = ({familyName}:Family) => `Accueil des réfugiés`
 
 export const trade: Ability = {
     isPrimary: true,
@@ -157,7 +155,7 @@ export const archeolog: Ability = {
 }
 export const terraformer: Ability = {
     effect: trashCard,
-    name: `Plus besoin d'aller sur Mars pour terraformer !`,
+    name: `Place nette`,
     family: cleanEarth,
     text: `${WHEN_PLAYING_THIS_CARD}<p>${wrapIcon(getTrashCardIcon('1.3em'))} Vous devez défausser la première carte des régions inoccupées.</p>`
 }
@@ -184,7 +182,7 @@ export const knowledge: Ability = {
     isPrimary: true,
     name: 'Lieu de savoir',
     family: knowledgeGatherer,
-    text: `<p>${WHEN_PLAYING_THIS_CARD} ${getPopulations(2)} par région comportant un ${KNOWLEDGE_ABILITY_TITLE.toUpperCase()} que vous occupez déjà.</p>`
+    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} par région comportant un ${KNOWLEDGE_ABILITY_TITLE.toUpperCase()} que vous occupez déjà.`
 }
 
 export const invasion: Ability = {
@@ -219,7 +217,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou de la même colonne que cette région.</p>`
+    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou de la même colonne.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family.familyName)} gagnent ${"rapidité".toUpperCase()}.</p>`;

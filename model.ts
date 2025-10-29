@@ -18,7 +18,7 @@ export enum Type {
 
 export enum FamilyName {
     "TECHNO" = "Teks",
-    "MILITARY" = "Mils",
+    "MILITARY" = "Milis",
     "EXPLORER" = "Skuts",
     "CLEAN_EARTH" = "Purs",
     "MERCHANT" = "Biz",
@@ -35,6 +35,7 @@ export interface Family {
     icon: string,
     color: string,
     primaryAbility?:Ability,
+    isDarkColor:boolean,
 }
 
 export interface Ability {

@@ -66,7 +66,6 @@ import {
     getOppidumIllustration,
     getOutbackHatIllustration,
     getPrisonerIllustration,
-    getRallyIllustration,
     getRevoltIllustration,
     getSailboatIllustration,
     getSailIllustration,
@@ -79,7 +78,6 @@ import {
     getWorldCompanyIllustration,
     getCowIllustration,
     getCheeseIllustration,
-    getFishingHarbourIllustration,
     getJellyFishIllustration, getBackupIllustration,
 } from "../layout/illustrations";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
@@ -441,7 +439,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
 
-    {title: "Hansa",
+    {title: "Santa Hansa",
         illustration: getMerchantLigueIllustration(),
         number:1,
         type: Type.TRIBE,
@@ -461,7 +459,7 @@ export const cards: Card[] = [
 
     {   title: `${FLOCK_CARD_TITLE}`,
         illustration:getCowIllustration(),
-        number:5,
+        number:4,
         type: Type.TRIBE,
         text: '',
         abilities: [cleanHearthNetwork],

@@ -4,7 +4,7 @@ import {getTerrainIllustration} from "../../services";
 import {getCrown2Illustration, getMoveIllustration} from "../illustrations";
 import {getEyeIcon} from "../icons";
 
-export const getFamilyIcon = ({icon, familyName}: Family) => `<div style="font-family:'Barlow Condensed', sans-serif;font-weight:700;height:fit-content;line-height:1em;text-align:center; border:1px solid white;border-radius:5%;font-size: 8px; background-color:rgba(0, 0, 0, .6);color:white;padding:.3mm;" >
+export const getFamilyIcon = ({icon, familyName}: Family) => `<div style="font-family:'Barlow Condensed', sans-serif;font-weight:700;height:fit-content;line-height:1em;text-align:center; border:1px solid white;border-radius:5%;font-size: 3mm; background-color:rgba(0, 0, 0, .6);color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 ${String(familyName).toUpperCase()}
         </div>`;
@@ -33,13 +33,14 @@ export const getAbilityVignette = (({
                                         text,
                                         family,
                                         family: {
+                                            isDarkColor,
                                             color,
                                         }
                                     }: Ability) =>
 
-    `<li style="position:relative;padding:.5mm;background:${color};">
-           <div style="color:white;display:flex;align-self:flex-start;flex-direction: row;">
-                  <h3 style="font-size:8pt;">${isPrimary ? `
+    `<li class='abilility-vignette' style="background:${color};" >
+           <div style="color:${isDarkColor?'white':'black'};display:flex;align-self:flex-start;flex-direction: row;">
+                  <h3 style="font-size:9pt;text-shadow: 0 0 4px ${isDarkColor?'rgba(0, 0, 0, .6)':'rgba(255, 255, 255, .6)'};">${isPrimary ? `
         <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin-right: .5mm;">
         ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>
