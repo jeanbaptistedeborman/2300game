@@ -1,10 +1,16 @@
 import {Ability, Family, getEnumKey, Terrain, terrains} from "../../model";
 import {terrainColors} from "../colors";
-import {getTerrainIllustration} from "../../services";
+import {darkenColor, getTerrainIllustration} from "../../services";
 import {getCrown2Illustration, getMoveIllustration} from "../illustrations";
 import {getEyeIcon} from "../icons";
+import {BORDER_WIDTH} from "../../constants";
 
-export const getFamilyIcon = ({icon, familyName}: Family) => `<div style="font-family:'Barlow Condensed', sans-serif;font-weight:700;height:fit-content;line-height:1em;text-align:center; border:1px solid white;border-radius:5%;font-size: 3mm; background-color:rgba(0, 0, 0, .6);color:white;padding:.3mm;" >
+
+export const getFamilyIcon = ({
+                                  icon,
+                                  familyName,
+                                  color
+                              }: Family) => `<div style="font-family:'Barlow Condensed', sans-serif;font-weight:700;height:100%;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 ${String(familyName).toUpperCase()}
         </div>`;
@@ -39,27 +45,26 @@ export const getAbilityVignette = (({
                                     }: Ability) =>
 
     `<li class='abilility-vignette' style="background:${color};" >
-           <div style="color:${isDarkColor?'white':'black'};display:flex;align-self:flex-start;flex-direction: row;">
-                  <h3 style="font-size:9pt;text-shadow: 0 0 4px ${isDarkColor?'rgba(0, 0, 0, .6)':'rgba(255, 255, 255, .6)'};">${isPrimary ? `
+           <div style="color:white;background-color:${darkenColor(color)};display:flex;border-bottom: .2mm; border-color: ${color}; padding:.2mm;">
+                  <h3 style="font-size:9pt;">${isPrimary ? `
         <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin-right: .5mm;">
         ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>
         
-        <div style="display: flex;color:white;">
+        <div style="box-sizing:border-box;display: flex;color:white;border:${BORDER_WIDTH} solid ${color};">
         
-        <div style="align-items:flex-start;display:flex;flex-direction:column;flex-grow: 1;">
-          
-           ${text && `<div class="ability_text ${isPrimary ? 'primary-' : ''}">
-                ${effect ? `<div style="margin-bottom:.5mm;vertical-align:top;width:100%;color:black;display:flex;flex-direction: row;background-color: white; justify-content: center;border-bottom:.05mm solid ${color}; font-weight: bold;">
+        <div style="display:flex;flex-grow: 1;border-color: ${color}">
+           ${text && `<div class="ability_text">
+                ${effect ? `<div style="display:flex;margin-bottom:.5mm;vertical-align:top;width:100%;color:black;justify-content: center;
+ font-weight: bold;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.5mm;font-weight: bold;">${getMoveIllustration()}</div>
                 RÉGIONS VOISINES&nbsp;:</div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center;">
-        <div style="position:relative;">
+        <div style="height:100%;">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:-1mm;background-color:white;border:.1mm solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:-1mm;background-color:white;border:${BORDER_WIDTH} solid ${darkenColor(color)};border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)

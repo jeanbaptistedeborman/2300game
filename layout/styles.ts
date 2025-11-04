@@ -1,7 +1,9 @@
+import {BORDER_WIDTH} from "../constants";
+
 export const styles = `
 body {
   margin: 0;
-   font-family:'Cambria';
+   font-family:"Crimson Pro", "Cambria", serif;
   -webkit-print-color-adjust:exact !important;
   print-color-adjust:exact !important;
     line-height:1.1em;
@@ -21,10 +23,7 @@ p:last-of-type {
 }
 
 .card {
-
-   
-
-
+    background-color: #FEEFD3FF;
     height: 33.33333%;
     width: 33.33333%;
     border: .1mm solid grey;
@@ -44,6 +43,7 @@ p:last-of-type {
 }
 
 .presentation-box {
+    clear:both;
     zoom:.90;
     margin-top:5mm;
     max-width:21cm;
@@ -60,7 +60,6 @@ p:last-of-type {
  
  .abilility-vignette {
     position:relative;
-    padding:.5mm;
  }
  
  .abilility-vignette:last-of-type {
@@ -68,6 +67,7 @@ p:last-of-type {
  }
  
  .presentation-box .card {
+    box-shadow:0 1mm 2mm lightgray;
     break-inside: avoid;
     flex-basis:32.5%;
     flex-shrink:1;
@@ -104,9 +104,11 @@ p:last-of-type {
 }
 
 .title {
+    position:relative; 
     text-align:center;
-    padding:1mm 1mm .5mm 1mm;
-    font-size: 12px;
+    top: -.5mm;
+    padding:0 1mm 1.5mm .5mm;
+    font-size: 4mm;
 }
 
 .page {
@@ -147,10 +149,10 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:5mm;
-    width:5mm;
+    height:4mm;
+    width:4mm;
     position:relative;
-    border:1px solid black;
+    border:${BORDER_WIDTH} solid black;
     border-radius:20%;
 }
 
@@ -160,15 +162,11 @@ div {
 }
 
 .ability_text {
-    z-index:1;
     flex-grow:1;
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
-    font-family:padding:0 .3mm;
-    border-radius:.5mm;
-    border:1px solid white;
-    margin-right:.5mm;
+    padding:.3mm;
     background-color:rgba(255, 255, 255, 0.9);
     color:black;    
 }

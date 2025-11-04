@@ -63,13 +63,12 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
 
-    return `<div class="card" style="color:${isSea?'white':'black'};background-color:${isSea?terrainColors.LIGHT_SEA:'white'};background-opacity:.2;">
+    return `<div class="card" style="color:${isSea?'white':'black'};${isSea?`background-color:${terrainColors.LIGHT_SEA};`:''}">
     ${addEffects(sortedAbilities)} 
     <div class="card-content">
     <h2 class="title">${title}</h2> 
     <div style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
-    ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white').mix(Color('#FFFFFF'), .3)
-}" >
+    ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
     ${illustration}
     ${status?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
        </div>

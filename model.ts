@@ -17,7 +17,7 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO" = "Teks",
+    "TECHNO" = "Tekos",
     "MILITARY" = "Milis",
     "EXPLORER" = "Skuts",
     "CLEAN_EARTH" = "Purs",

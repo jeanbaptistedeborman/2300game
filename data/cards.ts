@@ -371,7 +371,7 @@ export const cards: Card[] = [
     },
     {  title: "Aéronaute",
         illustration:getBalloonIllustration(),
-        number:4,
+        number:3,
         type: Type.TRIBE,
         text: '',
         abilities: [ scout],
@@ -405,7 +405,7 @@ export const cards: Card[] = [
     },
     {
         illustration: getKnowledgeIllustration(),
-        number:3,
+        number:4,
         type: Type.TRIBE,
         title: "Bibliothèque",
         text: '',

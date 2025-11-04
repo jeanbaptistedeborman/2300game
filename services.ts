@@ -8,6 +8,7 @@ import {
 import {cards} from "./data/cards";
 import {DECK_NUMBER} from "./constants";
 import {cardTerrains} from "./index";
+import Color from "color";
 
 export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
     return generateCompletedCards().filter(({abilities}) => abilities.some(({family: {familyName: name}}) => familyName === name)).length;
@@ -24,6 +25,8 @@ export const logStats =  (cards:Card[]) =>
     });
 
 }
+
+export const darkenColor = (color:string)=> Color(color).darken(.5);
 
 export const countCards = (acc, {number}) => acc+number;
 
@@ -61,5 +64,8 @@ export const generateCompletedCards = () => cards
             })
         )
     }))
+    .map ((card:Card, index:number, selectedCards) => ({...card, backTerrain: cardTerrains[Math.floor((index)%3)] }))
     .sort(() => .5 -Math.random())
-    .map ((card:Card, index:number, selectedCards) => ({...card, backTerrain: cardTerrains[Math.floor((index)/selectedCards.length*3)] }));
+    .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
+
+;

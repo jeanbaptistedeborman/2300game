@@ -1,12 +1,12 @@
 import Color from "color";
 
-const SEA = '#279f91';
+const SEA = '#507790';
 
 export const terrainColors =  {
-    SCORCHED:'#ce4152',
+    SCORCHED:'#ee4c31',
     DESERT:'#f5d63b',
-    SAVANNA:'#8ba92b',
+    SAVANNA:'#7ba354',
     SEA,
-    LIGHT_SEA: Color(SEA).mix(Color('#000000'), .01),
+    LIGHT_SEA: Color(SEA).lighten(.40),
     TEMPERATE:'#ffffff'
 }
