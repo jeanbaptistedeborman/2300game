@@ -1,9 +1,10 @@
-import { Card, Terrain} from "../model";
-import {terrainColors} from "./colors";
-import {getFamilyIcon} from "./components/components";
-import {getTerrainIllustration} from "../services";
+import {Card, Terrain, terrains} from "../../model";
+import {terrainColors} from "../colors";
+import {getFamilyIcon} from "../components/components";
+import {getTerrainIllustration} from "../../services";
 
-export const backTemplate = ({ abilities, backTerrain}: Card): string => `<div class="card back ${backTerrain}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]} !important;">
+export const backTemplate = ({ abilities, backTerrain}: Card): string =>
+    `<div class="card back ${Object.keys(Terrain)[backTerrain]}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]};">
     <ul >
     ${abilities
     .filter(({isVisible}) => isVisible)

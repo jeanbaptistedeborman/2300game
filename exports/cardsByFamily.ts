@@ -5,7 +5,7 @@ import {Ability, Card, Family, FamilyName} from "../model";
 import {DECK_NUMBER} from "../constants";
 import {countCards, findPrimaryAbility} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";
-import {getFamilyIcon} from "../layout/components/components";
+import {getFamilyIcon, header} from "../layout/components/components";
 
 export const generateCardsByFamiy = (cards) => {
 
@@ -25,15 +25,9 @@ export const generateCardsByFamiy = (cards) => {
 
     fs.writeFile('output/cards-by-family.html',
         `<HTML lang="fr">
-  <head>
-  <title>2300 game: cards by families</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    
-</head>
+  
+  
+   ${header}
   
   <style>
     ${styles}

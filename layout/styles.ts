@@ -1,5 +1,8 @@
 import {BORDER_WIDTH} from "../constants";
 
+const backgroundColor = "#FEEFD3";
+//const backgroundColor = "#f7f4eb";
+
 export const styles = `
 body {
   margin: 0;
@@ -23,7 +26,7 @@ p:last-of-type {
 }
 
 .card {
-    background-color: #FEEFD3FF;
+    background-color: ${backgroundColor};
     height: 33.33333%;
     width: 33.33333%;
     border: .1mm solid grey;
@@ -80,7 +83,8 @@ p:last-of-type {
  }
 
 .card.back {
-     padding:11mm;         
+     padding:11mm; 
+     box-shadow: inset 0 0 15mm rgba(0,20,0,0.4);        
 }
 
 .DESERT {
@@ -93,22 +97,28 @@ p:last-of-type {
         opacity: 1;
 }
 
-.SAVANNA {
+.card.back.SAVANNA {
+    box-shadow: inset 0 0 15mm rgba(141,36,36, 100%);
    background-size: 4em 4em;
         opacity: 1;
 }
 
-.SCORCHED {
+.card.back.FOURNAISE {
+        box-shadow: inset 0 0 15mm rgba(141,36,36, 100%);     
         background-size: 4em 4em;
         opacity: 1
 }
 
 .title {
-    position:relative; 
     text-align:center;
     top: -.5mm;
-    padding:0 1mm 1.5mm .5mm;
+    padding:0 5mm 1mm 5mm;
     font-size: 4mm;
+}
+
+.ability_title {
+    padding: 0 ${BORDER_WIDTH};
+    font-size:11pt;
 }
 
 .page {
@@ -152,7 +162,7 @@ div {
     height:4mm;
     width:4mm;
     position:relative;
-    border:${BORDER_WIDTH} solid black;
+    border:.5mm solid black;
     border-radius:20%;
 }
 
@@ -167,7 +177,6 @@ div {
     hyphens: auto;
     vertical-align:bottom;
     padding:.3mm;
-    background-color:rgba(255, 255, 255, 0.9);
     color:black;    
 }
 

@@ -24,9 +24,9 @@ export const military:Family = {
 export const knowledgeGatherer:Family = {
     text: `Comme les lieux de savoir sont rares et prestigieux, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de leur carte.`,
     flavourText: `
-    "Mes chers confrères, la lecture des textes anciens m'a mené à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
+    "Mes chers confrères, la lecture des textes des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>
-    <br>Les savants étudient les lieux qui ont préservé le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais sous leurs dehors désintéressés, ces érudits en sont convaincus: le savoir, c'est le pouvoir.`,
+    <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais les savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
     color: '#efbb35',
@@ -53,12 +53,12 @@ export const cleanEarth:Family = {
     flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez voir les écologistes bien vénères de 2200 quand l'espérance de vie sera tombée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon(),
-    color: "#64822a",
+    color: "#7fa537",
     isDarkColor:true,
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors rationnels, ces marchands croient littéralement que c'est le père Noël qui apportait la prospérité aux anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre sur terre malgré que les humains aient bousillés la neige, les rennes et les sapins.",
+    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que le père Noël a existé... que c'est lui qui apportait l'abondance aux anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les humains aient bousillés la neige, les rennes et les sapins.",
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon(),
     color: "#d97b2d",
@@ -75,4 +75,4 @@ export const none:Family = {
     isDarkColor:true,
 }
 
-export const families:Family[] = [none, navigators, merchant, cleanEarth, knowledgeGatherer,  techno, explorer, military ]
+export const families:Family[] = [none, merchant, cleanEarth, knowledgeGatherer, navigators, techno, explorer, military ]

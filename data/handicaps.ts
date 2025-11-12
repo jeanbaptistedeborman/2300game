@@ -8,7 +8,7 @@ import {
 import {oil} from "./abilities";
 import {cleanEarth, military, techno} from "./families";
 
-const ICON_SIZE = '3mm';
+const ICON_SIZE = '6mm';
 
 export const oilDependent: Handicap = {
     name: 'Dépendant du pétrole',

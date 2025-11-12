@@ -6,45 +6,21 @@ import {
     getTrashCardIcon,
     getArmyIcon,
     getGetUpCardIcon,
-    getCircleIcon,
     getCowIcon,
-    getCogIcon,
-    getTreeIcon,
-    getBookIcon,
-    getFistIcon,
-    getShipIcon, get2CoinsIcon, getBlimpIcon, getLizardManIcon, getCardPlayIcon,
+    getLizardManIcon, getCardPlayIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, takeCard, trashCard} from "./effects";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
+import {
+    getMinusPopulations,
+    getPlusPopulations,
+    getPopulations,
+    getTribeDescription, POPULATION_X2, populationIcon,
+    wrapIcon
+} from "../layout/components/components";
 
 const ICON_SIZE = '1.1em';
-const LARGE_ICON_SIZE = '3em';
-
-const wrapIcon = (icon:string):string => `<span style="vertical-align:baseline;mix-blend-mode:darken;filter:invert(1);">${icon}</span>`
-
-const getTribeDescription = ({familyName,color}:Family) => {
-    const ICON_SIZE:string = '1em';
-
-    const ICON_MAP =  new Map <FamilyName,string>([
-        [FamilyName.CLEAN_EARTH, getTreeIcon('.9em')],
-        [FamilyName.EXPLORER, getBlimpIcon(ICON_SIZE)],
-        [FamilyName.KNOWLEDGE, getBookIcon(ICON_SIZE)],
-        [FamilyName.MERCHANT, get2CoinsIcon('1.1em')],
-        [FamilyName.MILITARY, getFistIcon('.8em')],
-        [FamilyName.NAVIGATOR, getShipIcon(ICON_SIZE)],
-        [FamilyName.TECHNO, getCogIcon('.7em')],
-    ]);
-
-    return `tribu <b style="white-space:nowrap;">${familyName.toUpperCase()}${wrapIcon(ICON_MAP.get(familyName))}</b>`;
-}
-const populationIcon:string = `<span style="filter: invert()">${getCircleIcon('.7em')}</span>`;
-const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
-const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
-    ${useNumber?`${number}${populationIcon}`:    
-    `${new Array(number).fill(populationIcon).join('')}`}
-        </span>`;
-const getPlusPopulations = (number:number)=> `<b style="white-space: nowrap">+${getPopulations(number, true)}</b>`;
-const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
+const LARGE_ICON_SIZE = '3.3em';
 
 const WHEN_PLAYING_THIS_CARD:string =  `<b>À la pose de cette région&nbsp;:</b>`;
 const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
@@ -67,7 +43,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`Vous pouvez poser cette région dans l'Océan.`,
+    text:`Vous pouvez poser cette région dans <b>l'Océan.</b>`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -82,7 +58,7 @@ export const militaryUnit: Ability = {
     icon:getArmyIcon(ICON_SIZE),
     name: "Hommes d'armes",
     family: military,
-    text: `Vos adversaires ne peuvent pas réaliser d'ACTION.`
+    text: `Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.`
 }
 
 export const cleanHand: Ability = {
@@ -95,13 +71,13 @@ export const cheeseFactory: Ability = {
     name: 'Fromagerie',
     family: cleanEarth,
     effect:addPopulation,
-    text: `${getPopulations(2)} si ${wrapIcon(getCowIcon('1.4em'))}${FLOCK_CARD_TITLE.toUpperCase()}`
+    text: `${getPopulations(2)} si ${wrapIcon(getCowIcon('1.1em'))}&nbsp;<b>${FLOCK_CARD_TITLE.toUpperCase()}</b>`
 }
 
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p><b>Lorsque moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser une CITÉ au lieu d'une simple colonie et déclencher la fin de partie.</p>`
+    text: `<p><b>Lorsque moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser une <b>CITÉ</b> au lieu d'une simple colonie et déclencher la fin de partie.</p>`
 }
 
 export const cleanContinent: Ability = {
@@ -116,13 +92,13 @@ export const cleanContinent: Ability = {
 export const promoteGMOsMilitary: Ability = {
     name: 'Recruteurs peu regardants',
     family: military,
-    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()}${wrapIcon(getLizardManIcon('1.1em'))} gagnent le pouvoir ${militaryUnit.name.toUpperCase()}&nbsp;${wrapIcon(getArmyIcon('.9em'))} et la ${getTribeDescription(military)}.`
+    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1.1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${militaryUnit.name.toUpperCase()}</b>&nbsp;${wrapIcon(getArmyIcon('.9em'))} et la ${getTribeDescription(military)}.`
 }
 
 export const promoteGMOsMerchant: Ability = {
     name: 'Equal opportunity policy',
     family: merchant,
-    text: `Toutes vos régions ${GMO_CARD_TITLE.toUpperCase()}${wrapIcon(getLizardManIcon('1.1em'))} gagnent le pouvoir ${trade.name.toUpperCase()} et la ${getTribeDescription(merchant)}.`
+    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1.1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${trade.name.toUpperCase()}</b> et la ${getTribeDescription(merchant)}.`
 }
 
 export const bewareOfTechno: Ability = {
@@ -146,7 +122,7 @@ export const oil: Ability = {
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
-    text: `<p>Vous pouvez poser cette région sur une autre région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur ce pouvoir.</p>`
+    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur ce pouvoir.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
@@ -180,9 +156,9 @@ export const cartographer: Ability = {
 
 export const knowledge: Ability = {
     isPrimary: true,
-    name: 'Lieu de savoir',
+    name: KNOWLEDGE_ABILITY_TITLE,
     family: knowledgeGatherer,
-    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} par région comportant un ${KNOWLEDGE_ABILITY_TITLE.toUpperCase()} que vous occupez déjà.`
+    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} pour chaque autre <b>${KNOWLEDGE_ABILITY_TITLE.toUpperCase()}</b> que vous occupez.`
 }
 
 export const invasion: Ability = {
@@ -210,7 +186,7 @@ export const administrativeCenter = {
     name: 'Administration militaire',
     family: military,
     value:2,
-    text: `<p>Vous pouvez effectuer 2 actions supplémentaires par tour au lieu d'une seule (défaussez pour chaque action)</p>`
+    text: `<p>Vous pouvez effectuer 2 actions supplémentaires par tour au lieu d'une seule (défaussez pour chaque action).</p>`
 }
 
 export const scout: Ability = {
@@ -220,7 +196,7 @@ export const scout: Ability = {
     text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou de la même colonne.</p>`
 }
 
-const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent ${"rapidité".toUpperCase()}.</p>`;
+const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent <b>${"rapidité".toUpperCase()}</b>.</p>`;
 
 export const airForce: Ability = {
     name: 'Vol',
@@ -258,7 +234,7 @@ export const simpleSettlement: Ability = {
 export const goodOldWorld: Ability = {
     name: "Survivalistes coriaces",
     family: techno,
-    text: `<p>${getPopulations(2)} par ${oil.name.toUpperCase()}</span> que vous occupez.</p>`
+    text: `<p>${getPopulations(2)} par <b>${oil.name.toUpperCase()}</b> que vous occupez.</p>`
 }
 
 export const merchantNetwork: Ability = {
@@ -299,7 +275,7 @@ export const recluse: Ability = {
     name: 'Defender of the Realm',
     family: military,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>Maximum&nbsp;:&nbsp;9</b> - 1 par ${populationIcon} adverse sur votre continent`,
+    <b>Maximum&nbsp;:&nbsp;9 - 1</b> par ${populationIcon} adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {

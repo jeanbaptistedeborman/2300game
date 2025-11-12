@@ -7,10 +7,12 @@ import {none} from "../../data/families";
 import {getFamilyCount} from "../../services";
 import {terrainColors} from "../colors";
 import Color from "color";
+import {BORDER_WIDTH} from "../../constants";
 
 const addEffects = (abilities: Ability[]) => {
-    const backGroundSize: string = '15mm';
-    const backgroundMargin: string = '-7mm';
+    const backGroundSize: string = '17mm';
+    const cornerBackGroundSize: string = '15mm';
+    const backgroundMargin: string = '-8.5mm';
     const cornerBackgroundMargin: string = '-3mm';
     const effectAbility: Ability = abilities.find(({effect}) => effect);
 
@@ -44,9 +46,9 @@ const addEffects = (abilities: Ability[]) => {
     const getMiddlePositions = (margin: string) => [`top:${margin};left:calc(50% + (${margin}))`, `bottom:${margin};left:calc(50% + (${margin}));`, `left:${margin};top:calc(50% + (${margin}));`, `right:${margin};top:calc(50% + (${margin}));`];
 
     return `${[
-        ...getMiddlePositions(backgroundMargin).map(position => `<div style ="border:.2mm solid white;background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
-        ...getCornerPositions(cornerBackgroundMargin).map(position => `<div style ="border:.2mm solid white;background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
-        ...getCornerPositions('7mm').map(position => `<div style="position:absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('')}
+        ...getMiddlePositions(backgroundMargin).map(position => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
+        ...getCornerPositions(cornerBackgroundMargin).map(position => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;${position}"></div>`),
+        ...getCornerPositions('7.5mm').map(position => `<div style="position:absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('')}
         ${icons}
         `
 }
@@ -63,7 +65,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
 
-    return `<div class="card" style="color:${isSea?'white':'black'};${isSea?`background-color:${terrainColors.LIGHT_SEA};`:''}">
+    return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.LIGHT_SEA};`:''}">
     ${addEffects(sortedAbilities)} 
     <div class="card-content">
     <h2 class="title">${title}</h2> 

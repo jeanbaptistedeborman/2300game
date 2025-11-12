@@ -26,7 +26,7 @@ export const logStats =  (cards:Card[]) =>
 
 }
 
-export const darkenColor = (color:string)=> Color(color).darken(.5);
+export const darkenColor = (color:string)=> Color(color).darken(.4);
 
 export const countCards = (acc, {number}) => acc+number;
 
