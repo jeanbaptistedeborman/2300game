@@ -43,7 +43,7 @@ const getPage = (cards: Card[]): string => {
         </div>`;
 }
 
-fs.writeFile('output/cards.html',
+fs.writeFile('docs/cards.html',
     `
   <HTML lang="fr">
    

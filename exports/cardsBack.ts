@@ -5,7 +5,7 @@ import {header} from "../layout/components/components";
 import {backTemplate} from "../layout/templates/cardBackTemplate";
 
 export const generateCardBacks = (cards) => {
-    fs.writeFile('output/cards-backs.html',
+    fs.writeFile('docs/cards-backs.html',
         `<HTML lang="fr">
  ${header}
   

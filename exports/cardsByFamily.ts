@@ -23,7 +23,7 @@ export const generateCardsByFamiy = (cards) => {
         }, {} as {FamilyName:Card[]}),
         [FamilyName.NONE]:cardsWithCorrectCount.filter (({abilities}) => abilities.length == 0 )};
 
-    fs.writeFile('output/cards-by-family.html',
+    fs.writeFile('docs/cards-by-family.html',
         `<HTML lang="fr">
   
   
