@@ -1,16 +1,13 @@
 import fs from "fs";
 import {styles} from "../layout/styles";
 import {Card} from "../model";
-import {backTemplate} from "../layout/templates";
+import {header} from "../layout/components/components";
+import {backTemplate} from "../layout/templates/cardBackTemplate";
 
 export const generateCardBacks = (cards) => {
     fs.writeFile('output/cards-backs.html',
         `<HTML lang="fr">
-  <head>
-  <title>2300 game: cards by families</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-</head>
+ ${header}
   
   <style>
     ${styles}

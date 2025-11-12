@@ -1,10 +1,11 @@
 import fs from "fs";
 import {styles} from "../layout/styles";
 import {families} from "../data/families";
-import {Card, Family, FamilyName} from "../model";
-import {cardTemplate} from "../layout/templates";
+import {Ability, Card, Family, FamilyName} from "../model";
 import {DECK_NUMBER} from "../constants";
-import {countCards} from "../services";
+import {countCards, findPrimaryAbility} from "../services";
+import {cardTemplate} from "../layout/templates/cardTemplate";
+import {getFamilyIcon, header} from "../layout/components/components";
 
 export const generateCardsByFamiy = (cards) => {
 
@@ -24,28 +25,42 @@ export const generateCardsByFamiy = (cards) => {
 
     fs.writeFile('output/cards-by-family.html',
         `<HTML lang="fr">
-  <head>
-  <title>2300 game: cards by families</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-</head>
+  
+  
+   ${header}
   
   <style>
     ${styles}
     </style>
   
     <BODY style="padding:1cm;">
-        <h1>Cartes par tribu (${cards.reduce(countCards, 0)*3})</h1>
-        <ul style="margin:1cm 0">
-        <li>Les cartes qui comprennent plusieurs tribus sont reprises dans chaque tribu.</li>
-        <li>Les tribus visibles au dos ne sont pas indiquées car celles-ci changent à chaque carte</li>
+       <header style="break-inside: avoid;"> <h1>Cartes par tribu (${
+            cards.filter(({status}:Card) => status !== 'discarded' && status !== 'test')
+            .reduce(countCards, 0)*DECK_NUMBER})</h1>
+        <ul style="margin:.3cm 0">
+        <li>Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
+        <li>Les tribus visibles au dos ne sont pas indiquées parce qu'elles varient à chaque carte</li>
         </ul>
-       ${Object.keys(cardsByFamiy).map((key) => `<div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 5mm">${key} (${cardsByFamiy[key]
+        
+        </header>
+       ${Object.keys(cardsByFamiy).map((key) => {
+           const family: Family =  families.find(({familyName}) => familyName === key);
+           const primaryAbility: Ability = findPrimaryAbility (cards, family.familyName);
+          
+           return `
+           <div style="break-inside: avoid;">
+           <div style="font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin-bottom: 2mm;padding-top:5mm;">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
-        <p style="font-style:italic;margin-bottom: 1mm;">${families.find((family) => family.familyName === key)?.flavourText || ''}</p>
-        <p>${families.find((family) => family.familyName === key)?.text || ''}</p>
+           
+           ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 3mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
+        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${family?.flavourText || ''}</p>
+        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${family?.text || ''}</p>
+        ${primaryAbility?`
+                <h3>Pouvoir titulaire: ${primaryAbility.name}</h3>`:''}   
         </div>
-    <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div>`).join('')}
+        <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
+    
+    }
    </BODY> 
    </HTML>
   `, () => {

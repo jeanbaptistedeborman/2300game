@@ -1,12 +1,13 @@
 import * as fs from 'fs';
-import {Card, FamilyName, Terrain} from "./model";
+import {Card, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
-import {backTemplate, cardTemplate} from "./layout/templates";
-import {logStats} from "./services";
+import {generateCompletedCards, logStats} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
-import {DECK_NUMBER} from "./constants";
+import {cardTemplate} from "./layout/templates/cardTemplate";
+import {header} from "./layout/components/components";
+import {backTemplate} from "./layout/templates/cardBackTemplate";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -14,24 +15,9 @@ const CARDS_PER_PAGE:number = 9;
 
 logStats(cards)
 
-const completedCards: Card[] =
-    cards
-        .map(( card:Card) => Array(card.number).fill(card)).flat()// duplicate cards by cardNumber
-        .map ((card:Card) => ({...card, backTerrain: cardTerrains[Math.floor(Math.random()*cardTerrains.length)] })) // attribute backterrain randomly
-        .map((card:Card)=>  ({ //set ability visibility
-            ...card,
-            number: card.number * DECK_NUMBER,
-            abilities:card.abilities.map(ability=> ({
-                ...ability,
-                isVisible: ability.family.familyName === FamilyName.KNOWLEDGE ||
-                    Math.random() > .55,
-            })
-            )
-        }))
-        .sort(() => .5 -Math.random());
+const completedCards: Card[] = generateCompletedCards();
 
-generateCardsByFamiy(cards);
-
+generateCardsByFamiy(cards.filter (({status}) => !['discarded', 'test'].includes(status)));
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
@@ -60,11 +46,9 @@ const getPage = (cards: Card[]): string => {
 fs.writeFile('output/cards.html',
     `
   <HTML lang="fr">
-  <head>
-  <title>2300 game card generator</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-</head>
+   
+  
+  ${header}
   
   <style>
     ${styles}

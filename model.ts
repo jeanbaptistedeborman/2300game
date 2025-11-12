@@ -1,10 +1,15 @@
-export const getEnumKey = (enumObject: any, value:string) => Object.keys(enumObject)[Object.values(enumObject).indexOf(value)];
+export const getEnumKey = (enumObject: any, value: string) => Object.keys(enumObject)[Object.values(enumObject).indexOf(value)];
 
 export enum Terrain {
-    'TEMPERATE' = 'Tempéré','SAVANNA' = 'Savanne', 'DESERT' = 'Désert', 'SCORCHED'='Calciné', 'SEA' = 'mer', 'ANY' = 'tous'
+    'TEMPERATE' = 'Tempéré',
+    'SAVANNA' = 'Savanne',
+    'DESERT' = 'Désert',
+    'SCORCHED' = 'Fournaise',
+    'SEA' = 'mer',
+    'ANY' = 'tous'
 }
 
-export const terrains:Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
+export const terrains: Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 
 export enum Type {
     'TRIBE',
@@ -12,48 +17,60 @@ export enum Type {
 }
 
 export enum FamilyName {
-    "TECHNO"= "Tekno",  "MILITARY" = "Milice", "EXPLORER" = "Scouts", "CLEAN_EARTH" = "Verts", "MERCHANT" = "Marchand", "KNOWLEDGE" = "Savant", "NAVIGATOR" = "Marin", "PEOPLE" = 'People', "NONE" = "SANS FAMILLE"
+    "TECHNO" = "Tekno",
+    "MILITARY" = "Milis",
+    "EXPLORER" = "Skout",
+    "CLEAN_EARTH" = "Terra",
+    "MERCHANT" = "Biz",
+    "KNOWLEDGE" = "Erud",
+    "NAVIGATOR" = "Nav",
+    "PEOPLE" = 'People',
+    "NONE" = "SANS TRIBU"
 }
 
 export interface Family {
-    flavourText:string,
-    text?:string,
-    familyName:FamilyName,
-    icon:string,
-    color:string,
+    flavourText: string,
+    text?: string,
+    familyName: FamilyName,
+    icon: string,
+    color: string,
+    primaryAbility?:Ability,
+    isDarkColor:boolean,
 }
 
 export interface Ability {
-    isVisible?:boolean,
-    effect?:Effect,
+    isPrimary?:boolean
+    isVisible?: boolean,
+    effect?: Effect,
     family: Family,
-  name: string,
-  text: string,
-  value:number,
+    name: string,
+    text: string,
+    inTest?:boolean;
     icon?: string,
 }
 
 export interface Handicap {
     name: string,
     icon?: string,
-    iconNumber?:number,
+    iconNumber?: number,
     text: string,
-    value:number,
+    value: number,
 }
 
 export interface Card {
-    illustration:string;
-    number:number;
+    status?: 'test' | 'discarded',
+    illustration: string;
+    number: number;
     title: string,
-    text:string,
+    text: string,
     type: Type,
     abilities: Ability[],
     handicaps?: Handicap[],
-    backTerrain?:Terrain,
+    backTerrain?: Terrain,
     allowedTerrain: Terrain,
 }
 
 export interface Effect {
-    icon:string,
-    color?:string,
+    icon: string,
+    color?: string,
 }
