@@ -405,7 +405,7 @@ export const cards: Card[] = [
     },
     {
         illustration: getKnowledgeIllustration(),
-        number:4,
+        number:3,
         type: Type.TRIBE,
         title: "Bibliothèque",
         text: '',
@@ -459,7 +459,7 @@ export const cards: Card[] = [
 
     {   title: `${FLOCK_CARD_TITLE}`,
         illustration:getCowIllustration(),
-        number:4,
+        number:3,
         type: Type.TRIBE,
         text: '',
         abilities: [cleanHearthNetwork],

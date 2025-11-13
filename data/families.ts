@@ -22,7 +22,7 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les lieux de savoir sont rares et prestigieux, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos de leur carte.`,
+    text: `Comme les lieux de savoir sont rares et prestigieux, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos.`,
     flavourText: `
     "Mes chers confrères, la lecture des textes des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>

@@ -33,7 +33,7 @@ export const generateCardsByFamiy = (cards) => {
     ${styles}
     </style>
   
-    <BODY style="padding:1cm;">
+    <body style="padding:1cm;max-width:21cm;margin:auto;">
        <header style="break-inside: avoid;"> <h1>Cartes par tribu (${
             cards.filter(({status}:Card) => status !== 'discarded' && status !== 'test')
             .reduce(countCards, 0)*DECK_NUMBER})</h1>
@@ -61,7 +61,7 @@ export const generateCardsByFamiy = (cards) => {
         <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
     
     }
-   </BODY> 
+   </body> 
    </HTML>
   `, () => {
         }
