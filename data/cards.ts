@@ -470,7 +470,7 @@ export const cards: Card[] = [
         number:1,
         type: Type.TRIBE,
         text: '',
-        abilities: [rallyMerchantFriends, trade],
+        abilities: [trade,rallyMerchantFriends],
         allowedTerrain: Terrain.DESERT,
     },
     { title: "Centre de réfugiés",

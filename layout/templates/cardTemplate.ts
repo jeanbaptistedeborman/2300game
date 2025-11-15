@@ -2,7 +2,7 @@ import {Ability, Card, FamilyName, Terrain} from "../../model";
 import {cards} from "../../data/cards";
 import {getAbilityVignette, getTerrainsVignettes} from "../components/components";
 import {get4DirectionIcon} from "../icons";
-import {evolving} from "../../data/effects";
+import {addPopulation, evolving} from "../../data/effects";
 import {none} from "../../data/families";
 import {getFamilyCount} from "../../services";
 import {terrainColors} from "../colors";
@@ -14,7 +14,7 @@ const addEffects = (abilities: Ability[]) => {
     const cornerBackGroundSize: string = '15mm';
     const backgroundMargin: string = '-8.5mm';
     const cornerBackgroundMargin: string = '-3mm';
-    const effectAbility: Ability = abilities.find(({effect}) => effect);
+    const effectAbility: Ability = [...abilities].sort ((a: Ability ,b:Ability  ) => (a.effect?.name === addPopulation.name)?-1:1).find(({effect}) => effect);
 
     if (!effectAbility && abilities.length) return '';
 

@@ -43,7 +43,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`Vous pouvez poser cette région dans <b>l'Océan.</b>`,
+    text:`Vous pouvez poser cette région dans <b>l'<b>Océan</b>.</b>`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -84,8 +84,8 @@ export const cleanContinent: Ability = {
     name: 'Terre pure',
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
-    <p>Aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
-    <b>Maximum: 10</b>
+    <p>Si aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
+    <b>MAXIMUM : ${getPopulations(10)}.</b>
 `
 }
 
@@ -179,7 +179,7 @@ export const harbour: Ability = {
     name: `Port de pêche`,
     family:cleanEarth,
     effect: addPopulation,
-    text: `${getPopulations(1)} si océan inoccupé`
+    text: `${getPopulations(1)} si <b>Océan</b> inoccupé`
 }
 
 export const administrativeCenter = {
@@ -275,7 +275,7 @@ export const recluse: Ability = {
     name: 'Defender of the Realm',
     family: military,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>Maximum&nbsp;:&nbsp;9 - 1</b> par ${populationIcon} adverse sur votre continent`,
+    <b>MAXIMUM&nbsp;: ${getPopulations(9)} - 1</b> par<br>${populationIcon} adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {

@@ -58,7 +58,7 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que le père Noël a existé... que c'est lui qui apportait l'abondance aux anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les humains aient bousillés la neige, les rennes et les sapins.",
+    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que le père Noël a existé... que c'est lui qui apportait l'abondance des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les humains aient bousillés la neige, les rennes et les sapins.",
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon(),
     color: "#d97b2d",

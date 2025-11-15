@@ -71,6 +71,7 @@ export interface Card {
 }
 
 export interface Effect {
+    name:string;
     icon: string,
     color?: string,
 }
