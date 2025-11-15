@@ -279,7 +279,7 @@ export const recluse: Ability = {
 }
 
 export const worldTraveler: Ability = {
-    name: 'Grand explorateur',
+    name: 'Grand Reporter',
     family: explorer,
     text: `${getPopulations(3)} si sur continent adverse`
 }

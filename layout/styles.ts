@@ -47,12 +47,12 @@ p:last-of-type {
 
 .presentation-box {
     clear:both;
-    zoom:.90;
+    zoom:.85;
     margin-top:5mm;
     max-width:21cm;
     margin-right:auto; 
     margin-left:auto;
-    gap:1mm;
+    gap:3mm 2mm;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap; 
@@ -79,7 +79,7 @@ p:last-of-type {
     border-width:.1mm;
     border-bottom-width:.5mm;
     border-left-width:.3mm;
-    border-radius:3mm;
+    border-radius:1.5mm;
  }
 
 .card.back {

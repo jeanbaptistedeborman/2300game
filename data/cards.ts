@@ -421,7 +421,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
 
-    {  title: "Boula Matari",
+    {  title: "Aventurier",
         illustration:getOutbackHatIllustration(),
         number:1,
         type: Type.TRIBE,
