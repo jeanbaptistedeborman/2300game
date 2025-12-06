@@ -22,7 +22,7 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les lieux de savoir sont rares et prestigieux, la tribu ${FamilyName.KNOWLEDGE} est toujours visible au dos.`,
+    text: `Comme les lieux de savoir sont rares et prestigieux, leur tribu est toujours visible au dos.`,
     flavourText: `
     "Mes chers confrères, la lecture des textes des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>
@@ -58,7 +58,7 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que le père Noël a existé... que c'est lui qui apportait l'abondance des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les humains aient bousillés la neige, les rennes et les sapins.",
+    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que le père Noël a existé... que c'est lui qui apportait l'abondance des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les humains aient bousillé la neige, les rennes et les sapins.",
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon(),
     color: "#d97b2d",
@@ -66,8 +66,8 @@ export const merchant:Family = {
 }
 
 export const none:Family = {
-    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni amis ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: avec quelques degrés de plus, il était maître du monde.
-<br><br>... Mais son heure viendra !<br><br>`,
+    flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni amis ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: encore quelques degrés et il était maître du monde !
+<br><br>... Mais son heure viendra.<br><br>`,
     text: `Démuni mais résistant à la chaleur, l'humain du futur&#8482; peut recevoir des pouvoirs en cours de partie.`,
     familyName:FamilyName.NONE,
     icon:getCogIcon(),

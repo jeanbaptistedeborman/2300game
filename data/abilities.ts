@@ -215,7 +215,7 @@ export const natureFlight: Ability = {
 export const cityBonus: Ability = {
     name: 'Mégapole',
     family:techno,
-    text: `${getPopulations(2)} si cette région comporte une cité.` ,
+    text: `${getPopulations(2)} si cette région comporte une <b>CITÉ</b>.` ,
 }
 
 export const flyingMerchants: Ability = {
@@ -292,6 +292,14 @@ export const rallyGreenFriends: Ability = {
     text: getRallyFriendsText (cleanEarth)
 }
 
+export const rallyTechnoFriends: Ability = {
+    name: getRallyFriendsTitle(techno),
+    icon: getCardPlayIcon(ICON_SIZE),
+    effect: takeCard,
+    family: techno,
+    text: getRallyFriendsText (techno)
+}
+
 export const rallyKnowledgeFriends: Ability = {
     name: getRallyFriendsTitle(knowledgeGatherer),
     icon: getCardPlayIcon(ICON_SIZE),
@@ -308,14 +316,6 @@ export const rallyMilitaryFriends: Ability = {
     text: getRallyFriendsText (military)
 }
 
-export const rallyTechnoFriends: Ability = {
-    name: getRallyFriendsTitle (techno),
-    icon: getGetUpCardIcon(ICON_SIZE),
-    effect: takeCard,
-    family: techno,
-    text: getRallyFriendsText (techno)
-}
-
 export const rallyMerchantFriends: Ability = {
     name: getRallyFriendsTitle (merchant),
     icon: getGetUpCardIcon(ICON_SIZE),
@@ -323,6 +323,13 @@ export const rallyMerchantFriends: Ability = {
     family: merchant,
     text: getRallyFriendsText (merchant)
 }
+
+export const burryThePast: Ability = {
+    name: 'Tabula rasa',
+    family: cleanEarth,
+    text:  `${getPopulations(2)} si posée sur région comportant la ${getTribeDescription(techno)}.`
+}
+
 
 export const cosmopoliteContinent: Ability = {
     name: 'Société ouverte',

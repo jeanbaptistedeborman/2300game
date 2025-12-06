@@ -34,12 +34,12 @@ export const generateCardsByFamiy = (cards) => {
     </style>
   
     <body style="padding:1cm;max-width:21cm;margin:auto;">
-       <header style="break-inside: avoid;"> <h1>Cartes par tribu (${
+       <header style="break-inside: avoid; font-family: 'Arial', 'Sans Serif'"> <h1>Cartes par tribu (${
             cards.filter(({status}:Card) => status !== 'discarded' && status !== 'test')
             .reduce(countCards, 0)*DECK_NUMBER})</h1>
         <ul style="margin:.3cm 0">
-        <li>Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
-        <li>Les tribus visibles au dos ne sont pas indiquées parce qu'elles varient à chaque carte</li>
+        <li style="margin-bottom: 1mm">Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>
+        <li>Les tribus visibles au dos ne sont pas indiquées parce qu'elles varient à chaque exemplaire.</li>
         </ul>
         
         </header>
@@ -53,10 +53,10 @@ export const generateCardsByFamiy = (cards) => {
             .reduce (countCards, 0)})</h2>
            
            ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 3mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
-        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;">${family?.flavourText || ''}</p>
-        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;">${family?.text || ''}</p>
+        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'">${family?.flavourText || ''}</p>
+        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'">${family?.text || ''}</p>
         ${primaryAbility?`
-                <h3>Pouvoir titulaire: ${primaryAbility.name}</h3>`:''}   
+                <h3 style="font-size:larger;font-family: 'Arial', 'Sans Serif'">Pouvoir titulaire: ${primaryAbility.name}</h3>`:''}   
         </div>
         <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
     

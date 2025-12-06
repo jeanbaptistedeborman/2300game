@@ -53,17 +53,16 @@ export interface Handicap {
     name: string,
     icon?: string,
     iconNumber?: number,
-    text: string,
     value: number,
 }
 
+export type CardStatus = 'test' | 'discarded';
+
 export interface Card {
-    status?: 'test' | 'discarded',
+    status?: CardStatus,
     illustration: string;
     number: number;
     title: string,
-    text: string,
-    type: Type,
     abilities: Ability[],
     handicaps?: Handicap[],
     backTerrain?: Terrain,

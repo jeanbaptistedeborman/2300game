@@ -7,7 +7,7 @@ import {
 } from "./layout/illustrations";
 import {cards} from "./data/cards";
 import {DECK_NUMBER} from "./constants";
-import {cardTerrains} from "./index";
+import {cardTerrains, EXCLUDED_STATUSES} from "./index";
 import Color from "color";
 
 export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
@@ -49,7 +49,7 @@ export const findPrimaryAbility = (cards: Card[], abilityFamilyName: string):Abi
         .find (({family:{familyName}, isPrimary}:Ability) => isPrimary && familyName === abilityFamilyName)
 
 export const generateCompletedCards = () => cards
-    .filter(({status}) => status !== 'discarded' && status !== 'test') //exclude discarded and test cards
+    .filter(({status}:Card) => ![EXCLUDED_STATUSES].includes(status)) //exclude unused cards
     .map(( card:Card) => Array(card.number * DECK_NUMBER).fill(card)).flat()// duplicate cards by cardNumber
     .map((card:Card)=>  ({ //set ability visibility
         ...card,

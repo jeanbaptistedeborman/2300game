@@ -13,11 +13,13 @@ import {backTemplate} from "./layout/templates/cardBackTemplate";
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 const CARDS_PER_PAGE:number = 9;
 
+export const EXCLUDED_STATUSES: string[] = ['discarded'];
+
 logStats(cards)
 
 const completedCards: Card[] = generateCompletedCards();
 
-generateCardsByFamiy(cards.filter (({status}) => !['discarded', 'test'].includes(status)));
+generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)));
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
