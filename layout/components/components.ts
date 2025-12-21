@@ -26,7 +26,7 @@ export const getPlusPopulations = (number:number)=> `<b style="white-space: nowr
 export const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
 
 
-export const getTribeDescription = ({familyName,color}:Family) => {
+export const getTribeDescription = ({familyName}:Family) => {
     const ICON_SIZE:string = '1em';
 
     const ICON_MAP =  new Map <FamilyName,string>([
@@ -114,7 +114,7 @@ export const getAbilityVignette = (({
         </div>
         <div style="height:100%;">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:2.5mm;background-color:white;border:${'.8mm'} solid ${color};border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:2.5mm;background-color:white;border:${'.8mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)

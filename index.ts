@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {Card, Terrain} from "./model";
+import {Card, CardStatus, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
 import {generateCompletedCards, logStats} from "./services";
@@ -13,7 +13,7 @@ import {backTemplate} from "./layout/templates/cardBackTemplate";
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 const CARDS_PER_PAGE:number = 9;
 
-export const EXCLUDED_STATUSES: string[] = ['discarded'];
+export const EXCLUDED_STATUSES: CardStatus[] = ['special', 'discarded'];
 
 logStats(cards)
 

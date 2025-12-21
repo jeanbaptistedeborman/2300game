@@ -1,4 +1,4 @@
-import {Ability, Family, FamilyName, Terrain} from "../model";
+import {Ability, Family, Terrain} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer, families} from "./families";
 import {
     getWingIcon,
@@ -29,7 +29,7 @@ const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>`;
 const getRallyFriendsText = (family:Family) => `Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
-const getRallyFriendsTitle = ({familyName}:Family) => `Accueil des réfugiés`
+const getRallyFriendsTitle = () => `Accueil des réfugiés`
 
 export const trade: Ability = {
     isPrimary: true,
@@ -85,7 +85,7 @@ export const cleanContinent: Ability = {
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
     <p>Si aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
-    <b>MAXIMUM : ${getPopulations(10)}.</b>
+    <b>MAXIMUM : ${getPopulations(7)}.</b>
 `
 }
 
@@ -145,7 +145,7 @@ export const terraformer_take_cards: Ability = {
 export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,
-    text: `<p>${getPopulations(1)} par adversaire avec qui vous bénéficiez du pouvoir <b>${trade.name.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${trade.name.toUpperCase()}</b> avec tous vos adversaires</p>`
+    text: `<p>${getPopulations(1)} par adversaire grâce à qui vous bénéficiez du pouvoir <b>${trade.name.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${trade.name.toUpperCase()}</b> avec tous vos adversaires</p>`
 }
 export const cartographer: Ability = {
     name: 'Cartographers',
@@ -285,7 +285,7 @@ export const worldTraveler: Ability = {
 }
 
 export const rallyGreenFriends: Ability = {
-    name: getRallyFriendsTitle(cleanEarth),
+    name: getRallyFriendsTitle(),
     icon: getCardPlayIcon(ICON_SIZE),
     effect: takeCard,
     family: cleanEarth,
@@ -293,7 +293,7 @@ export const rallyGreenFriends: Ability = {
 }
 
 export const rallyTechnoFriends: Ability = {
-    name: getRallyFriendsTitle(techno),
+    name: getRallyFriendsTitle(),
     icon: getCardPlayIcon(ICON_SIZE),
     effect: takeCard,
     family: techno,
@@ -301,7 +301,7 @@ export const rallyTechnoFriends: Ability = {
 }
 
 export const rallyKnowledgeFriends: Ability = {
-    name: getRallyFriendsTitle(knowledgeGatherer),
+    name: getRallyFriendsTitle(),
     icon: getCardPlayIcon(ICON_SIZE),
     effect: takeCard,
     family: knowledgeGatherer,
@@ -309,7 +309,7 @@ export const rallyKnowledgeFriends: Ability = {
 }
 
 export const rallyMilitaryFriends: Ability = {
-    name: getRallyFriendsTitle(military),
+    name: getRallyFriendsTitle(),
     icon: getCardPlayIcon(ICON_SIZE),
     effect: takeCard,
     family: military,
@@ -317,7 +317,7 @@ export const rallyMilitaryFriends: Ability = {
 }
 
 export const rallyMerchantFriends: Ability = {
-    name: getRallyFriendsTitle (merchant),
+    name: getRallyFriendsTitle (),
     icon: getGetUpCardIcon(ICON_SIZE),
     effect: takeCard,
     family: merchant,

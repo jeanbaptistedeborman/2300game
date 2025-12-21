@@ -43,7 +43,6 @@ import {
     getBlimpIllustration,
     getCaravanIllustration,
     getCarIllustration,
-    getComputerIllustration,
     getCrownIllustration,
     getDerrick,
     getEmbracedEnergyIllustration,
@@ -78,7 +77,7 @@ import {
     getWorldCompanyIllustration,
     getCowIllustration,
     getCheeseIllustration,
-    getJellyFishIllustration, getBackupIllustration, getBulldozerIllustration,
+    getJellyFishIllustration, getBackupIllustration, getBulldozerIllustration, getAIIllustration,
 } from "../layout/illustrations";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
@@ -208,7 +207,7 @@ export const cards: Card[] = [
     },
     {
         illustration: getRevoltIllustration(),
-        status: "test",
+        status: "discarded",
         number:1,
         title: "Pas touche à la Techno!",
         abilities: [bewareOfTechno, militaryUnit],
@@ -393,6 +392,7 @@ export const cards: Card[] = [
 
     {
         illustration: getBulldozerIllustration(),
+        status: 'test',
         title: "Enterrés à jamais",
         number:1,
         abilities: [burryThePast],
@@ -422,7 +422,7 @@ export const cards: Card[] = [
     },
     {
         title: "Missionnaire",
-        status: 'discarded',
+        status: 'special',
         illustration: getEmbracedEnergyIllustration(),
         number:1,
         abilities: [worldTraveler, mission],
@@ -430,8 +430,8 @@ export const cards: Card[] = [
     },
 
     {
-        title: "Datacenter <span style='white-space: nowrap;'>The Adaptive Company&#8482;</span>",
-        illustration: getComputerIllustration(),
+        title: "Intelligence Artificielle <span style='white-space: nowrap;'>The Adaptive Company&#8482;</span>",
+        illustration: getAIIllustration(),
         number:1,
         abilities: [knowledge, goodOldWorld],
         allowedTerrain: Terrain.TEMPERATE,

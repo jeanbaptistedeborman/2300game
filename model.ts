@@ -54,9 +54,10 @@ export interface Handicap {
     icon?: string,
     iconNumber?: number,
     value: number,
+    text: string,
 }
 
-export type CardStatus = 'test' | 'discarded';
+export type CardStatus = 'test' | 'discarded' | 'special';
 
 export interface Card {
     status?: CardStatus,
