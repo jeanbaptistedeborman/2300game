@@ -1,6 +1,6 @@
 import {Effect} from "../model";
 import {
-    getArmyIcon, getCardPlayIcon, getCircleIcon,
+    getArmyIcon, getCancelIcon, getCardPlayIcon, getCircleIcon,
     getQuestionMarkIcon, getRandomCardIcon,
     getTrashCardIcon,
 } from "../layout/icons";
@@ -10,6 +10,11 @@ const LARGE_ICONSIZE = '8mm';
 export const forbid:Effect ={
     name: 'forbid',
     icon:getArmyIcon(ICON_SIZE),
+}
+
+export const removePopulation:Effect ={
+    name: 'removePopulation',
+    icon:getCancelIcon(LARGE_ICONSIZE)
 }
 
 export const addPopulation:Effect ={

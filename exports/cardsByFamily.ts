@@ -7,6 +7,8 @@ import {countCards, findPrimaryAbility} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";
 import {getFamilyIcon, header} from "../layout/components/components";
 
+const textStyle:string = `line-height:1.2em;font-size:larger;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'`;
+
 export const generateCardsByFamiy = (cards) => {
 
     const cardsWithCorrectCount:Card[] = cards.map (card => ({...card, number:card.number * DECK_NUMBER}));
@@ -53,8 +55,10 @@ export const generateCardsByFamiy = (cards) => {
             .reduce (countCards, 0)})</h2>
            
            ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 3mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
-        <p style="font-size:larger;font-style:italic;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'">${family?.flavourText || ''}</p>
-        <p style="font-size:larger;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'">${family?.text || ''}</p>
+        <p style="${textStyle};font-style:italic;" >${family?.flavourText || ''}</p>
+        <p style="${textStyle}" >${family?.text || ''}</p>
+        ${family?.tip?`<div style="${textStyle}; background-color:#fee6a0;padding:1mm">${family.tip}</div>`:''}
+        
         ${primaryAbility?`
                 <h3 style="font-size:larger;font-family: 'Arial', 'Sans Serif'">Pouvoir titulaire: ${primaryAbility.name}</h3>`:''}   
         </div>

@@ -35,7 +35,7 @@ import {
     terraformer,
     trade,
     worldCompany,
-    worldTraveler, cheeseFactory, harbour, rallyTechnoFriends, burryThePast,
+    worldTraveler, cheeseFactory, harbour, rallyTechnoFriends, burryThePast, autoFac, scorchedEarth,
 } from './abilities'
 import {cleanHearthDependant, militaryDependant, militarySuperiority} from "./handicaps";
 import {
@@ -77,7 +77,12 @@ import {
     getWorldCompanyIllustration,
     getCowIllustration,
     getCheeseIllustration,
-    getJellyFishIllustration, getBackupIllustration, getBulldozerIllustration, getAIIllustration,
+    getJellyFishIllustration,
+    getBackupIllustration,
+    getBulldozerIllustration,
+    getAIIllustration,
+    getFireIllustration,
+    getFactoryIllustration, getLadyXIllustration,
 } from "../layout/illustrations";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
@@ -184,7 +189,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Continent sacré",
+        title: "Continent Pur",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -314,7 +319,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.ANY,
     },
     {    title: "Lady X",
-        illustration: getSpyIllustration(),
+        illustration: getLadyXIllustration(),
         number:1,
         abilities: [spy, scout],
         allowedTerrain: Terrain.TEMPERATE,
@@ -397,6 +402,24 @@ export const cards: Card[] = [
         number:1,
         abilities: [burryThePast],
         allowedTerrain: Terrain.DESERT,
+    },
+
+    {
+        illustration: getFactoryIllustration(),
+        status: 'test',
+        title: "Mad factory",
+        number:1,
+        abilities: [autoFac, goodOldWorld],
+        allowedTerrain: Terrain.DESERT,
+    },
+
+    {
+        illustration: getFireIllustration(),
+        status: 'test',
+        title: "Conemaraah !",
+        number:1,
+        abilities: [militaryUnit, scorchedEarth],
+        allowedTerrain: Terrain.SAVANNA,
     },
 
     {

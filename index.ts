@@ -8,6 +8,7 @@ import {generateCardBacks} from "./exports/cardsBack";
 import {cardTemplate} from "./layout/templates/cardTemplate";
 import {header} from "./layout/components/components";
 import {backTemplate} from "./layout/templates/cardBackTemplate";
+import {getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -34,7 +35,7 @@ console.log ('', 'GENERATED CARDS', '-------------------------------------------
 logStats(completedCards);
 
 const getPage = (cards: Card[]): string => {
-    const faces: string[] = cards.map((card) => cardTemplate(card));
+    const faces: string[] = [...cards.map((card) => cardTemplate(card)), ...new Array(4).fill(getStartRegionTemplate())]
     const backs: string[] = cards.map((card) => backTemplate(card));
 
     return `<div class="page recto">

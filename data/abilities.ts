@@ -9,7 +9,7 @@ import {
     getCowIcon,
     getLizardManIcon, getCardPlayIcon,
 } from "../layout/icons";
-import {addPopulation, forbid, takeCard, trashCard} from "./effects";
+import {addPopulation, forbid, removePopulation, takeCard, trashCard} from "./effects";
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
 import {
     getMinusPopulations,
@@ -81,7 +81,7 @@ export const shortGame: Ability = {
 }
 
 export const cleanContinent: Ability = {
-    name: 'Terre pure',
+    name: 'Terre sacrée',
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
     <p>Si aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
@@ -325,11 +325,10 @@ export const rallyMerchantFriends: Ability = {
 }
 
 export const burryThePast: Ability = {
-    name: 'Tabula rasa',
+    name: "Un bunker pour l'éternité",
     family: cleanEarth,
     text:  `${getPopulations(2)} si posée sur région comportant la ${getTribeDescription(techno)}.`
 }
-
 
 export const cosmopoliteContinent: Ability = {
     name: 'Société ouverte',
@@ -349,6 +348,20 @@ export const mission: Ability = {
     name: `Vade Retro !`,
     family: cleanEarth,
     text: `Défaussez les carte des régions inoccupées comportant la ${getTribeDescription(techno)}.`
+}
+
+export const autoFac: Ability = {
+    name: 'Autofac',
+    family: techno,
+    effect: removePopulation,
+    text: `<p>Retirez toutes les colonies des pouvoirs autres que ${getTribeDescription(techno)}.</p>`
+}
+
+export const scorchedEarth: Ability = {
+    name: 'Terres brûlées',
+    family: military,
+    effect: addPopulation,
+    text: `<p>${getPopulations(1)} si région continentale inoccupée</p>`
 }
 
 export const realmOfDiversity: Ability = {

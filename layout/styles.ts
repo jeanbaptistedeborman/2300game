@@ -34,6 +34,10 @@ p:last-of-type {
     overflow: hidden;
     position:relative;
 }
+.start-region {
+    padding-top:5mm;
+    text-align:center;
+}
 
 .card-content {
     width:100%;

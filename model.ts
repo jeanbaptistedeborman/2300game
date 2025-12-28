@@ -29,6 +29,7 @@ export enum FamilyName {
 }
 
 export interface Family {
+    tip?:string,
     flavourText: string,
     text?: string,
     familyName: FamilyName,
