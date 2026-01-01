@@ -9,7 +9,8 @@ import {getFamilyIcon, header} from "../layout/components/components";
 
 const textStyle:string = `line-height:1.2em;font-size:larger;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'`;
 
-export const generateCardsByFamiy = (cards) => {
+export const generateCardsByFamiy = (cards: Card[]) => {
+
 
     const cardsWithCorrectCount:Card[] = cards.map (card => ({...card, number:card.number * DECK_NUMBER}));
     const cardsByFamiy:{

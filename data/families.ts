@@ -7,7 +7,7 @@ import {terrainColors} from "../layout/colors";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau de vouloir reconstruire sur les ruines du monde d'hier mais il est risqué de se lancer dans l'aventure avant d'avoir trouvé du pétrole.",
+    tip: "C'est bien beau de vouloir reconstruire sur les ruines du monde d'hier. Mais il est risqué de se lancer dans l'aventure avant d'avoir trouvé du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
     color: "#9f7bb8",
@@ -23,11 +23,11 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les lieux de savoir sont rares et prestigieux, leur tribu est toujours visible au dos.`,
+    text: `Comme les rares lieux de savoir qui ont survécu après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
     flavourText: `
-    "Mes chers confrères, la lecture des textes des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
+    "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>
-    <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais les savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
+    <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
     tip: `Tous les moyens sont bons pour récupérer les bribes du savoir des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),

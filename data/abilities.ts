@@ -275,7 +275,7 @@ export const recluse: Ability = {
     name: 'Defender of the Realm',
     family: military,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>MAXIMUM&nbsp;: ${getPopulations(9)} - 1</b> par<br>${populationIcon} adverse sur votre continent`,
+    <b>MAXIMUM&nbsp;: ${getPopulations(9)} - 1</b> par ${populationIcon} adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {
