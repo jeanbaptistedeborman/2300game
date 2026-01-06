@@ -7,7 +7,7 @@ import {terrainColors} from "../layout/colors";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau de vouloir reconstruire sur les ruines du monde d'hier. Mais il est risqué de se lancer dans l'aventure avant d'avoir trouvé du pétrole.",
+    tip: "C'est bien beau de vouloir reconstruire le monde d'hier. Mais encore faut-il trouver du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
     color: "#9f7bb8",
@@ -28,7 +28,7 @@ export const knowledgeGatherer:Family = {
     "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>
     <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
-    tip: `Tous les moyens sont bons pour récupérer les bribes du savoir des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
+    tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon(),
     color: '#efbb35',
@@ -44,7 +44,7 @@ export const explorer:Family = {
 }
 
 export const navigators:Family = {
-    tip: `Préparez soigneusement vos expédition sur les continents adverse de manière à vous y installer rapidement avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour avoir des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps pour les restaurer. Exploitez les navires avec le pouvoir "Centre de réfugiés": ils permettent de prendre pied plus rapidement sur un continent... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
+    tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans prendre de temps pour restaurer. Exploitez les cartes Navigation avec le pouvoir "Centre de réfugiés": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
     flavourText:"Les océans sont devenus d'immenses bouillons tabassés par les ouragans. Seuls les plus hardis s'y aventurent.",
     familyName:FamilyName.NAVIGATOR,
     icon:getShipIcon(),

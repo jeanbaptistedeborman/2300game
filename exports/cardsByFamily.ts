@@ -9,9 +9,7 @@ import {getFamilyIcon, header} from "../layout/components/components";
 
 const textStyle:string = `line-height:1.2em;font-size:larger;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'`;
 
-export const generateCardsByFamiy = (cards: Card[]) => {
-
-
+export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
     const cardsWithCorrectCount:Card[] = cards.map (card => ({...card, number:card.number * DECK_NUMBER}));
     const cardsByFamiy:{
         FamilyName:Card[],
@@ -63,7 +61,11 @@ export const generateCardsByFamiy = (cards: Card[]) => {
         ${primaryAbility?`
                 <h3 style="font-size:larger;font-family: 'Arial', 'Sans Serif'">Pouvoir titulaire: ${primaryAbility.name}</h3>`:''}   
         </div>
-        <div class="presentation-box">${cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}</div></div>`}).join('')
+        <div class="presentation-box">${
+               
+               cardsByFamiy[key].map((card: Card) => cardTemplate(card)).join('')}
+        
+        </div></div>`}).join('')
     
     }
    </body> 

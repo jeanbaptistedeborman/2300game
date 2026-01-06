@@ -43,7 +43,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`Vous pouvez poser cette région dans <b>l'<b>Océan</b>.</b>`,
+    text:`${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez poser cette région dans <b>l'<b>Océan</b>.</b>`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -81,7 +81,7 @@ export const shortGame: Ability = {
 }
 
 export const cleanContinent: Ability = {
-    name: 'Terre sacrée',
+    name: 'Continent Pur',
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
     <p>Si aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
@@ -171,7 +171,7 @@ export const spy: Ability = {
     name: `Nid d'espions`,
     family:explorer,
     text: `
-        ${WHEN_PLAYING_THIS_CARD}${getPopulations(2)}.
+        ${WHEN_PLAYING_THIS_CARD}${getPlusPopulations(2)}.
         <p>${AT_YOUR_TURN}Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`
 }
 

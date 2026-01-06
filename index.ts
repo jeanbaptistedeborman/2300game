@@ -20,7 +20,7 @@ logStats(cards)
 
 const completedCards: Card[] = generateCompletedCards();
 
-generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)));
+generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)), cards);
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {

@@ -189,7 +189,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Continent Pur",
+        title: "Temple de <span style='white-space: nowrap'>la Grande Resurrection</span>",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
