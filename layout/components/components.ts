@@ -61,9 +61,9 @@ export const getFamilyIcon = ({
                                   icon,
                                   familyName,
                                   color
-                              }: Family) => `<div style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
-                ${String(familyName).toUpperCase()}
+                <span class="text">${String(familyName).toUpperCase()}<span>
         </div>`;
 
 export const getTerrainVignette = (terrain => {

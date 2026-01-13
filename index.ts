@@ -14,13 +14,13 @@ import {getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 const CARDS_PER_PAGE:number = 9;
 
-export const EXCLUDED_STATUSES: CardStatus[] = ['special', 'discarded'];
+export const EXCLUDED_STATUSES: CardStatus[] = ['special', 'discarded', 'test'];
 
 logStats(cards)
 
 const completedCards: Card[] = generateCompletedCards();
 
-generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)), cards);
+generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)), completedCards);
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {

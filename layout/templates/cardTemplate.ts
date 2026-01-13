@@ -92,7 +92,7 @@ ${(handicaps?.length > 0) ? `<ul>
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .5mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>
-   <div style="position:absolute;bottom:0; left:13mm;font-size: 8pt">${number} 
+   <div style="position:absolute;bottom:0; left:13mm;font-size: 10pt">${number} 
    ${false?`(${
     sortedAbilities
     .map((ability) => getFamilyCount(cards, ability.family.familyName))

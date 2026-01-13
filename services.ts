@@ -50,7 +50,6 @@ export const findPrimaryAbility = (cards: Card[], abilityFamilyName: string):Abi
 
 const mixArray =  (array: any[]): any[] => [...array].sort(() => .5 -Math.random());
 
-
 const getSequenceWithHiddenAbility = (abilities:Ability[], selectedAbilities):boolean[][] => {
     const sequenceArray: boolean[][] = [[false], [false], [false]];
     sequenceArray[0][abilities.findIndex(({family:{familyName}}) => familyName === selectedAbilities[0].family.familyName)] = true;
@@ -58,12 +57,18 @@ const getSequenceWithHiddenAbility = (abilities:Ability[], selectedAbilities):bo
 }
 
 const getVisibilitySequence = ({abilities, title, number}:Card, amount: number):boolean[][] => {
+
+    const VISIBILITY9: boolean [][][] = [
+        [[true], [false], [false]],
+        [[false], [true], [false]],
+        [[false], [false], [true]]
+    ];
+
     const VISIBILITY_SEQUENCES = {
         SAME_FAMILY_2: [[true, true], [true, false], [false, false]],
         DIFFERENT_FAMILY_2: [[true, true], [true, false], [false, false]],
         ONE: [[true], [false], [false]],
     };
-
 
     const selectedAbilities = abilities.filter(
         (ability: Ability) =>
@@ -85,6 +90,22 @@ const getVisibilitySequence = ({abilities, title, number}:Card, amount: number):
         return new Array(amount).fill('dummy').map (() =>   mixArray(VISIBILITY_SEQUENCES.DIFFERENT_FAMILY_2)).flat();
     }
     if (selectedAbilities.length === 1  && abilities.length ===1) {
+        console.log(`Card with single ability and no primary ability: ${title} ${amount}`);
+
+        if (number === 2) {
+            const visibility6: boolean[][][] =  mixArray(VISIBILITY9).slice(0,2);
+
+            // @ts-ignore
+            console.log(visibility6);
+            const result = new Array(amount).fill('dummy').map ((val: never, index:number) =>   visibility6[index]).flat();
+            console.log(`Visibility for card ${title}: `, result);
+            // @ts-ignore
+            return result;
+        }
+
+        if (number === 3) {
+            return new Array(amount).fill('dummy').map ((val: never, index: number) =>   VISIBILITY9[index]).flat();
+        }
         return new Array(amount).fill('dummy').map (() =>   mixArray(VISIBILITY_SEQUENCES.ONE)).flat();
     }
     if (selectedAbilities.length === 1  && abilities.length >1) {

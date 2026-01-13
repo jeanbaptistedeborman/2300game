@@ -5,9 +5,9 @@ const backgroundColor = "#FEEFD3";
 
 export const styles = `
 body {
-  margin: 0;
    font-family:"Crimson Pro", "Cambria", serif;
   -webkit-print-color-adjust:exact !important;
+  padding: 0;
   print-color-adjust:exact !important;
     line-height:1.1em;
    font-size: 9pt;
@@ -50,19 +50,18 @@ p:last-of-type {
 }
 
 .presentation-box {
+    width:100%;
     clear:both;
-    zoom:.85;
-    margin-top:5mm;
+    zoom:.82;
+    margin-top:1mm;
     max-width:21cm;
-    margin-right:auto; 
-    margin-left:auto;
-    gap:3mm 2mm;
+    gap:1mm 2mm;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap; 
     justify-content:flex-start;
     align-content:flex-start;
-    margin-bottom:1cm;
+    margin-bottom:1mm;
  }
  
  .abilility-vignette {
@@ -73,7 +72,32 @@ p:last-of-type {
     border-radius:0 0 1mm 1mm; 
  }
  
+ .presentation-box .card-container {
+    break-inside: avoid;
+    flex-basis:32.5%;
+    flex-shrink:1;
+ }
+ 
+ .card-container .card.back {
+    zoom:.06;
+    flex-basis:60mm;
+    box-shadow: none;
+    padding: 5mm;
+    border:none;
+ }
+ 
+ .card-container .card.back svg, .card-container .card.back .text  {
+    display:none;
+ }
+.card-container .card.back .back-vignette {
+    height:16mm;
+    border: .1mm solid black;
+    margin-bottom:5mm;
+ }
+ 
  .presentation-box .card {
+    box-sizing: border-box;
+    width:100%;
     box-shadow:0 1mm 2mm lightgray;
     break-inside: avoid;
     flex-basis:32.5%;
@@ -201,5 +225,18 @@ div {
    border-radius: 1mm; 
    margin-bottom: 1mm;
 }
+
+ @page {
+    size: A4;
+    margin: 20mm;
+    
+    @bottom-right {
+      content: "2200 annexe: cartes par tribu " counter(page) "/" counter(pages);
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      color: #000;
+    }
+   
+  }
 
 `

@@ -164,7 +164,7 @@ export const cards: Card[] = [
     {
         illustration: getFistIllustration(),
         number:1,
-        title: "Ordre de <span style='white-space: nowrap'>la poigne de fer</span>",
+        title: "Ordre de <span>la poigne de fer</span>",
         abilities: [administrativeCenter, militaryUnit],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,
@@ -189,7 +189,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple de <span style='white-space: nowrap'>la Grande Resurrection</span>",
+        title: "Temple de <span>la Renaissance Immaculée</span>",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -205,7 +205,7 @@ export const cards: Card[] = [
     {
         illustration:  getPrisonerIllustration(),
         number:1,
-        title: "Grande <span style='white-space: nowrap'>inquisition verte</span>",
+        title: "Grande <span>inquisition verte</span>",
         abilities: [cleanHand],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA
@@ -238,7 +238,7 @@ export const cards: Card[] = [
     {
         illustration: getFlameThrowerIllustration(),
         number:1,
-        title: "Disavowal <span style='white-space: nowrap'>Of The Ancients</span>",
+        title: "Disavowal <span>Of The Ancients</span>",
         abilities: [reuse],
         handicaps: [],
         allowedTerrain: Terrain.DESERT,
@@ -304,7 +304,7 @@ export const cards: Card[] = [
         abilities: [worldCompany, trade],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {  title: "Société Savante <span style='white-space: nowrap'>de Géographie</span>",
+    {  title: "Société Savante <span>de Géographie</span>",
         illustration:getGlobeIllustration(),
         number:1,
         abilities: [cartographer, scout],
@@ -331,7 +331,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        title: "Compagnons <span style='white-space: nowrap'>du Flying Santa</span>",
+        title: "Compagnons <span>du Flying Santa</span>",
         illustration:getBlimpIllustration(),
         number:1,
         abilities: [flyingMerchants, trade],
@@ -357,7 +357,7 @@ export const cards: Card[] = [
         abilities: [knowledge],
         allowedTerrain: Terrain.DESERT,
     },
-    {     title: "Bunker <span style='white-space: nowrap'>The Adaptive Company&#8482;</span>",
+    {     title: "Bunker <span>The Adaptive Company&#8482;</span>",
         illustration: getCarIllustration(),
         number:2,
         abilities: [goodOldWorld],
@@ -453,7 +453,7 @@ export const cards: Card[] = [
     },
 
     {
-        title: "Intelligence Artificielle <span style='white-space: nowrap;'>The Adaptive Company&#8482;</span>",
+        title: "Intelligence Artificielle <span>The Adaptive Company&#8482;</span>",
         illustration: getAIIllustration(),
         number:1,
         abilities: [knowledge, goodOldWorld],

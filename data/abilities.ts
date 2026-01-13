@@ -29,7 +29,7 @@ const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>`;
 const getRallyFriendsText = (family:Family) => `Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
-const getRallyFriendsTitle = () => `Accueil des réfugiés`
+export const getRallyFriendsTitle = () => `Accueil des réfugiés`
 
 export const trade: Ability = {
     isPrimary: true,
@@ -77,7 +77,7 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p><b>Lorsque moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser une <b>CITÉ</b> au lieu d'une simple colonie et déclencher la fin de partie.</p>`
+    text: `<p><b>Lorsque moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser des <b>CITÉS</b> au lieu de simples colonies et déclencher la fin de partie.</p>`
 }
 
 export const cleanContinent: Ability = {
