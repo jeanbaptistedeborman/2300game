@@ -87,6 +87,16 @@ import {
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
 export const cards: Card[] = [
+
+    {
+        illustration:getWarriorIllustration(),
+        number:2,
+        title: "Desert warriors",
+        abilities: [militaryUnit],
+        handicaps: [],
+        allowedTerrain: Terrain.DESERT
+    },
+
     {
         illustration: getCaravanIllustration(),
         number:3,
@@ -169,14 +179,7 @@ export const cards: Card[] = [
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {
-        illustration:getWarriorIllustration(),
-        number:1,
-        title: "Desert warriors",
-        abilities: [militaryUnit],
-        handicaps: [],
-        allowedTerrain: Terrain.DESERT
-    },
+
     {
         illustration: getWarBoat(),
         number:1,
@@ -189,7 +192,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple de <span>la Renaissance Immaculée</span>",
+        title: "Temple de <span>l'Immaculée Renaissance </span>",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -407,7 +410,7 @@ export const cards: Card[] = [
     {
         illustration: getFactoryIllustration(),
         status: 'test',
-        title: "Mad factory",
+        title: "Crazy factory",
         number:1,
         abilities: [autoFac, goodOldWorld],
         allowedTerrain: Terrain.DESERT,
@@ -453,7 +456,7 @@ export const cards: Card[] = [
     },
 
     {
-        title: "Intelligence Artificielle <span>The Adaptive Company&#8482;</span>",
+        title: "IA The Adaptive Company&#8482;",
         illustration: getAIIllustration(),
         number:1,
         abilities: [knowledge, goodOldWorld],
@@ -468,7 +471,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {   title: 'Kristmas Spirit',
-        status: 'discarded',
+        status: 'test',
         illustration: getFriendsIllustration(),
         number:1,
         abilities: [cosmopoliteContinent, trade],
