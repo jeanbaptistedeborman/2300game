@@ -108,7 +108,7 @@ export const getAbilityVignette = (({
                 ${effect ? `<div style="display:flex;margin-bottom:.5mm;vertical-align:top;width:100%;color:black;justify-content: center;
  font-weight: bold;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.5mm;font-weight: bold;">${getMoveIllustration()}</div>
-                RÉGIONS VOISINES&nbsp;:</div>` : ''}
+                EMPLACEMENTS VOISINS&nbsp;:</div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>

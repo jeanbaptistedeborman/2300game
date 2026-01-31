@@ -110,7 +110,7 @@ export const bewareOfTechno: Ability = {
     effect:addPopulation,
     name: 'Khmers verts',
     family: cleanEarth,
-    text: `${getPopulations(2)} si inoccupée et comportant la ${getTribeDescription(techno)}.`
+    text: `${getPopulations(2)} si région inoccupée comportant la ${getTribeDescription(techno)}.`
 }
 
 export const longTravel: Ability = {
