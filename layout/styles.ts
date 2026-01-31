@@ -2,7 +2,7 @@ import {BORDER_WIDTH} from "../constants";
 
 const backgroundColor = "#FEEFD3";
 //const backgroundColor = "#f7f4eb";
-const cardGap:string = '2mm';
+const cardGap:string = '1mm';
 
 export const styles = `
 body {
@@ -11,7 +11,7 @@ body {
   padding: 0;
   print-color-adjust:exact !important;
     line-height:1.1em;
-   font-size: 9pt;
+   font-size: 8.5pt;
    margin:0; 
 }
 
@@ -30,7 +30,7 @@ p:last-of-type {
 .card {
     background-color: ${backgroundColor};
     height: calc(33.33333% - calc(${cardGap} * 2));
-    flex: 1 1 calc(33.33333% - calc(${cardGap} * 2/3));
+    flex: 0 0 calc(33.33333% - calc(${cardGap} * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
@@ -208,7 +208,8 @@ div {
     hyphens: auto;
     vertical-align:bottom;
     padding:.3mm;
-    color:black;    
+    color:black;
+    text-wrap: pretty;    
 }
 
 .ability_text.primary {
@@ -229,7 +230,11 @@ div {
    margin-bottom: 1mm;
 }
 
- @page {
+`
+
+export const footerStyle:string =  `
+
+@page {
     size: A4;
     margin: 20mm;
     
@@ -241,5 +246,6 @@ div {
     }
    
   }
+
 
 `
