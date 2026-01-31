@@ -9,7 +9,7 @@ import {GET_FAMILIES_TITLE} from "../constants";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau de vouloir reconstruire le monde d'hier. Mais il faut du pétrole.",
+    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais il faut du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
     color: "#9f7bb8",
@@ -64,8 +64,8 @@ export const cleanEarth:Family = {
 }
 
 export const merchant:Family = {
-    flavourText:"Sous leurs dehors rationnels, ces marchands s'imaginent littéralement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
-    tip:`Comme au temps des anciens, le commerce marche main dans la main avec les militaires. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs chez vos adversaires.`,
+    flavourText:"Sous leurs dehors rationnels, les marchands croient fermement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
+    tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs chez vos adversaires.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon(),
     color: "#d97b2d",
@@ -82,4 +82,4 @@ export const none:Family = {
     isDarkColor:true,
 }
 
-export const families:Family[] = [none, merchant, cleanEarth, navigators, techno,  navigators, knowledgeGatherer, explorer, military ]
+export const families:Family[] = [none, merchant, cleanEarth, navigators, techno, knowledgeGatherer, explorer, military ]

@@ -1,5 +1,5 @@
 import fs from "fs";
-import {styles} from "../layout/styles";
+import {footerStyle, styles} from "../layout/styles";
 import {families} from "../data/families";
 import {Ability, Card, Family, FamilyName, terrains} from "../model";
 import {DECK_NUMBER} from "../constants";
@@ -38,6 +38,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
   
   <style>
     ${styles}
+    ${footerStyle}
     </style>
   
     <body style="padding:5mm 0 ! important;padding:1cm;max-width:21cm;margin:auto;">

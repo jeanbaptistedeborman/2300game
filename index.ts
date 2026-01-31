@@ -14,7 +14,7 @@ import {getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 const CARDS_PER_PAGE:number = 9;
 
-export const EXCLUDED_STATUSES: CardStatus[] = ['special', 'discarded', 'test'];
+export const EXCLUDED_STATUSES: CardStatus[] = ['special', 'discarded'];
 
 logStats(cards)
 
@@ -34,9 +34,9 @@ const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
 console.log ('', 'GENERATED CARDS', '---------------------------------------------------------');
 logStats(completedCards);
 
-const getPage = (cards: Card[]): string => {
-    const faces: string[] = [...cards.map((card) => cardTemplate(card)), ...new Array(4).fill(getStartRegionTemplate())]
-    const backs: string[] = cards.map((card) => backTemplate(card));
+const getPage = (cards: Card[] =  null): string => {
+        const faces: string[] = cards?[...cards.map((card) => cardTemplate(card))]:new Array(6).fill(getStartRegionTemplate());
+        const backs: string[] = cards?cards.map((card) => backTemplate(card)):[];
 
     return `<div class="page recto">
         ${faces.join('')}
@@ -58,7 +58,13 @@ fs.writeFile('docs/cards.html',
     </style>
   
     <BODY>
-    ${cardChunks.map((cards) => getPage(cards)).join('')}
+    ${
+    [...cardChunks.map((cards) => getPage(cards)),
+        getPage()
+    ]
+        
+        .join('')}
+    
    </BODY> 
    </HTML>
   `, () => {

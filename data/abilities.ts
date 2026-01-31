@@ -10,7 +10,13 @@ import {
     getLizardManIcon, getCardPlayIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, removePopulation, takeCard, trashCard} from "./effects";
-import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, KNOWLEDGE_ABILITY_TITLE, MERCHANT_ABILITY_TITLE} from "../constants";
+import {
+    FLOCK_CARD_TITLE,
+    GET_FAMILIES_TITLE,
+    GMO_CARD_TITLE,
+    KNOWLEDGE_ABILITY_TITLE,
+    MERCHANT_ABILITY_TITLE
+} from "../constants";
 import {
     getMinusPopulations,
     getPlusPopulations,
@@ -29,8 +35,7 @@ const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>`;
 const getRallyFriendsText = (family:Family) => `Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
-export const getRallyFriendsTitle = () => `Accueil des réfugiés`
-
+export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
 export const trade: Ability = {
     isPrimary: true,
     effect:addPopulation,
@@ -105,7 +110,7 @@ export const bewareOfTechno: Ability = {
     effect:addPopulation,
     name: 'Khmers verts',
     family: cleanEarth,
-    text: `${getPopulations(2)} si inoccupée et comportant la ${getTribeDescription(techno)}.`
+    text: `${getPopulations(2)} si région inoccupée comportant la ${getTribeDescription(techno)}.`
 }
 
 export const longTravel: Ability = {
@@ -333,7 +338,7 @@ export const burryThePast: Ability = {
 export const cosmopoliteContinent: Ability = {
     name: 'Société ouverte',
     family: merchant,
-    text: `${getPopulations(1)} par région d'un adversaire sur votre continent.`
+    text: `${getPopulations(3)} si vous occupez ${families.length -1} tribus&nbsp;&NotEqual;`
 }
 
 export const continentOfDiversity: Ability = {
