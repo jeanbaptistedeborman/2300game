@@ -9,7 +9,7 @@ import {GET_FAMILIES_TITLE} from "../constants";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais il faut du pétrole.",
+    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon(),
     color: "#9f7bb8",
@@ -25,7 +25,7 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les rares lieux de savoir qui ont survécu après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
+    text: `Comme les rares lieux de savoir ayant survécu après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
     flavourText: `
     "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>

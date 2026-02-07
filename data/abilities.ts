@@ -150,7 +150,7 @@ export const terraformer_take_cards: Ability = {
 export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,
-    text: `<p>${getPopulations(1)} par adversaire grâce à qui vous bénéficiez du pouvoir <b>${trade.name.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${trade.name.toUpperCase()}</b> avec tous vos adversaires</p>`
+    text: `<p>${getPopulations(1)} par adversaire avec qui vous bénéficiez du pouvoir <b>${trade.name.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${trade.name.toUpperCase()}</b> avec tous vos adversaires.</p>`
 }
 export const cartographer: Ability = {
     name: 'Cartographers',
@@ -174,7 +174,7 @@ export const invasion: Ability = {
 
 export const spy: Ability = {
     name: `Nid d'espions`,
-    family:explorer,
+    family:military,
     text: `
         ${WHEN_PLAYING_THIS_CARD}${getPlusPopulations(2)}.
         <p>${AT_YOUR_TURN}Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`

@@ -15,7 +15,7 @@ import {
 import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
-export const wrapIcon = (icon:string):string => `<span style="margin:0 .2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
+export const wrapIcon = (icon:string):string => `<span style="margin:0 -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
 export const populationIcon:string = `${wrapIcon(getCircleIcon('1em'))}`;
 export const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 export const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">

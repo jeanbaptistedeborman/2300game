@@ -11,11 +11,6 @@ export enum Terrain {
 
 export const terrains: Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 
-export enum Type {
-    'TRIBE',
-    'BASE',
-}
-
 export enum FamilyName {
     "TECHNO" = "Tekno",
     "MILITARY" = "Milis",
@@ -69,6 +64,7 @@ export interface Card {
     handicaps?: Handicap[],
     backTerrain?: Terrain,
     allowedTerrain: Terrain,
+    visibilitySequence?: boolean[][],
 }
 
 export interface Effect {

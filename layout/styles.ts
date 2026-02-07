@@ -11,7 +11,7 @@ body {
   padding: 0;
   print-color-adjust:exact !important;
     line-height:1.1em;
-   font-size: 8.5pt;
+   font-size: 9pt;
    margin:0; 
 }
 
@@ -49,6 +49,7 @@ p:last-of-type {
     flex-direction:column;
     position:relative;
     box-sizing:border-box;
+    letter-spacing:-0.01em;
 }
 
 .presentation-box {
@@ -144,6 +145,7 @@ p:last-of-type {
     top: -.5mm;
     padding:0 5mm 1mm 5mm;
     font-size: 4mm;
+    text-wrap: pretty;
 }
 
 .ability_title {
@@ -209,7 +211,6 @@ div {
     vertical-align:bottom;
     padding:.3mm;
     color:black;
-    text-wrap: pretty;    
 }
 
 .ability_text.primary {

@@ -174,7 +174,7 @@ export const cards: Card[] = [
     {
         illustration: getFistIllustration(),
         number:1,
-        title: "Ordre de <span>la poigne de fer</span>",
+        title: "Ordre de la poigne de fer",
         abilities: [administrativeCenter, militaryUnit],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,
@@ -192,7 +192,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple de <span>l'Immaculée Renaissance </span>",
+        title: "Temple de la Renaissance Immaculée",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -208,7 +208,7 @@ export const cards: Card[] = [
     {
         illustration:  getPrisonerIllustration(),
         number:1,
-        title: "Grande <span>inquisition verte</span>",
+        title: "Grande inquisition verte",
         abilities: [cleanHand],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA
@@ -391,7 +391,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
-        title: "Méduses abondantes",
+        title: "Cap Méduses",
         illustration: getJellyFishIllustration(),
         number:1,
         abilities: [harbour],
@@ -419,7 +419,7 @@ export const cards: Card[] = [
     {
         illustration: getFireIllustration(),
         status: 'test',
-        title: "Conemaraah !",
+        title: "Co-naih-maa-raaaaah !",
         number:1,
         abilities: [militaryUnit, scorchedEarth],
         allowedTerrain: Terrain.SAVANNA,
