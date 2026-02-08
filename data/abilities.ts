@@ -41,7 +41,7 @@ export const trade: Ability = {
     effect:addPopulation,
     name: MERCHANT_ABILITY_TITLE,
     family: merchant,
-    text: `${getPopulations(2)} si occupée par adversaire.`
+    text: `${getPopulations(2)} si occupé par adversaire.`
 }
 
 export const marine: Ability = {
@@ -359,7 +359,7 @@ export const autoFac: Ability = {
     name: 'Autofac',
     family: techno,
     effect: removePopulation,
-    text: `<p>Retirez toutes les colonies des pouvoirs autres que ${getTribeDescription(techno)}.</p>`
+    text: `<p>Toutes les colonies des pouvoirs autres que ${getTribeDescription(techno)} sont retirées.</p>`
 }
 
 export const scorchedEarth: Ability = {

@@ -73,7 +73,7 @@ const loadVisibilitySequence = (card:Card):undefined | boolean[][]=> {
 }
 
 const saveVisibilitySequence = (card:Card, visibilitySequence:boolean[][]) => {
-    console.log(`Saving new visibility sequence for card ${card.title}`);
+    console.log(`***** Saving new visibility sequence for card ${card.title}`, '*******************');
     const visibilitySequences = JSON.parse(fs.readFileSync('data/visibility-sequences.json', 'utf-8'));
     fs.writeFileSync('data/visibility-sequences.json', JSON.stringify(
         {
@@ -159,8 +159,11 @@ const has2AbilitiesOfDifferentFamilies = (abilities:Ability[]):boolean => {
 }
 
 const computeVisibility = (card: Card, ability: Ability, cardVisibilitySequence:boolean[], abilityIndex: number):boolean => {
+    if (!cardVisibilitySequence) {
+        console.log(card.title)
+    }
     return  ability.name === KNOWLEDGE_ABILITY_TITLE ||
-    cardVisibilitySequence[abilityIndex];
+        cardVisibilitySequence[abilityIndex];
 }
 
 const generateMultipleCards = (card:Card):Card[] => {
@@ -183,9 +186,9 @@ const generateMultipleCards = (card:Card):Card[] => {
 
 export const generateCompletedCards = () => cards
     .filter(({status}:Card) => !EXCLUDED_STATUSES.includes(status))
-        //.filter (({title}:Card) => title.includes("Outre"))
+       //.filter (({title}:Card) => title.includes("inquisitio") || title.includes('progrè'))
     .map(generateMultipleCards).flat()
-    .map ((card:Card, index:number) => ({...card, backTerrain: cardTerrains.reverse()[Math.floor((index)%3)] }))
+    .map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
     //.sort(() => .5 -Math.random())
     //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 

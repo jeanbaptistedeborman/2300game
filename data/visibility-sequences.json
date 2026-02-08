@@ -79,11 +79,11 @@
   ],
   "freres_doutre_mer_nav_terra": [
     [
-      false,
+      true,
       false
     ],
     [
-      true,
+      false,
       false
     ],
     [
@@ -213,10 +213,10 @@
       false
     ],
     [
-      false
+      true
     ],
     [
-      true
+      false
     ]
   ],
   "grande_inquisition_verte_terra": [
@@ -264,7 +264,7 @@
       true
     ]
   ],
-  "disavowal_spanof_the_ancientsspan_terra": [
+  "disavowal_of_the_ancients_terra": [
     [
       false
     ],
@@ -347,12 +347,6 @@
   ],
   "purificateurs_radicaux_terra": [
     [
-      false
-    ],
-    [
-      false
-    ],
-    [
       true
     ],
     [
@@ -360,6 +354,12 @@
     ],
     [
       true
+    ],
+    [
+      false
+    ],
+    [
+      false
     ],
     [
       false
@@ -379,7 +379,11 @@
       true
     ]
   ],
-  "societe_savante_spande_geographiespan_skout_skout": [
+  "societe_savante_de_geographie_skout_skout": [
+    [
+      true,
+      false
+    ],
     [
       false,
       false
@@ -387,54 +391,21 @@
     [
       true,
       true
-    ],
-    [
-      true,
-      false
     ]
   ],
   "lady_x_milis_skout": [
     [
+      false
+    ],
+    [
       false,
       true
     ],
     [
       false
-    ],
-    [
-      false
     ]
   ],
-  "aeronaute_skout": [
-    [
-      false
-    ],
-    [
-      true
-    ],
-    [
-      false
-    ],
-    [
-      true
-    ],
-    [
-      false
-    ],
-    [
-      false
-    ],
-    [
-      false
-    ],
-    [
-      false
-    ],
-    [
-      true
-    ]
-  ],
-  "compagnons_spandu_flying_santaspan_biz_biz": [
+  "compagnons_du_flying_santa_biz_biz": [
     [
       true,
       true
@@ -464,13 +435,13 @@
   ],
   "amis_du_vent_terra": [
     [
-      false
-    ],
-    [
-      false
-    ],
-    [
       true
+    ],
+    [
+      false
+    ],
+    [
+      false
     ]
   ],
   "bibliotheque_erud": [
@@ -502,12 +473,12 @@
       false
     ]
   ],
-  "bunker_spanthe_adaptive_company8482span_tekno": [
-    [
-      false
-    ],
+  "bunker_the_adaptive_company8482_tekno": [
     [
       true
+    ],
+    [
+      false
     ],
     [
       false
@@ -524,16 +495,16 @@
   ],
   "aventurier_skout_skout": [
     [
-      false,
-      false
-    ],
-    [
-      true,
-      false
-    ],
-    [
       true,
       true
+    ],
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      false
     ]
   ],
   "clan_macfromton_terra": [
@@ -747,6 +718,54 @@
     [
       false,
       false
+    ]
+  ],
+  "the_adaptive_company8482_crazy_factory_tekno_tekno": [
+    [
+      true,
+      true
+    ],
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "adaptive_company8482_crazy_factory_tekno_tekno": [
+    [
+      true,
+      true
+    ],
+    [
+      true,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "aeronaute_skout": [
+    [
+      true
+    ],
+    [
+      false
+    ],
+    [
+      true
+    ],
+    [
+      false
+    ],
+    [
+      false
+    ],
+    [
+     false
     ]
   ]
 }

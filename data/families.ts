@@ -25,7 +25,7 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les rares lieux de savoir ayant survécu après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
+    text: `Comme les rares lieux de savoir d'après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
     flavourText: `
     "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
     <br>
@@ -65,7 +65,7 @@ export const cleanEarth:Family = {
 
 export const merchant:Family = {
     flavourText:"Sous leurs dehors rationnels, les marchands croient fermement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
-    tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs chez vos adversaires.`,
+    tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon(),
     color: "#d97b2d",
