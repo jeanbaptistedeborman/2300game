@@ -35,10 +35,10 @@ console.log ('', 'GENERATED CARDS', '-------------------------------------------
 logStats(completedCards);
 
 const getPage = (cards: Card[] =  null): string => {
-        const faces: string[] = cards?[...cards.map((card) => cardTemplate(card))]:new Array(6).fill(getStartRegionTemplate());
-        const backs: string[] = cards?cards.map((card) => backTemplate(card)):[];
+        const faces: string[] = cards?cards.map((card) => cardTemplate(card)):new Array(6).fill(getStartRegionTemplate());
+        const backs: string[] =   cards?cards.map((card) => backTemplate(card)):new Array(6).fill('dummy').map((never:never, index) =>getStartRegionTemplate(index));
 
-    return `<div class="page recto">
+      return `<div class="page recto">
         ${faces.join('')}
         </div>
         <div class="page verso">
