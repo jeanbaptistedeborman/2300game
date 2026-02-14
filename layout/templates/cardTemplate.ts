@@ -64,10 +64,10 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     });
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
-
+    const hasEffect = sortedAbilities.some(({effect}) => effect) || sortedAbilities.length === 0;
     return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.LIGHT_SEA};`:''}">
     ${addEffects(sortedAbilities)} 
-    <div class="card-content">
+    <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
     <div style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
@@ -77,7 +77,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     
 ${(handicaps?.length > 0) ? `<ul>
         ${
-    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.5mm;"> 
+    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;"> 
         <div>
         <div>
             <span style="mix-blend-mode:lighten;color:white;display:flex;flex-direction:row;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}
@@ -89,7 +89,7 @@ ${(handicaps?.length > 0) ? `<ul>
     <ul style="border-radius: 0  0 1mm 1mm;">
     ${sortedAbilities.map((ability) => getAbilityVignette(ability)).join('')}
     </ul>
-    <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .5mm; gap:.5mm;">
+    <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>
    <div style="position:absolute;bottom:0; left:13mm;font-size: 10pt">${number} 

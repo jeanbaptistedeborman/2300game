@@ -11,7 +11,7 @@ export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
     tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut du pétrole.",
     familyName:FamilyName.TECHNO,
-    icon:getCogIcon(),
+    icon:getCogIcon('5mm'),
     color: "#9f7bb8",
     isDarkColor:true,
 }
@@ -19,7 +19,7 @@ export const techno:Family = {
 export const military:Family = {
     flavourText: "L'apocalypse climatique a détruit 32 millions d'espèces. Malheureusement, le militaire a survécu.",
     familyName:FamilyName.MILITARY,
-    icon:getFistIcon(),
+    icon:getFistIcon('5mm'),
     color: "#b42f1b",
     isDarkColor:true,
 }
@@ -32,7 +32,7 @@ export const knowledgeGatherer:Family = {
     <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
     tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
-    icon:getBookIcon(),
+    icon:getBookIcon('5mm'),
     color: '#efbb35',
     isDarkColor:false,
 }
@@ -40,7 +40,7 @@ export const knowledgeGatherer:Family = {
 export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
-    icon:getBalloonIcon(),
+    icon:getBalloonIcon('5mm'),
     color: "#073050",
     isDarkColor:true,
 }
@@ -49,7 +49,7 @@ export const navigators:Family = {
     tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps à restaurer. Exploitez les cartes Navigation avec le pouvoir "${GET_FAMILIES_TITLE}": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
     flavourText:"Les océans sont devenus d'immenses bouillons tabassés par les ouragans. Seuls les plus hardis s'y aventurent.",
     familyName:FamilyName.NAVIGATOR,
-    icon:getShipIcon(),
+    icon:getShipIcon('5mm'),
     color: terrainColors.SEA,
     isDarkColor:true,
 }
@@ -58,7 +58,7 @@ export const cleanEarth:Family = {
     tip: `La tribu ${FamilyName.CLEAN_EARTH.toUpperCase()} prospère en purifiant son continent pour y établir de grandes étendues pastorales. Mais ses adversaires peuvent utiliser la tribu ${military.familyName.toUpperCase()} pour l'empêcher de s'étendre. Ils peuvent en outre polluer le continent en l'occupant avec la tribu ${techno.familyName.toUpperCase()}.`,
     flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez les écologistes bien vénères de 2200 quand l'espérance de vie sera tombée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
-    icon:getTreeIcon(),
+    icon:getTreeIcon('5mm'),
     color: "#7fa537",
     isDarkColor:true,
 }
@@ -67,7 +67,7 @@ export const merchant:Family = {
     flavourText:"Sous leurs dehors rationnels, les marchands croient fermement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
     tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
-    icon:get2CoinsIcon(),
+    icon:get2CoinsIcon('5mm'),
     color: "#d97b2d",
     isDarkColor:true,
 }
@@ -77,7 +77,7 @@ export const none:Family = {
 <br>... Mais son heure viendra.`,
     tip: "Réprouvés mais résistants à la chaleur, les humains du futur&#8482 sont les seuls qui peuvent occuper la Fournaise. Utilisez-les pour prendre vos adversaires de vitesse. Ils peuvent en outre recevoir des pouvoirs en cours de partie.",
     familyName:FamilyName.NONE,
-    icon:getCogIcon(),
+    icon:getCogIcon('5mm'),
     color: "#545050",
     isDarkColor:true,
 }

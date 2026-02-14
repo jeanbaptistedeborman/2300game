@@ -15,7 +15,7 @@ import {
 import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
-export const wrapIcon = (icon:string):string => `<span style="margin:0 -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
+export const wrapIcon = (icon:string):string => `<span style="margin:-1mm -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
 export const populationIcon:string = `${wrapIcon(getCircleIcon('1em'))}`;
 export const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 export const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
@@ -97,7 +97,7 @@ export const getAbilityVignette = (({
     `<li class='abilility-vignette' style="background:${darkenColor(color)};" >
            <div style="color:white;background-color:${darkenColor(color)};display:flex;border-bottom: .2mm; border-color: ${color}; padding:.2mm;">
                   <h3 class="ability_title">${isPrimary ? `
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin-right: .5mm;">
+        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>
         
@@ -105,10 +105,10 @@ export const getAbilityVignette = (({
         
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
            ${text && `<div class="ability_text" style="background-color:${Color(color).mix(Color('#ffffff'), .95)}">
-                ${effect ? `<div style="display:flex;margin-bottom:.5mm;vertical-align:top;width:100%;color:black;justify-content: center;
+                ${effect ? `<div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
  font-weight: bold;">
-                <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.5mm;font-weight: bold;">${getMoveIllustration()}</div>
-                EMPLACEMENTS VOISINS&nbsp;:</div>` : ''}
+                <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div>
+                EMPLACEMENTS VOISINS</div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>

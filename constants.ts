@@ -9,4 +9,4 @@ export const GET_FAMILIES_TITLE:string = "Immigration choisie";
 
 
 
-export const BORDER_WIDTH:string = '.7mm';
+export const BORDER_WIDTH:string = '.3mm';

@@ -44,12 +44,16 @@ p:last-of-type {
 .card-content {
     width:100%;
     height: 100%;
-    padding: 9mm;
+    padding: 3mm;
     display: flex;
     flex-direction:column;
     position:relative;
     box-sizing:border-box;
     letter-spacing:-0.01em;
+}
+
+.card-content.effect {
+    padding:8.7mm;
 }
 
 .presentation-box {
@@ -143,14 +147,14 @@ p:last-of-type {
 .title {
     text-align:center;
     top: -.5mm;
-    padding:0 5mm 1mm 5mm;
+    padding:0 5mm .5mm 5mm;
     font-size: 4mm;
     text-wrap: pretty;
 }
 
 .ability_title {
-    padding: 0 ${BORDER_WIDTH};
-    font-size:11pt;
+    padding: .2mm ${BORDER_WIDTH} 0 0;
+    font-size:10pt;
 }
 
 .page {
@@ -161,7 +165,7 @@ p:last-of-type {
     gap:${cardGap};
     page-break-after: always;
     overflow:hidden;
-    height: 25cm;
+    height: 23cm;
 }
 
 .page.verso {
@@ -195,7 +199,7 @@ div {
     height:4mm;
     width:4mm;
     position:relative;
-    border:.5mm solid black;
+    border:.2mm solid black;
     border-radius:20%;
 }
 

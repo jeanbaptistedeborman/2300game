@@ -101,7 +101,7 @@ export const promoteGMOsMilitary: Ability = {
 }
 
 export const promoteGMOsMerchant: Ability = {
-    name: 'Equal opportunity policy',
+    name: 'Equal opportunity',
     family: merchant,
     text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1.1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${trade.name.toUpperCase()}</b> et la ${getTribeDescription(merchant)}.`
 }

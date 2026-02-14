@@ -334,7 +334,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        title: "Compagnons du Flying Santa",
+        title: "Flying Santa Company",
         illustration:getBlimpIllustration(),
         number:1,
         abilities: [flyingMerchants, trade],
@@ -419,7 +419,7 @@ export const cards: Card[] = [
     {
         illustration: getFireIllustration(),
         status: 'test',
-        title: "Co-Naih-Maa-Raaaaah !",
+        title: "Co-Nai-Ma-Raaaaah !",
         number:1,
         abilities: [militaryUnit, scorchedEarth],
         allowedTerrain: Terrain.SAVANNA,
