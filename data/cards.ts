@@ -69,7 +69,6 @@ import {
     getSailboatIllustration,
     getSailIllustration,
     getSkullIllustration,
-    getSpyIllustration,
     getWarBoat,
     getWarPlaneIllustration,
     getWarriorIllustration,
@@ -106,7 +105,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        number:3,
+        number:2,
         illustration: getSailIllustration(),
         title: "Capitaine intrépide",
         abilities: [marine],
@@ -419,7 +418,7 @@ export const cards: Card[] = [
     {
         illustration: getFireIllustration(),
         status: 'test',
-        title: "Co-Nai-Ma-Raaaaah !",
+        title: "Conaimaraaaaah !",
         number:1,
         abilities: [militaryUnit, scorchedEarth],
         allowedTerrain: Terrain.SAVANNA,

@@ -1,0 +1,1357 @@
+{
+  "desert_warriors_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "caravane_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "capitaine_intrepide_nav": [
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "freres_doutre_mer_nav_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "freres_doutre_mer_nav_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "freres_doutre_mer_nav_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "freres_doutre_mer_nav_erud": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "navire_marchand_biz_nav": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "bourgade_prospere_terra_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "citadelle_terra_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        false
+      ]
+    }
+  ],
+  "ordre_de_la_poigne_de_fer_milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "canonniere_nav_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "temple_de_la_renaissance_immaculee_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "on_arrete_le_progres__terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "grande_inquisition_verte_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "make_earth_great_again_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "plateforme_petroliere_tekno_nav": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "disavowal_of_the_ancients_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "lhumain_du_futur8482_": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": []
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": []
+    }
+  ],
+  "machine_a_recycler_terra_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "continent_tabou_milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "promotion_des_lezards_milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "societe_inclusive_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "new_london_milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "purificateurs_radicaux_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "kristmas_international_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "societe_savante_de_geographie_skout_skout": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "lady_x_milis_skout": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "aeronaute_skout": [
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "flying_santa_company_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "force_aerienne_milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "amis_du_vent_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "bibliotheque_erud": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "bunker_the_adaptive_company8482_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "aventurier_skout_skout": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "clan_macfromton_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "santa_hansa_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "cap_meduses_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "enterres_a_jamais_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "adaptive_company8482_crazy_factory_tekno_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "conaimaraaaaah__milis_milis": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        false
+      ]
+    }
+  ],
+  "bovins_preserves_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "centre_de_refugies_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "centre_de_refugies_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    }
+  ],
+  "ia_the_adaptive_company8482_erud_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        false
+      ]
+    }
+  ],
+  "kristmas_spirit_biz_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "babylon_3000_tekno_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "navire_marchand_nav_biz": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "plateforme_petroliere_nav_tekno": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
+        true
+      ]
+    }
+  ],
+  "ia_the_adaptive_company8482_tekno_erud": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        true
+      ]
+    }
+  ]
+}

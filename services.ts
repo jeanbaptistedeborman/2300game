@@ -18,11 +18,16 @@ export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
 export const logStats =  (cards:Card[]) =>
 {
     console.log("CARDS NUMBER: ", cards.length);
+    console.log('/');
+    console.log (`Cards with SCORCHED back: ${cards.filter(card => card.backTerrain === Terrain.SCORCHED).length}`);
+    console.log (`Cards with DESERT back: ${cards.filter(card => card.backTerrain === Terrain.DESERT).length}`);
+    console.log (`Cards with SAVANNA back: ${cards.filter(card => card.backTerrain === Terrain.SAVANNA).length}`);
+    console.log('/');
     console.log (`Cards with visible family:  ${cards.filter(({abilities}) => abilities.some(({isVisible}) => isVisible)).length}`);
     console.log (`Cards with 2 abilities: ${cards.filter(card => card.abilities.length > 1).length}`);
     console.log (`Cards with 1 ability: ${cards.filter(card => card.abilities.length === 1).length}`);
     console.log (`Cards with 0 ability: ${cards.filter(card => card.abilities.length === 0).length}`);
-
+    console.log('/');
     console.log (`Cards with SCORCHED back and visible family: ${cards.filter(({backTerrain, abilities}) => backTerrain === Terrain.SCORCHED && abilities.some(({isVisible}) => isVisible)).length}`);
     console.log (`Cards with DESERT back and visible family: ${cards.filter(({backTerrain, abilities}) => backTerrain === Terrain.DESERT && abilities.some(({isVisible}) => isVisible)).length}`);
     console.log (`Cards with SAVANNA back and visible family: ${cards.filter(({backTerrain, abilities}) => backTerrain === Terrain.SAVANNA && abilities.some(({isVisible}) => isVisible)).length}`);
@@ -68,22 +73,32 @@ const getCardIdentifier = ({title, abilities}:Card):string => `${title} ${abilit
     .replace(/[^a-zA-Z0-9\s]/g, '')
     .replace(/ /g, '_').toLowerCase();
 
-const loadVisibilitySequence = (card:Card):undefined | boolean[][]=> {
-    return JSON.parse(fs.readFileSync('data/visibility-sequences.json', 'utf-8'))[getCardIdentifier(card)];
+const loadVisibilitySequence = (card:Card):undefined | CardBackInfo[]=> {
+    return JSON.parse(fs.readFileSync('data/backinfos.json', 'utf-8'))[getCardIdentifier(card)];
 }
 
-const saveVisibilitySequence = (card:Card, visibilitySequence:boolean[][]) => {
-    console.log(`***** Saving new visibility sequence for card ${card.title}`, '*******************');
-    const visibilitySequences = JSON.parse(fs.readFileSync('data/visibility-sequences.json', 'utf-8'));
-    fs.writeFileSync('data/visibility-sequences.json', JSON.stringify(
+const saveVisibilitySequence = (card:Card, backInfo:CardBackInfo[]) => {
+    console.log(`***** Saving new backInfo for card ${card.title}`, '*******************');
+    const backInfos: {
+    [cardIdentifier: string]: CardBackInfo
+    }  = JSON.parse(fs.readFileSync('data/backinfos.json', 'utf-8'));
+    fs.writeFileSync('data/backinfos.json', JSON.stringify(
         {
-            ...visibilitySequences,
-            [getCardIdentifier(card)]: visibilitySequence
+            ...backInfos,
+            [getCardIdentifier(card)]: backInfo
         }
     ));
 }
 
-const computeAndSaveVisibilitySequence = (card:Card, amount: number):boolean[][] => {
+const addAlwaysVisibleAbilities =  (sequence:boolean[][], card:Card, abilityTitle:string):boolean[][] => {
+    console.log (card.title);
+    return sequence.map( (abilitiesVisibility:boolean[]) => abilitiesVisibility.map((visibility:boolean, index:number) =>
+        card.abilities[index]?.name === abilityTitle?true:visibility
+    ));
+}
+
+const computeVisibilitySequence = (card:Card):boolean[][] => {
+
     const {abilities, title, number} = card;
     const VISIBILITY9: boolean [][][] = [
         [[true], [false], [false]],
@@ -108,7 +123,7 @@ const computeAndSaveVisibilitySequence = (card:Card, amount: number):boolean[][]
     ); // Removes non-primary abilities of families that have a primary ability
 
 
-    if (!abilities.length) return; // Humain du futur
+    if (!abilities.length) return new Array(number * DECK_NUMBER).fill('dummy').map (() =>   []);
 
     if (has2AbilitiesOfSameFamily(selectedAbilities)) {
         return new Array(number).fill('dummy').map (() =>   mixArray(VISIBILITY_SEQUENCES.SAME_FAMILY_2)).flat();
@@ -121,10 +136,8 @@ const computeAndSaveVisibilitySequence = (card:Card, amount: number):boolean[][]
 
         if (number === 2) {
             const visibility6: boolean[][][] =  mixArray(VISIBILITY9).slice(0,2);
-            const result = visibility6.flat();
-            return result;
+            return visibility6.flat();
         }
-
         if (number === 3) {
             return mixArray(VISIBILITY9).flat();
         }
@@ -134,20 +147,30 @@ const computeAndSaveVisibilitySequence = (card:Card, amount: number):boolean[][]
         return new Array(number).fill('dummy').map (() =>   mixArray(getSequenceWithHiddenAbility(abilities,selectedAbilities))).flat();
     }
     throw new Error (`Could not compute visibility sequence for card ${title}`);
-
 }
 
-const getVisibilitySequence = (card:Card, amount: number):boolean[][] => {
+const getVisibilitySequence = (card:Card, amount: number):CardBackInfo[] => {
+    const existingSequence = loadVisibilitySequence(card);
+    if (existingSequence) return existingSequence;
+    const newSequence =  addBackTerrainToSequence (addAlwaysVisibleAbilities(computeVisibilitySequence(card, amount), card, KNOWLEDGE_ABILITY_TITLE));
 
-    if (card.abilities.length === 0) return;
-    const sequence = loadVisibilitySequence(card);
-    if (sequence) return sequence;
-    const newSequence =  computeAndSaveVisibilitySequence(card, amount);
     saveVisibilitySequence(card, newSequence);
     if (newSequence.length !== amount * card.number) throw (new Error(`Generated visibility sequence length (${newSequence.length}) does not match expected length (${amount * card.number}) for card ${card.title}`));
     return newSequence;
 }
 
+
+interface CardBackInfo {
+    backTerrain: Terrain;
+    visibilities: boolean[];
+}
+
+const addBackTerrainToSequence = (visibilitySequence: boolean [][] = [[]]):CardBackInfo[] => {
+    return visibilitySequence.map ( (visibilitySequence:boolean[], index:number) => ({
+        backTerrain: cardTerrains[index%3],
+        visibilities: visibilitySequence
+    }))
+}
 
 const has2AbilitiesOfSameFamily = (abilities:Ability[]):boolean => {
     const abilitiesOfSameFamily = abilities.filter(({family:{familyName}}) => familyName === abilities[0].family.familyName);
@@ -158,37 +181,31 @@ const has2AbilitiesOfDifferentFamilies = (abilities:Ability[]):boolean => {
     return abilities.length === 2 && abilities.filter(({family:{familyName}}) => familyName !== abilities[0].family.familyName).length >=1;
 }
 
-const computeVisibility = (card: Card, ability: Ability, cardVisibilitySequence:boolean[], abilityIndex: number):boolean => {
-    if (!cardVisibilitySequence) {
-        console.log(card.title)
-    }
-    return  ability.name === KNOWLEDGE_ABILITY_TITLE ||
-        cardVisibilitySequence[abilityIndex];
-}
-
 const generateMultipleCards = (card:Card):Card[] => {
-    const cardVisibilitySequence:boolean[][] = getVisibilitySequence (card, DECK_NUMBER);
+    const visibilityWithBackSequence:CardBackInfo[] =  getVisibilitySequence (card, DECK_NUMBER);
     const cardCopies:number = card.number * DECK_NUMBER;
+
     return Array(card.number * DECK_NUMBER).fill(card)// duplicate cards by cardNumber
         .map((card:Card, cardIndex)=> {
+            const cardVisibilityInfo:CardBackInfo = visibilityWithBackSequence[cardIndex];
             return {
                 ...card,
                 number: cardCopies,
+                backTerrain: cardVisibilityInfo.backTerrain,
                 abilities: card.abilities.map((ability: Ability, abilityIndex: number) => ({
                         ...ability,
-                        isVisible: computeVisibility(card, ability, cardVisibilitySequence[cardIndex % cardCopies], abilityIndex),
+                        isVisible: cardVisibilityInfo.visibilities[abilityIndex],
                     })
                 )
             }
         });
-
 }
 
 export const generateCompletedCards = () => cards
     .filter(({status}:Card) => !EXCLUDED_STATUSES.includes(status))
        //.filter (({title}:Card) => title.includes("inquisitio") || title.includes('progrè'))
     .map(generateMultipleCards).flat()
-    .map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
+    //.map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
     //.sort(() => .5 -Math.random())
     //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 
