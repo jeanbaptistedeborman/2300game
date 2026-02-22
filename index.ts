@@ -8,7 +8,7 @@ import {generateCardBacks} from "./exports/cardsBack";
 import {cardTemplate} from "./layout/templates/cardTemplate";
 import {header} from "./layout/components/components";
 import {backTemplate} from "./layout/templates/cardBackTemplate";
-import {getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
+import {ASSYMETRIC_START_REGION_URLS, getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -35,8 +35,8 @@ console.log ('', 'GENERATED CARDS', '-------------------------------------------
 logStats(completedCards);
 
 const getPage = (cards: Card[] =  null): string => {
-        const faces: string[] = cards?cards.map((card) => cardTemplate(card)):new Array(6).fill(getStartRegionTemplate());
-        const backs: string[] =   cards?cards.map((card) => backTemplate(card)):new Array(6).fill('dummy').map((never:never, index) =>getStartRegionTemplate(index));
+        const faces: string[] = cards?cards.map((card) => cardTemplate(card)):new Array(ASSYMETRIC_START_REGION_URLS.length).fill(getStartRegionTemplate());
+        const backs: string[] =   cards?cards.map((card) => backTemplate(card)):new Array(ASSYMETRIC_START_REGION_URLS.length).fill('dummy').map((never:never, index) =>getStartRegionTemplate(index));
 
       return `<div class="page recto">
         ${faces.join('')}

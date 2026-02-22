@@ -1,8 +1,9 @@
 import {BORDER_WIDTH} from "../constants";
 
 const backgroundColor = "#FEEFD3";
-//const backgroundColor = "#f7f4eb";
-const cardGap:string = '1mm';
+
+//const CARD_GAP:string = '1mm';
+const CARD_GAP:string = '0mm';
 
 export const styles = `
 body {
@@ -29,8 +30,8 @@ p:last-of-type {
 
 .card {
     background-color: ${backgroundColor};
-    height: calc(33.33333% - calc(${cardGap} * 2));
-    flex: 0 0 calc(33.33333% - calc(${cardGap} * 2/3));
+    height: calc(33.33333% - calc(${CARD_GAP} * 2));
+    flex: 0 0 calc(33.33333% - calc(${CARD_GAP} * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
@@ -162,10 +163,10 @@ p:last-of-type {
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    gap:${cardGap};
+    gap:${CARD_GAP};
     page-break-after: always;
     overflow:hidden;
-    height: 23cm;
+    height: 22cm;
 }
 
 .page.verso {
@@ -215,6 +216,7 @@ div {
     vertical-align:bottom;
     padding:.3mm;
     color:black;
+    text-wrap: pretty;
 }
 
 .ability_text.primary {

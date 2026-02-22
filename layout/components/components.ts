@@ -114,7 +114,7 @@ export const getAbilityVignette = (({
         </div>
         <div style="height:100%;">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:2.5mm;background-color:white;border:${'.8mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:2.5mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)

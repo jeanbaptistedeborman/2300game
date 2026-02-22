@@ -17,13 +17,14 @@ export const getFamilyCount = ((cards : Card[], familyName:FamilyName) => {
 
 export const logStats =  (cards:Card[]) =>
 {
+    console.log (`Cards with visible family:  ${cards.filter(({abilities}) => abilities.some(({isVisible}) => isVisible)).length}`);
     console.log("CARDS NUMBER: ", cards.length);
     console.log('/');
     console.log (`Cards with SCORCHED back: ${cards.filter(card => card.backTerrain === Terrain.SCORCHED).length}`);
     console.log (`Cards with DESERT back: ${cards.filter(card => card.backTerrain === Terrain.DESERT).length}`);
     console.log (`Cards with SAVANNA back: ${cards.filter(card => card.backTerrain === Terrain.SAVANNA).length}`);
     console.log('/');
-    console.log (`Cards with visible family:  ${cards.filter(({abilities}) => abilities.some(({isVisible}) => isVisible)).length}`);
+
     console.log (`Cards with 2 abilities: ${cards.filter(card => card.abilities.length > 1).length}`);
     console.log (`Cards with 1 ability: ${cards.filter(card => card.abilities.length === 1).length}`);
     console.log (`Cards with 0 ability: ${cards.filter(card => card.abilities.length === 0).length}`);
@@ -152,7 +153,7 @@ const computeVisibilitySequence = (card:Card):boolean[][] => {
 const getVisibilitySequence = (card:Card, amount: number):CardBackInfo[] => {
     const existingSequence = loadVisibilitySequence(card);
     if (existingSequence) return existingSequence;
-    const newSequence =  addBackTerrainToSequence (addAlwaysVisibleAbilities(computeVisibilitySequence(card, amount), card, KNOWLEDGE_ABILITY_TITLE));
+    const newSequence =  addBackTerrainToSequence (addAlwaysVisibleAbilities(computeVisibilitySequence(card), card, KNOWLEDGE_ABILITY_TITLE));
 
     saveVisibilitySequence(card, newSequence);
     if (newSequence.length !== amount * card.number) throw (new Error(`Generated visibility sequence length (${newSequence.length}) does not match expected length (${amount * card.number}) for card ${card.title}`));
@@ -207,6 +208,6 @@ export const generateCompletedCards = () => cards
     .map(generateMultipleCards).flat()
     //.map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
     //.sort(() => .5 -Math.random())
-    //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
+    .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 
 ;
