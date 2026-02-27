@@ -2,8 +2,11 @@ import {BORDER_WIDTH} from "../constants";
 
 const backgroundColor = "#FEEFD3";
 
-//const CARD_GAP:string = '1mm';
-const CARD_GAP:string = '0mm';
+
+
+//const CARD_GAP:string[] = ['1mm', '2mm'];
+const CARD_GAP:string[] = ['0mm', '0mm'];
+
 
 export const styles = `
 body {
@@ -30,8 +33,8 @@ p:last-of-type {
 
 .card {
     background-color: ${backgroundColor};
-    height: calc(33.33333% - calc(${CARD_GAP} * 2));
-    flex: 0 0 calc(33.33333% - calc(${CARD_GAP} * 2/3));
+    height: calc(33.33333% - calc(${CARD_GAP[0]} * 2));
+    flex: 0 0 calc(33.33333% - calc(${CARD_GAP[1]} * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
@@ -45,7 +48,7 @@ p:last-of-type {
 .card-content {
     width:100%;
     height: 100%;
-    padding: 3mm;
+    padding: 3mm 4mm;
     display: flex;
     flex-direction:column;
     position:relative;
@@ -150,7 +153,7 @@ p:last-of-type {
     top: -.5mm;
     padding:0 5mm .5mm 5mm;
     font-size: 4mm;
-    text-wrap: pretty;
+    text-wrap: balance;
 }
 
 .ability_title {
@@ -163,7 +166,7 @@ p:last-of-type {
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    gap:${CARD_GAP};
+    gap:${CARD_GAP[0]}  ${CARD_GAP[1]};
     page-break-after: always;
     overflow:hidden;
     height: 22cm;
@@ -216,6 +219,7 @@ div {
     vertical-align:bottom;
     padding:.3mm;
     color:black;
+    line-height:1em;
     text-wrap: pretty;
 }
 

@@ -19,6 +19,6 @@ export const getStartRegionTemplate = (index?: number): string => {
 
     return `<div class="card start-region ${isExperienced? 'experienced' : 'novice'}" >
             <img alt='start region' style="width:80%;height:80%" src="${url}">
-             ${isExperienced? '<div style="position:absolute;bottom:0;width:100%;background-color:black; color: white">JOUEURS EXPERIMENTES</div>':'<div style="position:absolute;bottom:0;width:100%;background-color:white; color: black">PREMIERES PARTIES</div>'}
+             ${isExperienced? '<div style="position:absolute;bottom:0;width:100%;background-color:black; color: white; padding: 3mm;">Expérimentés</div>':'<div style="padding: 3mm;position:absolute;bottom:0;width:100%;background-color:white; color: black">Débutants</div>'}
     </div>`;
 }

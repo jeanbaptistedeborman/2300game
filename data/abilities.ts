@@ -25,7 +25,7 @@ import {
     wrapIcon
 } from "../layout/components/components";
 
-const ICON_SIZE = '1.1em';
+const ICON_SIZE = '1em';
 const LARGE_ICON_SIZE = '3.3em';
 
 const WHEN_PLAYING_THIS_CARD:string =  `<b>À la pose de cette région&nbsp;:</b>`;
