@@ -9,7 +9,7 @@ import {GET_FAMILIES_TITLE} from "../constants";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut du pétrole.",
+    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais il faut du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon('5mm'),
     color: "#9f7bb8",
@@ -46,7 +46,7 @@ export const explorer:Family = {
 }
 
 export const navigators:Family = {
-    tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps à restaurer. Exploitez les cartes Navigation avec le pouvoir "${GET_FAMILIES_TITLE}": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
+    tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps à les restaurer. Exploitez les cartes Navigation avec le pouvoir "${GET_FAMILIES_TITLE}": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
     flavourText:"Les océans sont devenus d'immenses bouillons tabassés par les ouragans. Seuls les plus hardis s'y aventurent.",
     familyName:FamilyName.NAVIGATOR,
     icon:getShipIcon('5mm'),

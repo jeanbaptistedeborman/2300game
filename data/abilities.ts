@@ -359,7 +359,7 @@ export const autoFac: Ability = {
     name: 'Autofac',
     family: techno,
     effect: removePopulation,
-    text: `<p>Toutes les colonies des pouvoirs autres que ${getTribeDescription(techno)} sont retirées.</p>`
+    text: `<p>Vous devez retirer ${getPopulations(1)} au choix d'un pouvoir autres que ${getTribeDescription(techno)}.</p>`
 }
 
 export const scorchedEarth: Ability = {

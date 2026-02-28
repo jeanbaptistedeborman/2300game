@@ -202,8 +202,10 @@ const generateMultipleCards = (card:Card):Card[] => {
         });
 }
 
+export const removeUnusedCards = (({status}:Card): boolean => !EXCLUDED_STATUSES.includes(status));
+
 export const generateCompletedCards = () => cards
-    .filter(({status}:Card) => !EXCLUDED_STATUSES.includes(status))
+    .filter(removeUnusedCards)
        //.filter (({title}:Card) => title.includes("inquisitio") || title.includes('progrè'))
     .map(generateMultipleCards).flat()
     //.map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))

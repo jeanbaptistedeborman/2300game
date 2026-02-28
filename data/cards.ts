@@ -191,7 +191,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple de la Renaissance Immaculée",
+        title: "Temple de l'Immaculée Rédemption",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE

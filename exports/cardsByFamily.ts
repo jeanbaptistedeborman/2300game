@@ -3,7 +3,7 @@ import {footerStyle, styles} from "../layout/styles";
 import {families} from "../data/families";
 import {Ability, Card, Family, FamilyName, terrains} from "../model";
 import {DECK_NUMBER} from "../constants";
-import {countCards, findPrimaryAbility} from "../services";
+import {countCards, findPrimaryAbility, removeUnusedCards} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";
 import {getFamilyIcon, header} from "../layout/components/components";
 import {backTemplate} from "../layout/templates/cardBackTemplate";
@@ -43,7 +43,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
   
     <body style="padding:5mm 0 ! important;padding:1cm;max-width:21cm;margin:auto;">
        <header style="break-inside: avoid; font-family: 'Arial', 'Sans Serif'"> <h1>Annexe: cartes par tribu (${
-            cards.filter(({status}:Card) => status !== 'discarded' && status !== 'test')
+            cards.filter(removeUnusedCards)
             .reduce(countCards, 0)*DECK_NUMBER})</h1>
         <ul style="margin:.3cm 0">
         <li style="margin-bottom: 1mm">Les cartes qui comportent plusieurs tribus sont reprises dans chaque tribu.</li>

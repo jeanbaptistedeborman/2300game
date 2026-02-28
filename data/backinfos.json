@@ -173,7 +173,7 @@
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -1351,6 +1351,26 @@
       "visibilities": [
         false,
         true
+      ]
+    }
+  ],
+  "temple_de_limmaculee_redemption_terra": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
       ]
     }
   ]
