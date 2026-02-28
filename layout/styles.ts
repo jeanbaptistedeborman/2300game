@@ -203,7 +203,7 @@ div {
     height:4mm;
     width:4mm;
     position:relative;
-    border:.2mm solid black;
+    border:.4mm solid black;
     border-radius:20%;
 }
 
@@ -220,7 +220,6 @@ div {
     padding:.3mm;
     color:black;
     line-height:1em;
-    text-wrap: pretty;
 }
 
 .ability_text.primary {

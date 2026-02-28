@@ -210,6 +210,6 @@ export const generateCompletedCards = () => cards
     .map(generateMultipleCards).flat()
     //.map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
     //.sort(() => .5 -Math.random())
-    .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
+    //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 
 ;

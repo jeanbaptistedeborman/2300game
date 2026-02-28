@@ -61,7 +61,7 @@ export const getFamilyIcon = ({
                                   icon,
                                   familyName,
                                   color
-                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 2.5mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 <span class="text">${String(familyName).toUpperCase()}<span>
         </div>`;
@@ -114,7 +114,7 @@ export const getAbilityVignette = (({
         </div>
         <div style="height:100%;">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-2mm;top:2.5mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:2.5mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)

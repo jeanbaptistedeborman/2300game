@@ -1,5 +1,5 @@
 {
-  "desert_warriors_milis": [
+  "desert_warriors_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -131,7 +131,7 @@
       ]
     }
   ],
-  "freres_doutre_mer_nav_terra": [
+  "freres_doutre_mer_nav_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -154,7 +154,7 @@
       ]
     }
   ],
-  "freres_doutre_mer_nav_tekno": [
+  "freres_doutre_mer_nav_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -240,7 +240,7 @@
       ]
     }
   ],
-  "bourgade_prospere_terra_biz": [
+  "bourgade_prospere_tera_biz": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -263,7 +263,7 @@
       ]
     }
   ],
-  "citadelle_terra_milis": [
+  "citadelle_tera_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -286,7 +286,7 @@
       ]
     }
   ],
-  "ordre_de_la_poigne_de_fer_milis_milis": [
+  "ordre_de_la_poigne_de_fer_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -309,7 +309,7 @@
       ]
     }
   ],
-  "canonniere_nav_milis": [
+  "canonniere_nav_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -332,7 +332,7 @@
       ]
     }
   ],
-  "temple_de_la_renaissance_immaculee_terra": [
+  "temple_de_la_renaissance_immaculee_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -352,7 +352,7 @@
       ]
     }
   ],
-  "on_arrete_le_progres__terra": [
+  "on_arrete_le_progres__tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -372,7 +372,7 @@
       ]
     }
   ],
-  "grande_inquisition_verte_terra": [
+  "grande_inquisition_verte_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -392,7 +392,7 @@
       ]
     }
   ],
-  "make_earth_great_again_tekno": [
+  "make_earth_great_again_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -430,7 +430,7 @@
       ]
     }
   ],
-  "plateforme_petroliere_tekno_nav": [
+  "plateforme_petroliere_teko_nav": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -453,7 +453,7 @@
       ]
     }
   ],
-  "disavowal_of_the_ancients_terra": [
+  "disavowal_of_the_ancients_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -547,7 +547,7 @@
       "visibilities": []
     }
   ],
-  "machine_a_recycler_terra_tekno": [
+  "machine_a_recycler_tera_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -570,7 +570,7 @@
       ]
     }
   ],
-  "continent_tabou_milis_milis": [
+  "continent_tabou_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -593,7 +593,7 @@
       ]
     }
   ],
-  "promotion_des_lezards_milis_milis": [
+  "promotion_des_lezards_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -639,7 +639,7 @@
       ]
     }
   ],
-  "new_london_milis_milis": [
+  "new_london_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -662,7 +662,7 @@
       ]
     }
   ],
-  "purificateurs_radicaux_terra": [
+  "purificateurs_radicaux_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -723,7 +723,7 @@
       ]
     }
   ],
-  "societe_savante_de_geographie_skout_skout": [
+  "societe_savante_de_geographie_skut_skut": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -746,7 +746,7 @@
       ]
     }
   ],
-  "lady_x_milis_skout": [
+  "lady_x_mili_skut": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -767,7 +767,7 @@
       ]
     }
   ],
-  "aeronaute_skout": [
+  "aeronaute_skut": [
     {
       "backTerrain": "Désert",
       "visibilities": [
@@ -828,7 +828,7 @@
       ]
     }
   ],
-  "force_aerienne_milis_milis": [
+  "force_aerienne_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -851,7 +851,7 @@
       ]
     }
   ],
-  "amis_du_vent_terra": [
+  "amis_du_vent_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -927,7 +927,7 @@
       ]
     }
   ],
-  "bunker_the_adaptive_company8482_tekno": [
+  "bunker_the_adaptive_company8482_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -965,7 +965,7 @@
       ]
     }
   ],
-  "aventurier_skout_skout": [
+  "aventurier_skut_skut": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -988,7 +988,7 @@
       ]
     }
   ],
-  "clan_macfromton_terra": [
+  "clan_macfromton_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1031,7 +1031,7 @@
       ]
     }
   ],
-  "cap_meduses_terra": [
+  "cap_meduses_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1051,7 +1051,7 @@
       ]
     }
   ],
-  "enterres_a_jamais_terra": [
+  "enterres_a_jamais_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1071,7 +1071,7 @@
       ]
     }
   ],
-  "adaptive_company8482_crazy_factory_tekno_tekno": [
+  "adaptive_company8482_crazy_factory_teko_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1094,7 +1094,7 @@
       ]
     }
   ],
-  "conaimaraaaaah__milis_milis": [
+  "conaimaraaaaah__mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1117,7 +1117,7 @@
       ]
     }
   ],
-  "bovins_preserves_terra": [
+  "bovins_preserves_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1196,7 +1196,7 @@
       ]
     }
   ],
-  "centre_de_refugies_terra": [
+  "centre_de_refugies_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1216,7 +1216,7 @@
       ]
     }
   ],
-  "ia_the_adaptive_company8482_erud_tekno": [
+  "ia_the_adaptive_company8482_erud_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1262,7 +1262,7 @@
       ]
     }
   ],
-  "babylon_3000_tekno_tekno": [
+  "babylon_3000_teko_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1308,7 +1308,7 @@
       ]
     }
   ],
-  "plateforme_petroliere_nav_tekno": [
+  "plateforme_petroliere_nav_teko": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1331,7 +1331,7 @@
       ]
     }
   ],
-  "ia_the_adaptive_company8482_tekno_erud": [
+  "ia_the_adaptive_company8482_teko_erud": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1354,7 +1354,7 @@
       ]
     }
   ],
-  "temple_de_limmaculee_redemption_terra": [
+  "temple_du_grand_pardon_tera": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -1364,13 +1364,33 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
+        true
+      ]
+    }
+  ],
+  "cap_des_meduses_tera": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
         false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
       ]
     }
   ]

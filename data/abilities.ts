@@ -82,14 +82,14 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p><b>Lorsque moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;:</b></p><p>Vous pouvez prématurément poser des <b>CITÉS</b> au lieu de simples colonies et déclencher la fin de partie.</p>`
+    text: `<p>${WHEN_PLAYING_THIS_CARD} <b><br>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b></p><p>Vous pouvez poser une ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir (ce qui déclenche la fin de partie).</p>`
 }
 
 export const cleanContinent: Ability = {
     name: 'Continent Pur',
     family: cleanEarth,
     text: `${WHEN_YOUR_RESOLUTION}
-    <p>Si aucune ${getTribeDescription(techno)} sur votre continent &nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
+    <p>Si aucune ${getTribeDescription(techno)} sur votre continent&nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
     <b>MAXIMUM : ${getPopulations(7)}.</b>
 `
 }

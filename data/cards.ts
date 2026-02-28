@@ -191,7 +191,7 @@ export const cards: Card[] = [
     {
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple de l'Immaculée Rédemption",
+        title: "Temple du Grand Pardon",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -390,7 +390,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
-        title: "Cap Méduses",
+        title: "Cap des Méduses",
         illustration: getJellyFishIllustration(),
         number:1,
         abilities: [harbour],
