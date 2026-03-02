@@ -198,7 +198,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} consultez la première carte des régions inoccupées de la même rangée ou de la même colonne.</p>`
+    text: `<p>${ANY_TIME} consultez la carte du dessus des régions inoccupées de votre continent situées sur la même rangée ou la même colonne.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent <b>${"rapidité".toUpperCase()}</b>.</p>`;
@@ -280,7 +280,7 @@ export const recluse: Ability = {
     name: 'Defender of the Realm',
     family: military,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>MAXIMUM&nbsp;: ${getPopulations(9)} - 1</b> par ${populationIcon} adverse sur votre continent`,
+    <b>MAXIMUM&nbsp;: ${getPopulations(7)} - 1</b> par ${populationIcon} adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {
@@ -359,7 +359,7 @@ export const autoFac: Ability = {
     name: 'Autofac',
     family: techno,
     effect: removePopulation,
-    text: `<p>Vous devez retirer ${getPopulations(1)} au choix d'un pouvoir autres que ${getTribeDescription(techno)}.</p>`
+    text: `<p>Vous devez retirer ${getPopulations(1)} au choix d'un que ${getTribeDescription(techno)}.</p>`
 }
 
 export const scorchedEarth: Ability = {

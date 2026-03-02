@@ -179,7 +179,7 @@
   ],
   "freres_doutre_mer_nav_biz": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Fournaise",
       "visibilities": [
         true
       ]
@@ -191,7 +191,7 @@
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Savanne",
       "visibilities": [
         false
       ]
@@ -414,13 +414,13 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -915,13 +915,13 @@
       ]
     },
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Savanne",
       "visibilities": [
         true
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Savanne",
       "visibilities": [
         true
       ]
@@ -931,13 +931,13 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {

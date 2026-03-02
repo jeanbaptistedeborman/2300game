@@ -30,6 +30,8 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
         }, {} as {FamilyName:Card[]}),
         [FamilyName.NONE]:cardsWithCorrectCount.filter (({abilities}) => abilities.length == 0 )};
 
+
+
     fs.writeFile('docs/cards-by-family.html',
         `<HTML lang="fr">
   
@@ -78,7 +80,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                     DOS: 
                         ${completedCards
                         .filter((completedCard) => isSameCard(card, completedCard))
-                       .sort ((a:Card, b:Card) =>  terrains.indexOf(b.backTerrain) - terrains.indexOf(a.backTerrain)) 
+                       //.sort ((a:Card, b:Card) =>  terrains.indexOf(b.backTerrain) - terrains.indexOf(a.backTerrain)) 
                        .map((completedCard: Card) => {
                            return backTemplate(completedCard);
                        }).join('')

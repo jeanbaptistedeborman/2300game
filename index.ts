@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import {Card, CardStatus, Terrain} from "./model";
 import {cards} from './data/cards';
 import {styles} from "./layout/styles";
-import {generateCompletedCards, logStats} from "./services";
+import {generateCompletedCards, logStats, removeUnusedCards} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
 import {cardTemplate} from "./layout/templates/cardTemplate";
@@ -20,7 +20,8 @@ logStats(cards)
 
 const completedCards: Card[] = generateCompletedCards();
 
-generateCardsByFamiy(cards.filter (({status}) => !EXCLUDED_STATUSES.includes(status)), completedCards);
+
+generateCardsByFamiy(cards.filter (removeUnusedCards), completedCards);
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {

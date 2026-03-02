@@ -206,9 +206,8 @@ export const removeUnusedCards = (({status}:Card): boolean => !EXCLUDED_STATUSES
 
 export const generateCompletedCards = () => cards
     .filter(removeUnusedCards)
-       //.filter (({title}:Card) => title.includes("inquisitio") || title.includes('progrè'))
     .map(generateMultipleCards).flat()
-    //.map ((card:Card, index:number) => ({...card, backTerrain: [...cardTerrains].reverse()[Math.floor((index)%3)] }))
+        //.filter (({backTerrain}:Card) => backTerrain === Terrain.SCORCHED)
     //.sort(() => .5 -Math.random())
     //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 

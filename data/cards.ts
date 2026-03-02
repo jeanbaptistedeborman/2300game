@@ -280,7 +280,7 @@ export const cards: Card[] = [
         number:1,
         title: "Société inclusive",
         abilities: [promoteGMOsMerchant, trade],
-        allowedTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
     },
 
     {
@@ -408,7 +408,7 @@ export const cards: Card[] = [
 
     {
         illustration: getFactoryIllustration(),
-        status: 'test',
+        status: 'discarded',
         title: "Adaptive Company&#8482; crazy factory",
         number:1,
         abilities: [autoFac, goodOldWorld],
