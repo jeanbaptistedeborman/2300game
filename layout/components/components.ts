@@ -61,7 +61,7 @@ export const getFamilyIcon = ({
                                   icon,
                                   familyName,
                                   color
-                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .8)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 <span class="text">${String(familyName).toUpperCase()}<span>
         </div>`;
@@ -101,18 +101,18 @@ export const getAbilityVignette = (({
         ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>
         
-        <div style="box-sizing:border-box;display: flex;color:white;border:${BORDER_WIDTH} solid ${color};">
+        <div style="box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};">
         
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
            ${text && `<div class="ability_text" style="background-color:${Color(color).mix(Color('#ffffff'), .95)}">
                 ${effect ? `<div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
- font-weight: bold;">
+ font-weight: bold;font-size: smaller;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div>
-                EMPLACEMENTS VOISINS</div>` : ''}
+                EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div></div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
             ${text}</div>`}
         </div>
-        <div style="height:100%;">
+        <div style="height:100%;}">
         ${getFamilyIcon(family)}
         ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:2.5mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>

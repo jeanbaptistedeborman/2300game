@@ -4,12 +4,11 @@ import {
     getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, get2CoinsIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
-import {getRallyFriendsTitle} from "./abilities";
 import {GET_FAMILIES_TITLE} from "../constants";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais il faut du pétrole.",
+    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut creuser pour avoir du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon('5mm'),
     color: "#9f7bb8",
@@ -25,11 +24,10 @@ export const military:Family = {
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les rares lieux de savoir d'après 2200 sont mythiques, leur tribu est toujours visible au dos.`,
+    text: `Comme les rares lieux de savoir ayant survécu en 2200 sont mythiques, leur tribu est toujours visible au dos.`,
     flavourText: `
-    "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !"   
-    <br>
-    <br>Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
+   "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !" </br>  
+    Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
     tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon('5mm'),
@@ -65,7 +63,7 @@ export const cleanEarth:Family = {
 
 export const merchant:Family = {
     flavourText:"Sous leurs dehors rationnels, les marchands croient fermement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
-    tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs.`,
+    tip:`Comme au temps des anciens, la force marche main dans la main avec le commerce. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les emplacements de vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon('5mm'),
     color: "#d97b2d",

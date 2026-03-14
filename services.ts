@@ -38,7 +38,7 @@ export const logStats =  (cards:Card[]) =>
 
 }
 
-export const darkenColor = (color:string)=> Color(color).darken(.4);
+export const darkenColor = (color:string, ratio : number = .4 )=> Color(color).darken(ratio);
 
 export const countCards = (acc, {number}) => acc+number;
 
@@ -208,7 +208,7 @@ export const generateCompletedCards = () => cards
     .filter(removeUnusedCards)
     .map(generateMultipleCards).flat()
         //.filter (({backTerrain}:Card) => backTerrain === Terrain.SCORCHED)
-    //.sort(() => .5 -Math.random())
-    //.sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
+    .sort(() => .5 -Math.random())
+    .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 
 ;

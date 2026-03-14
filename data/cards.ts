@@ -294,7 +294,7 @@ export const cards: Card[] = [
     {
         illustration: getFarmerIllustration(),
         number:2,
-        title: "Purificateurs radicaux",
+        title: "Terraforming Earth",
         abilities: [terraformer],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,

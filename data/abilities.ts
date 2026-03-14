@@ -33,7 +33,9 @@ const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<p><b>À tout moment&nbsp;:</b></p>`;
 const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
-const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>`;
+const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller;">[RAPPEL&nbsp;: Aussi prendre en compte les régions inoccupées ou occupées par des adversaires.]</p>`;
+
+const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
 const getRallyFriendsText = (family:Family) => `Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
 export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
 export const trade: Ability = {
@@ -48,7 +50,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez poser cette région dans <b>l'<b>Océan</b>.</b>`,
+    text:`${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez appliquer les règles de navigation.`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -82,7 +84,7 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p>${WHEN_PLAYING_THIS_CARD} <b><br>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b></p><p>Vous pouvez poser une ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir (ce qui déclenche la fin de partie).</p>`
+    text: `<p>${WHEN_PLAYING_THIS_CARD} <b><br>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b></p><p>Vous pouvez poser une ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir. (Ceci déclenchera la fin de partie).</p>`
 }
 
 export const cleanContinent: Ability = {
@@ -91,6 +93,7 @@ export const cleanContinent: Ability = {
     text: `${WHEN_YOUR_RESOLUTION}
     <p>Si aucune ${getTribeDescription(techno)} sur votre continent&nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
     <b>MAXIMUM : ${getPopulations(7)}.</b>
+    ${reminderOccupiedAndEnemy}
 `
 }
 
@@ -136,7 +139,7 @@ export const archeolog: Ability = {
 }
 export const terraformer: Ability = {
     effect: trashCard,
-    name: `Place nette`,
+    name: `Purificateurs radicaux`,
     family: cleanEarth,
     text: `${WHEN_PLAYING_THIS_CARD}<p>${wrapIcon(getTrashCardIcon('1.3em'))} Vous devez défausser la première carte des régions inoccupées.</p>`
 }
@@ -198,7 +201,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} consultez la carte du dessus des régions inoccupées de votre continent situées sur la même rangée ou la même colonne.</p>`
+    text: `<p>${ANY_TIME} vous pouvez consulter la carte du dessus des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent <b>${"rapidité".toUpperCase()}</b>.</p>`;
@@ -286,7 +289,7 @@ export const recluse: Ability = {
 export const worldTraveler: Ability = {
     name: 'Grand Reporter',
     family: explorer,
-    text: `${getPopulations(3)} si sur continent adverse`
+    text: `${getPopulations(2)} si sur continent adverse`
 }
 
 export const rallyGreenFriends: Ability = {

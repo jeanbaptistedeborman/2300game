@@ -80,7 +80,7 @@ ${(handicaps?.length > 0) ? `<ul>
     handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;"> 
         <div>
         <div>
-            <span style="mix-blend-mode:lighten;color:white;display:flex;flex-direction:row;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}
+            <span style="mix-blend-mode:lighten;color:white;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}
         </div>
         </span>
         </li>`).join('')}</ul>` : ``

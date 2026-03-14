@@ -142,15 +142,15 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false,
-        false
+        true,
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -242,7 +242,7 @@
   ],
   "bourgade_prospere_tera_biz": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Fournaise",
       "visibilities": [
         false,
         false
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Savanne",
       "visibilities": [
         true,
         true
@@ -311,17 +311,10 @@
   ],
   "canonniere_nav_mili": [
     {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true,
-        false
-      ]
-    },
-    {
       "backTerrain": "Désert",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
@@ -329,6 +322,13 @@
       "visibilities": [
         false,
         false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        true
       ]
     }
   ],
@@ -435,21 +435,21 @@
       "backTerrain": "Savanne",
       "visibilities": [
         false,
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
         true,
-        false
+        true
       ]
     }
   ],
@@ -551,21 +551,21 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
-        false
+        true,
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         true
       ]
     }
@@ -597,14 +597,14 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
-        false
+        true,
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
@@ -612,7 +612,7 @@
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -628,14 +628,14 @@
       "backTerrain": "Désert",
       "visibilities": [
         true,
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -727,8 +727,10 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
+
+
         true,
-        false
+        true
       ]
     },
     {
@@ -742,7 +744,7 @@
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -855,13 +857,13 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -915,13 +917,13 @@
       ]
     },
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Désert",
       "visibilities": [
         true
       ]
     },
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Désert",
       "visibilities": [
         true
       ]
@@ -935,7 +937,7 @@
       ]
     },
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Fournaise",
       "visibilities": [
         true
       ]
@@ -1177,14 +1179,14 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
-        false
+        true,
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
@@ -1192,7 +1194,7 @@
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -1267,20 +1269,22 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        false
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+
+        false,
+        false
+
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        false,
+        true,
         false
       ]
     }
@@ -1305,29 +1309,6 @@
       "visibilities": [
         false,
         false
-      ]
-    }
-  ],
-  "plateforme_petroliere_nav_teko": [
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true,
-        false
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        false,
-        false
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
-        true,
-        true
       ]
     }
   ],
@@ -1391,6 +1372,67 @@
       "backTerrain": "Fournaise",
       "visibilities": [
         true
+      ]
+    }
+  ],
+  "plateforme_petroliere_nav_teko": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true,
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false,
+        false
+      ]
+    }
+  ],
+  "terraforming_earth_tera": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
       ]
     }
   ]

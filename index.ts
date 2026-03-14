@@ -9,6 +9,7 @@ import {cardTemplate} from "./layout/templates/cardTemplate";
 import {header} from "./layout/components/components";
 import {backTemplate} from "./layout/templates/cardBackTemplate";
 import {ASSYMETRIC_START_REGION_URLS, getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
+import {generateFamilyPresentation} from "./exports/FamilyPresentation";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -22,6 +23,7 @@ const completedCards: Card[] = generateCompletedCards();
 
 
 generateCardsByFamiy(cards.filter (removeUnusedCards), completedCards);
+generateFamilyPresentation(cards.filter (removeUnusedCards), completedCards);
 generateCardBacks(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
@@ -64,7 +66,7 @@ fs.writeFile('docs/cards.html',
         getPage()
     ]
         
-        .join('')}
+        .join('')}  
     
    </BODY> 
    </HTML>

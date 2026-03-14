@@ -61,7 +61,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
             <div style="style="break-inside: avoid; font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin:2mm 0 1mm 0;">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
            
-           ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 3mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
+           ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 1mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
             <p style="${textStyle};font-style:italic;" >${family?.flavourText || ''}</p>
             <p style="${textStyle}" >${family?.text || ''}</p>
             ${family?.tip?`<div style="${textStyle}; background-color:#fee6a0;padding:1mm">${family.tip}</div>`:''}

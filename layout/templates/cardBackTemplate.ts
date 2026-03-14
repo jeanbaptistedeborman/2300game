@@ -11,6 +11,14 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
     }
 
     return `<div class="card back ${Object.keys(Terrain)[backTerrain]}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]};">
+
+   <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0">
+       
+    
+        <div style="color:white; position:absolute; left:1mm; bottom:3mm;" >${backTerrain.toUpperCase()}</div>
+        ${getTerrainIllustration(backTerrain)}
+    </div>
+
     <ul >
     ${abilities
         .filter(({isVisible}) => isVisible)
@@ -19,11 +27,6 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
                   family: {color}
               }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}${getFamilyIcon(family)}</li>`).join('')}
     </ul>
-    <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0">
-       
-    
-        <div style="color:white; position:absolute; left:1mm; bottom:3mm;" >${backTerrain.toUpperCase()}</div>
-        ${getTerrainIllustration(backTerrain)}
-    </div>
+ 
     </div>`;
 }
