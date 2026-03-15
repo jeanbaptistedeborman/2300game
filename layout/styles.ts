@@ -151,14 +151,16 @@ p:last-of-type {
 .title {
     text-align:center;
     top: -.5mm;
-    padding:0 5mm .5mm 5mm;
+    padding:0 2mm .5mm 2mm;
     font-size: 4mm;
     text-wrap: balance;
+    letter-spacing: -.02em;
 }
 
 .ability_title {
     padding: .2mm ${BORDER_WIDTH} 0 0;
     font-size:10pt;
+    letter-spacing: -.02em;
 }
 
 .page {

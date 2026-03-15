@@ -47,7 +47,7 @@ export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]
         </header>
         
        <div style="column-count: 2; gap: 5mm 1cm;">     
-       ${Object.keys(cardsByFamiy).map((key) => {
+       ${Object.keys(cardsByFamiy).map((key ) => {
             const family: Family = families.find(({familyName}) => familyName === key);
             const primaryAbility: Ability = findPrimaryAbility(cards, family.familyName);
 

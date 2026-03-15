@@ -105,7 +105,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
-        number:2,
+        number:1,
         illustration: getSailIllustration(),
         title: "Capitaine intrépide",
         abilities: [marine],
@@ -173,7 +173,7 @@ export const cards: Card[] = [
     {
         illustration: getFistIllustration(),
         number:1,
-        title: "Ordre de la poigne de fer",
+        title: "Poigne de fer",
         abilities: [administrativeCenter, militaryUnit],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,
@@ -266,7 +266,7 @@ export const cards: Card[] = [
         number:1,
         title: "Continent tabou",
         abilities: [recluse, militaryUnit],
-        allowedTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.TEMPERATE
     },
     {
         illustration: getLizardManIllustration(),

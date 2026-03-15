@@ -8,7 +8,7 @@ import {GET_FAMILIES_TITLE} from "../constants";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
-    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut creuser pour avoir du pétrole.",
+    tip: "C'est bien beau d'essayer de reconstruire le monde d'hier. Mais faut creuser pour trouver du pétrole.",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon('5mm'),
     color: "#9f7bb8",

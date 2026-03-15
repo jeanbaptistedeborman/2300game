@@ -95,18 +95,6 @@
   ],
   "capitaine_intrepide_nav": [
     {
-      "backTerrain": "Désert",
-      "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        false
-      ]
-    },
-    {
       "backTerrain": "Fournaise",
       "visibilities": [
         true
@@ -115,13 +103,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        false
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -136,14 +118,14 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        false
+        true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -179,7 +161,7 @@
   ],
   "freres_doutre_mer_nav_biz": [
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Désert",
       "visibilities": [
         true
       ]
@@ -207,13 +189,13 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        false
+        true
       ]
     }
   ],
@@ -286,7 +268,7 @@
       ]
     }
   ],
-  "ordre_de_la_poigne_de_fer_mili_mili": [
+  "poigne_de_fer_mili_mili": [
     {
       "backTerrain": "Savanne",
       "visibilities": [
@@ -461,15 +443,15 @@
       ]
     },
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
