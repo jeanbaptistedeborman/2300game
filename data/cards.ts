@@ -266,7 +266,7 @@ export const cards: Card[] = [
         number:1,
         title: "Continent tabou",
         abilities: [recluse, militaryUnit],
-        allowedTerrain: Terrain.TEMPERATE
+        allowedTerrain: Terrain.SAVANNA
     },
     {
         illustration: getLizardManIllustration(),
@@ -324,7 +324,7 @@ export const cards: Card[] = [
         illustration: getLadyXIllustration(),
         number:1,
         abilities: [spy, scout],
-        allowedTerrain: Terrain.TEMPERATE,
+        allowedTerrain: Terrain.SAVANNA,
     },
     {  title: "Aéronaute",
         illustration:getBalloonIllustration(),

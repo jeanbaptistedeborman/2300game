@@ -26,16 +26,16 @@ import {
 } from "../layout/components/components";
 
 const ICON_SIZE = '1em';
-const LARGE_ICON_SIZE = '3.3em';
+const LARGE_ICON_SIZE = '3em';
 
 const WHEN_PLAYING_THIS_CARD:string =  `<b>À la pose de cette région&nbsp;:</b>`;
 const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<p><b>À tout moment&nbsp;:</b></p>`;
 const AT_YOUR_TURN = `<p><b>Pendant votre tour&nbsp;:</b></p>`;
 
-const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller;">[RAPPEL&nbsp;: Aussi prendre en compte les régions inoccupées ou occupées par des adversaires.]</p>`;
+const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions inoccupées ou occupées par des adversaires.]</p>`;
 
-const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
+const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte la ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
 const getRallyFriendsText = (family:Family) => `Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
 export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
 export const trade: Ability = {
@@ -50,7 +50,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez appliquer les règles de navigation.`,
+    text:`<span class="smaller-text">${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez appliquer les règles de navigation.<span>`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -65,7 +65,7 @@ export const militaryUnit: Ability = {
     icon:getArmyIcon(ICON_SIZE),
     name: "Hommes d'armes",
     family: military,
-    text: `Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.`
+    text: `<span class = "smaller-text">Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</span>`
 }
 
 export const cleanHand: Ability = {
@@ -141,7 +141,7 @@ export const terraformer: Ability = {
     effect: trashCard,
     name: `Purificateurs radicaux`,
     family: cleanEarth,
-    text: `${WHEN_PLAYING_THIS_CARD}<p>${wrapIcon(getTrashCardIcon('1.3em'))} Vous devez défausser la première carte des régions inoccupées.</p>`
+    text: `${WHEN_PLAYING_THIS_CARD}<p>${wrapIcon(getTrashCardIcon('1.3em'))} Vous devez défausser la carte du dessus des régions inoccupées.</p>`
 }
 export const terraformer_take_cards: Ability = {
     effect:takeCard,
@@ -179,7 +179,7 @@ export const spy: Ability = {
     name: `Nid d'espions`,
     family:military,
     text: `
-        ${WHEN_PLAYING_THIS_CARD}${getPlusPopulations(2)}.
+        ${WHEN_PLAYING_THIS_CARD}${getPlusPopulations(1)}.
         <p>${AT_YOUR_TURN}Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`
 }
 

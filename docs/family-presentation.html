@@ -41,8 +41,8 @@ p:last-of-type {
 
 .card {
     background-color: #FEEFD3;
-    height: calc(33.33333% - calc(0mm * 2));
-    flex: 0 0 calc(33.33333% - calc(0mm * 2/3));
+    height: 6.6cm;
+    flex: 0 0 calc(33.33333% - calc(3mm * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
@@ -157,36 +157,47 @@ p:last-of-type {
 }
 
 .title {
+    position:relative;
     text-align:center;
-    top: -.5mm;
+    top: -.2mm;
     padding:0 2mm .5mm 2mm;
     font-size: 4mm;
     text-wrap: balance;
     letter-spacing: -.02em;
 }
 
+.smaller-text {
+line-height:1em;
+font-size: 8pt;
+}
+
 .ability_title {
     padding: .2mm .3mm 0 0;
-    font-size:10pt;
+    line-height:.80em;
+    font-size:9pt;
     letter-spacing: -.02em;
 }
 
 .page {
-    max-width:21cm;
+    max-width:20cm;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    gap:0mm  0mm;
+    gap:3mm  3mm;
     page-break-after: always;
     overflow:hidden;
-    height: 22cm;
+    height: 27cm;
 }
 
 .page.verso {
     flex-direction: row-reverse;
     opacity: 0.8;
 }
-page:before::{}
+
+.page.recto {
+    display: flex;
+}
+
 
 
 ul {
@@ -210,10 +221,10 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:4mm;
-    width:4mm;
+    height:3mm;
+    width:3mm;
     position:relative;
-    border:.4mm solid black;
+    border:.3mm solid black;
     border-radius:20%;
 }
 
@@ -229,7 +240,7 @@ div {
     vertical-align:bottom;
     padding:.3mm;
     color:black;
-    line-height:1em;
+    line-height:.9em;
 }
 
 .ability_text.primary {
@@ -309,8 +320,8 @@ div {
         
                 <li class='abilility-vignette' style="background:hsl(27.19999999999999, 69.4%, 30.8%);" >
            <div style="color:white;background-color:hsl(27.19999999999999, 69.4%, 30.8%);display:flex;border-bottom: .2mm; border-color: #d97b2d; padding:.2mm;">
-                  <h3 class="ability_title">
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="padding:0 0 0 4mm">
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         <svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,9)" style=""><path d="M408.256 119.46l-37.7 52.165 19.57 44.426 34.8-37.214-16.67-59.375zm86.074 12.513L384.44 249.498 334.01 135.02l-75.162 132.947-86.948-131.78-33.334 114.122L17.922 132.83l39.3 127.6c1.945-.348 3.94-.54 5.98-.54 18.812 0 34.26 15.452 34.26 34.262 0 13.823-8.346 25.822-20.235 31.22l5.337 17.33c12.425 25.466 71.863 45.152 176.582 47.206 110.805 2.174 178.12-17.54 189.854-47.207h-.002l4.357-20.26c-16.836-2.114-30.02-16.612-30.02-33.986 0-18.81 15.45-34.262 34.263-34.262 3.513 0 6.91.54 10.11 1.54l26.622-123.762zm-391.77 2.04l1.22 56.337 25.56 24.89 9.592-32.842-36.37-48.386zm150.585 2.91l-24.483 51.36 28.955 43.885 24.922-44.08-29.395-51.166zm204.453 135.962c-8.712 0-15.575 6.862-15.575 15.572 0 8.71 6.863 15.574 15.575 15.574s15.572-6.863 15.572-15.573-6.86-15.572-15.572-15.572zM63.2 278.58c-8.71 0-15.573 6.864-15.573 15.574s6.862 15.573 15.574 15.573c8.713 0 15.573-6.862 15.573-15.573 0-8.71-6.86-15.574-15.572-15.574zm130.33 17.842c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.26-34.262zm131.234 0c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.262-34.262zm-131.235 18.69c-8.713 0-15.573 6.86-15.573 15.572 0 8.71 6.86 15.574 15.572 15.574 8.71 0 15.572-6.864 15.572-15.574s-6.86-15.573-15.573-15.573zm131.234 0c-8.712 0-15.573 6.86-15.573 15.572 0 8.71 6.862 15.574 15.574 15.574s15.574-6.864 15.574-15.574-6.862-15.573-15.574-15.573z" fill="#fff" fill-opacity="1"></path></g></svg></span>COMPTOIRS</h3>
             </div>
         
@@ -319,7 +330,7 @@ div {
         <div style="display:flex;flex-grow: 1;border-color: #d97b2d">
            <div class="ability_text" style="background-color:rgb(253, 248, 245)">
                 <div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
- font-weight: bold;font-size: smaller;">
+ font-weight: bold;font-size: smaller;background-color: white;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M256 34.47l-90.51 90.51h67.883v108.393H124.98V165.49L34.47 256l90.51 90.51v-67.883h108.393V387.02H165.49L256 477.53l90.51-90.51h-67.883V278.627H387.02v67.883L477.53 256l-90.51-90.51v67.883H278.627V124.98h67.883L256 34.47z" fill="#fff" fill-opacity="1"></path></g></svg></div>
                 EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M256 34.47l-90.51 90.51h67.883v108.393H124.98V165.49L34.47 256l90.51 90.51v-67.883h108.393V387.02H165.49L256 477.53l90.51-90.51h-67.883V278.627H387.02v67.883L477.53 256l-90.51-90.51v67.883H278.627V124.98h67.883L256 34.47z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
             
@@ -349,8 +360,8 @@ div {
         
                 <li class='abilility-vignette' style="background:hsl(180, 37.8%, 29.5%);" >
            <div style="color:white;background-color:hsl(180, 37.8%, 29.5%);display:flex;border-bottom: .2mm; border-color: #4eadad; padding:.2mm;">
-                  <h3 class="ability_title">
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="padding:0 0 0 4mm">
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         <svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,9)" style=""><path d="M408.256 119.46l-37.7 52.165 19.57 44.426 34.8-37.214-16.67-59.375zm86.074 12.513L384.44 249.498 334.01 135.02l-75.162 132.947-86.948-131.78-33.334 114.122L17.922 132.83l39.3 127.6c1.945-.348 3.94-.54 5.98-.54 18.812 0 34.26 15.452 34.26 34.262 0 13.823-8.346 25.822-20.235 31.22l5.337 17.33c12.425 25.466 71.863 45.152 176.582 47.206 110.805 2.174 178.12-17.54 189.854-47.207h-.002l4.357-20.26c-16.836-2.114-30.02-16.612-30.02-33.986 0-18.81 15.45-34.262 34.263-34.262 3.513 0 6.91.54 10.11 1.54l26.622-123.762zm-391.77 2.04l1.22 56.337 25.56 24.89 9.592-32.842-36.37-48.386zm150.585 2.91l-24.483 51.36 28.955 43.885 24.922-44.08-29.395-51.166zm204.453 135.962c-8.712 0-15.575 6.862-15.575 15.572 0 8.71 6.863 15.574 15.575 15.574s15.572-6.863 15.572-15.573-6.86-15.572-15.572-15.572zM63.2 278.58c-8.71 0-15.573 6.864-15.573 15.574s6.862 15.573 15.574 15.573c8.713 0 15.573-6.862 15.573-15.573 0-8.71-6.86-15.574-15.572-15.574zm130.33 17.842c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.26-34.262zm131.234 0c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.262-34.262zm-131.235 18.69c-8.713 0-15.573 6.86-15.573 15.572 0 8.71 6.86 15.574 15.572 15.574 8.71 0 15.572-6.864 15.572-15.574s-6.86-15.573-15.573-15.573zm131.234 0c-8.712 0-15.573 6.86-15.573 15.572 0 8.71 6.862 15.574 15.574 15.574s15.574-6.864 15.574-15.574-6.862-15.573-15.574-15.573z" fill="#fff" fill-opacity="1"></path></g></svg></span>NAVIGATION</h3>
             </div>
         
@@ -360,7 +371,7 @@ div {
            <div class="ability_text" style="background-color:rgb(246, 251, 251)">
                 
             
-            <b>À la pose de cette région&nbsp;:</b><br/>Vous pouvez appliquer les règles de navigation.</div>
+            <span class="smaller-text"><b>À la pose de cette région&nbsp;:</b><br/>Vous pouvez appliquer les règles de navigation.<span></div>
         </div>
         <div style="height:100%;}">
         <div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: hsl(180, 37.8%, 9.8%);color:white;padding:.3mm;" >
@@ -384,8 +395,8 @@ div {
         
                 <li class='abilility-vignette' style="background:hsl(43.19999999999999, 85.3%, 34.4%);" >
            <div style="color:white;background-color:hsl(43.19999999999999, 85.3%, 34.4%);display:flex;border-bottom: .2mm; border-color: #efbb35; padding:.2mm;">
-                  <h3 class="ability_title">
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="padding:0 0 0 4mm">
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         <svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,9)" style=""><path d="M408.256 119.46l-37.7 52.165 19.57 44.426 34.8-37.214-16.67-59.375zm86.074 12.513L384.44 249.498 334.01 135.02l-75.162 132.947-86.948-131.78-33.334 114.122L17.922 132.83l39.3 127.6c1.945-.348 3.94-.54 5.98-.54 18.812 0 34.26 15.452 34.26 34.262 0 13.823-8.346 25.822-20.235 31.22l5.337 17.33c12.425 25.466 71.863 45.152 176.582 47.206 110.805 2.174 178.12-17.54 189.854-47.207h-.002l4.357-20.26c-16.836-2.114-30.02-16.612-30.02-33.986 0-18.81 15.45-34.262 34.263-34.262 3.513 0 6.91.54 10.11 1.54l26.622-123.762zm-391.77 2.04l1.22 56.337 25.56 24.89 9.592-32.842-36.37-48.386zm150.585 2.91l-24.483 51.36 28.955 43.885 24.922-44.08-29.395-51.166zm204.453 135.962c-8.712 0-15.575 6.862-15.575 15.572 0 8.71 6.863 15.574 15.575 15.574s15.572-6.863 15.572-15.573-6.86-15.572-15.572-15.572zM63.2 278.58c-8.71 0-15.573 6.864-15.573 15.574s6.862 15.573 15.574 15.573c8.713 0 15.573-6.862 15.573-15.573 0-8.71-6.86-15.574-15.572-15.574zm130.33 17.842c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.26-34.262zm131.234 0c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.262-34.262zm-131.235 18.69c-8.713 0-15.573 6.86-15.573 15.572 0 8.71 6.86 15.574 15.572 15.574 8.71 0 15.572-6.864 15.572-15.574s-6.86-15.573-15.573-15.573zm131.234 0c-8.712 0-15.573 6.86-15.573 15.572 0 8.71 6.862 15.574 15.574 15.574s15.574-6.864 15.574-15.574-6.862-15.573-15.574-15.573z" fill="#fff" fill-opacity="1"></path></g></svg></span>LIEU DE SAVOIR</h3>
             </div>
         
@@ -421,8 +432,8 @@ div {
         
                 <li class='abilility-vignette' style="background:hsl(206.29999999999995, 83.9%, 10.2%);" >
            <div style="color:white;background-color:hsl(206.29999999999995, 83.9%, 10.2%);display:flex;border-bottom: .2mm; border-color: #073050; padding:.2mm;">
-                  <h3 class="ability_title">
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="padding:0 0 0 4mm">
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         <svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,9)" style=""><path d="M408.256 119.46l-37.7 52.165 19.57 44.426 34.8-37.214-16.67-59.375zm86.074 12.513L384.44 249.498 334.01 135.02l-75.162 132.947-86.948-131.78-33.334 114.122L17.922 132.83l39.3 127.6c1.945-.348 3.94-.54 5.98-.54 18.812 0 34.26 15.452 34.26 34.262 0 13.823-8.346 25.822-20.235 31.22l5.337 17.33c12.425 25.466 71.863 45.152 176.582 47.206 110.805 2.174 178.12-17.54 189.854-47.207h-.002l4.357-20.26c-16.836-2.114-30.02-16.612-30.02-33.986 0-18.81 15.45-34.262 34.263-34.262 3.513 0 6.91.54 10.11 1.54l26.622-123.762zm-391.77 2.04l1.22 56.337 25.56 24.89 9.592-32.842-36.37-48.386zm150.585 2.91l-24.483 51.36 28.955 43.885 24.922-44.08-29.395-51.166zm204.453 135.962c-8.712 0-15.575 6.862-15.575 15.572 0 8.71 6.863 15.574 15.575 15.574s15.572-6.863 15.572-15.573-6.86-15.572-15.572-15.572zM63.2 278.58c-8.71 0-15.573 6.864-15.573 15.574s6.862 15.573 15.574 15.573c8.713 0 15.573-6.862 15.573-15.573 0-8.71-6.86-15.574-15.572-15.574zm130.33 17.842c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.26-34.262zm131.234 0c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.262-34.262zm-131.235 18.69c-8.713 0-15.573 6.86-15.573 15.572 0 8.71 6.86 15.574 15.572 15.574 8.71 0 15.572-6.864 15.572-15.574s-6.86-15.573-15.573-15.573zm131.234 0c-8.712 0-15.573 6.86-15.573 15.572 0 8.71 6.862 15.574 15.574 15.574s15.574-6.864 15.574-15.574-6.862-15.573-15.574-15.573z" fill="#fff" fill-opacity="1"></path></g></svg></span>EXPLORATEUR</h3>
             </div>
         
@@ -456,8 +467,8 @@ div {
         
                 <li class='abilility-vignette' style="background:hsl(7.800000000000011, 73.9%, 24.4%);" >
            <div style="color:white;background-color:hsl(7.800000000000011, 73.9%, 24.4%);display:flex;border-bottom: .2mm; border-color: #b42f1b; padding:.2mm;">
-                  <h3 class="ability_title">
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="padding:0 0 0 4mm">
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         <svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,9)" style=""><path d="M408.256 119.46l-37.7 52.165 19.57 44.426 34.8-37.214-16.67-59.375zm86.074 12.513L384.44 249.498 334.01 135.02l-75.162 132.947-86.948-131.78-33.334 114.122L17.922 132.83l39.3 127.6c1.945-.348 3.94-.54 5.98-.54 18.812 0 34.26 15.452 34.26 34.262 0 13.823-8.346 25.822-20.235 31.22l5.337 17.33c12.425 25.466 71.863 45.152 176.582 47.206 110.805 2.174 178.12-17.54 189.854-47.207h-.002l4.357-20.26c-16.836-2.114-30.02-16.612-30.02-33.986 0-18.81 15.45-34.262 34.263-34.262 3.513 0 6.91.54 10.11 1.54l26.622-123.762zm-391.77 2.04l1.22 56.337 25.56 24.89 9.592-32.842-36.37-48.386zm150.585 2.91l-24.483 51.36 28.955 43.885 24.922-44.08-29.395-51.166zm204.453 135.962c-8.712 0-15.575 6.862-15.575 15.572 0 8.71 6.863 15.574 15.575 15.574s15.572-6.863 15.572-15.573-6.86-15.572-15.572-15.572zM63.2 278.58c-8.71 0-15.573 6.864-15.573 15.574s6.862 15.573 15.574 15.573c8.713 0 15.573-6.862 15.573-15.573 0-8.71-6.86-15.574-15.572-15.574zm130.33 17.842c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.26-34.262zm131.234 0c18.812 0 34.26 15.45 34.26 34.262 0 18.81-15.448 34.26-34.26 34.26-18.813 0-34.262-15.45-34.262-34.26s15.45-34.262 34.262-34.262zm-131.235 18.69c-8.713 0-15.573 6.86-15.573 15.572 0 8.71 6.86 15.574 15.572 15.574 8.71 0 15.572-6.864 15.572-15.574s-6.86-15.573-15.573-15.573zm131.234 0c-8.712 0-15.573 6.86-15.573 15.572 0 8.71 6.862 15.574 15.574 15.574s15.574-6.864 15.574-15.574-6.862-15.573-15.574-15.573z" fill="#fff" fill-opacity="1"></path></g></svg></span>HOMMES D'ARMES</h3>
             </div>
         
@@ -466,11 +477,11 @@ div {
         <div style="display:flex;flex-grow: 1;border-color: #b42f1b">
            <div class="ability_text" style="background-color:rgb(251, 245, 244)">
                 <div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
- font-weight: bold;font-size: smaller;">
+ font-weight: bold;font-size: smaller;background-color: white;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M256 34.47l-90.51 90.51h67.883v108.393H124.98V165.49L34.47 256l90.51 90.51v-67.883h108.393V387.02H165.49L256 477.53l90.51-90.51h-67.883V278.627H387.02v67.883L477.53 256l-90.51-90.51v67.883H278.627V124.98h67.883L256 34.47z" fill="#fff" fill-opacity="1"></path></g></svg></div>
                 EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 100%; width:100%; position: absolute; mix-blend-mode: lighten"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M256 34.47l-90.51 90.51h67.883v108.393H124.98V165.49L34.47 256l90.51 90.51v-67.883h108.393V387.02H165.49L256 477.53l90.51-90.51h-67.883V278.627H387.02v67.883L477.53 256l-90.51-90.51v67.883H278.627V124.98h67.883L256 34.47z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
             <span style="filter:invert(1);float:left;mix-blend-mode: darken;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 1em; width: 1em;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,4)" style=""><path d="M462.9 19.12c-9.6 0-17.2 7.59-17.2 17.19 0 9.61 7.6 17.19 17.2 17.19s17.2-7.58 17.2-17.19c0-9.6-7.6-17.19-17.2-17.19zm-80.3 21.82c-160.3.8-218.1 217.46-362.93 96.26 3.25 36.8 88.43 78.4 88.43 78.4-26.03 20-34.78 24.7-71.99 25.5 104.09 86.7 338.69-99.8 408.39 40.1l-2.3-38.4-45.4-46.5 42.7.6-.6-10.2-50.7-32.2 48.4-7.2-.7-11.1-50-27.3 47.9-8.8-.6-10.69L381 66.66l50.5-5.85-.8-13.9c-17.1-4.2-33-6.05-48.1-5.97zm70.8 29.97l20.2 423.99 18.7-.9-20.2-423c-6.3 1.54-12.7 1.5-18.7-.1zM360 292.9l-43.6 70 21.3 25L322 493h18.9l15.2-102.3 28-20.2c-8.1-25.9-16.1-51.8-24.1-77.6zm-156.7 17.9l-28.8 69.8 20.5 20.2 2.2 92.2h18.7l-2.2-93 19.6-19.9-30-69.3zm-158.16 5l-16.4 61.9 17.65 13.2L61.24 493h18.87L64.89 388.3l13.22-17.6-32.93-54.9zm85.96 7.4l-28.2 57.5 15.1 17-6.7 95.3H130l6.8-95.3 15.9-14.2-21.6-60.3zM268 355.5l-19.5 68.4 19.4 15.2 5.8 53.9h18.9l-5.9-54.3 16.8-21.6c-11.9-20.5-23.7-41-35.5-61.6zm143.6.1l-18.9 68.6 20.3 15.5 6.2 53.3H438l-6.4-55.2 16-20.9z" fill="#fff" fill-opacity="1"></path></g></svg></span>
-            Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</div>
+            <span class = "smaller-text">Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</span></div>
         </div>
         <div style="height:100%;}">
         <div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: hsl(7.800000000000011, 73.9%, 8.1%);color:white;padding:.3mm;" >

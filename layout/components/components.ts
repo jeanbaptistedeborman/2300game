@@ -96,8 +96,8 @@ export const getAbilityVignette = (({
 
     `<li class='abilility-vignette' style="background:${darkenColor(color)};" >
            <div style="color:white;background-color:${darkenColor(color)};display:flex;border-bottom: .2mm; border-color: ${color}; padding:.2mm;">
-                  <h3 class="ability_title">${isPrimary ? `
-        <span style="height: 4mm; width: 4mm; position: relative;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
+                  <h3 class="ability_title" style="${isPrimary ? 'padding:0 0 0 4mm': ''}">${isPrimary ? `
+        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
         ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
             </div>
         
@@ -106,7 +106,7 @@ export const getAbilityVignette = (({
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
            ${text && `<div class="ability_text" style="background-color:${Color(color).mix(Color('#ffffff'), .95)}">
                 ${effect ? `<div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
- font-weight: bold;font-size: smaller;">
+ font-weight: bold;font-size: smaller;background-color: white;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div>
                 EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div></div>` : ''}
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}

@@ -124,14 +124,14 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false,
+        true,
         false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -356,7 +356,7 @@
   ],
   "grande_inquisition_verte_tera": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Désert",
       "visibilities": [
         true
       ]
@@ -564,14 +564,14 @@
       "backTerrain": "Désert",
       "visibilities": [
         true,
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
         true,
-        true
+        false
       ]
     }
   ],
@@ -602,7 +602,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
+        true,
         false
       ]
     },
@@ -616,7 +616,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -814,7 +814,7 @@
   ],
   "force_aerienne_mili_mili": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Fournaise",
       "visibilities": [
         false,
         false
@@ -828,7 +828,7 @@
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Savanne",
       "visibilities": [
         true,
         true
@@ -845,13 +845,13 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        false
+        true
       ]
     }
   ],
@@ -881,7 +881,7 @@
       ]
     },
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Savanne",
       "visibilities": [
         true
       ]
@@ -1045,13 +1045,13 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -1135,7 +1135,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -1168,14 +1168,14 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false,
+        true,
         false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }

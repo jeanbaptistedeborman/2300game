@@ -4,8 +4,8 @@ const backgroundColor = "#FEEFD3";
 
 
 
-//const CARD_GAP:string[] = ['1mm', '2mm'];
-const CARD_GAP:string[] = ['0mm', '0mm'];
+const CARD_GAP:string[] = ['3mm', '3mm'];
+//const CARD_GAP:string[] = ['0mm', '0mm'];
 
 
 export const styles = `
@@ -33,7 +33,7 @@ p:last-of-type {
 
 .card {
     background-color: ${backgroundColor};
-    height: calc(33.33333% - calc(${CARD_GAP[0]} * 2));
+    height: 6.6cm;
     flex: 0 0 calc(33.33333% - calc(${CARD_GAP[1]} * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
@@ -149,36 +149,47 @@ p:last-of-type {
 }
 
 .title {
+    position:relative;
     text-align:center;
-    top: -.5mm;
+    top: -.2mm;
     padding:0 2mm .5mm 2mm;
     font-size: 4mm;
     text-wrap: balance;
     letter-spacing: -.02em;
 }
 
+.smaller-text {
+line-height:1em;
+font-size: 8pt;
+}
+
 .ability_title {
     padding: .2mm ${BORDER_WIDTH} 0 0;
-    font-size:10pt;
+    line-height:.80em;
+    font-size:9pt;
     letter-spacing: -.02em;
 }
 
 .page {
-    max-width:21cm;
+    max-width:20cm;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
     gap:${CARD_GAP[0]}  ${CARD_GAP[1]};
     page-break-after: always;
     overflow:hidden;
-    height: 22cm;
+    height: 27cm;
 }
 
 .page.verso {
     flex-direction: row-reverse;
     opacity: 0.8;
 }
-page:before::{}
+
+.page.recto {
+    display: flex;
+}
+
 
 
 ul {
@@ -202,10 +213,10 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:4mm;
-    width:4mm;
+    height:3mm;
+    width:3mm;
     position:relative;
-    border:.4mm solid black;
+    border:.3mm solid black;
     border-radius:20%;
 }
 
@@ -221,7 +232,7 @@ div {
     vertical-align:bottom;
     padding:.3mm;
     color:black;
-    line-height:1em;
+    line-height:.9em;
 }
 
 .ability_text.primary {
