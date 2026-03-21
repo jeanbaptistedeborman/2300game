@@ -72,12 +72,12 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     <div style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
     ${illustration}
-    ${status?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
+    ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>
         ${
-    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;"> 
+    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;font-weight: bold"> 
         <div>
         <div>
             <span style="mix-blend-mode:lighten;color:white;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}

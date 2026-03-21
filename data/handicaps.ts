@@ -44,7 +44,7 @@ export const cleanHearthDependant: Handicap = {
     iconNumber:2,
     icon:getTreeIcon(ICON_SIZE),
     value: 2,
-    text: `Occuper 2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()} pour poser cette carte.`
+    text: `Occuper 2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()}.`
 }
 
 export const militaryDependant: Handicap = {
@@ -52,7 +52,7 @@ export const militaryDependant: Handicap = {
     icon: getFistIcon(ICON_SIZE),
     iconNumber:2  ,
     value: 2,
-    text: `Occuper 2 régions comportant la tribu ${military.familyName.toUpperCase()} pour poser cette carte.`
+    text: `Occuper 2 régions comportant la tribu ${military.familyName.toUpperCase()}.`
 }
 
 export const militarySuperiority: Handicap = {
