@@ -63,7 +63,6 @@ p:last-of-type {
 .presentation-box {
     width:100%;
     clear:both;
-    zoom:.82;
     margin-top:1mm;
     max-width:21cm;
     gap:1mm 2mm;
@@ -113,7 +112,7 @@ p:last-of-type {
     break-inside: avoid;
     flex-basis:32.5%;
     flex-shrink:1;
-    height:85mm;
+    height:75mm;
     border-color:black;
     border-width:.1mm;
     border-bottom-width:.5mm;
@@ -151,9 +150,9 @@ p:last-of-type {
 .title {
     position:relative;
     text-align:center;
-    top: -.2mm;
-    padding:0 2mm .5mm 2mm;
-    font-size: 4mm;
+    top: -.4mm;
+    padding:0 2mm 0 2mm;
+    font-size: 3.5mm;
     text-wrap: balance;
     letter-spacing: -.02em;
 }
@@ -171,7 +170,7 @@ font-size: 8pt;
 }
 
 .page {
-    max-width:20cm;
+    max-width:22cm;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -230,7 +229,7 @@ div {
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
-    padding:.3mm;
+    padding:.1mm .3mm .2mm .3mm;
     color:black;
     line-height:.9em;
 }

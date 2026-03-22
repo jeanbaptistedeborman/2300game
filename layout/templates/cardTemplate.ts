@@ -77,10 +77,9 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     
 ${(handicaps?.length > 0) ? `<ul>
         ${
-    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;font-weight: bold"> 
+    handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;font-weight: bold;font-size:8.5pt;"> 
         <div>
-        <div>
-            <span style="mix-blend-mode:lighten;color:white;">${icon ? Array(iconNumber).fill(icon).join('') : ''}&nbsp;${text}
+            ${icon ? `<span style="mix-blend-mode:lighten;color:white;"> ${Array(iconNumber).fill(icon).join('')}</span>` : ''}&nbsp;${text}
         </div>
         </span>
         </li>`).join('')}</ul>` : ``

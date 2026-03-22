@@ -16,7 +16,7 @@ import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
 export const wrapIcon = (icon:string):string => `<span style="margin:-1mm -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
-export const populationIcon:string = `${wrapIcon(getCircleIcon('1em'))}`;
+export const populationIcon:string = `${wrapIcon(getCircleIcon('.8em'))}`;
 export const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 export const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
     ${useNumber?`${number}${populationIcon}`:
@@ -114,7 +114,7 @@ export const getAbilityVignette = (({
         </div>
         <div style="height:100%;}">
         ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:2.5mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:1.2mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
         </div>
         </div>
         </li>`)

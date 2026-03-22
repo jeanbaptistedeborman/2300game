@@ -58,7 +58,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
           
            return `
            <div>
-            <div style="style="break-inside: avoid; font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin:2mm 0 1mm 0;">${key} (${cardsByFamiy[key]
+            <div style="style="break-inside: avoid-page; font-size: .3cm; line-height: normal"><h2 style="font-size:4mm;margin:2mm 0 1mm 0;">${key} (${cardsByFamiy[key]
             .reduce (countCards, 0)})</h2>
            
            ${family.familyName === FamilyName.NONE ? ``:`<div style="float: left; background-color:${family.color};margin: 0 3mm 1mm 0;padding:1mm;border-radius: 1mm; border:0;">${getFamilyIcon(family)}</div>`}   
@@ -76,7 +76,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                    (card: Card) => `
                 <div class="card-container">${cardTemplate(card)}
                     
-                    <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end;">
+                    <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end; display: none;">
                     DOS: 
                         ${completedCards
                         .filter((completedCard) => isSameCard(card, completedCard))

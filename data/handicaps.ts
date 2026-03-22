@@ -8,7 +8,7 @@ import {
 import {oil} from "./abilities";
 import {cleanEarth, military, techno} from "./families";
 
-const ICON_SIZE = '1em';
+const ICON_SIZE = '.8em';
 
 export const oilDependent: Handicap = {
     name: 'Dépendant du pétrole',
@@ -44,7 +44,7 @@ export const cleanHearthDependant: Handicap = {
     iconNumber:2,
     icon:getTreeIcon(ICON_SIZE),
     value: 2,
-    text: `Occuper 2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()}.`
+    text: `Occuper 2 régions comportant la tribu ${cleanEarth.familyName.toUpperCase()}  pour poser.`
 }
 
 export const militaryDependant: Handicap = {
@@ -52,7 +52,7 @@ export const militaryDependant: Handicap = {
     icon: getFistIcon(ICON_SIZE),
     iconNumber:2  ,
     value: 2,
-    text: `Occuper 2 régions comportant la tribu ${military.familyName.toUpperCase()}.`
+    text: `Occuper 2 régions comportant la tribu ${military.familyName.toUpperCase()} pour poser.`
 }
 
 export const militarySuperiority: Handicap = {

@@ -25,7 +25,7 @@ import {
     wrapIcon
 } from "../layout/components/components";
 
-const ICON_SIZE = '1em';
+const ICON_SIZE = '.9em';
 const LARGE_ICON_SIZE = '3em';
 
 const WHEN_PLAYING_THIS_CARD:string =  `<b>À la pose de cette région&nbsp;:</b>`;
@@ -62,7 +62,7 @@ export const flight: Ability = {
 export const militaryUnit: Ability = {
     isPrimary: true,
     effect:forbid,
-    icon:getArmyIcon(ICON_SIZE),
+    icon:getArmyIcon('1.7em'),
     name: "Hommes d'armes",
     family: military,
     text: `<span class = "smaller-text">Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</span>`
@@ -98,15 +98,15 @@ export const cleanContinent: Ability = {
 }
 
 export const promoteGMOsMilitary: Ability = {
-    name: 'Recruteurs peu regardants',
+    name: 'Recrutement laxiste',
     family: military,
-    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1.1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${militaryUnit.name.toUpperCase()}</b>&nbsp;${wrapIcon(getArmyIcon('.9em'))} et la ${getTribeDescription(military)}.`
+    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${militaryUnit.name.toUpperCase()}</b>&nbsp;${wrapIcon(getArmyIcon('.9em'))} et la ${getTribeDescription(military)}.`
 }
 
 export const promoteGMOsMerchant: Ability = {
     name: 'Equal opportunity',
     family: merchant,
-    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1.1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${trade.name.toUpperCase()}</b> et la ${getTribeDescription(merchant)}.`
+    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${trade.name.toUpperCase()}</b> et la ${getTribeDescription(merchant)}.`
 }
 
 export const bewareOfTechno: Ability = {
