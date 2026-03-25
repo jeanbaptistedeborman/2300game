@@ -104,13 +104,15 @@ export const getAbilityVignette = (({
         <div style="box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};">
         
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
-           ${text && `<div class="ability_text" style="background-color:${Color(color).mix(Color('#ffffff'), .95)}">
-                ${effect ? `<div style="display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
+           ${text && `<div class="ability_text" style="flex-direction:column;display:flex;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
+                ${effect ? `<div style="flex-grow:1;display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
  font-weight: bold;font-size: smaller;background-color: white;">
                 <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div>
                 EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div></div>` : ''}
+                
+                <div style="flex-grow:1;">
             ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
-            ${text}</div>`}
+            ${text}</div></div>`}
         </div>
         <div style="height:100%;}">
         ${getFamilyIcon(family)}
