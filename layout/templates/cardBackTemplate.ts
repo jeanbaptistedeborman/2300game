@@ -12,14 +12,14 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
 
     return `<div class="card back ${Object.keys(Terrain)[backTerrain]}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]};">
 
-   <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0">
+   <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0; z-index: 1;">
        
     
         <div style="color:white; position:absolute; left:1mm; bottom:3mm;" >${backTerrain.toUpperCase()}</div>
         ${getTerrainIllustration(backTerrain)}
     </div>
 
-    <ul >
+    <ul style="position: relative; z-index: 2">
     ${abilities
         .filter(({isVisible}) => isVisible)
         .map(({
