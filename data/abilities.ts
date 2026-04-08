@@ -50,7 +50,7 @@ export const marine: Ability = {
     isPrimary: true,
     name: 'Navigation',
     family: navigators,
-    text:`<span class="smaller-text">${WHEN_PLAYING_THIS_CARD}<br/>Vous pouvez appliquer les règles de navigation.<span>`,
+    text:`<span class="smaller-text">Vous pouvez poser cette carte dans l'Océan en suivant les règles de navigation.<span>`,
 }
 export const flight: Ability = {
     name: 'Volants',
@@ -201,7 +201,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} vous pouvez consulter la carte du dessus des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`
+    text: `<p>${ANY_TIME} vous pouvez consulter la première carte des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent <b>${"rapidité".toUpperCase()}</b>.</p>`;

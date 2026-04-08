@@ -76,7 +76,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                    (card: Card) => `
                 <div class="card-container">${cardTemplate(card)}
                     
-                    <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end; display: none;">
+                    <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end;">
                     DOS: 
                         ${completedCards
                         .filter((completedCard) => isSameCard(card, completedCard))
