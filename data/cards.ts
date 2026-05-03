@@ -323,7 +323,7 @@ export const cards: Card[] = [
     {    title: "Lady X",
         illustration: getLadyXIllustration(),
         number:1,
-        abilities: [spy, scout],
+        abilities: [scout, spy],
         allowedTerrain: Terrain.SAVANNA,
     },
     {  title: "Aéronaute",
@@ -390,7 +390,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
-        title: "Cap des Méduses",
+        title: "Pêcheurs de méduses",
         illustration: getJellyFishIllustration(),
         number:1,
         abilities: [harbour],

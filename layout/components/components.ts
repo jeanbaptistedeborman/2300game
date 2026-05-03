@@ -15,7 +15,7 @@ import {
 import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
-export const wrapIcon = (icon:string):string => `<span style="margin:-1mm -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:darken;filter:invert(1);">${icon}</span>`;
+export const wrapIcon = (icon:string, darken: boolean = true):string => `<span style="margin:-1mm -0.2mm  0 0.2mm;display:inline-block;transform: translate(0, .4mm);mix-blend-mode:${darken?'darken':''};filter:invert(1);">${icon}</span>`;
 export const populationIcon:string = `${wrapIcon(getCircleIcon('.8em'))}`;
 export const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 export const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
@@ -61,7 +61,7 @@ export const getFamilyIcon = ({
                                   icon,
                                   familyName,
                                   color
-                              }: Family) => `<div class='text' style="font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .8)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .4)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
                 <span class="text">${String(familyName).toUpperCase()}<span>
         </div>`;
@@ -86,37 +86,38 @@ export const getAbilityVignette = (({
                                         isVisible,
                                         effect,
                                         isPrimary,
-                                        icon: abilityIcon,
                                         text,
+                                        icon,
+                                        abilityPicture,
+                                        givesAdditionalPopulations,
                                         family,
                                         family: {
                                             color,
                                         }
-                                    }: Ability) =>
+                                    }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false) =>
 
-    `<li class='abilility-vignette' style="background:${darkenColor(color)};" >
-           <div style="color:white;background-color:${darkenColor(color)};display:flex;border-bottom: .2mm; border-color: ${color}; padding:.2mm;">
-                  <h3 class="ability_title" style="${isPrimary ? 'padding:0 0 0 4mm': ''}">${isPrimary ? `
-        <span style="height: 4mm; width: 4mm; position: absolute;left:0;top:.4mm;display: inline-block; vertical-align: bottom; margin: -1mm .5mm 0 0;">
-        ${getCrown2Illustration()}</span>` : ''}${name.toLocaleUpperCase()}</h3>
-            </div>
-        
-        <div style="box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};">
-        
+    `<li class='abilility-vignette${ (givesAdditionalPopulations && !effect) ? ' population-placeholder' : ''}' >
+        ${isPrimary ? `
+        <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color)};display:flex;align-items:stretch;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
+          <div style="flex-shrink:0;align-self:stretch;display:flex;">${(!hideFamilyIcon && !leftAlign) ? getFamilyIcon(family) : ''}</div>
+          <div style="background-color:${darkenColor(color)};display:flex;align-items:center;flex-grow:1;gap:.5mm;padding:.2mm;">
+            <span style="font-weight:700;font-size:12pt;letter-spacing:-.02em;flex-grow:1;text-align:center;">${name}</span>
+            ${abilityPicture ? `<img src="${abilityPicture}" style="height:.4cm;object-fit:contain;display:block;flex-shrink:0;" />` : `<span>${text || ''}</span>`}
+          </div>
+          ${isVisible ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
+        </div>` : `
+        <div style="box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
+        <div style="align-self:stretch;display:flex;flex-shrink:0;">
+        ${!hideFamilyIcon ? getFamilyIcon(family) : ''}
+        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
+        </div>
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
            ${text && `<div class="ability_text" style="flex-direction:column;display:flex;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
-                ${effect ? `<div style="flex-grow:1;display:flex;vertical-align:top;width:100%;color:black;justify-content: center;
- font-weight: bold;font-size: smaller;background-color: white;">
-                <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div>
-                EMPLACEMENTS VOISINS <div style="filter:invert(1);height:1em; width:1em;position:relative;vertical-align: baseline;margin-right:.3mm;font-weight: bold;">${getMoveIllustration()}</div></div>` : ''}
-                
+
+               
                 <div style="flex-grow:1;">
-            ${abilityIcon ? `<span style="filter:invert(1);float:left;mix-blend-mode: darken;">${abilityIcon}</span>` : ''}
-            ${text}</div></div>`}
+            ${effect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" style="height:1.8em;object-fit:contain;flex-shrink:0;margin-right:.2mm;float:left;" />` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
+            <span>${text}</span></div></div>`}
         </div>
-        <div style="height:100%;}">
-        ${getFamilyIcon(family)}
-        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:1.2mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
-        </div>
-        </div>
+        </div>`}
         </li>`)

@@ -1,7 +1,7 @@
 import {Ability, Card, FamilyName, Terrain} from "../../model";
 import {cards} from "../../data/cards";
 import {getAbilityVignette, getTerrainsVignettes} from "../components/components";
-import {get4DirectionIcon} from "../icons";
+import {get4DirectionIcon, getPadlockIcon} from "../icons";
 import {addPopulation, evolving} from "../../data/effects";
 import {none} from "../../data/families";
 import {getFamilyCount} from "../../services";
@@ -48,7 +48,7 @@ const addEffects = (abilities: Ability[]) => {
     return `${[
         ...getMiddlePositions(backgroundMargin).map(position => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${position}"></div>`),
         ...getCornerPositions(cornerBackgroundMargin).map(position => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;${position}"></div>`),
-        ...getCornerPositions('7.5mm').map(position => `<div style="position:absolute;background-color: black;filter:invert(1);border:0 solid;border-radius:.5mm;overflow: hidden;${position}">${get4DirectionIcon('3.5mm')}</div>`)].join('')}
+        ...getCornerPositions('7.5mm').map(position => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;${position}">${getPadlockIcon('3.5mm')}</div>`)].join('')}
         ${icons}
         `
 }
@@ -60,12 +60,12 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
         if (AFamilyName === FamilyName.NAVIGATOR || BFamilyName === FamilyName.NAVIGATOR) {
             return (AFamilyName === FamilyName.NAVIGATOR)?-1: 1;
         }
-        return AisPrimary ? 1 : -1;
+        return AisPrimary ? -1 : 1;
     });
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
     const hasEffect = sortedAbilities.some(({effect}) => effect) || sortedAbilities.length === 0;
-    return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.LIGHT_SEA};`:''}">
+    return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.SEA};`:''}">
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
@@ -86,7 +86,7 @@ ${(handicaps?.length > 0) ? `<ul>
 }
     
     <ul style="border-radius: 0  0 1mm 1mm;">
-    ${sortedAbilities.map((ability) => getAbilityVignette(ability)).join('')}
+    ${sortedAbilities.map((ability) => getAbilityVignette(ability, !ability.isPrimary && sortedAbilities.some(a => a.isPrimary && a.family.familyName === ability.family.familyName))).join('')}
     </ul>
     <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}

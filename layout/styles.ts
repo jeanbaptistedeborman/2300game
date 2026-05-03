@@ -76,6 +76,11 @@ p:last-of-type {
  
  .abilility-vignette {
     position:relative;
+    display: flex;
+ }
+ 
+ .abilility-vignette.population-placeholder {
+    min-height: 1cm;
  }
  
  .abilility-vignette:last-of-type {

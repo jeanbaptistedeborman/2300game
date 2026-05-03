@@ -5,6 +5,8 @@ import {Ability, Card, Family, FamilyName} from "../model";
 import {findPrimaryAbility, hasPrimaryAbility} from "../services";
 import {getAbilityVignette, getFamilyIcon, header} from "../layout/components/components";
 
+const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
+
 const textStyle: string = `line-height:1.2em;;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'`;
 
 const isSameCard = (cardA: Card, cardB: Card): boolean => {
@@ -55,9 +57,13 @@ export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]
            <div style="display: flex;margin: 1mm 0 5mm 0;background-color: ${family.color}; border:1mm solid; border-radius: 2mm; overflow: clip;border-color:${family.color};break-inside: avoid-column;">
            
            <div style="background-color:${family.color};margin: 0 3mm 1mm 0;padding:1mm;border-radius: 0; border:1mm; zoom:2;border-color:${family.color};">${getFamilyIcon(family)}</div>  
-        <div style="font-family: 'Arial', 'Sans Serif'; flex-grow: 1; zoom:1.5;">
+        <div style="font-family: 'Arial', 'Sans Serif'; flex-grow: 1; zoom:1.5; display:flex; flex-direction:column;">
         ${primaryAbility ? `
-                ${getAbilityVignette(primaryAbility)}` : '<br/>Pas de pouvoir titulaire'} 
+                <style>.family-vignette-ul{display:flex;flex-direction:column;flex-grow:1;margin:0;padding:0;} .family-vignette-ul .abilility-vignette{flex-grow:1;} .family-vignette-ul .abilility-vignette > div{flex-grow:1;}</style>
+                <ul class="family-vignette-ul">${getAbilityVignette(primaryAbility, false, true)}</ul>
+                ${primaryAbility.text ? `<div style="padding: 1mm 2mm; font-size: 9pt; line-height: 1.2em; color: black; background-color: white; font-family: 'Crimson Pro', serif;">
+                  ${primaryAbility.effect ? `<img src="${FLIGHT_PICTURE_URL}" style="height:1.6em;object-fit:contain;flex-shrink:0;margin-right:1mm;float:left;" /><b>Emplacements voisins&nbsp;:</b> ` : ''}${primaryAbility.text}
+                </div>` : ''}` : '<br/>Pas de pouvoir titulaire'} 
           
         </div>
         </div>`

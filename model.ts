@@ -40,9 +40,11 @@ export interface Ability {
     effect?: Effect,
     family: Family,
     name: string,
-    text: string,
-    inTest?:boolean;
     icon?: string,
+    text?: string,
+    abilityPicture?: string,
+    givesAdditionalPopulations?: boolean,
+    inTest?:boolean;
 }
 
 export interface Handicap {
