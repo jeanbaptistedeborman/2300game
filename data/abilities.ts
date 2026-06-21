@@ -53,9 +53,9 @@ export const trade: Ability = {
 
 export const marine: Ability = {
     isPrimary: true,
-    name: 'Navigation',
+    name: 'Navigateur',
     family: navigators,
-    text: `<span>Vous pouvez poser cette carte sur une île adverse en suivant les règles de navigation.<span>`,
+    text: `<span>Vous pouvez poser cette carte sur une île adjacente à un continent adverse en suivant les règles de navigation.<span>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vQUVhofd4BReQN6iChV5cj22w1KcbfRAWUukbtHLWzic7dbl700sqVaA248Hsy9_WoZo9vDjyl1coxD/pub?w=658&h=258`,
 }
 
@@ -63,7 +63,7 @@ export const militaryUnit: Ability = {
     isPrimary: true,
     effect:forbid,
     icon:getArmyIcon('1.7em'),
-    name: "Militaires",
+    name: "Militaire",
     family: military,
     text: `<span class="smaller-text">Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</span>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vR5WUeyyGNz_wH7o5m_n2oi7T6hDXOVIx0skvOtzd9s3bEqD8DFd1ty2PznjMz0-kBuYYWFWX5WCKnE/pub?w=658&h=258`,

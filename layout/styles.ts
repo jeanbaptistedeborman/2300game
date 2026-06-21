@@ -4,8 +4,8 @@ const backgroundColor = "#FEEFD3";
 
 
 
-const CARD_GAP:string[] = ['3mm', '3mm'];
-//const CARD_GAP:string[] = ['0mm', '0mm'];
+//const CARD_GAP:string[] = ['3mm', '3mm'];
+const CARD_GAP:string[] = ['0mm', '0mm'];
 
 
 export const styles = `
