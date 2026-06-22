@@ -87,7 +87,7 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p>${WHEN_PLAYING_THIS_CARD} <b></p>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b>Vous pouvez poser une ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir. (Ceci déclenchera la fin de partie.)</p>`
+    text: `<p>${WHEN_PLAYING_THIS_CARD} <b></p>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b>Vous pouvez poser ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir. (Ceci déclenchera la fin de partie.)</p>`
 }
 
 export const cleanContinent: Ability = {

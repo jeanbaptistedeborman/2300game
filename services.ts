@@ -69,24 +69,19 @@ const getSequenceWithHiddenAbility = (abilities:Ability[], selectedAbilities):bo
 }
 
 
-const getCardIdentifier = ({title, abilities}:Card):string => `${title} ${abilities.map(({family:{familyName}}) => familyName).join(' ')}`
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-zA-Z0-9\s]/g, '')
-    .replace(/ /g, '_').toLowerCase();
-
 const loadVisibilitySequence = (card:Card):undefined | CardBackInfo[]=> {
-    return JSON.parse(fs.readFileSync('data/backinfos.json', 'utf-8'))[getCardIdentifier(card)];
+    return JSON.parse(fs.readFileSync('data/backinfos.json', 'utf-8'))[card.id];
 }
 
 const saveVisibilitySequence = (card:Card, backInfo:CardBackInfo[]) => {
     console.log(`***** Saving new backInfo for card ${card.title}`, '*******************');
     const backInfos: {
-    [cardIdentifier: string]: CardBackInfo
+    [cardIdentifier: string]: CardBackInfo[]
     }  = JSON.parse(fs.readFileSync('data/backinfos.json', 'utf-8'));
     fs.writeFileSync('data/backinfos.json', JSON.stringify(
         {
             ...backInfos,
-            [getCardIdentifier(card)]: backInfo
+            [card.id]: backInfo
         }
     ));
 }
@@ -153,11 +148,7 @@ const computeVisibilitySequence = (card:Card):boolean[][] => {
 const getVisibilitySequence = (card:Card, amount: number):CardBackInfo[] => {
     const existingSequence = loadVisibilitySequence(card);
     if (existingSequence) return existingSequence;
-    const newSequence =  addBackTerrainToSequence (addAlwaysVisibleAbilities(computeVisibilitySequence(card), card, KNOWLEDGE_ABILITY_TITLE));
-
-    saveVisibilitySequence(card, newSequence);
-    if (newSequence.length !== amount * card.number) throw (new Error(`Generated visibility sequence length (${newSequence.length}) does not match expected length (${amount * card.number}) for card ${card.title}`));
-    return newSequence;
+    throw (new Error ("No existing visibility sequence found for card " + card.title + " (" + card.id + "). Please generate it first."));
 }
 
 
@@ -210,5 +201,4 @@ export const generateCompletedCards = () => cards
         //.filter (({backTerrain}:Card) => backTerrain === Terrain.SCORCHED)
     .sort(() => .5 -Math.random())
     .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
-
 ;

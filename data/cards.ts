@@ -86,8 +86,8 @@ import {
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
 export const cards: Card[] = [
-
     {
+        id: "desert_warriors_militaire",
         illustration:getWarriorIllustration(),
         number:2,
         title: "Desert warriors",
@@ -97,6 +97,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "caravane_marchand",
         illustration: getCaravanIllustration(),
         number:3,
         title: "Caravane",
@@ -105,6 +106,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "capitaine_intrepide_navigateur",
         number:1,
         illustration: getSailIllustration(),
         title: "Capitaine intrépide",
@@ -113,6 +115,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "freres_doutre_mer_navigateur_ecolo",
         number:1,
         illustration: getSailIllustration(),
         title: "Frères d'Outre Mer",
@@ -121,6 +124,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "freres_doutre_mer_navigateur_tekno",
         number:1,
         status: 'test',
         illustration: getSailIllustration(),
@@ -130,6 +134,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "freres_doutre_mer_navigateur_marchand",
         number:1,
         illustration: getSailIllustration(),
         title: "Frères d'Outre Mer",
@@ -138,6 +143,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "freres_doutre_mer_navigateur_savant",
         number:1,
         illustration: getSailIllustration(),
         title: "Frères d'Outre Mer",
@@ -146,6 +152,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "navire_marchand_marchand_navigateur",
         number:1,
         illustration: getSailboatIllustration(),
         title: "Navire marchand",
@@ -154,6 +161,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "bourgade_prospere_ecolo_marchand",
         illustration: getHouseIllustration(),
         number:1,
         title: "Bourgade prospère",
@@ -162,6 +170,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "citadelle_ecolo_militaire",
         illustration: getFortIllustration(),
         number:1,
         title: "Citadelle",
@@ -171,6 +180,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "poigne_de_fer_militaire_militaire",
         illustration: getFistIllustration(),
         number:1,
         title: "Poigne de fer",
@@ -180,6 +190,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "canonniere_navigateur_militaire",
         illustration: getWarBoat(),
         number:1,
         title: "Canonnière",
@@ -189,6 +200,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA
     },
     {
+        id: "temple_du_grand_pardon_ecolo",
         illustration:getOppidumIllustration(),
         number:1,
         title: "Temple du Grand Pardon",
@@ -197,6 +209,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE
     },
     {
+        id: "on_arrete_le_progres__ecolo",
         illustration: getHandIllustration(),
         number:1,
         title: "On arrête le progrès !",
@@ -205,6 +218,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT
     },
     {
+        id: "grande_inquisition_verte_ecolo",
         illustration:  getPrisonerIllustration(),
         number:1,
         title: "Grande inquisition verte",
@@ -213,6 +227,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA
     },
     {
+        id: "pas_touche_a_la_techno_ecolo_militaire",
         illustration: getRevoltIllustration(),
         status: "discarded",
         number:1,
@@ -222,6 +237,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA
     },
     {
+        id: "make_earth_great_again_tekno",
         illustration: getDerrick(),
         number:2,
         title: "Make Earth Great Again",
@@ -230,6 +246,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "plateforme_petroliere_tekno_navigateur",
         illustration: getOilPlatform(),
         number:1,
         title: "Plateforme pétrolière",
@@ -238,6 +255,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SEA,
     },
     {
+        id: "disavowal_of_the_ancients_ecolo",
         illustration: getFlameThrowerIllustration(),
         number:1,
         title: "Disavowal Of The Ancients",
@@ -246,6 +264,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "lhumain_du_futur8482_",
         number:6,
         illustration:getLizardManIllustration(),
         title: GMO_CARD_TITLE,
@@ -254,6 +273,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SCORCHED,
     },
     {
+        id: "machine_a_recycler_ecolo_tekno",
         illustration: getMachineIllustration(),
         number:1,
         title: "Machine à recycler",
@@ -262,6 +282,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "continent_tabou_militaire_militaire",
         illustration: getSkullIllustration(),
         number:1,
         title: "Continent tabou",
@@ -269,6 +290,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA
     },
     {
+        id: "promotion_des_lezards_militaire_militaire",
         illustration: getLizardManIllustration(),
         number:1,
         title: "Promotion des lézards",
@@ -276,6 +298,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "societe_inclusive_marchand_marchand",
         illustration: getLizardManIllustration(),
         number:1,
         title: "Société inclusive",
@@ -284,6 +307,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "new_london_militaire_militaire",
         illustration: getCrownIllustration(),
         number:1,
         title: "New London",
@@ -292,6 +316,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "terraforming_earth_ecolo",
         illustration: getFarmerIllustration(),
         number:2,
         title: "Terraforming Earth",
@@ -300,19 +325,24 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "kristmas_international_marchand_marchand",
         illustration:getWorldCompanyIllustration(),
         number:1,
         title: "Kristmas International",
         abilities: [worldCompany, trade],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {  title: "Société Savante de Géographie",
+    {
+        id: "societe_savante_de_geographie_explorateur_explorateur",
+        title: "Société Savante de Géographie",
         illustration:getGlobeIllustration(),
         number:1,
         abilities: [cartographer, scout],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {    title: "Invasion",
+    {
+        id: "invasion_militaire_militaire",
+        title: "Invasion",
         status: 'discarded',
         illustration: getInvasionIllustration(),
         number:1,
@@ -320,32 +350,40 @@ export const cards: Card[] = [
         handicaps: [militarySuperiority],
         allowedTerrain: Terrain.ANY,
     },
-    {    title: "Lady X",
+    {
+        id: "lady_x_explorateur_explorateur",
+        title: "Lady X",
         illustration: getLadyXIllustration(),
         number:1,
         abilities: [scout, spy],
         allowedTerrain: Terrain.SAVANNA,
     },
-    {  title: "Aéronaute",
+    {
+        id: "aeronaute_explorateur",
+        title: "Aéronaute",
         illustration:getBalloonIllustration(),
         number:2,
         abilities: [ scout],
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "flying_santa_company_marchand_marchand",
         title: "Flying Santa Company",
         illustration:getBlimpIllustration(),
         number:1,
         abilities: [flyingMerchants, trade],
         allowedTerrain: Terrain.TEMPERATE,
     },
-    {    title: "Force aérienne",
+    {
+        id: "force_aerienne_militaire_militaire",
+        title: "Force aérienne",
         illustration: getWarPlaneIllustration(),
         number:1,
         abilities: [airForce, militaryUnit],
         allowedTerrain: Terrain.TEMPERATE,
     },
     {
+        id: "amis_du_vent_ecolo",
         title: "Amis du vent",
         illustration: getHangGliderIllustration(),
         number:1,
@@ -353,13 +391,16 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {
+        id: "bibliotheque_savant",
         illustration: getKnowledgeIllustration(),
         number:3,
         title: "Bibliothèque",
         abilities: [knowledge],
         allowedTerrain: Terrain.DESERT,
     },
-    {     title: "Bunker The Adaptive Company&#8482;",
+    {
+        id: "bunker_the_adaptive_company8482_tekno",
+        title: "Bunker The Adaptive Company&#8482;",
         illustration: getCarIllustration(),
         number:2,
         abilities: [goodOldWorld],
@@ -367,6 +408,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "aventurier_explorateur_explorateur",
         title: "Aventurier",
         illustration:getOutbackHatIllustration(),
         number:1,
@@ -375,6 +417,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "clan_macfromton_ecolo",
         title: "Clan MacFromton",
         illustration: getCheeseIllustration(),
         number:1,
@@ -383,6 +426,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "santa_hansa_marchand_marchand",
         title: "Santa Hansa",
         illustration: getMerchantLigueIllustration(),
         number:1,
@@ -390,6 +434,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "pecheurs_de_meduses_ecolo",
         title: "Pêcheurs de méduses",
         illustration: getJellyFishIllustration(),
         number:1,
@@ -398,6 +443,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "enterres_a_jamais_ecolo",
         illustration: getBulldozerIllustration(),
         status: 'test',
         title: "Enterrés à jamais",
@@ -407,6 +453,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "adaptive_company8482_crazy_factory_tekno_tekno",
         illustration: getFactoryIllustration(),
         status: 'discarded',
         title: "Adaptive Company&#8482; crazy factory",
@@ -416,6 +463,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "conaimaraaaaah__militaire_militaire",
         illustration: getFireIllustration(),
         status: 'test',
         title: "Conaimaraaaaah !",
@@ -425,6 +473,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "bovins_preserves_ecolo",
         title: `${FLOCK_CARD_TITLE}`,
         illustration:getCowIllustration(),
         number:3,
@@ -432,6 +481,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "centre_de_refugies_marchand_marchand",
         title: "Centre de réfugiés",
         illustration:getBackupIllustration(),
         number:1,
@@ -439,6 +489,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "centre_de_refugies_ecolo",
         title: "Centre de réfugiés",
         illustration:getBackupIllustration(),
         number:1,
@@ -446,6 +497,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.DESERT,
     },
     {
+        id: "missionnaire_explorateur_ecolo",
         title: "Missionnaire",
         status: 'special',
         illustration: getEmbracedEnergyIllustration(),
@@ -455,6 +507,7 @@ export const cards: Card[] = [
     },
 
     {
+        id: "ia_the_adaptive_company8482_savant_tekno",
         title: "IA The Adaptive Company&#8482;",
         illustration: getAIIllustration(),
         number:1,
@@ -462,6 +515,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.TEMPERATE,
     },
     {
+        id: "empire_diversifie_militaire_militaire",
         title: "Empire diversifié",
         status: 'discarded',
         illustration: getGatheringIllustration(),
@@ -469,7 +523,9 @@ export const cards: Card[] = [
         abilities: [realmOfDiversity, militaryUnit],
         allowedTerrain: Terrain.TEMPERATE,
     },
-    {   title: 'Kristmas Spirit',
+    {
+        id: "kristmas_spirit_marchand_marchand",
+        title: 'Kristmas Spirit',
         status: 'test',
         illustration: getFriendsIllustration(),
         number:1,
@@ -477,6 +533,7 @@ export const cards: Card[] = [
         allowedTerrain: Terrain.SAVANNA,
     },
     {
+        id: "babylon_3000_tekno_tekno",
         title: 'Babylon 3000',
         illustration: getMegapolisIllustration(),
         number:1,

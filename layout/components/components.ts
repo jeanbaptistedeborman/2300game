@@ -1,7 +1,6 @@
 import {Ability, Family, FamilyName, getEnumKey, Terrain, terrains} from "../../model";
 import {terrainColors} from "../colors";
 import {darkenColor, getTerrainIllustration} from "../../services";
-import {getCrown2Illustration, getMoveIllustration} from "../illustrations";
 import {
     get2CoinsIcon,
     getBlimpIcon,
@@ -59,11 +58,9 @@ export const header:string = `<head>
 
 export const getFamilyIcon = ({
                                   icon,
-                                  familyName,
                                   color
-                              }: Family) => `<div class='text' style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .4)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .7)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
-                <span class="text">${String(familyName).toUpperCase()}<span>
         </div>`;
 
 export const getTerrainVignette = (terrain => {
@@ -81,6 +78,13 @@ export const getTerrainsVignettes = (targetTerrain) => {
         .map(terrain => getTerrainVignette(terrain)).join('')
 }
 
+const getFamilyBand = (family: Family, abilityPicture?: string, showIcon: boolean = true) => `
+    <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:12pt;letter-spacing:-.02em;display:flex;align-items:stretch;justify-content:center;">
+        ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
+        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">${family.familyName.toUpperCase()}</span>
+        ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />` : ''}
+    </div>`;
+
 export const getAbilityVignette = (({
                                         name,
                                         isVisible,
@@ -94,30 +98,24 @@ export const getAbilityVignette = (({
                                         family: {
                                             color,
                                         }
-                                    }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false) =>
+                                    }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false, showFamilyBand: boolean = true) =>
 
     `<li class='abilility-vignette${ (givesAdditionalPopulations && !effect) ? ' population-placeholder' : ''}' >
         ${isPrimary ? `
         <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color)};display:flex;align-items:stretch;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
-          <div style="flex-shrink:0;align-self:stretch;display:flex;">${(!hideFamilyIcon && !leftAlign) ? getFamilyIcon(family) : ''}</div>
-          <div style="background-color:${darkenColor(color)};display:flex;align-items:center;flex-grow:1;gap:.5mm;padding:.2mm;">
-            <span style="font-weight:700;font-size:12pt;letter-spacing:-.02em;flex-grow:1;text-align:center;">${name}</span>
-            ${abilityPicture ? `<img src="${abilityPicture}" style="height:.4cm;object-fit:contain;display:block;flex-shrink:0;" />` : `<span>${text || ''}</span>`}
+          <div style="background-color:${darkenColor(color)};display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
+            ${showFamilyBand ? getFamilyBand(family, abilityPicture, !hideFamilyIcon && !leftAlign) : ''}
           </div>
           ${isVisible ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
         </div>` : `
-        <div style="box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
-        <div style="align-self:stretch;display:flex;flex-shrink:0;">
-        ${!hideFamilyIcon ? getFamilyIcon(family) : ''}
-        ${(isVisible) ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:${'.5mm'} solid black;border-radius: 50%;' >${getEyeIcon('3mm')}</div>` : ''}
-        </div>
+        <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
         <div style="display:flex;flex-grow: 1;border-color: ${color}">
-           ${text && `<div class="ability_text" style="flex-direction:column;display:flex;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
-
-               
-                <div style="flex-grow:1;">
-            ${effect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" style="height:1.8em;object-fit:contain;flex-shrink:0;margin-right:.2mm;float:left;" />` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
+           ${text && `<div class="ability_text" style="flex-direction:column;display:flex;padding:0;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
+                ${showFamilyBand ? getFamilyBand(family, abilityPicture, !hideFamilyIcon) : ''}
+                <div style="flex-grow:1;padding:.1mm .3mm .2mm .3mm;">
+            ${effect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="${family.familyName} effect illustration" style="height:1.8em;object-fit:contain;flex-shrink:0;margin-right:.2mm;float:left;" />` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
             <span>${text}</span></div></div>`}
         </div>
+        ${isVisible ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
         </div>`}
         </li>`)

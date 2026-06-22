@@ -250,13 +250,14 @@ div {
    padding:1mm;
    display:flex;
    flex-direction:row;
+   color:white;
+   font-size:10pt; 
    justify-content: space-between; 
    border:2px solid black;
    border-width: .1mm .2mm 1mm .5mm;
    border-radius: 1mm; 
    margin-bottom: 1mm;
 }
-
 `
 
 export const footerStyle:string =  `

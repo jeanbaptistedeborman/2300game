@@ -25,7 +25,7 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
         .map(({
                   family,
                   family: {color}
-              }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}${getFamilyIcon(family)}</li>`).join('')}
+              }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}<div>${family.familyName}</div>${getFamilyIcon(family)}</li>`).join('')}
     </ul>
  
     </div>`;
