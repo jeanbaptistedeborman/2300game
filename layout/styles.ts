@@ -4,8 +4,8 @@ const backgroundColor = "#FEEFD3";
 
 
 
-//const CARD_GAP:string[] = ['3mm', '3mm'];
-const CARD_GAP:string[] = ['0mm', '0mm'];
+const CARD_GAP:string[] = ['3mm', '3mm'];
+//const CARD_GAP:string[] = ['0mm', '0mm'];
 
 
 export const styles = `
@@ -14,8 +14,8 @@ body {
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
-    line-height:1.1em;
-   font-size: 9pt;
+  line-height:1.1em;
+   font-size: 10pt;
    margin:0; 
 }
 
@@ -234,9 +234,9 @@ div {
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
-    padding:.1mm .3mm .2mm .3mm;
+    padding:.3mm;
     color:black;
-    line-height:.9em;
+    line-height:1em;
 }
 
 .ability_text.primary {

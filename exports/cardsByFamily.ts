@@ -1,7 +1,7 @@
 import fs from "fs";
 import {footerStyle, styles} from "../layout/styles";
 import {families} from "../data/families";
-import {Ability, Card, Family, FamilyName, terrains} from "../model";
+import {Ability, Card, Family, FamilyName} from "../model";
 import {DECK_NUMBER} from "../constants";
 import {countCards, findPrimaryAbility, removeUnusedCards} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";

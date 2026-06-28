@@ -66,7 +66,7 @@ export const merchant:Family = {
     tip:`Comme au temps des anciens, la force marche main dans la main avec le commerce. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les emplacements de vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon('5mm'),
-    color: "#d97b2d",
+    color: "#ff8102",
     isDarkColor:true,
 }
 

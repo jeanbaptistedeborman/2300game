@@ -602,8 +602,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     },
     {
@@ -725,8 +725,8 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     }
   ],
@@ -960,8 +960,8 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     },
     {
@@ -996,8 +996,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     },
     {

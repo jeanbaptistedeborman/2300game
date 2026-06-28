@@ -56,7 +56,7 @@ export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]
             return `
            <div style="display: flex;margin: 1mm 0 5mm 0;background-color: ${family.color}; border:1mm solid; border-radius: 2mm; overflow: clip;border-color:${family.color};break-inside: avoid-column;">
            
-           <div style="background-color:${family.color};margin: 0 3mm 1mm 0;padding:1mm;border-radius: 0; border:1mm; zoom:2;border-color:${family.color};">${getFamilyIcon(family)}</div>  
+           <div style="background-color:${family.color};margin: 0 3mm 1mm 0;padding:1mm;border-radius: 0; border:1mm; zoom:2;border-color:${family.color};">${getFamilyIcon(family)}</div>
         <div style="font-family: 'Arial', 'Sans Serif'; flex-grow: 1; zoom:1.5; display:flex; flex-direction:column;">
         ${primaryAbility ? `
                 <style>.family-vignette-ul{display:flex;flex-direction:column;flex-grow:1;margin:0;padding:0;} .family-vignette-ul .abilility-vignette{flex-grow:1;} .family-vignette-ul .abilility-vignette > div{flex-grow:1;}</style>

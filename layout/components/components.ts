@@ -38,7 +38,7 @@ export const getTribeDescription = ({familyName}:Family) => {
         [FamilyName.TECHNO, getCogIcon('.7em')],
     ]);
 
-    return `tribu <b style="white-space:nowrap;">${familyName.toUpperCase()}${wrapIcon(ICON_MAP.get(familyName))}</b>`;
+    return `tribu <b>${familyName.toUpperCase()}${wrapIcon(ICON_MAP.get(familyName))}</b>`;
 }
 
 
@@ -59,7 +59,7 @@ export const header:string = `<head>
 export const getFamilyIcon = ({
                                   icon,
                                   color
-                              }: Family) => `<div class='text' style="height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .7)};color:white;padding:.3mm;" >
+                              }: Family) => `<div class='text' style="box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 3mm; background-color: ${darkenColor(color, .7)};color:white;padding:.3mm;" >
                <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
         </div>`;
 
@@ -79,7 +79,7 @@ export const getTerrainsVignettes = (targetTerrain) => {
 }
 
 const getFamilyBand = (family: Family, abilityPicture?: string, showIcon: boolean = true) => `
-    <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:12pt;letter-spacing:-.02em;display:flex;align-items:stretch;justify-content:center;">
+    <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
         ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
         <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">${family.familyName.toUpperCase()}</span>
         ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />` : ''}
@@ -102,20 +102,24 @@ export const getAbilityVignette = (({
 
     `<li class='abilility-vignette${ (givesAdditionalPopulations && !effect) ? ' population-placeholder' : ''}' >
         ${isPrimary ? `
-        <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color)};display:flex;align-items:stretch;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
+        <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color)};display:flex;align-items:center;color:white;border:${BORDER_WIDTH} solid ${color};width:100%; font-size: smaller">
           <div style="background-color:${darkenColor(color)};display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
-            ${showFamilyBand ? getFamilyBand(family, abilityPicture, !hideFamilyIcon && !leftAlign) : ''}
+            ${showFamilyBand ? getFamilyBand(family, abilityPicture, true) : ''}
           </div>
-          ${isVisible ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
+          ${isVisible ? `<div style='position:absolute;left:-2mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
         </div>` : `
         <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
-        <div style="display:flex;flex-grow: 1;border-color: ${color}">
+        <div style="display:flex;flex-grow:1;border-color:${color}">
            ${text && `<div class="ability_text" style="flex-direction:column;display:flex;padding:0;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
-                ${showFamilyBand ? getFamilyBand(family, abilityPicture, !hideFamilyIcon) : ''}
-                <div style="flex-grow:1;padding:.1mm .3mm .2mm .3mm;">
+                ${showFamilyBand ? getFamilyBand(family, abilityPicture, false) : ''}
+                <div style="flex-grow:1;display:flex;box-sizing:border-box;">
+            <div style="width:5.5mm;flex-shrink:0;background-color:${color};display:flex;align-items:flex-start;justify-content:center;overflow:hidden;">
+                <span style="display:block;line-height:0;">${family.icon}</span>
+            </div>
+            <div style="flex-grow:1;padding:.1mm .3mm .2mm .3mm;box-sizing:border-box;">
             ${effect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="${family.familyName} effect illustration" style="height:1.8em;object-fit:contain;flex-shrink:0;margin-right:.2mm;float:left;" />` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
-            <span>${text}</span></div></div>`}
+            <span>${text}</span></div></div></div>`}
         </div>
-        ${isVisible ? `<div style='position:absolute;right:-1mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
+        ${isVisible ? `<div style='position:absolute;left:-2mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
         </div>`}
         </li>`)

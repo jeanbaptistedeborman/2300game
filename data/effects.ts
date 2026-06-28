@@ -30,7 +30,6 @@ export const takeCardFromHand:Effect ={
 
 export const evolving:Effect ={
     name: 'evolving',
-    icon:getQuestionMarkIcon(LARGE_ICONSIZE)
 }
 
 export const takeCard:Effect ={

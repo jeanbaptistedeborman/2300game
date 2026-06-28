@@ -6,7 +6,7 @@ import {
     getArmyIcon,
     getGetUpCardIcon,
     getCowIcon,
-    getLizardManIcon, getCardPlayIcon, getOpenPadlockIcon, getOilIcon, getForbiddenPersonIcon,
+    getLizardManIcon, getCardPlayIcon, getOpenPadlockIcon, getOilIcon,
 } from "../layout/icons";
 import {addPopulation, forbid, removePopulation, takeCard, trashCard} from "./effects";
 import {
@@ -32,12 +32,13 @@ const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<b>À tout moment&nbsp;:</b>`;
 const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 
-const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions inoccupées ou occupées par des adversaires.]</p>`;
+const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.]</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
-const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:40%;height:40%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('80%')}</div>`;
-export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:3em;width:3em;margin-right:1mm;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.5em;object-fit:contain;" alt="">${LOCK_BADGE('top:0;left:0;')}${LOCK_BADGE('top:0;right:0;')}${LOCK_BADGE('bottom:0;left:0;')}${LOCK_BADGE('bottom:0;right:0;')}</div>`;
+const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:30%;height:30%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('60%')}</div>`;
+export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:3em;width:3em;margin-right:1mm;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.5em;object-fit:contain;" alt="">${LOCK_BADGE('top:1mm;left:1mm;')}${LOCK_BADGE('top:1mm;right:1mm;')}${LOCK_BADGE('bottom:1mm;left:1mm;')}${LOCK_BADGE('bottom:1mm;right:1mm;')}</div>`;
 
+const getPromoteGMOText = (family:Family) => `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir de la ${getTribeDescription(family)} et font partie de cette tribu.`
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte la ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
 const getRallyFriendsText = (family:Family) => `${wrapIcon(getCardPlayIcon('.9em'))}Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
 export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
@@ -104,13 +105,13 @@ export const cleanContinent: Ability = {
 export const promoteGMOsMilitary: Ability = {
     name: 'Recrutement laxiste',
     family: military,
-    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${militaryUnit.name.toUpperCase()}</b> et la ${getTribeDescription(military)}.`
+    text: getPromoteGMOText(military)
 }
 
 export const promoteGMOsMerchant: Ability = {
     name: 'Equal opportunity',
     family: merchant,
-    text: `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir <b>${trade.name.toUpperCase()}</b> et la ${getTribeDescription(merchant)}.`
+    text: getPromoteGMOText(merchant)
 }
 
 export const bewareOfTechno: Ability = {

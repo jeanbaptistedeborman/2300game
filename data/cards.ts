@@ -86,6 +86,7 @@ import {
 import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
 
 export const cards: Card[] = [
+
     {
         id: "desert_warriors_militaire",
         illustration:getWarriorIllustration(),
@@ -301,7 +302,7 @@ export const cards: Card[] = [
         id: "societe_inclusive_marchand_marchand",
         illustration: getLizardManIllustration(),
         number:1,
-        title: "Société inclusive",
+        title: "Equal opportunity Company",
         abilities: [promoteGMOsMerchant, trade],
         allowedTerrain: Terrain.SAVANNA,
     },

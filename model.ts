@@ -12,13 +12,13 @@ export enum Terrain {
 export const terrains: Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 
 export enum FamilyName {
-    "TECHNO" = "Tekno",
-    "MILITARY" = "Militaire",
-    "EXPLORER" = "Explorateur",
-    "CLEAN_EARTH" = "Ecolo",
-    "MERCHANT" = "Marchand",
-    "KNOWLEDGE" = "Savant",
-    "NAVIGATOR" = "Navigateur",
+    "TECHNO" = "Tekno Bros",
+    "MILITARY" = "Militaires",
+    "EXPLORER" = "Explorateurs",
+    "CLEAN_EARTH" = "Green Saviors",
+    "MERCHANT" = "Marchands",
+    "KNOWLEDGE" = "Savants",
+    "NAVIGATOR" = "Navigateurs",
     "PEOPLE" = 'People',
     "NONE" = "SANS TRIBU"
 }
@@ -58,8 +58,8 @@ export interface Handicap {
 export type CardStatus = 'test' | 'discarded' | 'special';
 
 export interface Card {
+    id: string;
     status?: CardStatus,
-    id: string,
     illustration: string;
     number: number;
     title: string,
@@ -72,6 +72,6 @@ export interface Card {
 
 export interface Effect {
     name:string;
-    icon: string,
+    icon?: string,
     color?: string,
 }
