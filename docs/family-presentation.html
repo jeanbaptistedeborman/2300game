@@ -22,7 +22,7 @@ body {
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
-  line-height:1.1em;
+  line-height:1.15em;
    font-size: 10pt;
    margin:0; 
 }
@@ -42,7 +42,7 @@ p:last-of-type {
 .card {
     background-color: #FEEFD3;
     height: 6.6cm;
-    flex: 0 0 calc(33.33333% - calc(3mm * 2/3));
+    flex: 0 0 calc(33.33333% - calc(0mm * 2/3));
     border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
@@ -56,7 +56,7 @@ p:last-of-type {
 .card-content {
     width:100%;
     height: 100%;
-    padding: 3mm 4mm;
+    padding: 2.8mm 3.6mm;
     display: flex;
     flex-direction:column;
     position:relative;
@@ -72,7 +72,6 @@ p:last-of-type {
     width:100%;
     clear:both;
     margin-top:1mm;
-    max-width:21cm;
     gap:1mm 2mm;
     display:flex;
     flex-direction:row;
@@ -89,10 +88,6 @@ p:last-of-type {
  
  .abilility-vignette.population-placeholder {
     min-height: 1cm;
- }
- 
- .abilility-vignette:last-of-type {
-    border-radius:0 0 1mm 1mm; 
  }
  
  .presentation-box .card-container {
@@ -163,9 +158,11 @@ p:last-of-type {
 .title {
     position:relative;
     text-align:center;
-    top: -.4mm;
-    padding:0 2mm 0 2mm;
-    font-size: 3.5mm;
+    top: 0;
+    padding:0 1.5mm;
+    margin-bottom:.35mm;
+    font-size: 3.7mm;
+    line-height:1.05;
     text-wrap: balance;
     letter-spacing: -.02em;
 }
@@ -183,11 +180,10 @@ font-size: 8pt;
 }
 
 .page {
-    max-width:22cm;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
-    gap:3mm  3mm;
+    gap:0mm  0mm;
     page-break-after: always;
     overflow:hidden;
     height: 27cm;
@@ -225,8 +221,8 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:3mm;
-    width:3mm;
+    height:3.2mm;
+    width:3.2mm;
     position:relative;
     border:.3mm solid black;
     border-radius:20%;
@@ -242,16 +238,54 @@ div {
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
-    padding:.3mm;
+    padding:.35mm;
     color:black;
-    line-height:1em;
+    line-height:1.12;
+    font-size:8.8pt;
+}
+
+.card-abilities {
+    display:flex;
+    flex-direction:column;
+    gap:.2mm;
+}
+
+.card-illustration {
+    margin-bottom:.3mm;
+}
+
+.card-meta {
+    margin-top:.4mm;
+}
+
+.card-number {
+    font-weight:600;
+    letter-spacing:.01em;
+}
+
+.ability_text p {
+    margin: 0 0 .45mm 0;
+}
+
+.ability_text p:last-of-type {
+    margin:0;
 }
 
 .ability_text.primary {
-   background-color:rgba(0, 0, 0, 0.5); 
+   background-color:rgba(0, 0, 0, 0.72); 
    color:white;
-   mix-blend-mode: lighten; 
+   mix-blend-mode: normal; 
    border:none; 
+}
+
+@media print {
+    .presentation-box .card {
+        box-shadow:none;
+    }
+
+    .negative {
+        mix-blend-mode:normal;
+    }
 }
 
 .back-vignette {
@@ -326,9 +360,9 @@ div {
         <div style="position:relative;box-sizing:border-box;background-color:hsl(30.100000000000023, 100%, 30.2%);display:flex;align-items:center;color:white;border:.3mm solid #ff8102;width:100%; font-size: smaller">
           <div style="background-color:hsl(30.100000000000023, 100%, 30.2%);display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             
-    <div style="background-color:hsl(30.100000000000023, 100%, 30.2%);color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(30.100000000000023, 100%, 15.1%);padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M264.4 95.01c-35.6-.06-80.2 11.19-124.2 34.09C96.27 152 61.45 182 41.01 211.3c-20.45 29.2-25.98 56.4-15.92 75.8 10.07 19.3 35.53 30.4 71.22 30.4 35.69.1 80.29-11.2 124.19-34 44-22.9 78.8-53 99.2-82.2 20.5-29.2 25.9-56.4 15.9-75.8-10.1-19.3-35.5-30.49-71.2-30.49zm91.9 70.29c-3.5 15.3-11.1 31-21.8 46.3-22.6 32.3-59.5 63.8-105.7 87.8-46.2 24.1-93.1 36.2-132.5 36.2-18.6 0-35.84-2.8-50.37-8.7l10.59 20.4c10.08 19.4 35.47 30.5 71.18 30.5 35.7 0 80.3-11.2 124.2-34.1 44-22.8 78.8-52.9 99.2-82.2 20.4-29.2 26-56.4 15.9-75.7zm28.8 16.8c11.2 26.7 2.2 59.2-19.2 89.7-18.9 27.1-47.8 53.4-83.6 75.4 11.1 1.2 22.7 1.8 34.5 1.8 49.5 0 94.3-10.6 125.9-27.1 31.7-16.5 49.1-38.1 49.1-59.9 0-21.8-17.4-43.4-49.1-59.9-16.1-8.4-35.7-15.3-57.6-20zm106.7 124.8c-10.2 11.9-24.2 22.4-40.7 31-35 18.2-82.2 29.1-134.3 29.1-21.2 0-41.6-1.8-60.7-5.2-23.2 11.7-46.5 20.4-68.9 26.1 1.2.7 2.4 1.3 3.7 2 31.6 16.5 76.4 27.1 125.9 27.1s94.3-10.6 125.9-27.1c31.7-16.5 49.1-38.1 49.1-59.9z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">MARCHANDS</span>
+    <div style="background-color:hsl(30.100000000000023, 100%, 30.2%);color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(30.100000000000023, 100%, 15.1%);padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M264.4 95.01c-35.6-.06-80.2 11.19-124.2 34.09C96.27 152 61.45 182 41.01 211.3c-20.45 29.2-25.98 56.4-15.92 75.8 10.07 19.3 35.53 30.4 71.22 30.4 35.69.1 80.29-11.2 124.19-34 44-22.9 78.8-53 99.2-82.2 20.5-29.2 25.9-56.4 15.9-75.8-10.1-19.3-35.5-30.49-71.2-30.49zm91.9 70.29c-3.5 15.3-11.1 31-21.8 46.3-22.6 32.3-59.5 63.8-105.7 87.8-46.2 24.1-93.1 36.2-132.5 36.2-18.6 0-35.84-2.8-50.37-8.7l10.59 20.4c10.08 19.4 35.47 30.5 71.18 30.5 35.7 0 80.3-11.2 124.2-34.1 44-22.8 78.8-52.9 99.2-82.2 20.4-29.2 26-56.4 15.9-75.7zm28.8 16.8c11.2 26.7 2.2 59.2-19.2 89.7-18.9 27.1-47.8 53.4-83.6 75.4 11.1 1.2 22.7 1.8 34.5 1.8 49.5 0 94.3-10.6 125.9-27.1 31.7-16.5 49.1-38.1 49.1-59.9 0-21.8-17.4-43.4-49.1-59.9-16.1-8.4-35.7-15.3-57.6-20zm106.7 124.8c-10.2 11.9-24.2 22.4-40.7 31-35 18.2-82.2 29.1-134.3 29.1-21.2 0-41.6-1.8-60.7-5.2-23.2 11.7-46.5 20.4-68.9 26.1 1.2.7 2.4 1.3 3.7 2 31.6 16.5 76.4 27.1 125.9 27.1s94.3-10.6 125.9-27.1c31.7-16.5 49.1-38.1 49.1-59.9z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">MARCHANDS</span>
         <img src="https://docs.google.com/drawings/d/e/2PACX-1vRg7ja9uEqa2aceeuOg5CGcOVRhAOfSc-wPsurcC6g4nUXIXDFNClBN8IvVSX91n0IX0WdPbbDBjM5w/pub?w=658&h=258" alt="Marchands ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />
     </div>
           </div>
@@ -356,9 +390,9 @@ div {
         <div style="position:relative;box-sizing:border-box;background-color:hsl(180, 37.8%, 29.5%);display:flex;align-items:center;color:white;border:.3mm solid #4eadad;width:100%; font-size: smaller">
           <div style="background-color:hsl(180, 37.8%, 29.5%);display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             
-    <div style="background-color:hsl(180, 37.8%, 29.5%);color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(180, 37.8%, 14.8%);padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"/><g class="" transform="translate(0,0)" style=""><path d="M199.256 74.5v285H27.744l25.998 78H380.255l104-78h-267v-285h-18zm18 18c36.787 88.85 64.94 216 0 250h208c22-34-11.905-164.76-208-250zm-36 0c-33.046 69.333-50 200-144 250h144v-250z" fill="#fff" fill-opacity="1"/></g></svg></div></div>
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">NAVIGATEURS</span>
+    <div style="background-color:hsl(180, 37.8%, 29.5%);color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(180, 37.8%, 14.8%);padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"/><g class="" transform="translate(0,0)" style=""><path d="M199.256 74.5v285H27.744l25.998 78H380.255l104-78h-267v-285h-18zm18 18c36.787 88.85 64.94 216 0 250h208c22-34-11.905-164.76-208-250zm-36 0c-33.046 69.333-50 200-144 250h144v-250z" fill="#fff" fill-opacity="1"/></g></svg></div></div>
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">NAVIGATEURS</span>
         <img src="https://docs.google.com/drawings/d/e/2PACX-1vQUVhofd4BReQN6iChV5cj22w1KcbfRAWUukbtHLWzic7dbl700sqVaA248Hsy9_WoZo9vDjyl1coxD/pub?w=658&h=258" alt="Navigateurs ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />
     </div>
           </div>
@@ -384,9 +418,9 @@ div {
         <div style="position:relative;box-sizing:border-box;background-color:hsl(43.19999999999999, 85.3%, 34.4%);display:flex;align-items:center;color:white;border:.3mm solid #efbb35;width:100%; font-size: smaller">
           <div style="background-color:hsl(43.19999999999999, 85.3%, 34.4%);display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             
-    <div style="background-color:hsl(43.19999999999999, 85.3%, 34.4%);color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(43.19999999999999, 85.3%, 17.2%);padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,4)" style=""><path d="M251.828 15.982l-29.2 136.08-56.74-75.652 7.78 90.4-49.154-24.68 22.19 49.643-67.16-13.433 57.817 70.668-55.48-10.514 35.634 26.608c29.894.77 62.017-2.565 90.597 4.35 18.697 4.522 36.167 14.302 48.255 32.74.414.632.82 1.274 1.22 1.923.402-.65.806-1.29 1.22-1.922 12.088-18.44 29.558-28.22 48.254-32.742 27.64-6.685 58.596-3.782 87.643-4.28l35.25-26.676-42.05 8.178 41.468-80.596-59.507 19.852 19.092-77.352-57.234 59.867 6.055-109.607-46.232 97.31-39.715-140.164zM92.236 281.787L50.27 311.02l207.343 72.68L464.95 310.67l-40.99-28.88c-42.595 7.18-92.04-5.54-126.02 10.345l-.116.05-.013.008c-5.226 2.37-9.962 5.418-14.255 9.382-7.564 6.774-13.817 16.048-18.36 28.694l-7.777 13.763-7.158-12.67c-5.434-15.833-13.453-26.5-23.324-33.637-.157-.114-.316-.22-.473-.332-.63-.446-1.267-.883-1.912-1.302-33.565-21.772-86.63-6.6-132.314-14.3zm-64.26 41.3L21.81 340.73l190.67 66.674v17.817h91.55v-18.687h-.055L492.15 340.73l-6.168-17.642-205.658 71.918 4.03 11.527h-54.75l4.03-11.527-205.657-71.918z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">SAVANTS</span>
+    <div style="background-color:hsl(43.19999999999999, 85.3%, 34.4%);color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(43.19999999999999, 85.3%, 17.2%);padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,4)" style=""><path d="M251.828 15.982l-29.2 136.08-56.74-75.652 7.78 90.4-49.154-24.68 22.19 49.643-67.16-13.433 57.817 70.668-55.48-10.514 35.634 26.608c29.894.77 62.017-2.565 90.597 4.35 18.697 4.522 36.167 14.302 48.255 32.74.414.632.82 1.274 1.22 1.923.402-.65.806-1.29 1.22-1.922 12.088-18.44 29.558-28.22 48.254-32.742 27.64-6.685 58.596-3.782 87.643-4.28l35.25-26.676-42.05 8.178 41.468-80.596-59.507 19.852 19.092-77.352-57.234 59.867 6.055-109.607-46.232 97.31-39.715-140.164zM92.236 281.787L50.27 311.02l207.343 72.68L464.95 310.67l-40.99-28.88c-42.595 7.18-92.04-5.54-126.02 10.345l-.116.05-.013.008c-5.226 2.37-9.962 5.418-14.255 9.382-7.564 6.774-13.817 16.048-18.36 28.694l-7.777 13.763-7.158-12.67c-5.434-15.833-13.453-26.5-23.324-33.637-.157-.114-.316-.22-.473-.332-.63-.446-1.267-.883-1.912-1.302-33.565-21.772-86.63-6.6-132.314-14.3zm-64.26 41.3L21.81 340.73l190.67 66.674v17.817h91.55v-18.687h-.055L492.15 340.73l-6.168-17.642-205.658 71.918 4.03 11.527h-54.75l4.03-11.527-205.657-71.918z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">SAVANTS</span>
         <img src="https://docs.google.com/drawings/d/e/2PACX-1vRH0trc0XqPDpsw4duqDsT-a3-ojAluOQ9oed9nB84aSlBIkVqWBafOf6pqsiZH6znYDNgLpZblyI0r/pub?w=658&h=258" alt="Savants ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />
     </div>
           </div>
@@ -414,9 +448,9 @@ div {
         <div style="position:relative;box-sizing:border-box;background-color:hsl(206.29999999999995, 83.9%, 10.2%);display:flex;align-items:center;color:white;border:.3mm solid #073050;width:100%; font-size: smaller">
           <div style="background-color:hsl(206.29999999999995, 83.9%, 10.2%);display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             
-    <div style="background-color:hsl(206.29999999999995, 83.9%, 10.2%);color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(206.29999999999995, 83.9%, 5.1%);padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,4)" style=""><path d="M247 25.332c-.642.046-1.288.098-1.936.152-28.244 52.446-31.912 108.59-28.084 167.936 3.77 58.42 14.916 119.542 15.936 181.58h46.168c1.02-62.038 12.167-123.16 15.936-181.58 3.828-59.347.16-115.49-28.084-167.936-.648-.054-1.294-.106-1.936-.152V352h-18V25.332zm-23.795 3.51c-7.21 1.567-14.562 3.595-21.893 6.04l-2.398 2.88c-38.992 46.79-49.743 83.613-45.955 123.384 3.787 39.772 23.27 83.214 47.31 139.31l4.45 11.458c.898 3.188 4.327 9.14 7.594 15.463-3.76-44.326-10.457-88.814-13.294-132.797-3.65-56.57-.748-112.657 24.185-165.738zm65.59 0c24.933 53.08 27.835 109.168 24.185 165.738-2.837 43.983-9.534 88.47-13.294 132.797 3.267-6.324 6.696-12.275 7.595-15.463l4.45-11.46c24.04-56.094 43.523-99.536 47.31-139.308 3.79-39.77-6.962-76.593-45.954-123.384l-2.4-2.88c-7.33-2.445-14.682-4.473-21.89-6.04zM167.5 49.422c-3.667 1.97-7.256 4.04-10.73 6.21C126.256 74.705 105 100.5 105 128c0 61.75 22.053 90.394 49.773 122.074 2.808 3.21 5.702 6.47 8.608 9.76-14.478-34.99-25.395-66.073-28.34-96.98-3.537-37.152 5.253-73.565 32.46-113.432zm177 0c27.207 39.867 35.997 76.28 32.46 113.432-2.945 30.907-13.862 61.99-28.34 96.98 2.905-3.29 5.8-6.55 8.607-9.76C384.947 218.394 407 189.75 407 128c0-27.5-21.256-53.296-51.77-72.367-3.474-2.172-7.063-4.24-10.73-6.21zM224 393v37h21.424v-37H224zm42.576 0v37H288v-37h-21.424zM224 448v44h64v-44h-64z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">EXPLORATEURS</span>
+    <div style="background-color:hsl(206.29999999999995, 83.9%, 10.2%);color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(206.29999999999995, 83.9%, 5.1%);padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path><g class="" transform="translate(1,4)" style=""><path d="M247 25.332c-.642.046-1.288.098-1.936.152-28.244 52.446-31.912 108.59-28.084 167.936 3.77 58.42 14.916 119.542 15.936 181.58h46.168c1.02-62.038 12.167-123.16 15.936-181.58 3.828-59.347.16-115.49-28.084-167.936-.648-.054-1.294-.106-1.936-.152V352h-18V25.332zm-23.795 3.51c-7.21 1.567-14.562 3.595-21.893 6.04l-2.398 2.88c-38.992 46.79-49.743 83.613-45.955 123.384 3.787 39.772 23.27 83.214 47.31 139.31l4.45 11.458c.898 3.188 4.327 9.14 7.594 15.463-3.76-44.326-10.457-88.814-13.294-132.797-3.65-56.57-.748-112.657 24.185-165.738zm65.59 0c24.933 53.08 27.835 109.168 24.185 165.738-2.837 43.983-9.534 88.47-13.294 132.797 3.267-6.324 6.696-12.275 7.595-15.463l4.45-11.46c24.04-56.094 43.523-99.536 47.31-139.308 3.79-39.77-6.962-76.593-45.954-123.384l-2.4-2.88c-7.33-2.445-14.682-4.473-21.89-6.04zM167.5 49.422c-3.667 1.97-7.256 4.04-10.73 6.21C126.256 74.705 105 100.5 105 128c0 61.75 22.053 90.394 49.773 122.074 2.808 3.21 5.702 6.47 8.608 9.76-14.478-34.99-25.395-66.073-28.34-96.98-3.537-37.152 5.253-73.565 32.46-113.432zm177 0c27.207 39.867 35.997 76.28 32.46 113.432-2.945 30.907-13.862 61.99-28.34 96.98 2.905-3.29 5.8-6.55 8.607-9.76C384.947 218.394 407 189.75 407 128c0-27.5-21.256-53.296-51.77-72.367-3.474-2.172-7.063-4.24-10.73-6.21zM224 393v37h21.424v-37H224zm42.576 0v37H288v-37h-21.424zM224 448v44h64v-44h-64z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">EXPLORATEURS</span>
         <img src="https://docs.google.com/drawings/d/e/2PACX-1vS8CGKW9qQve6brkMiVlNbOK4lZ4ahCYvSxy2OQkHJR19kzfFqs4iu4ZDxpPHh7q2pYo7_yBb-t5haa/pub?w=658&h=258" alt="Explorateurs ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />
     </div>
           </div>
@@ -442,9 +476,9 @@ div {
         <div style="position:relative;box-sizing:border-box;background-color:hsl(7.800000000000011, 73.9%, 24.4%);display:flex;align-items:center;color:white;border:.3mm solid #b42f1b;width:100%; font-size: smaller">
           <div style="background-color:hsl(7.800000000000011, 73.9%, 24.4%);display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             
-    <div style="background-color:hsl(7.800000000000011, 73.9%, 24.4%);color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(7.800000000000011, 73.9%, 12.2%);padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M227.227 21.777c-1.845 0-3.704.05-5.567.157-15.314.875-30.76 5.305-39.494 10.863l-.008 73.15c2.884-.094 5.777-.147 8.676-.142 23.382.036 47.104 3.286 68.47 9.513l.01-87.507c-7.034-3.518-19.178-6.03-32.087-6.033zm80.74 9.16c-11.925.15-23.077 2.364-29.967 5.596l-.008 77.602v7.658c38.486 15.67 64.814 42.48 58.735 78.764l-.96 5.73-5.562 1.674c-17.45 5.253-34.872 9.703-52.225 13.335V246.53c25.562-.704 51.327-2.687 77.145-6.098l.02-197.928c-8.284-5.563-23.508-10.243-38.842-11.328-2.792-.198-5.584-.273-8.336-.238zM143.223 46.294c-1.176-.015-2.374-.01-3.588.02-4.175.1-8.533.468-12.903 1.152-15.67 2.454-31.477 8.565-40.406 15.402l-.01 72.955c18.808-15.81 46.704-25.143 77.15-28.54l.007-57.966c-4.82-1.752-12.018-2.916-20.25-3.023zm258.394 3.46c-10.804.117-20.722 1.93-27.043 4.655l-.02 183.182c25.074-4.02 50.16-9.412 75.122-16.358l1.99-158.447c-8.352-5.9-23.648-11.025-39.05-12.553-3.698-.366-7.398-.517-11-.478zm-222.775 74.202c-53.72.702-101.407 20.365-97.887 66.6 15.836-3.918 30.84-5.893 44.94-6.1 34.84-.51 64.213 9.704 87.318 27.613 34.608-3.11 69.852-10 105.412-20.314.14-41.287-74.098-68.657-139.783-67.8zm-48.877 78.65c-1.296-.003-2.603.012-3.92.045-17.256.436-36.45 4.03-57.566 11.037 5.79 53.808 26.325 106.41 58.5 143.346 6.226 7.15 12.856 13.712 19.875 19.615 29.303 9.282 69.26 12.917 110.534 12.14 3.777-55.805-8.717-108.357-36.193-142.74-21.265-26.61-51.064-43.39-91.232-43.444zm129.326 22.282c-9.358 1.637-18.69 3.016-27.995 4.15 1.54 1.74 3.043 3.52 4.502 5.346 3.146 3.937 6.094 8.062 8.873 12.334 9.916.144 19.868.125 29.857-.106H259.29v-21.723zm191.817 15.343c-65.406 17.826-131.462 25.41-195.85 25.315 16.998 35.144 23.828 78.093 21.013 122.6 42.482-2.08 85.03-8.23 118.187-15.983 26.693-32.78 47.37-77.118 56.65-131.932zM400.51 389.9c-38.334 9.145-87.95 16.056-136.873 17.454-47.67 1.36-94.336-2.228-129.448-15.262l-.01 78.93c27.187 12.568 76.414 20.205 127.318 20.298 51.224.094 104.214-7.173 139-20.773l.012-80.647z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">MILITAIRES</span>
+    <div style="background-color:hsl(7.800000000000011, 73.9%, 24.4%);color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        <div style="flex-shrink:0;display:flex;align-items:center;background-color:hsl(7.800000000000011, 73.9%, 12.2%);padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;"><svg class="Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 5mm; width: 5mm;"><path d="M0 0h512v512H0z" fill="#000000" fill-opacity="1"></path><g class="" transform="translate(5,4)" style=""><path d="M227.227 21.777c-1.845 0-3.704.05-5.567.157-15.314.875-30.76 5.305-39.494 10.863l-.008 73.15c2.884-.094 5.777-.147 8.676-.142 23.382.036 47.104 3.286 68.47 9.513l.01-87.507c-7.034-3.518-19.178-6.03-32.087-6.033zm80.74 9.16c-11.925.15-23.077 2.364-29.967 5.596l-.008 77.602v7.658c38.486 15.67 64.814 42.48 58.735 78.764l-.96 5.73-5.562 1.674c-17.45 5.253-34.872 9.703-52.225 13.335V246.53c25.562-.704 51.327-2.687 77.145-6.098l.02-197.928c-8.284-5.563-23.508-10.243-38.842-11.328-2.792-.198-5.584-.273-8.336-.238zM143.223 46.294c-1.176-.015-2.374-.01-3.588.02-4.175.1-8.533.468-12.903 1.152-15.67 2.454-31.477 8.565-40.406 15.402l-.01 72.955c18.808-15.81 46.704-25.143 77.15-28.54l.007-57.966c-4.82-1.752-12.018-2.916-20.25-3.023zm258.394 3.46c-10.804.117-20.722 1.93-27.043 4.655l-.02 183.182c25.074-4.02 50.16-9.412 75.122-16.358l1.99-158.447c-8.352-5.9-23.648-11.025-39.05-12.553-3.698-.366-7.398-.517-11-.478zm-222.775 74.202c-53.72.702-101.407 20.365-97.887 66.6 15.836-3.918 30.84-5.893 44.94-6.1 34.84-.51 64.213 9.704 87.318 27.613 34.608-3.11 69.852-10 105.412-20.314.14-41.287-74.098-68.657-139.783-67.8zm-48.877 78.65c-1.296-.003-2.603.012-3.92.045-17.256.436-36.45 4.03-57.566 11.037 5.79 53.808 26.325 106.41 58.5 143.346 6.226 7.15 12.856 13.712 19.875 19.615 29.303 9.282 69.26 12.917 110.534 12.14 3.777-55.805-8.717-108.357-36.193-142.74-21.265-26.61-51.064-43.39-91.232-43.444zm129.326 22.282c-9.358 1.637-18.69 3.016-27.995 4.15 1.54 1.74 3.043 3.52 4.502 5.346 3.146 3.937 6.094 8.062 8.873 12.334 9.916.144 19.868.125 29.857-.106H259.29v-21.723zm191.817 15.343c-65.406 17.826-131.462 25.41-195.85 25.315 16.998 35.144 23.828 78.093 21.013 122.6 42.482-2.08 85.03-8.23 118.187-15.983 26.693-32.78 47.37-77.118 56.65-131.932zM400.51 389.9c-38.334 9.145-87.95 16.056-136.873 17.454-47.67 1.36-94.336-2.228-129.448-15.262l-.01 78.93c27.187 12.568 76.414 20.205 127.318 20.298 51.224.094 104.214-7.173 139-20.773l.012-80.647z" fill="#fff" fill-opacity="1"></path></g></svg></div></div>
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">MILITAIRES</span>
         <img src="https://docs.google.com/drawings/d/e/2PACX-1vR5WUeyyGNz_wH7o5m_n2oi7T6hDXOVIx0skvOtzd9s3bEqD8DFd1ty2PznjMz0-kBuYYWFWX5WCKnE/pub?w=658&h=258" alt="Militaires ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />
     </div>
           </div>

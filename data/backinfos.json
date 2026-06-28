@@ -800,8 +800,8 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     },
     {
@@ -1155,6 +1155,24 @@
       "visibilities": [
         true
       ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
     }
   ],
   "centre_de_refugies_marchand_marchand": [
@@ -1234,8 +1252,8 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        false
+        false,
+        true
       ]
     },
     {

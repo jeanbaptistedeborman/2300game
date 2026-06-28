@@ -17,7 +17,8 @@ const addEffects = (abilities: Ability[]) => {
 
     if (!effectAbility && abilities.length) return '';
 
-    const {effect, family: {color}} = effectAbility || {effect: evolving, family: none};
+    const effect = effectAbility?.effect || evolving;
+    const color = effect?.color || effectAbility?.family?.color || none.color;
 
     const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
@@ -74,7 +75,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
-    <div style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
+    <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
     ${illustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
@@ -90,7 +91,7 @@ ${(handicaps?.length > 0) ? `<ul>
         </li>`).join('')}</ul>` : ``
 }
     
-    <ul style="border-radius: 0  0 1mm 1mm;">
+    <ul class="card-abilities" style="border-radius: 0  0 1mm 1mm;">
     ${sortedAbilities.map((ability, index) => getAbilityVignette(
         ability,
         !ability.isPrimary && sortedAbilities.some(a => a.isPrimary && a.family.familyName === ability.family.familyName),
@@ -98,10 +99,10 @@ ${(handicaps?.length > 0) ? `<ul>
         shouldShowFamilyBand(ability, index)
     )).join('')}
     </ul>
-    <div style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">
+    <div class="card-meta" style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
     </div>
-        <div style="position:absolute;bottom:0; left:13mm;font-size: 10pt">${number}</div>
+        <div class="card-number" style="position:absolute;bottom:0; left:13mm;font-size: 10pt">${number}</div>
     </div>
 </div>
 `;

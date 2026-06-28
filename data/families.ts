@@ -35,6 +35,7 @@ export const knowledgeGatherer:Family = {
     isDarkColor:false,
 }
 
+
 export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,

@@ -20,7 +20,7 @@ import {
     getMinusPopulations,
     getPlusPopulations,
     getPopulations,
-    getTribeDescription, POPULATION_X2, populationIcon,
+    getTribeDescription, getTribeName, POPULATION_X2, populationIcon,
     wrapIcon
 } from "../layout/components/components";
 
@@ -35,12 +35,16 @@ const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.]</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
-const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:30%;height:30%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('60%')}</div>`;
-export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:3em;width:3em;margin-right:1mm;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.5em;object-fit:contain;" alt="">${LOCK_BADGE('top:1mm;left:1mm;')}${LOCK_BADGE('top:1mm;right:1mm;')}${LOCK_BADGE('bottom:1mm;left:1mm;')}${LOCK_BADGE('bottom:1mm;right:1mm;')}</div>`;
+const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
+export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:2.15em;width:2.15em;vertical-align:middle;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.3em;object-fit:contain;" alt="">${LOCK_BADGE('top:.15mm;left:.15mm;')}${LOCK_BADGE('top:.15mm;right:.15mm;')}${LOCK_BADGE('bottom:.15mm;left:.15mm;')}${LOCK_BADGE('bottom:.15mm;right:.15mm;')}</div>`;
 
-const getPromoteGMOText = (family:Family) => `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir de la ${getTribeDescription(family)} et font partie de cette tribu.`
+const getPromoteGMOText = (family:Family) => `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir et la tribu ${getTribeName(family)}.`
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte la ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
 const getRallyFriendsText = (family:Family) => `${wrapIcon(getCardPlayIcon('.9em'))}Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
+const getRallyFriendsEffect = (family: Family) => ({
+    ...takeCard,
+    color: family.color,
+});
 export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
 export const trade: Ability = {
     isPrimary: true,
@@ -74,7 +78,7 @@ export const cleanHand: Ability = {
     name: 'Exil des hérétiques',
     family: cleanEarth,
     givesAdditionalPopulations: true,
-    text: `A chaque fois que vous défaussez une carte comportant la ${getTribeDescription(techno)}&nbsp;: ${getPlusPopulations(1)}.`
+    text: `A chaque fois que vous défaussez une carte comportant la ${getTribeDescription(techno)}&nbsp;:&nbsp;${getPlusPopulations(1)}.`
 }
 
 export const cheeseFactory: Ability = {
@@ -201,7 +205,7 @@ export const harbour: Ability = {
     family:cleanEarth,
     effect: addPopulation,
     givesAdditionalPopulations: true,
-    text: `${getPopulations(1)} si <b>Océan</b> ou île inoccupée`
+    text: `${getPopulations(1)} si <b>Océan</b> ou <b>île</b> inoccupée`
 }
 
 export const administrativeCenter = {
@@ -219,7 +223,7 @@ export const scout: Ability = {
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vS8CGKW9qQve6brkMiVlNbOK4lZ4ahCYvSxy2OQkHJR19kzfFqs4iu4ZDxpPHh7q2pYo7_yBb-t5haa/pub?w=658&h=258`,
 }
 
-const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent <b>${"rapidité".toUpperCase()}</b>.</p>`;
+const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent la <b>${"rapidité".toUpperCase()}</b>.</p>`;
 
 export const airForce: Ability = {
     name: 'Vol',
@@ -319,35 +323,40 @@ export const worldTraveler: Ability = {
 
 export const rallyGreenFriends: Ability = {
     name: getRallyFriendsTitle(),
-    effect: takeCard,
-    family: cleanEarth,
+    effect: getRallyFriendsEffect(cleanEarth),
+    family: navigators,
     text: getRallyFriendsText (cleanEarth)
+}
+
+export const rallyGreenFriendsContinent: Ability = {
+    ... rallyGreenFriends,
+    family: cleanEarth,
 }
 
 export const rallyTechnoFriends: Ability = {
     name: getRallyFriendsTitle(),
-    effect: takeCard,
-    family: techno,
+    effect: getRallyFriendsEffect(techno),
+    family: navigators,
     text: getRallyFriendsText (techno)
 }
 
 export const rallyKnowledgeFriends: Ability = {
     name: getRallyFriendsTitle(),
-    effect: takeCard,
-    family: knowledgeGatherer,
+    effect: getRallyFriendsEffect(knowledgeGatherer),
+    family: navigators,
     text: getRallyFriendsText (knowledgeGatherer)
 }
 
 export const rallyMilitaryFriends: Ability = {
     name: getRallyFriendsTitle(),
-    effect: takeCard,
-    family: military,
+    effect: getRallyFriendsEffect(military),
+    family: navigators,
     text: getRallyFriendsText (military)
 }
 
 export const rallyMerchantFriends: Ability = {
     name: getRallyFriendsTitle (),
-    effect: takeCard,
+    effect: getRallyFriendsEffect(merchant),
     family: merchant,
     text: getRallyFriendsText (merchant)
 }
@@ -363,7 +372,7 @@ export const cosmopoliteContinent: Ability = {
     name: 'Société ouverte',
     family: merchant,
     givesAdditionalPopulations: true,
-    text: `${getPopulations(3)} si vous occupez ${families.length -1} tribus&nbsp;&NotEqual;`
+    text: `${getPopulations(3)} si vous occupez ${families.length -1} tribus&nbsp;&NotEqual;.`
 }
 
 export const continentOfDiversity: Ability = {

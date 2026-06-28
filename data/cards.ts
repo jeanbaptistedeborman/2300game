@@ -36,6 +36,7 @@ import {
     trade,
     worldCompany,
     worldTraveler, cheeseFactory, harbour, rallyTechnoFriends, burryThePast, autoFac, scorchedEarth,
+    rallyGreenFriendsContinent,
 } from './abilities'
 import {cleanHearthDependant, militaryDependant, militarySuperiority} from "./handicaps";
 import {
@@ -281,6 +282,7 @@ export const cards: Card[] = [
         abilities: [archeolog, goodOldWorld],
         handicaps: [cleanHearthDependant],
         allowedTerrain: Terrain.DESERT,
+        status: "discarded",
     },
     {
         id: "continent_tabou_militaire_militaire",
@@ -302,7 +304,7 @@ export const cards: Card[] = [
         id: "societe_inclusive_marchand_marchand",
         illustration: getLizardManIllustration(),
         number:1,
-        title: "Equal opportunity Company",
+        title: "Equal opportunity",
         abilities: [promoteGMOsMerchant, trade],
         allowedTerrain: Terrain.SAVANNA,
     },
@@ -467,7 +469,7 @@ export const cards: Card[] = [
         id: "conaimaraaaaah__militaire_militaire",
         illustration: getFireIllustration(),
         status: 'test',
-        title: "Conaimaraaaaah !",
+        title: "Terre brûlées",
         number:1,
         abilities: [militaryUnit, scorchedEarth],
         allowedTerrain: Terrain.SAVANNA,
@@ -488,13 +490,14 @@ export const cards: Card[] = [
         number:1,
         abilities: [trade,rallyMerchantFriends],
         allowedTerrain: Terrain.DESERT,
+        status: "discarded"
     },
     {
         id: "centre_de_refugies_ecolo",
         title: "Centre de réfugiés",
         illustration:getBackupIllustration(),
         number:1,
-        abilities: [rallyGreenFriends],
+        abilities: [rallyGreenFriendsContinent],
         allowedTerrain: Terrain.DESERT,
     },
     {
