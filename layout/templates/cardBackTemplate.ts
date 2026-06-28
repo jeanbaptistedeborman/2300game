@@ -1,7 +1,7 @@
 import {Card, Terrain } from "../../model";
 import {terrainColors} from "../colors";
 import {getFamilyIcon} from "../components/components";
-import {getTerrainIllustration} from "../../services";
+import {darkenColor, getTerrainIllustration} from "../../services";
 
 export const backTemplate = ({ abilities, backTerrain, title}: Card): string => {
 
@@ -25,7 +25,7 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
         .map(({
                   family,
                   family: {color}
-              }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}<div>${family.familyName}</div>${getFamilyIcon(family)}</li>`).join('')}
+              }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}<div style="flex-grow:1;line-height:100%;text-align:center;font-size:smaller;font-weight: bold;background-color: ${darkenColor(color)}">${family.familyName.toUpperCase()}</div>${getFamilyIcon(family)}</li>`).join('')}
     </ul>
  
     </div>`;

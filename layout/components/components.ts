@@ -24,10 +24,8 @@ export const getPopulations = (number:number, useNumber = true):string => `<span
 export const getPlusPopulations = (number:number)=> `<b style="white-space: nowrap">+${getPopulations(number, true)}</b>`;
 export const getMinusPopulations = (number:number)=> `<b style="white-space: nowrap">-${getPopulations(number, true)}</b>`;
 
-
-export const getTribeDescription = ({familyName}:Family) => {
+export const getTribeName = ({familyName}:Family) => {
     const ICON_SIZE:string = '1em';
-
     const ICON_MAP =  new Map <FamilyName,string>([
         [FamilyName.CLEAN_EARTH, getTreeIcon('.9em')],
         [FamilyName.EXPLORER, getBlimpIcon(ICON_SIZE)],
@@ -37,8 +35,11 @@ export const getTribeDescription = ({familyName}:Family) => {
         [FamilyName.NAVIGATOR, getShipIcon(ICON_SIZE)],
         [FamilyName.TECHNO, getCogIcon('.7em')],
     ]);
+    return `<b>${familyName.toUpperCase()}${wrapIcon(ICON_MAP.get(familyName))}</b>`;
+}
 
-    return `tribu <b>${familyName.toUpperCase()}${wrapIcon(ICON_MAP.get(familyName))}</b>`;
+export const getTribeDescription  = (family:Family): string =>  {
+    return `tribu ${getTribeName(family)}`;
 }
 
 
@@ -79,9 +80,9 @@ export const getTerrainsVignettes = (targetTerrain) => {
 }
 
 const getFamilyBand = (family: Family, abilityPicture?: string, showIcon: boolean = true) => `
-    <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:10pt;letter-spacing:-.02em;display:flex;align-items:center;justify-content:center;">
-        ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};padding:.3mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
-        <span style="flex-grow:1;text-align:center;padding:.2mm .3mm;">${family.familyName.toUpperCase()}</span>
+    <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
+        ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};padding:.3mm .4mm;font-family:'Barlow Condensed',sans-serif;font-size:3mm;"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
+        <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">${family.familyName.toUpperCase()}</span>
         ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />` : ''}
     </div>`;
 
@@ -116,7 +117,7 @@ export const getAbilityVignette = (({
             <div style="width:5.5mm;flex-shrink:0;background-color:${color};display:flex;align-items:flex-start;justify-content:center;overflow:hidden;">
                 <span style="display:block;line-height:0;">${family.icon}</span>
             </div>
-            <div style="flex-grow:1;padding:.1mm .3mm .2mm .3mm;box-sizing:border-box;">
+            <div style="flex-grow:1;padding:.25mm .45mm .3mm .45mm;box-sizing:border-box;font-size:8.7pt;line-height:1.12;">
             ${effect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="${family.familyName} effect illustration" style="height:1.8em;object-fit:contain;flex-shrink:0;margin-right:.2mm;float:left;" />` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
             <span>${text}</span></div></div></div>`}
         </div>

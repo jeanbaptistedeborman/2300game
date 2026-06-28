@@ -4,7 +4,7 @@ const backgroundColor = "#FEEFD3";
 
 
 
-const CARD_GAP:string[] = ['3mm', '3mm'];
+const CARD_GAP:string[] = ['3mm', '4mm'];
 //const CARD_GAP:string[] = ['0mm', '0mm'];
 
 
@@ -14,7 +14,7 @@ body {
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
-  line-height:1.1em;
+  line-height:1.15em;
    font-size: 10pt;
    margin:0; 
 }
@@ -48,7 +48,7 @@ p:last-of-type {
 .card-content {
     width:100%;
     height: 100%;
-    padding: 3mm 4mm;
+    padding: 2.8mm 3.6mm;
     display: flex;
     flex-direction:column;
     position:relative;
@@ -155,9 +155,11 @@ p:last-of-type {
 .title {
     position:relative;
     text-align:center;
-    top: -.4mm;
-    padding:0 2mm 0 2mm;
-    font-size: 3.5mm;
+    top: 0;
+    padding:0 1.5mm;
+    margin-bottom:.35mm;
+    font-size: 3.7mm;
+    line-height:1.05;
     text-wrap: balance;
     letter-spacing: -.02em;
 }
@@ -175,7 +177,7 @@ font-size: 8pt;
 }
 
 .page {
-    max-width:22cm;
+    max-width:20cm;
     display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -217,8 +219,8 @@ div {
 
 .terrain-icon {
     overflow: hidden;
-    height:3mm;
-    width:3mm;
+    height:3.2mm;
+    width:3.2mm;
     position:relative;
     border:.3mm solid black;
     border-radius:20%;
@@ -234,16 +236,54 @@ div {
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
-    padding:.3mm;
+    padding:.35mm;
     color:black;
-    line-height:1em;
+    line-height:1.12;
+    font-size:8.8pt;
+}
+
+.card-abilities {
+    display:flex;
+    flex-direction:column;
+    gap:.2mm;
+}
+
+.card-illustration {
+    margin-bottom:.3mm;
+}
+
+.card-meta {
+    margin-top:.4mm;
+}
+
+.card-number {
+    font-weight:600;
+    letter-spacing:.01em;
+}
+
+.ability_text p {
+    margin: 0 0 .45mm 0;
+}
+
+.ability_text p:last-of-type {
+    margin:0;
 }
 
 .ability_text.primary {
-   background-color:rgba(0, 0, 0, 0.5); 
+   background-color:rgba(0, 0, 0, 0.72); 
    color:white;
-   mix-blend-mode: lighten; 
+   mix-blend-mode: normal; 
    border:none; 
+}
+
+@media print {
+    .presentation-box .card {
+        box-shadow:none;
+    }
+
+    .negative {
+        mix-blend-mode:normal;
+    }
 }
 
 .back-vignette {
