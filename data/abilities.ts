@@ -1,4 +1,4 @@
-import {Ability, Family, Terrain} from "../model";
+import {Ability, Family, FamilyName, Terrain} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer, families} from "./families";
 import {
     getWingIcon,
@@ -99,9 +99,9 @@ export const cleanContinent: Ability = {
     name: 'Continent Pur',
     family: cleanEarth,
     givesAdditionalPopulations: true,
-    text: `${WHEN_YOUR_RESOLUTION}
+    text: `<WHEN_YOUR_RESOLUTION></WHEN_YOUR_RESOLUTION>${WHEN_YOUR_RESOLUTION}
     <p>Si aucune ${getTribeDescription(techno)} sur votre continent&nbsp;: ${getPlusPopulations(1)}.<br/>Sinon&nbsp;: ${getMinusPopulations(1)}.</p>
-    <b>MAXIMUM : ${getPopulations(7)}.</b>
+    <b>MAXIMUM : ${getPopulations(6)}.</b>
     ${reminderOccupiedAndEnemy}
 `
 }
@@ -136,9 +136,9 @@ export const longTravel: Ability = {
 export const oil: Ability = {
     name: `Exploitation pétrolière`,
     family: techno,
-    text: `Exploitation pétrolière ${wrapIcon(getOilIcon('1em'))}`,
+    text: `<b>Exploitation pétrolière${wrapIcon(getOilIcon('1em'))}</b>`,
 }
-const OIL_LABEL = `${oil.name.toUpperCase()} ${wrapIcon(getOilIcon('1em'))}`;
+const OIL_LABEL = `${oil.name.toUpperCase()}${wrapIcon(getOilIcon('1em'))}`;
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
@@ -166,7 +166,7 @@ export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,
     givesAdditionalPopulations: true,
-    text: `<p>${getPopulations(1)} par adversaire avec qui vous bénéficiez du pouvoir <b>${trade.name.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${trade.name.toUpperCase()}</b> avec tous vos adversaires.</p>`
+    text: `<p>${getPopulations(1)} par adversaire avec qui vous bénéficiez du pouvoir <b>${FamilyName.MERCHANT.toUpperCase()}</b>.</p><p>${POPULATION_X2} si <b>${FamilyName.MERCHANT.toUpperCase()}</b> avec tous vos adversaires.</p>`
 }
 export const cartographer: Ability = {
     name: 'Cartographers',
@@ -181,7 +181,7 @@ export const knowledge: Ability = {
     name: KNOWLEDGE_ABILITY_TITLE,
     family: knowledgeGatherer,
     givesAdditionalPopulations: true,
-    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} pour chaque autre <b>${KNOWLEDGE_ABILITY_TITLE.toUpperCase()}</b> que vous occupez.`,
+    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} pour chaque autre <b>${FamilyName.KNOWLEDGE.toUpperCase()}</b> que vous occupez.`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vRH0trc0XqPDpsw4duqDsT-a3-ojAluOQ9oed9nB84aSlBIkVqWBafOf6pqsiZH6znYDNgLpZblyI0r/pub?w=658&h=258`,
 }
 
@@ -311,14 +311,14 @@ export const recluse: Ability = {
     family: military,
     givesAdditionalPopulations: true,
     text: `<p>${WHEN_YOUR_RESOLUTION} ${getPlusPopulations(1)}.</p>
-    <b>MAXIMUM&nbsp;: ${getPopulations(7)} - 1</b> par ${populationIcon} adverse sur votre continent`,
+    <b>MAXIMUM&nbsp;: ${getPopulations(6)} - 1</b> par ${populationIcon} adverse sur votre continent`,
 }
 
 export const worldTraveler: Ability = {
     name: 'Grand Reporter',
     family: explorer,
     givesAdditionalPopulations: true,
-    text: `${getPopulations(2)} si sur continent adverse`
+    text: `${getPopulations(2)} si sur continent adverse.`
 }
 
 export const rallyGreenFriends: Ability = {
@@ -357,7 +357,7 @@ export const rallyMilitaryFriends: Ability = {
 export const rallyMerchantFriends: Ability = {
     name: getRallyFriendsTitle (),
     effect: getRallyFriendsEffect(merchant),
-    family: merchant,
+    family: navigators,
     text: getRallyFriendsText (merchant)
 }
 

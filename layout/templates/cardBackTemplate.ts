@@ -25,7 +25,7 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card): string => 
         .map(({
                   family,
                   family: {color}
-              }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}<div style="flex-grow:1;line-height:100%;text-align:center;font-size:smaller;font-weight: bold;background-color: ${darkenColor(color)}">${family.familyName.toUpperCase()}</div>${getFamilyIcon(family)}</li>`).join('')}
+                  }) => `<li style="background-color: ${color};" class="back-vignette" >${getFamilyIcon(family)}<div style="flex-grow:1;display:flex;align-items:center;justify-content:center;text-align:center;font-size:smaller;font-weight: bold;background-color: ${darkenColor(color)}">${family.familyName.toUpperCase()}</div>${getFamilyIcon(family)}</li>`).join('')}
     </ul>
  
     </div>`;

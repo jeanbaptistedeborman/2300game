@@ -84,7 +84,7 @@ import {
     getFireIllustration,
     getFactoryIllustration, getLadyXIllustration,
 } from "../layout/illustrations";
-import {FLOCK_CARD_TITLE, GMO_CARD_TITLE} from "../constants";
+import {FLOCK_CARD_TITLE, GMO_CARD_TITLE, OVERSEA_BROTHERS_TITLE} from "../constants";
 
 export const cards: Card[] = [
 
@@ -120,7 +120,7 @@ export const cards: Card[] = [
         id: "freres_doutre_mer_navigateur_ecolo",
         number:1,
         illustration: getSailIllustration(),
-        title: "Frères d'Outre Mer",
+        title: OVERSEA_BROTHERS_TITLE,
         abilities: [marine, rallyGreenFriends],
         handicaps: [],
         allowedTerrain: Terrain.SEA,
@@ -130,7 +130,7 @@ export const cards: Card[] = [
         number:1,
         status: 'test',
         illustration: getSailIllustration(),
-        title: "Frères d'Outre Mer",
+        title: OVERSEA_BROTHERS_TITLE,
         abilities: [marine, rallyTechnoFriends],
         handicaps: [],
         allowedTerrain: Terrain.SEA,
@@ -139,7 +139,7 @@ export const cards: Card[] = [
         id: "freres_doutre_mer_navigateur_marchand",
         number:1,
         illustration: getSailIllustration(),
-        title: "Frères d'Outre Mer",
+        title: OVERSEA_BROTHERS_TITLE,
         abilities: [marine, rallyMerchantFriends],
         handicaps: [],
         allowedTerrain: Terrain.SEA,
@@ -148,7 +148,7 @@ export const cards: Card[] = [
         id: "freres_doutre_mer_navigateur_savant",
         number:1,
         illustration: getSailIllustration(),
-        title: "Frères d'Outre Mer",
+        title: OVERSEA_BROTHERS_TITLE,
         abilities: [marine, rallyKnowledgeFriends],
         handicaps: [],
         allowedTerrain: Terrain.SEA,
@@ -166,7 +166,7 @@ export const cards: Card[] = [
         id: "bourgade_prospere_ecolo_marchand",
         illustration: getHouseIllustration(),
         number:1,
-        title: "Bourgade prospère",
+        title: "Bourgade pastorale",
         abilities: [simpleSettlement, trade],
         handicaps: [],
         allowedTerrain: Terrain.DESERT,
@@ -205,7 +205,7 @@ export const cards: Card[] = [
         id: "temple_du_grand_pardon_ecolo",
         illustration:getOppidumIllustration(),
         number:1,
-        title: "Temple du Grand Pardon",
+        title: "Temple de la Rédemption",
         abilities: [cleanContinent],
         handicaps: [],
         allowedTerrain: Terrain.TEMPERATE
@@ -542,6 +542,6 @@ export const cards: Card[] = [
         illustration: getMegapolisIllustration(),
         number:1,
         abilities: [goodOldWorld, cityBonus],
-        allowedTerrain: Terrain.SAVANNA,
+        allowedTerrain: Terrain.TEMPERATE,
     }
 ];

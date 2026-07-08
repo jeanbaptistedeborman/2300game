@@ -255,6 +255,12 @@ div {
     letter-spacing:.01em;
 }
 
+.with-effect-stroke svg g path {
+    stroke: currentColor;
+    stroke-width: 130;
+    paint-order: stroke fill;
+}
+
 .ability_text p {
     margin: 0 0 .45mm 0;
 }

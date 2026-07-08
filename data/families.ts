@@ -4,7 +4,8 @@ import {
     getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, get2CoinsIcon
 } from "../layout/icons";
 import {terrainColors} from "../layout/colors";
-import {GET_FAMILIES_TITLE} from "../constants";
+import {GET_FAMILIES_TITLE, OVERSEA_BROTHERS_TITLE} from "../constants";
+import {cards} from "./cards";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
@@ -28,7 +29,7 @@ export const knowledgeGatherer:Family = {
     flavourText: `
    "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !" </br>  
     Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
-    tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (ou même la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
+    tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (voire la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon('5mm'),
     color: '#efbb35',
@@ -45,7 +46,7 @@ export const explorer:Family = {
 }
 
 export const navigators:Family = {
-    tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps à les restaurer. Exploitez les cartes Navigation avec le pouvoir "${GET_FAMILIES_TITLE}": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
+    tip: `Préparez soigneusement vos expédition sur les continents adverses afin de vous installer avant que vos adversaire ne puissent vous bloquer: prévoyez des cartes à défausser pour des actions supplémentaires; utilisez vos Humains du Futur pour occuper des régions sans perdre de temps à les restaurer. Exploitez les cartes "${OVERSEA_BROTHERS_TITLE}": en y retirant une carte, ils permettent de prendre pied plus facilement sur les régions où vous accostez... et n'oubliez pas les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les régions qui vous intéressent.`,
     flavourText:"Les océans sont devenus d'immenses bouillons tabassés par les ouragans. Seuls les plus hardis s'y aventurent.",
     familyName:FamilyName.NAVIGATOR,
     icon:getShipIcon('5mm'),
@@ -58,16 +59,16 @@ export const cleanEarth:Family = {
     flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez les écologistes bien vénères de 2200 quand l'espérance de vie sera tombée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon('5mm'),
-    color: "#7fa537",
+    color: "#649531",
     isDarkColor:true,
 }
 
 export const merchant:Family = {
     flavourText:"Sous leurs dehors rationnels, les marchands croient fermement que c'est le père Noël qui apportait la prospérité des anciens. Ils tiennent de longues cérémonies de chants de Noël pour le convaincre de redescendre du ciel malgré que les anciens aient bousillé la neige, les rennes et les sapins.",
-    tip:`Comme au temps des anciens, la force marche main dans la main avec le commerce. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver les emplacements de vos comptoirs.`,
+    tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon('5mm'),
-    color: "#ff8102",
+    color: "#ff6400",
     isDarkColor:true,
 }
 

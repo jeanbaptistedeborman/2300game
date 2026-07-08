@@ -2,7 +2,7 @@ import {Ability, Card, FamilyName, Terrain} from "../../model";
 import {cards} from "../../data/cards";
 import {getAbilityVignette, getTerrainsVignettes} from "../components/components";
 import {getPadlockIcon} from "../icons";
-import {addPopulation, evolving} from "../../data/effects";
+import {addPopulation, evolving, forbid} from "../../data/effects";
 import {none} from "../../data/families";
 import {getFamilyCount} from "../../services";
 import {terrainColors} from "../colors";
@@ -13,12 +13,28 @@ const addEffects = (abilities: Ability[]) => {
     const cornerBackGroundSize: string = '15mm';
     const backgroundMargin: string = '-8.5mm';
     const cornerBackgroundMargin: string = '-3mm';
-    const effectAbility: Ability = [...abilities].sort((a: Ability) => (a.effect?.name === addPopulation.name) ? -1 : 1).find(({effect}) => effect);
+    const effectAbilities: Ability[] = abilities.filter(({effect}) => !!effect);
+    const effectAbility: Ability = [...effectAbilities].sort((a: Ability, b: Ability) => {
+        const aHasPriority: boolean = a.effect?.name === addPopulation.name;
+        const bHasPriority: boolean = b.effect?.name === addPopulation.name;
+        if (aHasPriority === bHasPriority) {
+            return 0;
+        }
+        return aHasPriority ? -1 : 1;
+    })[0];
 
     if (!effectAbility && abilities.length) return '';
 
     const effect = effectAbility?.effect || evolving;
     const color = effect?.color || effectAbility?.family?.color || none.color;
+    const forbidIcon: string | undefined = effectAbilities.find(({effect}) => effect?.name === forbid.name)?.effect?.icon;
+    const addPopulationIcon: string | undefined = effectAbilities.find(({effect}) => effect?.name === addPopulation.name)?.effect?.icon;
+    const marginIcon: string = (forbidIcon && addPopulationIcon)
+        ? `<span style="position:relative;display:inline-flex;align-items:center;justify-content:center;line-height:0;">
+                ${addPopulationIcon}
+                <span class="with-effect-stroke" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:0;color:${color};transform:translateY(.2mm) scale(0.75);transform-origin:center;">${forbidIcon}</span>
+            </span>`
+        : (effect.icon || '');
 
     const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
@@ -26,18 +42,18 @@ const addEffects = (abilities: Ability[]) => {
     const  icons = `
     <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:lighten;">
         <div style="${rowStyle}" >
-            <div style="${cellStyle}">${effect.icon}</div>
-            <div style="${cellStyle}">${effect.icon}</div>
-            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
         </div>
         <div style="${rowStyle}">
-            <div style="${cellStyle}">${effect.icon}</div>
-            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
         </div>
         <div style="${rowStyle}">
-            <div style="${cellStyle}">${effect.icon}</div>
-            <div style="${cellStyle}">${effect.icon}</div>
-            <div style="${cellStyle}">${effect.icon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${marginIcon}</div>
         </div>
     </div>
     `;
@@ -54,11 +70,17 @@ const addEffects = (abilities: Ability[]) => {
 }
 
 export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain}: Card): string => {
-    const sortedAbilities: Ability[] = abilities.sort((
+    const sortedAbilities: Ability[] = [...abilities].sort((
         {isPrimary: AisPrimary, family: {familyName: AFamilyName}},
-        {family: {familyName: BFamilyName}}) => {
-        if (AFamilyName === FamilyName.NAVIGATOR || BFamilyName === FamilyName.NAVIGATOR) {
-            return (AFamilyName === FamilyName.NAVIGATOR)?-1: 1;
+        {isPrimary: BisPrimary, family: {familyName: BFamilyName}}) => {
+        if (AFamilyName === FamilyName.NAVIGATOR && BFamilyName !== FamilyName.NAVIGATOR) {
+            return -1;
+        }
+        if (BFamilyName === FamilyName.NAVIGATOR && AFamilyName !== FamilyName.NAVIGATOR) {
+            return 1;
+        }
+        if (AisPrimary === BisPrimary) {
+            return 0;
         }
         return AisPrimary ? -1 : 1;
     });
