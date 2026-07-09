@@ -7,6 +7,13 @@ import {none} from "../../data/families";
 import {getFamilyCount} from "../../services";
 import {terrainColors} from "../colors";
 import Color from "color";
+import {VOL_ABILITY_NAME} from "../../constants";
+
+const familiesWithVol: Set<FamilyName> = new Set(
+    cards.flatMap(({abilities}) => abilities)
+        .filter(({name}) => name === VOL_ABILITY_NAME)
+        .map(({family: {familyName}}) => familyName)
+);
 
 const addEffects = (abilities: Ability[]) => {
     const backGroundSize: string = '17mm';
@@ -25,6 +32,9 @@ const addEffects = (abilities: Ability[]) => {
 
     if (!effectAbility && abilities.length) return '';
 
+    // Empty-ability cards use the default evolving frame, which should keep all corner visuals.
+    const hasFamilyVol: boolean = abilities.length === 0 || (effectAbility !== undefined && familiesWithVol.has(effectAbility.family.familyName));
+
     const effect = effectAbility?.effect || evolving;
     const color = effect?.color || effectAbility?.family?.color || none.color;
     const forbidIcon: string | undefined = effectAbilities.find(({effect}) => effect?.name === forbid.name)?.effect?.icon;
@@ -35,6 +45,7 @@ const addEffects = (abilities: Ability[]) => {
                 <span class="with-effect-stroke" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:0;color:${color};transform:translateY(.2mm) scale(0.75);transform-origin:center;">${forbidIcon}</span>
             </span>`
         : (effect.icon || '');
+    const cornerMarginIcon: string = hasFamilyVol ? marginIcon : '';
 
     const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
@@ -42,18 +53,18 @@ const addEffects = (abilities: Ability[]) => {
     const  icons = `
     <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:lighten;">
         <div style="${rowStyle}" >
+            <div style="${cellStyle}">${cornerMarginIcon}</div>
             <div style="${cellStyle}">${marginIcon}</div>
-            <div style="${cellStyle}">${marginIcon}</div>
-            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${cornerMarginIcon}</div>
         </div>
         <div style="${rowStyle}">
             <div style="${cellStyle}">${marginIcon}</div>
             <div style="${cellStyle}">${marginIcon}</div>
         </div>
         <div style="${rowStyle}">
+            <div style="${cellStyle}">${cornerMarginIcon}</div>
             <div style="${cellStyle}">${marginIcon}</div>
-            <div style="${cellStyle}">${marginIcon}</div>
-            <div style="${cellStyle}">${marginIcon}</div>
+            <div style="${cellStyle}">${cornerMarginIcon}</div>
         </div>
     </div>
     `;
@@ -63,8 +74,8 @@ const addEffects = (abilities: Ability[]) => {
 
     return `${[
         ...getMiddlePositions(backgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${coords}"></div>`),
-        ...getCornerPositions(cornerBackgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;${coords}"></div>`),
-        ...getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;${coords}">${getPadlockIcon('3.5mm')}</div>`)].join('')}
+        ...(hasFamilyVol ? getCornerPositions(cornerBackgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;${coords}"></div>`) : []),
+        ...(hasFamilyVol ? getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;${coords}">${getPadlockIcon('3.5mm')}</div>`) : [])].join('')}
         ${icons}
         `
 }
@@ -118,7 +129,8 @@ ${(handicaps?.length > 0) ? `<ul>
         ability,
         !ability.isPrimary && sortedAbilities.some(a => a.isPrimary && a.family.familyName === ability.family.familyName),
         false,
-        shouldShowFamilyBand(ability, index)
+        shouldShowFamilyBand(ability, index),
+        familiesWithVol.has(ability.family.familyName)
     )).join('')}
     </ul>
     <div class="card-meta" style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">

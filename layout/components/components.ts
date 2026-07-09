@@ -99,7 +99,7 @@ export const getAbilityVignette = (({
                                         family: {
                                             color,
                                         }
-                                    }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false, showFamilyBand: boolean = true) =>
+                                    }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false, showFamilyBand: boolean = true, familyHasVol: boolean = false) =>
 
     `<li class='abilility-vignette${ (givesAdditionalPopulations && !effect) ? ' population-placeholder' : ''}' >
         ${isPrimary ? `
