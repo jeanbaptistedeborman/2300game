@@ -34,6 +34,7 @@ const addEffects = (abilities: Ability[]) => {
 
     // Empty-ability cards use the default evolving frame, which should keep all corner visuals.
     const hasFamilyVol: boolean = abilities.length === 0 || (effectAbility !== undefined && familiesWithVol.has(effectAbility.family.familyName));
+    const cornerOpacity: number = hasFamilyVol ? 1 : 0.3;
 
     const effect = effectAbility?.effect || evolving;
     const color = effect?.color || effectAbility?.family?.color || none.color;
@@ -45,7 +46,7 @@ const addEffects = (abilities: Ability[]) => {
                 <span class="with-effect-stroke" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:0;color:${color};transform:translateY(.2mm) scale(0.75);transform-origin:center;">${forbidIcon}</span>
             </span>`
         : (effect.icon || '');
-    const cornerMarginIcon: string = hasFamilyVol ? marginIcon : '';
+    const cornerMarginIcon: string = `<span style="opacity:${cornerOpacity};display:inline-flex;">${marginIcon}</span>`;
 
     const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
@@ -74,8 +75,8 @@ const addEffects = (abilities: Ability[]) => {
 
     return `${[
         ...getMiddlePositions(backgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${coords}"></div>`),
-        ...(hasFamilyVol ? getCornerPositions(cornerBackgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;${coords}"></div>`) : []),
-        ...(hasFamilyVol ? getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;${coords}">${getPadlockIcon('3.5mm')}</div>`) : [])].join('')}
+        ...getCornerPositions(cornerBackgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;opacity:${cornerOpacity};${coords}"></div>`),
+        ...getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;opacity:${cornerOpacity};${coords}">${getPadlockIcon('3.5mm')}</div>`)].join('')}
         ${icons}
         `
 }
