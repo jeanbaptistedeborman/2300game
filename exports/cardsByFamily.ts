@@ -92,7 +92,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                         .filter((completedCard) => isSameCard(card, completedCard))
                        //.sort ((a:Card, b:Card) =>  terrains.indexOf(b.backTerrain) - terrains.indexOf(a.backTerrain)) 
                        .map((completedCard: Card) => {
-                           return backTemplate(completedCard);
+                           return backTemplate(completedCard, {badgeSizeMm: 24, showGridLines: false, centerIcon: true});
                        }).join('')
                    }
                        </div>

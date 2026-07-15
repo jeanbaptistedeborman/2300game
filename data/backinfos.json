@@ -27,7 +27,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -41,7 +41,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -117,8 +117,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -154,7 +154,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -163,18 +163,21 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        true,
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
+        false,
         false
       ]
     },
     {
       "backTerrain": "Savanne",
       "visibilities": [
+        false,
         false
       ]
     }
@@ -189,13 +192,13 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -203,19 +206,19 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
+        false,
         true
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Savanne",
       "visibilities": [
         false,
         false
@@ -240,8 +243,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     }
   ],
@@ -250,7 +253,7 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
@@ -263,7 +266,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -272,8 +275,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -295,7 +298,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
@@ -324,27 +327,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
         false
-      ]
-    }
-  ],
-  "on_arrete_le_progres__ecolo": [
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        false
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        true
       ]
     },
     {
@@ -378,11 +361,11 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false
+        true
       ]
     },
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Savanne",
       "visibilities": [
         false
       ]
@@ -396,13 +379,13 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -417,7 +400,7 @@
       "backTerrain": "Savanne",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
@@ -430,14 +413,14 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     }
   ],
   "disavowal_of_the_ancients_ecolo": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Désert",
       "visibilities": [
         false
       ]
@@ -445,7 +428,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -563,14 +546,14 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -579,21 +562,21 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false,
+        true,
         false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -603,14 +586,14 @@
       "backTerrain": "Savanne",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -625,8 +608,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -648,7 +631,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -660,7 +643,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -686,22 +669,22 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
+        true,
         false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     }
   ],
@@ -709,8 +692,6 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-
-
         true,
         true
       ]
@@ -741,11 +722,11 @@
       "backTerrain": "Désert",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Désert",
       "visibilities": [
         false
       ]
@@ -753,9 +734,9 @@
   ],
   "aeronaute_explorateur": [
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -794,14 +775,14 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
@@ -830,8 +811,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     }
   ],
@@ -845,6 +826,44 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    }
+  ],
+  "bibliotheque_savant": [
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
+        true
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
         false
       ]
     },
@@ -853,43 +872,11 @@
       "visibilities": [
         true
       ]
-    }
-  ],
-  "bibliotheque_savant": [
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
-        true
-      ]
     },
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -901,13 +888,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -921,7 +902,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     },
     {
@@ -933,7 +914,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -953,19 +934,19 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
-      "backTerrain": "Désert",
+      "backTerrain": "Fournaise",
       "visibilities": [
         false,
         false
@@ -976,13 +957,13 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -996,15 +977,15 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false,
-        true
+        true,
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -1031,7 +1012,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -1045,11 +1026,11 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true
+        false
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Désert",
       "visibilities": [
         false
       ]
@@ -1059,8 +1040,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -1096,7 +1077,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -1111,7 +1092,25 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        false
+      ]
+    },
+    {
+      "backTerrain": "Savanne",
+      "visibilities": [
         true
+      ]
+    },
+    {
+      "backTerrain": "Désert",
+      "visibilities": [
+        false
       ]
     },
     {
@@ -1141,25 +1140,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        false
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-        false
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
         true
-      ]
-    },
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        false
       ]
     },
     {
@@ -1180,13 +1161,13 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
@@ -1208,7 +1189,7 @@
     {
       "backTerrain": "Désert",
       "visibilities": [
-        false
+        true
       ]
     },
     {
@@ -1222,8 +1203,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -1236,7 +1217,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true,
+        false,
         false
       ]
     }
@@ -1246,14 +1227,14 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
         false,
-        true
+        false
       ]
     },
     {
@@ -1266,38 +1247,6 @@
   ],
   "babylon_3000_tekno_tekno": [
     {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true,
-        true
-      ]
-    },
-    {
-      "backTerrain": "Désert",
-      "visibilities": [
-
-        false,
-        false
-
-      ]
-    },
-    {
-      "backTerrain": "Fournaise",
-      "visibilities": [
-        true,
-        false
-      ]
-    }
-  ],
-  "navire_marchand_navigateur_marchand": [
-    {
-      "backTerrain": "Savanne",
-      "visibilities": [
-        true,
-        true
-      ]
-    },
-    {
       "backTerrain": "Désert",
       "visibilities": [
         true,
@@ -1305,9 +1254,16 @@
       ]
     },
     {
-      "backTerrain": "Fournaise",
+      "backTerrain": "Désert",
       "visibilities": [
         false,
+        false
+      ]
+    },
+    {
+      "backTerrain": "Fournaise",
+      "visibilities": [
+        true,
         false
       ]
     }
@@ -1316,8 +1272,8 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -1351,7 +1307,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -1371,7 +1327,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     }
   ],
@@ -1379,15 +1335,15 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
+        false,
         false
       ]
     },
     {
       "backTerrain": "Désert",
       "visibilities": [
-        true,
-        true
+        false,
+        false
       ]
     },
     {
@@ -1400,7 +1356,7 @@
   ],
   "terraforming_earth_ecolo": [
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Fournaise",
       "visibilities": [
         false
       ]
@@ -1414,7 +1370,7 @@
     {
       "backTerrain": "Fournaise",
       "visibilities": [
-        true
+        false
       ]
     },
     {

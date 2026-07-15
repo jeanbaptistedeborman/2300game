@@ -5,6 +5,7 @@ import {styles} from "./layout/styles";
 import {generateCompletedCards, logStats, removeUnusedCards} from "./services";
 import {generateCardsByFamiy} from "./exports/cardsByFamily";
 import {generateCardBacks} from "./exports/cardsBack";
+import {generateInstallationSample} from "./exports/installationSample";
 import {cardTemplate} from "./layout/templates/cardTemplate";
 import {header} from "./layout/components/components";
 import {backTemplate} from "./layout/templates/cardBackTemplate";
@@ -25,6 +26,7 @@ const completedCards: Card[] = generateCompletedCards();
 generateCardsByFamiy(cards.filter (removeUnusedCards), completedCards);
 generateFamilyPresentation(cards.filter (removeUnusedCards), completedCards);
 generateCardBacks(completedCards);
+generateInstallationSample(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {
@@ -73,5 +75,3 @@ fs.writeFile('docs/cards.html',
   `, () => {
     }
 )
-
-

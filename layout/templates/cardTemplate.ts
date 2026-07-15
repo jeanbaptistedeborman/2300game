@@ -34,7 +34,7 @@ const addEffects = (abilities: Ability[]) => {
 
     // Empty-ability cards use the default evolving frame, which should keep all corner visuals.
     const hasFamilyVol: boolean = abilities.length === 0 || (effectAbility !== undefined && familiesWithVol.has(effectAbility.family.familyName));
-    const cornerOpacity: number = hasFamilyVol ? 1 : 0.3;
+    const cornerOpacity: number = hasFamilyVol ? 1 : 0;
 
     const effect = effectAbility?.effect || evolving;
     const color = effect?.color || effectAbility?.family?.color || none.color;
@@ -82,6 +82,13 @@ const addEffects = (abilities: Ability[]) => {
 }
 
 export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain}: Card): string => {
+    const leftAlignedIllustration: string = illustration
+        ? illustration.replace(/<svg\b([^>]*)>/, (_match, attrs) => {
+            const normalized = String(attrs).replace(/\s*preserveAspectRatio="[^"]*"/i, '');
+            return `<svg${normalized} preserveAspectRatio="xMinYMid meet">`;
+        })
+        : illustration;
+
     const sortedAbilities: Ability[] = [...abilities].sort((
         {isPrimary: AisPrimary, family: {familyName: AFamilyName}},
         {isPrimary: BisPrimary, family: {familyName: BFamilyName}}) => {
@@ -109,9 +116,9 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
-    <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;background-color:
+    <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;display:flex;justify-content:flex-start;align-items:flex-start;text-align:left;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
-    ${illustration}
+    ${leftAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
        </div>
     

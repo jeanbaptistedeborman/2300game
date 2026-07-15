@@ -3,16 +3,16 @@ import {
     getCogIcon,
     getShipIcon, getTreeIcon, getBookIcon, getFistIcon, getBalloonIcon, get2CoinsIcon
 } from "../layout/icons";
-import {terrainColors} from "../layout/colors";
 import {GET_FAMILIES_TITLE, OVERSEA_BROTHERS_TITLE} from "../constants";
 import {cards} from "./cards";
+import {terrainColors} from "../layout/colors";
 
 export const techno:Family = {
     flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
     tip: "C'est bien beau de reconstruire le monde d'hier. Mais pour trouver du pétrole, il faut creuser .",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon('5mm'),
-    color: "#9f7bb8",
+    color: "#9333ea",
     isDarkColor:true,
 }
 
@@ -20,19 +20,18 @@ export const military:Family = {
     flavourText: "L'apocalypse climatique a détruit 32 millions d'espèces. Malheureusement, le militaire a survécu.",
     familyName:FamilyName.MILITARY,
     icon:getFistIcon('5mm'),
-    color: "#b42f1b",
+    color: "#b91c1c",
     isDarkColor:true,
 }
 
 export const knowledgeGatherer:Family = {
-    text: `Comme les rares lieux de savoir ayant survécu en 2200 sont mythiques, leur tribu est toujours visible au dos.`,
     flavourText: `
    "Mes chers confrères, la lecture des anciens m'amène à une conclusion vertigineuse : il se peut que le père Noël n'ait jamais existé !" </br>  
     Les érudits étudient le savoir des anciens. Leurs premiers déchiffrages sont lents. Mais ces savants en sont convaincus&nbsp;: le savoir, c'est le pouvoir.<br><br>`,
     tip: `Tous les moyens sont bons pour arracher les secrets des anciens: utilisez la tribu ${ FamilyName.EXPLORER.toUpperCase()} pour fouiller votre continent (voire la main de vos adversaires) et n'hésitez pas à monter des expéditions vers les continents adverses pour y dérober leurs lieux de savoir.`,
     familyName:FamilyName.KNOWLEDGE,
     icon:getBookIcon('5mm'),
-    color: '#efbb35',
+    color: '#f3bc06',
     isDarkColor:false,
 }
 
@@ -41,7 +40,7 @@ export const explorer:Family = {
     flavourText: "Un monde tout neuf à explorer: l'apocalypse a du bon !",
     familyName:FamilyName.EXPLORER,
     icon:getBalloonIcon('5mm'),
-    color: "#073050",
+    color: "#282d37",
     isDarkColor:true,
 }
 
@@ -59,7 +58,7 @@ export const cleanEarth:Family = {
     flavourText:"Vous trouvez les écologistes d'aujourd'hui un peu pénibles? Attendez les écologistes bien vénères de 2200 quand l'espérance de vie sera tombée à 25 ans.",
     familyName:FamilyName.CLEAN_EARTH,
     icon:getTreeIcon('5mm'),
-    color: "#649531",
+    color: "#16a34a",
     isDarkColor:true,
 }
 
@@ -68,7 +67,7 @@ export const merchant:Family = {
     tip:`Comme au temps des anciens, la force et le commerce marchent main dans la main. N'hésitez pas à utiliser les hommes d'armes de la tribu ${military.familyName.toUpperCase()} pour réserver des emplacements pour vos comptoirs.`,
     familyName:FamilyName.MERCHANT,
     icon:get2CoinsIcon('5mm'),
-    color: "#ff6400",
+    color: "#f97316",
     isDarkColor:true,
 }
 
@@ -78,7 +77,7 @@ export const none:Family = {
     tip: "Réprouvés mais résistants à la chaleur, les humains du futur&#8482 sont les seuls qui peuvent occuper la Fournaise. Utilisez-les pour prendre vos adversaires de vitesse. Ils peuvent en outre recevoir des pouvoirs en cours de partie.",
     familyName:FamilyName.NONE,
     icon:getCogIcon('5mm'),
-    color: "#545050",
+    color: "#938c8c",
     isDarkColor:true,
 }
 

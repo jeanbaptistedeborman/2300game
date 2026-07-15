@@ -121,7 +121,7 @@ p:last-of-type {
  }
 
 .card.back {
-     padding:11mm; 
+     padding:14mm 1mm; 
      box-shadow: inset 0 0 15mm rgba(0,20,0,0.4);        
 }
 
