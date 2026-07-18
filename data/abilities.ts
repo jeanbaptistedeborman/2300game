@@ -1,7 +1,6 @@
 import {Ability, Family, FamilyName, Terrain} from "../model";
 import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeGatherer, families} from "./families";
 import {
-    getWingIcon,
     getTrashCardIcon,
     getArmyIcon,
     getGetUpCardIcon,
@@ -25,7 +24,6 @@ import {
 } from "../layout/components/components";
 
 const ICON_SIZE = '.9em';
-const LARGE_ICON_SIZE = '1.5em';
 
 const WHEN_PLAYING_THIS_CARD:string =  `<b>À la pose de cette région&nbsp;:</b>`;
 const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
@@ -35,12 +33,12 @@ const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.]</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
-const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
+const LOCK_BADGE = (position: string) => `<div style="overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
 export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:2.15em;width:2.15em;vertical-align:middle;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.3em;object-fit:contain;" alt="">${LOCK_BADGE('top:.15mm;left:.15mm;')}${LOCK_BADGE('top:.15mm;right:.15mm;')}${LOCK_BADGE('bottom:.15mm;left:.15mm;')}${LOCK_BADGE('bottom:.15mm;right:.15mm;')}</div>`;
 
 const getPromoteGMOText = (family:Family) => `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir et la tribu ${getTribeName(family)}.`
 const getNetworkText = (family:Family) => `<p>${getPopulations(1)} si comporte la ${getTribeDescription(family)}.</p>${reminderOccupiedAndEnemy}`;
-const getRallyFriendsText = (family:Family) => `${wrapIcon(getCardPlayIcon('.9em'))}Piochez les cartes comportant la ${getTribeDescription(family)} des régions inoccupées.`
+const getRallyFriendsText = (family:Family) => `${wrapIcon(getCardPlayIcon('.9em'))}Piochez les cartes du dessus comportant la ${getTribeDescription(family)} des régions inoccupées.`
 const getRallyFriendsEffect = (family: Family) => ({
     ...takeCard,
     color: family.color,

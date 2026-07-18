@@ -27,8 +27,16 @@ const getVisibleAbility = (card: Card) => card.abilities.find(({isVisible}) => !
 
 const renderAbilityCell = (card: Card): string => {
     const ability = getVisibleAbility(card);
-    const icon = ability?.family.icon || "";
-    return `<div class="installation-icon-only">${icon}</div>`;
+    const icon = (ability?.family.icon || "")
+        .replace(/width:[^;"]+;/, "width:100%;")
+        .replace(/height:[^;"]+;/, "height:100%;");
+
+    if (!icon.trim()) {
+        return `<div class="installation-icon-only"></div>`;
+    }
+
+    const iconColor = ability?.family.color || "#333";
+    return `<div class="installation-icon-only" style="--installation-icon-bg:${iconColor};"><span class="installation-icon-badge"><span class="installation-icon-svg">${icon}</span></span></div>`;
 };
 
 const renderBox = (pickedCards: PickedCardByTerrain): string => `
@@ -66,8 +74,6 @@ export const generateInstallationSample = (completedCards: Card[]) => {
     if (!savannaPool.length || !desertPool.length || !scorchedPool.length) {
         throw new Error("Cannot generate installation sample: at least one terrain has no card.");
     }
-
-    const totalBoxes = BOX_COUNT * SERIES_COUNT; // 64
 
     const seriesHtml = Array.from({length: SERIES_COUNT}, (_, seriesIndex) => {
         const boxes: PickedCardByTerrain[] = Array.from({length: BOX_COUNT}, (_, boxIndex) => {
@@ -137,6 +143,28 @@ body { padding: 5mm; }
     line-height: 0;
     width: 100%;
 }
+.installation-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 11mm;
+    height: 11mm;
+    border-radius: 50%;
+    background: var(--installation-icon-bg, #333);
+    box-shadow: 0 0 0 .25mm rgba(0,0,0,.55);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 1.1mm;
+}
+.installation-icon-svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+    mix-blend-mode: lighten;
+}
 .installation-card-names {
     list-style: disc;
     margin: 1.5mm 0 0 0;
@@ -150,7 +178,7 @@ body { padding: 5mm; }
     padding: 0;
 }
 </style>
-<body>
+<body style="zoom:.6">
     ${seriesHtml}
 </body>
 </html>`
