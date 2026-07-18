@@ -170,7 +170,7 @@ export const cartographer: Ability = {
     name: 'Cartographers',
     family: explorer,
     givesAdditionalPopulations: true,
-    text: `<p>${getPopulations(1)} par continent adverse dont vous occupez au moins une région.</p>
+    text: `<p>${getPopulations(1)} par continent adverse dont vous occupez   au moins une région.</p>
     <p>${POPULATION_X2} si tous les continents.</p>`
 }
 
