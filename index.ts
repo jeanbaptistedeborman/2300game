@@ -11,6 +11,7 @@ import {header} from "./layout/components/components";
 import {backTemplate} from "./layout/templates/cardBackTemplate";
 import {ASSYMETRIC_START_REGION_URLS, getStartRegionTemplate} from "./layout/templates/startRegionTemplate";
 import {generateFamilyPresentation} from "./exports/FamilyPresentation";
+import {generatePrintCards} from "./exports/cardsPrint";
 
 
 export const cardTerrains:Terrain[] = [Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
@@ -27,6 +28,7 @@ generateCardsByFamiy(cards.filter (removeUnusedCards), completedCards);
 generateFamilyPresentation(cards.filter (removeUnusedCards), completedCards);
 generateCardBacks(completedCards);
 generateInstallationSample(completedCards);
+generatePrintCards(completedCards);
 
 const cardChunks:Card[][] = completedCards.reduce((acc, card, index) => {
     if (index % CARDS_PER_PAGE === 0) {

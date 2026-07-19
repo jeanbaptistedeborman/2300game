@@ -33,7 +33,7 @@ const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.]</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
-const LOCK_BADGE = (position: string) => `<div style="overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
+const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
 export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:2.15em;width:2.15em;vertical-align:middle;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.3em;object-fit:contain;" alt="">${LOCK_BADGE('top:.15mm;left:.15mm;')}${LOCK_BADGE('top:.15mm;right:.15mm;')}${LOCK_BADGE('bottom:.15mm;left:.15mm;')}${LOCK_BADGE('bottom:.15mm;right:.15mm;')}</div>`;
 
 const getPromoteGMOText = (family:Family) => `Toutes vos régions ${wrapIcon(getLizardManIcon('1em'))}<b>${GMO_CARD_TITLE.toUpperCase()}</b> gagnent le pouvoir et la tribu ${getTribeName(family)}.`
@@ -153,13 +153,7 @@ export const terraformer: Ability = {
     family: cleanEarth,
     text: `${WHEN_PLAYING_THIS_CARD}<p>${wrapIcon(getTrashCardIcon('1.3em'))} Vous devez défausser la carte du dessus des régions inoccupées.</p>`
 }
-export const terraformer_take_cards: Ability = {
-    effect:takeCard,
-    icon: getGetUpCardIcon(ICON_SIZE),
-    name: 'Terraformers recycleurs',
-    family: cleanEarth,
-    text: "${WHEN_PLAYING_THIS_CARD} piochez une carte de chaque région adjacente inoccupée."
-}
+
 export const worldCompany: Ability = {
     name: 'World company',
     family: merchant,

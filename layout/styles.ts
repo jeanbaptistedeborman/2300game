@@ -177,7 +177,6 @@ font-size: 8pt;
     flex-wrap: wrap;
     gap:${CARD_GAP[0]}  ${CARD_GAP[1]};
     page-break-after: always;
-    overflow:hidden;
     height: 27cm;
 }
 
