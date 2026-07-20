@@ -90,7 +90,8 @@ export const cheeseFactory: Ability = {
 export const shortGame: Ability = {
     name: "Game over",
     family: cleanEarth,
-    text: `<p>${WHEN_PLAYING_THIS_CARD} <b></p>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b>Vous pouvez poser ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur ce pouvoir. (Ceci déclenchera la fin de partie.)</p>`
+    givesAdditionalPopulations: true,
+    text: `<p>${WHEN_PLAYING_THIS_CARD} <b></p>Si moins de ${getPopulations(10)} (cités comprises) dans votre réserve&nbsp;: </b>Vous pouvez poser ${getPopulations(1)} <b>${'cité'.toUpperCase()}</b> sur cette carte. (Ceci déclenchera la fin de partie.)</p>`
 }
 
 export const cleanContinent: Ability = {
@@ -140,7 +141,8 @@ const OIL_LABEL = `${oil.name.toUpperCase()}${wrapIcon(getOilIcon('1em'))}`;
 export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
-    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur ce pouvoir.</p>`
+    givesAdditionalPopulations: true,
+    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur cette carte.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
