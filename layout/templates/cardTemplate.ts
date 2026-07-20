@@ -122,7 +122,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     
     ${leftAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
-    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vR_XyG3Et7DJQzV3IcJtcYpzL2DYZcQXhVSsSwiMLlO-6SonZQfdEpClDoJymb0FZS9L41BNn4J8xEZ/pub?w=111&h=111" alt="" style="position:absolute;bottom:1mm;left:1mm;width:5mm;height:5mm;object-fit:contain;" />` : ''}
+    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vR_XyG3Et7DJQzV3IcJtcYpzL2DYZcQXhVSsSwiMLlO-6SonZQfdEpClDoJymb0FZS9L41BNn4J8xEZ/pub?w=111&h=111" alt="" style="position:absolute;bottom:2mm;left:2mm;width:5mm;height:5mm;object-fit:contain;" />` : ''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>

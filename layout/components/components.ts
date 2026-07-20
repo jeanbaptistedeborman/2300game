@@ -101,7 +101,7 @@ export const getAbilityVignette = (({
                                         }
                                     }: Ability, hideFamilyIcon: boolean = false, leftAlign: boolean = false, showFamilyBand: boolean = true, familyHasVol: boolean = false) =>
 
-    `<li class='abilility-vignette${ (givesAdditionalPopulations && !effect) ? ' population-placeholder' : ''}' >
+    `<li class='abilility-vignette' >
         ${isPrimary ? `
         <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color)};display:flex;align-items:center;color:white;border:${BORDER_WIDTH} solid ${color};width:100%; font-size: smaller">
           <div style="background-color:${darkenColor(color)};display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
