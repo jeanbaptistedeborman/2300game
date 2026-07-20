@@ -9,8 +9,9 @@ const CARD_GAP:string[] = ['0mm', '0mm'];
 
 
 export const styles = `
+
 body {
-   font-family:"Crimson Pro", "Cambria", serif;
+   font-family:"Roboto", serif;
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
@@ -307,7 +308,6 @@ export const footerStyle:string =  `
     
     @bottom-right {
       content: "2200 annexe: cartes par tribu " counter(page) "/" counter(pages);
-      font-family: Arial, sans-serif;
       font-size: 10pt;
       color: #000;
     }

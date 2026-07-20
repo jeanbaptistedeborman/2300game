@@ -44,9 +44,6 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeM
     return `<div class="card back ${Object.keys(Terrain)[backTerrain]}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]};">
  <div style="color:black; position:absolute; left:1mm; bottom:3mm;font-weight: bold;" >${backTerrain.toUpperCase()}</div>
    <div style="mix-blend-mode:color-dodge;opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0; z-index: 1;">
-       
-    
-       
         ${getTerrainIllustration(backTerrain)}
     </div>
 

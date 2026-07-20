@@ -7,7 +7,7 @@ import {getFamilyIcon, header} from "../layout/components/components";
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
 
-const textStyle: string = `line-height:1.2em;;margin-bottom: 1mm;margin-top: 1mm;font-family: 'Arial', 'Sans Serif'`;
+const textStyle: string = `line-height:1.2em;;margin-bottom: 1mm;margin-top: 1mm`;
 
 const isSameCard = (cardA: Card, cardB: Card): boolean => {
     return cardA.title === cardB.title &&
@@ -56,14 +56,14 @@ export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]
             return `
            <div style="display: flex;margin: 1mm 0 5mm 0;background-color: ${family.color}; border:1mm solid; border-radius: 2mm; overflow: clip;border-color:${family.color};break-inside: avoid-column;">
            
-        <div style="font-family: 'Arial', 'Sans Serif'; flex-grow: 1; zoom:1.5; display:flex; flex-direction:column;">
+        <div style="flex-grow: 1; zoom:1.5; display:flex; flex-direction:column;">
         <div style="padding: 1mm 2mm; font-weight: 700; font-size: 10pt; text-transform: uppercase; color: ${family.isDarkColor ? 'white' : 'black'}; display:flex; align-items:center; gap:1mm;">
           <span style="display:inline-flex; width:2em; height:2em; align-items:center; justify-content:center; flex-shrink:0;">${family.icon}</span>
           <span>${family.familyName}</span>
         </div>
         ${primaryAbility ? `
                 <div style="border:.5mm solid ${family.color}; background-color:${family.color}; border-radius:1mm; overflow:hidden;">
-                  <div style="padding: 1mm 2mm; font-size: 9pt; line-height: 1.2em; background-color: ${family.color}; font-family: 'Crimson Pro', serif; display:flex; align-items:flex-start; gap:1mm;">
+                  <div style="padding: 1mm 2mm; font-size: 9pt; line-height: 1.2em; background-color: ${family.color}; display:flex; align-items:flex-start; gap:1mm;">
                     ${primaryAbility.abilityPicture ? `<div style="background-color:rgba(0,0,0,.45); padding:.5mm; border-radius:.7mm; display:flex; align-items:center; flex-shrink:0;"><img src="${primaryAbility.abilityPicture}" alt="Illustration du pouvoir ${primaryAbility.name}" style="height:1.8em;object-fit:contain;display:block;" /></div>` : ''}
                     <div style="background-color:white; color:black; padding:.6mm .8mm; border-radius:.6mm; flex-grow:1;">
                       ${primaryAbility.effect ? `<img src="${FLIGHT_PICTURE_URL}" alt="Effet emplacements voisins" style="height:1.6em;object-fit:contain;flex-shrink:0;margin-right:1mm;float:left;" /><b>Emplacements voisins&nbsp;:</b> ` : ''}${primaryAbility.text || ''}

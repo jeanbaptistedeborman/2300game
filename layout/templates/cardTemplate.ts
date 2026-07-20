@@ -106,6 +106,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
 
     const isSea: boolean = allowedTerrain === Terrain.SEA;
     const hasEffect = sortedAbilities.some(({effect}) => effect) || sortedAbilities.length === 0;
+    const hasAdditionalPopulationsNoEffect: boolean = sortedAbilities.some(a => a.givesAdditionalPopulations && !a.effect);
     const shouldShowFamilyBand = (ability: Ability, index: number): boolean => {
         if (index === 0) {
             return true;
@@ -118,8 +119,10 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     <h2 class="title">${title}</h2> 
     <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;display:flex;justify-content:flex-start;align-items:flex-start;text-align:left;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
+    
     ${leftAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
+    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vR_XyG3Et7DJQzV3IcJtcYpzL2DYZcQXhVSsSwiMLlO-6SonZQfdEpClDoJymb0FZS9L41BNn4J8xEZ/pub?w=111&h=111" alt="" style="position:absolute;bottom:1mm;left:1mm;width:5mm;height:5mm;object-fit:contain;" />` : ''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>
