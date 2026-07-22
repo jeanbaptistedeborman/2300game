@@ -11,12 +11,12 @@ const CARD_GAP:string[] = ['0mm', '0mm'];
 export const styles = `
 
 body {
-   font-family:"Roboto", serif;
+   font-family:"Roboto Condensed", serif;
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
   line-height:1.15em;
-   font-size: 10pt;
+   font-size: 11pt;
    margin:0; 
 }
 
@@ -36,7 +36,6 @@ p:last-of-type {
     background-color: ${backgroundColor};
     height: 6.6cm;
     flex: 0 0 calc(33.33333% - calc(${CARD_GAP[1]} * 2/3));
-    border: .1mm solid grey;
     box-sizing: border-box;
     overflow: hidden;
     position:relative;
@@ -222,6 +221,8 @@ div {
 }
 
 .ability_text {
+font-size:9.5pt;
+font-weight:600;
     flex-grow:1;
     width:100%;
     hyphens: auto;
@@ -229,7 +230,6 @@ div {
     padding:.35mm;
     color:black;
     line-height:1.12;
-    font-size:8.8pt;
 }
 
 .card-abilities {

@@ -312,7 +312,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true,
+        false,
         true
       ]
     }
@@ -452,7 +452,7 @@
       "visibilities": []
     },
     {
-      "backTerrain": "Savanne",
+      "backTerrain": "Fournaise",
       "visibilities": []
     },
     {
@@ -517,7 +517,7 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
@@ -693,7 +693,7 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {

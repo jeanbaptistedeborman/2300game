@@ -30,7 +30,7 @@ const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<b>À tout moment&nbsp;:</b>`;
 const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 
-const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller; line-height:.8em">[RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.]</p>`;
+const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller">(RAPPEL&nbsp;: Aussi prendre en compte régions adverses ou inoccupées.)</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
 const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
@@ -190,8 +190,8 @@ export const spy: Ability = {
     family: explorer,
     givesAdditionalPopulations: true,
     text: `
-        ${WHEN_PLAYING_THIS_CARD}${getPlusPopulations(1)}.
-        <p>${AT_YOUR_TURN}Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`
+        ${WHEN_PLAYING_THIS_CARD} ${getPlusPopulations(1)}.
+        <p>${AT_YOUR_TURN} Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`
 }
 
 export const harbour: Ability = {
@@ -213,7 +213,7 @@ export const scout: Ability = {
     isPrimary: true,
     name: 'Explorateur',
     family:explorer,
-    text: `<p>${ANY_TIME} vous pouvez consulter la première carte des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`,
+    text: `<p>${ANY_TIME} vous pouvez consulter la carte du dessus des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vS8CGKW9qQve6brkMiVlNbOK4lZ4ahCYvSxy2OQkHJR19kzfFqs4iu4ZDxpPHh7q2pYo7_yBb-t5haa/pub?w=658&h=258`,
 }
 

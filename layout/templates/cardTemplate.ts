@@ -8,6 +8,7 @@ import {getFamilyCount} from "../../services";
 import {terrainColors} from "../colors";
 import Color from "color";
 import {VOL_ABILITY_NAME} from "../../constants";
+import {holeOverlay} from "./holeOverlay";
 
 const familiesWithVol: Set<FamilyName> = new Set(
     cards.flatMap(({abilities}) => abilities)
@@ -81,7 +82,7 @@ const addEffects = (abilities: Ability[]) => {
         `
 }
 
-export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain}: Card): string => {
+export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain, backTerrain}: Card): string => {
     const leftAlignedIllustration: string = illustration
         ? illustration.replace(/<svg\b([^>]*)>/, (_match, attrs) => {
             const normalized = String(attrs).replace(/\s*preserveAspectRatio="[^"]*"/i, '');
@@ -114,6 +115,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
         return sortedAbilities[index - 1].family.familyName !== ability.family.familyName;
     };
     return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.SEA};`:''}">
+    ${holeOverlay(backTerrain, {mirror: true, whiteBorderMm: 0.6, includeFrontOnly: true})}
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
@@ -122,7 +124,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
     
     ${leftAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
-    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vR_XyG3Et7DJQzV3IcJtcYpzL2DYZcQXhVSsSwiMLlO-6SonZQfdEpClDoJymb0FZS9L41BNn4J8xEZ/pub?w=111&h=111" alt="" style="position:absolute;bottom:2mm;left:2mm;width:5mm;height:5mm;object-fit:contain;" />` : ''}
+    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vRxkh_1PrSTcC_zafkciVF2WtpjBsEM5rxa5T42Yp_1SEDr8YrRkL4x9vP8E8YazpMVp7xUUWncNpWD/pub?w=111&amp;h=111" alt="" style="position:absolute;bottom:1mm;left:1mm;width:6mm;height:6mm;object-fit:contain;" />` : ''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>

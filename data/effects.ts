@@ -20,7 +20,7 @@ export const removePopulation:Effect ={
 
 export const addPopulation:Effect ={
     name: 'addPopulation',
-    icon:getCircleIcon(LARGE_ICONSIZE)
+    icon:`<img src="https://docs.google.com/drawings/d/e/2PACX-1vR_XyG3Et7DJQzV3IcJtcYpzL2DYZcQXhVSsSwiMLlO-6SonZQfdEpClDoJymb0FZS9L41BNn4J8xEZ/pub?w=111&h=111" alt="" style="height:8mm;width:8mm;object-fit:contain;display:block;" />`
 }
 
 export const takeCardFromHand:Effect ={

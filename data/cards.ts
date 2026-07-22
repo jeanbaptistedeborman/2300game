@@ -214,7 +214,7 @@ export const cards: Card[] = [
         id: "on_arrete_le_progres__ecolo",
         illustration: getHandIllustration(),
         number:1,
-        title: "On arrête le progrès !",
+        title: "Arrêtez le progrès !",
         abilities: [shortGame],
         handicaps: [],
         allowedTerrain: Terrain.DESERT
