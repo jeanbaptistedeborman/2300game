@@ -7,9 +7,10 @@ type BackTemplateOptions = {
     badgeSizeMm?: number;
     showGridLines?: boolean;
     centerIcon?: boolean;
+    hideHoleShapes?: boolean;
 }
 
-export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeMm = 8, showGridLines = true, centerIcon = false}: BackTemplateOptions = {}): string => {
+export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeMm = 8, showGridLines = true, centerIcon = false, hideHoleShapes = false}: BackTemplateOptions = {}): string => {
 
     if (!backTerrain)  {
         console.log ("No back for ", title);
@@ -37,7 +38,7 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeM
     </div>
 
     <div style="position:absolute;left:0;top:0;z-index:2;width:${gridContainerWidthMm}mm;height:${gridContainerHeightMm}mm;margin:0;box-sizing:border-box;">
-    ${showGridLines ? holeOverlay(backTerrain) : ''}
+    ${showGridLines ? holeOverlay(backTerrain, {hideHoleShapes}) : ''}
     ${columns.map((terrain, index) => {
         const hasGridFrame = showGridLines && !(backTerrain === Terrain.SAVANNA || index === 0 || (index === 1 && backTerrain === Terrain.DESERT));
         const useSvgFrameLayout = showGridLines && (backTerrain === Terrain.SCORCHED || backTerrain === Terrain.DESERT);

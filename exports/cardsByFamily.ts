@@ -84,7 +84,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                cardsByFamiy[key].map(
                    
                    (card: Card) => `
-                <div class="card-container">${cardTemplate(card)}
+                <div class="card-container">${cardTemplate(card, {hideHoleShapes: true})}
                     
                     <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end;">
                     DOS: 
@@ -92,7 +92,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                         .filter((completedCard) => isSameCard(card, completedCard))
                        //.sort ((a:Card, b:Card) =>  terrains.indexOf(b.backTerrain) - terrains.indexOf(a.backTerrain)) 
                        .map((completedCard: Card) => {
-                           return backTemplate(completedCard, {badgeSizeMm: 24, showGridLines: false, centerIcon: true});
+                           return backTemplate(completedCard, {badgeSizeMm: 24, showGridLines: false, centerIcon: true, hideHoleShapes: true});
                        }).join('')
                    }
                        </div>

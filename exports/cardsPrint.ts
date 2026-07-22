@@ -11,12 +11,12 @@ const CARD_HEIGHT = "66mm";
 
 const renderPage = (card: Card): string => `
 <section class="page print-page">
-    ${cardTemplate(card)}
+    ${cardTemplate(card, {hideHoleShapes: true})}
 </section>`;
 
 const renderBackPage = (card: Card): string => `
 <section class="page print-page back-page">
-    ${backTemplate(card)}
+    ${backTemplate(card, {hideHoleShapes: true})}
 </section>`;
 
 const renderHoleShapeOnlyPage = (terrain: Terrain): string => `

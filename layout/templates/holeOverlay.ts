@@ -32,7 +32,7 @@ const doubleFrameLeftMm = frameAnchorPaddingMm + iconSizeMm + svgHorizontalOffse
 // --- Hole shapes ---
 const singleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
 // Same as the desert shape but filled with 40% black. Used front-only for savanna backs.
-const singleSquareDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#000" fill-opacity="0.4" stroke="#ffffff" stroke-width="1"/></svg>`;
+const singleSquareDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#000" fill-opacity="0.4" stroke="#ffffff" stroke-width=".5"/></svg>`;
 const doubleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.21 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><path d="M47.12.5H15.94C7.4.59.5,7.53.5,16.09s6.9,15.5,15.44,15.58h0s31.18,0,31.18,0c8.61,0,15.59-6.98,15.59-15.59S55.73.5,47.12.5Z" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
 const frontShapeCornerImageUrlDefault = "https://docs.google.com/drawings/d/e/2PACX-1vTTrBRDVlItQx819qfNEfLfOFnLnWIR_yosYRQKbcWuwWOqpNb3Bgz7cDBYnC4r40hTUE1SVU6NiWPA/pub?w=505&h=368";
 
@@ -93,6 +93,8 @@ type HoleOverlayOptions = {
     shapeCornerImageUrl?: string;
     /** Optional width (in mm) for the bottom-right shape image. */
     shapeCornerImageWidthMm?: number;
+    /** Hide real hole shapes visually while keeping them in the DOM. */
+    hideHoleShapes?: boolean;
 };
 
 /**
@@ -107,6 +109,7 @@ export const holeOverlay = (
         includeFrontOnly = false,
         shapeCornerImageUrl = frontShapeCornerImageUrlDefault,
         shapeCornerImageWidthMm = 8,
+        hideHoleShapes = false,
     }: HoleOverlayOptions = {},
 ): string => {
     const holeShapes = getHoleShapes(terrain);
@@ -129,11 +132,11 @@ export const holeOverlay = (
         return `<div style="position:absolute;${horizontalAnchor}top:${topMm}mm;width:${widthMm}mm;height:${heightMm}mm;pointer-events:none;z-index:0;">${cornerImage}${svg}</div>`;
     };
 
-    const layer = (shapes: HoleShape[], isMirrored: boolean): string => shapes.length
-        ? `<div style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;${isMirrored ? 'transform:scaleX(-1);' : ''}">${shapes.map((shape) => shapeDiv(shape, isMirrored)).join('')}</div>`
+    const layer = (shapes: HoleShape[], isMirrored: boolean, hidden = false): string => shapes.length
+        ? `<div style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;${isMirrored ? 'transform:scaleX(-1);' : ''}${hidden ? 'opacity:0;' : ''}">${shapes.map((shape) => shapeDiv(shape, isMirrored)).join('')}</div>`
         : '';
 
-    return `${layer(holeShapes, mirror)}${layer(frontOnlyShapes, false)}`;
+    return `${layer(holeShapes, mirror, hideHoleShapes)}${layer(frontOnlyShapes, false)}`;
 };
 
 
