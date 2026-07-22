@@ -131,7 +131,7 @@ export const cardTemplate = (
     
     ${leftAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
-    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vRxkh_1PrSTcC_zafkciVF2WtpjBsEM5rxa5T42Yp_1SEDr8YrRkL4x9vP8E8YazpMVp7xUUWncNpWD/pub?w=111&amp;h=111" alt="" style="position:absolute;bottom:1mm;left:1mm;width:6mm;height:6mm;object-fit:contain;" />` : ''}
+    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vRxkh_1PrSTcC_zafkciVF2WtpjBsEM5rxa5T42Yp_1SEDr8YrRkL4x9vP8E8YazpMVp7xUUWncNpWD/pub?w=111&amp;h=111" alt="" style="position:absolute;bottom:0mm;left:1mm;width:6mm;height:6mm;object-fit:contain;" />` : ''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>

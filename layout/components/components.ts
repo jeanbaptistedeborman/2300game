@@ -108,7 +108,7 @@ export const getAbilityVignette = (({
           <div style="background-color:${darkenColor(color)};display:flex;flex-direction:column;align-items:stretch;flex-grow:1;">
             ${showFamilyBand ? getFamilyBand(family, abilityPicture, true) : ''}
           </div>
-          ${isVisible ? `<div style='position:absolute;left:-2mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('2mm')}</div>` : ''}
+          ${isVisible ? `<div style='position:absolute;left:-1.5mm;top:-1.5mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('2.5mm')}</div>` : ''}
         </div>` : `
         <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
         <div style="display:flex;flex-grow:1;border-color:${color}">
@@ -126,6 +126,6 @@ export const getAbilityVignette = (({
             </div>` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
             <span>${text}</span></div></div></div>`}
         </div>
-        ${isVisible ? `<div style='position:absolute;left:-2mm;top:-2mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('3mm')}</div>` : ''}
+        ${isVisible ? `<div style='position:absolute;left:-1.5mm;top:-1.5mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('2.5mm')}</div>` : ''}
         </div>`}
         </li>`)
