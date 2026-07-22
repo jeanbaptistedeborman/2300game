@@ -34,7 +34,7 @@ const singleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32
 // Same as the desert shape but filled with 40% black. Used front-only for savanna backs.
 const singleSquareDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#000" fill-opacity="0.4" stroke="#ffffff" stroke-width="1"/></svg>`;
 const doubleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.21 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><path d="M47.12.5H15.94C7.4.59.5,7.53.5,16.09s6.9,15.5,15.44,15.58h0s31.18,0,31.18,0c8.61,0,15.59-6.98,15.59-15.59S55.73.5,47.12.5Z" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
-const frontShapeCornerImageUrlDefault = "https://docs.google.com/drawings/d/e/2PACX-1vTTrBRDVlItQx819qfNEfLfOFnLnWIR_yosYRQKbcWuwWOqpNb3Bgz7cDBYnC4r40hTUE1SVU6NiWPA/pub?w=115&h=241";
+const frontShapeCornerImageUrlDefault = "https://docs.google.com/drawings/d/e/2PACX-1vTTrBRDVlItQx819qfNEfLfOFnLnWIR_yosYRQKbcWuwWOqpNb3Bgz7cDBYnC4r40hTUE1SVU6NiWPA/pub?w=505&h=368";
 
 export type HoleShape = {
     svg: string;
@@ -106,7 +106,7 @@ export const holeOverlay = (
         whiteBorderMm = 0,
         includeFrontOnly = false,
         shapeCornerImageUrl = frontShapeCornerImageUrlDefault,
-        shapeCornerImageWidthMm = 4,
+        shapeCornerImageWidthMm = 8,
     }: HoleOverlayOptions = {},
 ): string => {
     const holeShapes = getHoleShapes(terrain);
@@ -124,9 +124,9 @@ export const holeOverlay = (
             ? 'position:absolute;inset:0;transform:scaleX(-1);transform-origin:center;pointer-events:none;'
             : 'position:absolute;inset:0;pointer-events:none;';
         const cornerImage = showShapeCornerImage
-            ? `<div style="${cornerImageFrame}"><img src="${shapeCornerImageUrl}" alt="" style="position:absolute;right:-1.3mm;top:-.3mm;width:${shapeCornerImageWidthMm}mm;height:auto;display:block;pointer-events:none;"/></div>`
+            ? `<div style="${cornerImageFrame}"><img src="${shapeCornerImageUrl}" alt="" style="position:absolute;right:-2mm;top:-.1mm;width:${shapeCornerImageWidthMm}mm;height:auto;display:block;pointer-events:none;"/></div>`
             : '';
-        return `<div style="position:absolute;${horizontalAnchor}top:${topMm}mm;width:${widthMm}mm;height:${heightMm}mm;pointer-events:none;z-index:0;">${svg}${cornerImage}</div>`;
+        return `<div style="position:absolute;${horizontalAnchor}top:${topMm}mm;width:${widthMm}mm;height:${heightMm}mm;pointer-events:none;z-index:0;">${cornerImage}${svg}</div>`;
     };
 
     const layer = (shapes: HoleShape[], isMirrored: boolean): string => shapes.length
