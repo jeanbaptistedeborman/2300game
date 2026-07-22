@@ -32,10 +32,11 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeM
     const gridContainerHeightMm = gridCellSizeMm + gridPaddingMm * 2;
 
     return `<div class="card back ${Object.keys(Terrain)[backTerrain]}" style="background-color: ${terrainColors[Object.keys(Terrain)[Object.values(Terrain).indexOf(backTerrain)]]};">
- <div style="color:black; position:absolute; left:1mm; bottom:3mm;font-weight: bold;" >${backTerrain.toUpperCase()}</div>
-   <div style="opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0; z-index: 1;">
+ 
+   <div style="opacity:.7;position:absolute;width:100%; bottom:-2mm; height:5cm;left: 0;">
         ${getTerrainIllustration(backTerrain)}
     </div>
+    <div style="color:black; position:absolute; left:1mm; bottom:1mm;font-weight: bold;" >${backTerrain.toUpperCase()}</div>
 
     <div style="position:absolute;left:0;top:0;z-index:2;width:${gridContainerWidthMm}mm;height:${gridContainerHeightMm}mm;margin:0;box-sizing:border-box;">
     ${showGridLines ? holeOverlay(backTerrain, {hideHoleShapes}) : ''}

@@ -121,7 +121,11 @@ export const holeOverlay = (
 
     const showShapeCornerImage = includeFrontOnly && !!shapeCornerImageUrl;
 
-    const shapeDiv = ({svg, leftMm, rightMm, topMm, widthMm, heightMm}: HoleShape, cancelMirror = false): string => {
+    const shapeDiv = (
+        {svg, leftMm, rightMm, topMm, widthMm, heightMm}: HoleShape,
+        cancelMirror = false,
+        hideSvg = false,
+    ): string => {
         const horizontalAnchor = rightMm !== undefined ? `right:${rightMm}mm;` : `left:${leftMm}mm;`;
         const cornerImageFrame = cancelMirror
             ? 'position:absolute;inset:0;transform:scaleX(-1);transform-origin:center;pointer-events:none;'
@@ -129,11 +133,14 @@ export const holeOverlay = (
         const cornerImage = showShapeCornerImage
             ? `<div style="${cornerImageFrame}"><img src="${shapeCornerImageUrl}" alt="" style="position:absolute;right:-2mm;top:-.1mm;width:${shapeCornerImageWidthMm}mm;height:auto;display:block;pointer-events:none;"/></div>`
             : '';
-        return `<div style="position:absolute;${horizontalAnchor}top:${topMm}mm;width:${widthMm}mm;height:${heightMm}mm;pointer-events:none;z-index:0;">${cornerImage}${svg}</div>`;
+        const svgLayer = hideSvg
+            ? `<div style="position:absolute;inset:0;opacity:0;pointer-events:none;">${svg}</div>`
+            : svg;
+        return `<div style="position:absolute;${horizontalAnchor}top:${topMm}mm;width:${widthMm}mm;height:${heightMm}mm;pointer-events:none;z-index:0;">${cornerImage}${svgLayer}</div>`;
     };
 
-    const layer = (shapes: HoleShape[], isMirrored: boolean, hidden = false): string => shapes.length
-        ? `<div style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;${isMirrored ? 'transform:scaleX(-1);' : ''}${hidden ? 'opacity:0;' : ''}">${shapes.map((shape) => shapeDiv(shape, isMirrored)).join('')}</div>`
+    const layer = (shapes: HoleShape[], isMirrored: boolean, hideSvg = false): string => shapes.length
+        ? `<div style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2;${isMirrored ? 'transform:scaleX(-1);' : ''}">${shapes.map((shape) => shapeDiv(shape, isMirrored, hideSvg)).join('')}</div>`
         : '';
 
     return `${layer(holeShapes, mirror, hideHoleShapes)}${layer(frontOnlyShapes, false)}`;
