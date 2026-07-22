@@ -12,7 +12,7 @@ export enum Terrain {
 export const terrains: Terrain[] = [Terrain.TEMPERATE, Terrain.SAVANNA, Terrain.DESERT, Terrain.SCORCHED]
 
 export enum FamilyName {
-    "TECHNO" = "Tek-bros",
+    "TECHNO" = "Tekbros",
     "MILITARY" = "Militaires",
     "EXPLORER" = "Explorateurs",
     "CLEAN_EARTH" = "Green Saviors",
