@@ -42,11 +42,17 @@ export const darkenColor = (color:string, ratio : number = .4 )=> Color(color).d
 
 export const countCards = (acc, {number}) => acc+number;
 
+// Keep only white illustration shapes by removing the black full-canvas background path.
+export const stripIllustrationBackground = (svg: string): string =>
+    svg?.replace(/<path d="M0 0h512v512H0z"[^>]*><\/path>/gi, '') ?? svg;
+
 export const getTerrainIllustration = (terrain:Terrain) =>
-    terrain === Terrain.SCORCHED? getScorchedIllustration() :
-        terrain === Terrain.DESERT?getDesertIllustration():
-            terrain === Terrain.SAVANNA?getGrassIllustration():
-                terrain === Terrain.SEA?getWaveIllustration():'';
+    stripIllustrationBackground(
+        terrain === Terrain.SCORCHED? getScorchedIllustration() :
+            terrain === Terrain.DESERT?getDesertIllustration():
+                terrain === Terrain.SAVANNA?getGrassIllustration():
+                    terrain === Terrain.SEA?getWaveIllustration():''
+    );
 
 
 export const isPrimaryAbility = (cards: Card[], abilityName: string, abilityFamilyName: string) =>

@@ -4,7 +4,7 @@ import {getAbilityVignette, getTerrainsVignettes} from "../components/components
 import {getPadlockIcon} from "../icons";
 import {addPopulation, evolving, forbid} from "../../data/effects";
 import {none} from "../../data/families";
-import {getFamilyCount} from "../../services";
+import {getFamilyCount, stripIllustrationBackground} from "../../services";
 import {terrainColors} from "../colors";
 import Color from "color";
 import {VOL_ABILITY_NAME} from "../../constants";
@@ -84,7 +84,7 @@ const addEffects = (abilities: Ability[]) => {
 
 export const cardTemplate = ({title, illustration, abilities, handicaps, number, status, allowedTerrain, backTerrain}: Card): string => {
     const leftAlignedIllustration: string = illustration
-        ? illustration.replace(/<svg\b([^>]*)>/, (_match, attrs) => {
+        ? stripIllustrationBackground(illustration).replace(/<svg\b([^>]*)>/, (_match, attrs) => {
             const normalized = String(attrs).replace(/\s*preserveAspectRatio="[^"]*"/i, '');
             return `<svg${normalized} preserveAspectRatio="xMinYMid meet">`;
         })
@@ -115,7 +115,7 @@ export const cardTemplate = ({title, illustration, abilities, handicaps, number,
         return sortedAbilities[index - 1].family.familyName !== ability.family.familyName;
     };
     return `<div class="card" style="color:${(isSea && false)?'white':'black'};${isSea?`background-color:${terrainColors.SEA};`:''}">
-    ${holeOverlay(backTerrain, {mirror: true, whiteBorderMm: 0.6, includeFrontOnly: true})}
+    ${holeOverlay(backTerrain, {mirror: true, whiteBorderMm: 0.1, includeFrontOnly: true})}
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
