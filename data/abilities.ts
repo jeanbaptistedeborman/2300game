@@ -3,7 +3,6 @@ import {explorer, merchant, techno, military, cleanEarth, navigators, knowledgeG
 import {
     getTrashCardIcon,
     getArmyIcon,
-    getGetUpCardIcon,
     getCowIcon,
     getLizardManIcon, getCardPlayIcon, getOpenPadlockIcon, getOilIcon,
 } from "../layout/icons";
@@ -33,6 +32,7 @@ const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller">(RAPPEL&nbsp;: Aussi prendre en compte régions adverses ou inoccupées.)</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
+const REUSE_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vTsIS8rpjrUcxWS_nsy9Tu3hS-bU3iTf_Bldk2cKsHO_nUXAFt2zl60_ZMEJyqEulPcCj6OSTzJObCE/pub?w=960&h=720`;
 const LOCK_BADGE = (position: string) => `<div style="position:absolute;overflow:visible;background-color:black;border-radius:50%;width:32%;height:32%;display:flex;align-items:center;justify-content:center;${position};transform:rotate(-5deg);">${getOpenPadlockIcon('62%')}</div>`;
 export const get4DirectionWithLockIcon = () => `<div style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:2.15em;width:2.15em;vertical-align:middle;"><img src="${FLIGHT_PICTURE_URL}" style="height:1.3em;object-fit:contain;" alt="">${LOCK_BADGE('top:.15mm;left:.15mm;')}${LOCK_BADGE('top:.15mm;right:.15mm;')}${LOCK_BADGE('bottom:.15mm;left:.15mm;')}${LOCK_BADGE('bottom:.15mm;right:.15mm;')}</div>`;
 
@@ -142,7 +142,7 @@ export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
     givesAdditionalPopulations: true,
-    text: `<p>Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur cette carte.</p>`
+    text: `<p><img src="${REUSE_PICTURE_URL}" alt="" style="height:1em;width:1em;object-fit:contain;vertical-align:middle;" />&nbsp;Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur cette carte.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',

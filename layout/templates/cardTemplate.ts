@@ -16,6 +16,10 @@ const familiesWithVol: Set<FamilyName> = new Set(
         .map(({family: {familyName}}) => familyName)
 );
 
+const REUSE_CARD_ID = 'disavowal_of_the_ancients_ecolo';
+const REUSE_TERRAIN_PICTURE_URL = 'https://docs.google.com/drawings/d/e/2PACX-1vTsIS8rpjrUcxWS_nsy9Tu3hS-bU3iTf_Bldk2cKsHO_nUXAFt2zl60_ZMEJyqEulPcCj6OSTzJObCE/pub?w=960&h=720';
+const getReuseTerrainVignette = () => `<div class="terrain-icon back" style="background-color:black;display:flex;align-items:center;justify-content:center;"><img src="${REUSE_TERRAIN_PICTURE_URL}" alt="" style="width:100%;height:100%;object-fit:contain;" /></div>`;
+
 const addEffects = (abilities: Ability[]) => {
     const backGroundSize: string = '17mm';
     const cornerBackGroundSize: string = '15mm';
@@ -87,7 +91,7 @@ type CardTemplateOptions = {
 };
 
 export const cardTemplate = (
-    {title, illustration, abilities, handicaps, number, status, allowedTerrain, backTerrain}: Card,
+    {id, title, illustration, abilities, handicaps, number, status, allowedTerrain, backTerrain}: Card,
     {hideHoleShapes = false}: CardTemplateOptions = {},
 ): string => {
     const leftAlignedIllustration: string = illustration
@@ -155,6 +159,7 @@ ${(handicaps?.length > 0) ? `<ul>
     </ul>
     <div class="card-meta" style ="display:flex;flex-direction:row;justify-content:center; margin-top: .3mm; gap:.5mm;">
         ${getTerrainsVignettes(allowedTerrain)}
+        ${id === REUSE_CARD_ID ? getReuseTerrainVignette() : ''}
     </div>
         <div class="card-number" style="position:absolute;bottom:0; left:13mm;font-size: 10pt">${number}</div>
     </div>
