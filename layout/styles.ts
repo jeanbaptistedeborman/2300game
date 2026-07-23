@@ -1,6 +1,7 @@
 import {BORDER_WIDTH} from "../constants";
 
-const backgroundColor = "#FEEFD3";
+//const backgroundColor = "#FEEFD3";
+const backgroundColor = 'white';
 
 
 
