@@ -260,7 +260,7 @@ export const cards: Card[] = [
         id: "disavowal_of_the_ancients_ecolo",
         illustration: getFlameThrowerIllustration(),
         number:1,
-        title: "Disavowal Of The Ancients",
+        title: "Renoncer au passé",
         abilities: [reuse],
         handicaps: [],
         allowedTerrain: Terrain.DESERT,

@@ -1071,7 +1071,7 @@
       "backTerrain": "Savanne",
       "visibilities": [
         true,
-        true
+        false
       ]
     },
     {
