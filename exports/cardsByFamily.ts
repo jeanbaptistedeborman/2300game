@@ -69,7 +69,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
             ${family?.tip?`<div style="${textStyle}; background-color:#fee6a0;padding:1mm">${family.tip}</div>`:''}
         
         ${primaryAbility ? `
-                <h3 style="margin:2mm 0 1mm 0;">Pouvoir titulaire :</h3>
+                <h3 style="margin:2mm 0 1mm 0;">Pouvoir de base :</h3>
                 <div style="margin-top:2mm; border:.5mm solid ${family.color}; background-color:${family.color}; border-radius:1mm; overflow:hidden;">
                   <div style="padding: 1mm 2mm; font-size: 9pt; line-height: 1.2em; background-color: ${family.color}; display:flex; align-items:flex-start; gap:1mm;">
                     ${primaryAbility.abilityPicture ? `<div style="background-color:rgba(0,0,0,.45); padding:.5mm; border-radius:.7mm; display:flex; align-items:center; flex-shrink:0;"><img src="${primaryAbility.abilityPicture}" alt="Illustration du pouvoir ${primaryAbility.name}" style="height:1.8em;object-fit:contain;display:block;" /></div>` : ''}

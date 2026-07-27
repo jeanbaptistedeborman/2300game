@@ -82,6 +82,39 @@ const frontOnlyShapesByTerrain: Partial<Record<Terrain, HoleShape[]>> = {
 export const getHoleShapes = (terrain?: Terrain): HoleShape[] =>
     terrain ? (holesByTerrain[terrain] ?? []) : [];
 
+type InlineFrontShapeOptions = {
+    /** Optional image rendered at the bottom-right of the shape. */
+    shapeCornerImageUrl?: string;
+    /** Optional width (in mm) for the corner image. */
+    shapeCornerImageWidthMm?: number;
+};
+
+/**
+ * Renders the front-only decorative shape(s) for a terrain in NORMAL flow
+ * (not absolutely positioned), so the shape and its corner image are simply
+ * displayed inline above/around surrounding content. The individual svg and
+ * image are still absolutely positioned within their own in-flow box.
+ */
+export const frontOnlyShapeInline = (
+    terrain?: Terrain,
+    {
+        shapeCornerImageUrl = frontShapeCornerImageUrlDefault,
+        shapeCornerImageWidthMm = 8,
+    }: InlineFrontShapeOptions = {},
+): string => {
+    const shapes = terrain ? (frontOnlyShapesByTerrain[terrain] ?? []) : [];
+    if (!shapes.length) {
+        return '';
+    }
+    return shapes.map(({svg, widthMm, heightMm}) => {
+        const normalizedSvg = svg.replace('position:absolute;top:0;', 'position:absolute;left:0;top:0;z-index:0;');
+        const cornerImage = shapeCornerImageUrl
+            ? `<img src="${shapeCornerImageUrl}" alt="" style="position:absolute;right:-2mm;top:-.1mm;z-index:1;width:${shapeCornerImageWidthMm}mm;height:auto;display:block;pointer-events:none;"/>`
+            : '';
+        return `<div style="position:relative;display:inline-block;width:${widthMm}mm;height:${heightMm}mm;overflow:visible;line-height:0;">${normalizedSvg}${cornerImage}</div>`;
+    }).join('');
+};
+
 type HoleOverlayOptions = {
     /** Mirror horizontally so the holes match the opposite (flipped) face. */
     mirror?: boolean;

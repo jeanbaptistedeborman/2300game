@@ -469,7 +469,7 @@ export const cards: Card[] = [
         id: "conaimaraaaaah__militaire_militaire",
         illustration: getFireIllustration(),
         status: 'test',
-        title: "Terre brûlées",
+        title: "Terres brûlées",
         number:1,
         abilities: [militaryUnit, scorchedEarth],
         allowedTerrain: Terrain.SAVANNA,

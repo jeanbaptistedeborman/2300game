@@ -15,6 +15,9 @@ import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
 export const wrapIcon = (icon:string, darken: boolean = true):string => `<span style="margin:-1mm 0 0 0.2mm;display:inline-block;transform: translate(0, -.03mm);mix-blend-mode:${darken?'darken':''};filter:invert(1);">${icon}</span>`;
+
+export const getEmplacementIcon = (side: 'left' | 'right' = 'right'):string =>
+    `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="" style="margin-top:.3mm;height:1em;width:1em;object-fit:contain;position:relative;vertical-align:baseline;margin-${side}:.3mm;" />`;
 export const populationIcon:string = `${wrapIcon(getCircleIcon('.8em'))}`;
 export const POPULATION_X2: string = `<b style="white-space: nowrap">X2</b>`;
 export const getPopulations = (number:number, useNumber = true):string => `<span style="white-space: nowrap; font-weight: bold;">
@@ -120,9 +123,9 @@ export const getAbilityVignette = (({
             </div>
             <div style="flex-grow:1;padding:.25mm .45mm .3mm .45mm;box-sizing:border-box;line-height:1.12;">
             ${effect ? `<div style="font-size:8pt;font-weight:bold;flex-grow:1;display:flex;vertical-align:center;line-height:1.5em;width:100%;color:black;justify-content:center;font-weight:700;background-color:white;">
-                <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="" style="margin-top:.3mm;height:1em;width:1em;object-fit:contain;position:relative;vertical-align:baseline;margin-right:.3mm;" />
+                ${getEmplacementIcon('right')}
                 EMPLACEMENTS VOISINS
-                <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="" style="margin-top:.3mm;height:1em;width:1em;object-fit:contain;position:relative;vertical-align:baseline;margin-left:.3mm;" />
+                ${getEmplacementIcon('left')}
             </div>` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
             <span>${text}</span></div></div></div>`}
         </div>
