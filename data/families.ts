@@ -81,4 +81,4 @@ export const none:Family = {
     isDarkColor:true,
 }
 
-export const families:Family[] = [none, merchant, cleanEarth, navigators, techno, knowledgeGatherer, explorer, military ]
+export const families:Family[] = [none, navigators, knowledgeGatherer, explorer, merchant, cleanEarth, techno, military ]

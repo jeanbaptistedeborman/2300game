@@ -44,6 +44,7 @@ const getRallyFriendsEffect = (family: Family) => ({
     color: family.color,
 });
 export const getRallyFriendsTitle = () => `${GET_FAMILIES_TITLE}`;
+
 export const trade: Ability = {
     isPrimary: true,
     effect:addPopulation,
@@ -52,6 +53,7 @@ export const trade: Ability = {
     givesAdditionalPopulations: true,
     text: `${getPopulations(2)} si occupé par adversaire.`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vRg7ja9uEqa2aceeuOg5CGcOVRhAOfSc-wPsurcC6g4nUXIXDFNClBN8IvVSX91n0IX0WdPbbDBjM5w/pub?w=658&h=258`,
+    abilityBigPicture: 'https://docs.google.com/drawings/d/e/2PACX-1vRbHfBhhsHknbeJh9g_yFtlkzBTEy2nWH1qWSptvAV_M51GUsQbNYJati-d43rOZC9f036Ri8eR3LM3/pub?w=1440&h=1080'
 }
 
 export const marine: Ability = {
@@ -60,6 +62,7 @@ export const marine: Ability = {
     family: navigators,
     text: `<span>Vous pouvez poser cette carte sur une île adjacente à un continent adverse en suivant les règles de navigation.<span>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vQUVhofd4BReQN6iChV5cj22w1KcbfRAWUukbtHLWzic7dbl700sqVaA248Hsy9_WoZo9vDjyl1coxD/pub?w=658&h=258`,
+    abilityBigPicture: 'https://docs.google.com/drawings/d/e/2PACX-1vTvyj6iu1Kvjl6YKQKTgg7TLY3PnQuckl-DQUo4Rrf1UkBNc6j2d4MuuVJPAxDZ0JMfyCp8530yW9Zm/pub?w=3150&h=2400',
 }
 
 export const militaryUnit: Ability = {
@@ -70,6 +73,7 @@ export const militaryUnit: Ability = {
     family: military,
     text: `<span class="smaller-text">Vos adversaires ne peuvent pas réaliser d'<b>ACTION</b>.</span>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vR5WUeyyGNz_wH7o5m_n2oi7T6hDXOVIx0skvOtzd9s3bEqD8DFd1ty2PznjMz0-kBuYYWFWX5WCKnE/pub?w=658&h=258`,
+    abilityBigPicture: 'https://docs.google.com/drawings/d/e/2PACX-1vRaj1rJUGlhHrNa3XdwNFOoo0jzecljfr579KHEfJ4EkEa2kh_d9YMqpE4nrv1bmi7yDzhQ6uSZe9ON/pub?w=4730&h=3600',
 }
 
 export const cleanHand: Ability = {
@@ -175,8 +179,9 @@ export const knowledge: Ability = {
     name: KNOWLEDGE_ABILITY_TITLE,
     family: knowledgeGatherer,
     givesAdditionalPopulations: true,
-    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} pour chaque autre <b>${FamilyName.KNOWLEDGE.toUpperCase()}</b> que vous occupez.`,
+    text: `<p>${WHEN_PLAYING_THIS_CARD}</p>${getPopulations(2)} pour chaque <b>autre ${FamilyName.KNOWLEDGE.toUpperCase()}</b> que vous occupez.`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vRH0trc0XqPDpsw4duqDsT-a3-ojAluOQ9oed9nB84aSlBIkVqWBafOf6pqsiZH6znYDNgLpZblyI0r/pub?w=658&h=258`,
+    abilityBigPicture:'https://docs.google.com/drawings/d/e/2PACX-1vSSt1NuWvlhieuKwsSvP3CTUUf_V9FkEC9TevaMphvMDaaNY9A1ZcdXHHYqjG_n7BHCOtqdfJHBcAxa/pub?w=4920&h=2990'
 }
 
 export const invasion: Ability = {
@@ -215,6 +220,7 @@ export const scout: Ability = {
     family:explorer,
     text: `<p>${ANY_TIME} vous pouvez consulter la carte du dessus des régions inoccupées de la même colonne et de la même rangée que cette région.</p>`,
     abilityPicture: `https://docs.google.com/drawings/d/e/2PACX-1vS8CGKW9qQve6brkMiVlNbOK4lZ4ahCYvSxy2OQkHJR19kzfFqs4iu4ZDxpPHh7q2pYo7_yBb-t5haa/pub?w=658&h=258`,
+    abilityBigPicture:'https://docs.google.com/drawings/d/e/2PACX-1vTmOl4r0UVOopCt6hQOnVKdEsp69wGqnVmwWvrwsK0Q9-jIrC2ZopUKPH-zFoK3gEeYAKgBnjO7r-IH/pub?w=4150&h=2030',
 }
 
 const getFlightText  = (family: Family) => `<p>Tous vos pouvoirs de la ${getTribeDescription(family)} gagnent la <b>${"rapidité".toUpperCase()}</b>.</p>`;

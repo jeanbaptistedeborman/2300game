@@ -98,6 +98,7 @@ export const getAbilityVignette = (({
                                         text,
                                         icon,
                                         abilityPicture,
+                                        abilityBigPicture,
                                         givesAdditionalPopulations,
                                         family,
                                         family: {
@@ -115,7 +116,7 @@ export const getAbilityVignette = (({
         </div>` : `
         <div style="position:relative;box-sizing:border-box;background-color:${darkenColor(color, .8)};display: flex;color:white;border:${BORDER_WIDTH} solid ${color};width:100%">
         <div style="display:flex;flex-grow:1;border-color:${color}">
-           ${text && `<div class="ability_text" style="flex-direction:column;display:flex;padding:0;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
+           ${(text || abilityBigPicture) && `<div class="ability_text" style="flex-direction:column;display:flex;padding:0;background-color:${Color(color).mix(Color('#ffffff'), .95)}">
                 ${showFamilyBand ? getFamilyBand(family, abilityPicture, false) : ''}
                 <div style="flex-grow:1;display:flex;box-sizing:border-box;">
             <div style="width:auto;flex-shrink:0;background-color:${color};display:flex;align-items:flex-start;justify-content:center;overflow:hidden;">
@@ -127,7 +128,10 @@ export const getAbilityVignette = (({
                 EMPLACEMENTS VOISINS
                 ${getEmplacementIcon('left')}
             </div>` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
-            <span>${text}</span></div></div></div>`}
+            ${text ? `<span>${text}</span>` : ''}
+            </div></div>
+            ${abilityBigPicture ? `<div style="padding:.45mm;background-color:white;border-top:.2mm solid rgba(0,0,0,.08);box-sizing:border-box;display:flex;justify-content:center;"><img src="${abilityBigPicture}" alt="Illustration detaillee du pouvoir ${name}" style="display:block;width:32mm;max-width:100%;max-height:18mm;object-fit:contain;object-position:center;" /></div>` : ''}
+            </div>`}
         </div>
         ${isVisible ? `<div style='position:absolute;left:-1.5mm;top:-1.5mm;background-color:white;border:.5mm solid black;border-radius:50%;'>${getEyeIcon('2.5mm')}</div>` : ''}
         </div>`}

@@ -45,7 +45,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
     ${footerStyle}
     </style>
   
-    <body style="padding:5mm 0 ! important;padding:1cm;max-width:21cm;margin:auto;">
+    <body style="padding:5mm 0 ! important;padding:1cm;max-width:14.8cm;margin:auto;">
        <header style="break-inside: avoid;"> <h1>Annexe: cartes par tribu (${
             cards.filter(removeUnusedCards)
             .reduce(countCards, 0)*DECK_NUMBER})</h1>
@@ -71,11 +71,22 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
         ${primaryAbility ? `
                 <h3 style="margin:2mm 0 1mm 0;">Pouvoir de base :</h3>
                 <div style="margin-top:2mm; border:.5mm solid ${family.color}; background-color:${family.color}; border-radius:1mm; overflow:hidden;">
-                  <div style="padding: 1mm 2mm; font-size: 9pt; line-height: 1.2em; background-color: ${family.color}; display:flex; align-items:flex-start; gap:1mm;">
-                    ${primaryAbility.abilityPicture ? `<div style="background-color:rgba(0,0,0,.45); padding:.5mm; border-radius:.7mm; display:flex; align-items:center; flex-shrink:0;"><img src="${primaryAbility.abilityPicture}" alt="Illustration du pouvoir ${primaryAbility.name}" style="height:1.8em;object-fit:contain;display:block;" /></div>` : ''}
-                    <div style="background-color:white; color:black; padding:.6mm .8mm; border-radius:.6mm; flex-grow:1;">
-                      ${primaryAbility.effect ? `<img src="${FLIGHT_PICTURE_URL}" alt="Effet emplacements voisins" style="height:1.6em;object-fit:contain;flex-shrink:0;margin-right:1mm;float:left;" /><b>Emplacements voisins&nbsp;:</b> ` : ''}${primaryAbility.text || ''}
+                  <div style="display:flex; align-items:stretch;">
+                    <div style="flex-grow:1; min-width:0;">
+                      <div style="padding:.7mm 1.1mm .5mm 1.1mm; font-size: 9pt; line-height:1.1em; font-weight:700; text-transform:uppercase; color:${family.isDarkColor ? 'white' : 'black'}; display:flex; align-items:center; gap:.8mm;">
+                        <span style="display:inline-flex; width:1.9em; height:1.9em; align-items:center; justify-content:center; flex-shrink:0;">${family.icon}</span>
+                        <span>${family.familyName}</span>
+                      </div>
+                      <div style="padding:0 1.1mm 1.1mm 1.1mm;">
+                        <div style="background-color:white; color:black; border-radius:.6mm; width:100%; box-sizing:border-box; overflow:hidden;">
+                          <div style="padding:.6mm .8mm; overflow:hidden;">
+                            ${primaryAbility.abilityPicture ? `<div style="float:left;margin:.1mm .5mm .2mm 0;background-color:rgba(0,0,0,.55);padding:.4mm;border-radius:.7mm;display:inline-flex;align-items:center;"><img src="${primaryAbility.abilityPicture}" alt="Illustration du pouvoir ${primaryAbility.name}" style="height:1.4em;object-fit:contain;display:block;" /></div>` : ''}
+                            ${primaryAbility.effect ? `<img src="${FLIGHT_PICTURE_URL}" alt="Effet emplacements voisins" style="height:1.6em;object-fit:contain;flex-shrink:0;margin-right:1mm;float:left;" /><b>Emplacements voisins&nbsp;:</b> ` : ''}${primaryAbility.text || ''}
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    ${primaryAbility.abilityBigPicture ? `<div style="flex:0 0 32mm;width:32mm;border-left:.2mm solid rgba(0,0,0,.08);background-color:white;display:flex;align-items:stretch;"><img src="${primaryAbility.abilityBigPicture}" alt="Illustration detaillee du pouvoir ${primaryAbility.name}" style="display:block;width:100%;height:100%;object-fit:contain;object-position:center;" /></div>` : ''}
                   </div>
                 </div>` : ''}   
         </div>

@@ -45,6 +45,7 @@ export interface Ability {
     abilityPicture?: string,
     givesAdditionalPopulations?: boolean,
     inTest?:boolean;
+    abilityBigPicture?: string,
 }
 
 export interface Handicap {
