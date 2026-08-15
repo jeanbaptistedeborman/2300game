@@ -39,6 +39,13 @@ const renderAbilityCell = (card: Card): string => {
     return `<div class="installation-icon-only" style="--installation-icon-bg:${iconColor};"><span class="installation-icon-badge"><span class="installation-icon-svg">${icon}</span></span></div>`;
 };
 
+const renderTribeColorDots = (card: Card): string => {
+    const dots = card.abilities
+        .map(ability => `<span class="installation-tribe-dot" style="background:${ability.family.color};"></span>`)
+        .join("");
+    return `<span class="installation-tribe-dots">${dots}</span>`;
+};
+
 const renderBox = (pickedCards: PickedCardByTerrain): string => `
 <section class="installation-box">
     <table>
@@ -51,9 +58,9 @@ const renderBox = (pickedCards: PickedCardByTerrain): string => `
         </tbody>
     </table>
     <ul class="installation-card-names">
-        <li>${pickedCards[Terrain.SCORCHED].title}</li>
-        <li>${pickedCards[Terrain.DESERT].title}</li>
-        <li>${pickedCards[Terrain.SAVANNA].title}</li>
+        <li>${pickedCards[Terrain.SCORCHED].title}${renderTribeColorDots(pickedCards[Terrain.SCORCHED])}</li>
+        <li>${pickedCards[Terrain.DESERT].title}${renderTribeColorDots(pickedCards[Terrain.DESERT])}</li>
+        <li>${pickedCards[Terrain.SAVANNA].title}${renderTribeColorDots(pickedCards[Terrain.SAVANNA])}</li>
     </ul>
 </section>`;
 
@@ -169,13 +176,31 @@ body { padding: 5mm; }
     list-style: disc;
     margin: 1.5mm 0 0 0;
     padding: 0 0 0 3.5mm;
-    font-size: 6pt;
+    font-size: 10pt;
     line-height: 1.2;
     color: white;
 }
 .installation-card-names li {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1mm;
+}
+.installation-tribe-dots {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: .5mm;
+    align-items: center;
+}
+.installation-tribe-dot {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 2.5mm;
+    height: 2.5mm;
+    border-radius: 50%;
+    box-shadow: 0 0 0 .2mm rgba(0,0,0,.4);
 }
 </style>
 <body style="zoom:.6">

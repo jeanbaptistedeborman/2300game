@@ -882,7 +882,7 @@
     {
       "backTerrain": "Savanne",
       "visibilities": [
-        true
+        false
       ]
     },
     {
