@@ -21,19 +21,37 @@ const iconSizeMm = 8;
 const iconGapMm = 2;
 const svgBoxHeightMm = 12;
 const singleSquareSvgSizeMm = svgBoxHeightMm;
-const doubleSquareSvgWidthMm = svgBoxHeightMm + iconSizeMm + iconGapMm;
+const doubleSquareSvgWidthMm = 2 * singleSquareSvgSizeMm - (svgBoxHeightMm - iconSizeMm) / 2;
 /** Vertical position (from the card top) shared by the holes and the back's family-icon row. */
-export const generalTopPositionMm = 13.5;
-const frameAnchorPaddingMm = 1;
-const svgHorizontalOffsetMm = 2;
-const singleFrameLeftMm = frameAnchorPaddingMm + iconSizeMm + iconGapMm + iconSizeMm + svgHorizontalOffsetMm;
-const doubleFrameLeftMm = frameAnchorPaddingMm + iconSizeMm + svgHorizontalOffsetMm;
+export const generalTopPositionMm = 13;
+const cardWidthMm = 60;
+const halfCardStartMm = (cardWidthMm / 2) + 4;
+/** Horizontal step between the three back columns (one icon + its gap). */
+export const columnStepMm = iconSizeMm + iconGapMm;
+/**
+ * Left edge (in CARD coordinates) of the first back column.
+ *
+ * The whole hole/icon group is anchored so it visually starts at the middle of
+ * the card while the widest shape (the scorched double hole) still fits inside
+ * the card. Both the holes (here) and the back icon row (`cardBackTemplate.ts`)
+ * are expressed in these SAME card coordinates, so the back overlay container
+ * MUST stay at left:0 and the front overlay (rendered with `mirror: true`)
+ * stays perfectly mirrored with the back.
+ */
+export const firstColumnLeftMm = halfCardStartMm - columnStepMm;
+/** Horizontal center offset of a single-slot hole inside its slot. */
+export const slotCenterOffsetMm = singleSquareSvgSizeMm / 2;
+/** Card-global horizontal center for one of the 3 back slots (0..2). */
+export const getBackSlotCenterMm = (slotIndex: number): number =>
+    firstColumnLeftMm + slotIndex * columnStepMm + slotCenterOffsetMm;
+const singleFrameLeftMm = firstColumnLeftMm + 2 * columnStepMm;
+const doubleFrameLeftMm = firstColumnLeftMm + columnStepMm;
 
 // --- Hole shapes ---
 const singleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
 // Same as the desert shape but filled with 40% black. Used front-only for savanna backs.
 const singleSquareDarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.18 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><circle cx="16.09" cy="16.09" r="15.59" fill="#000" fill-opacity="0.4" stroke="#ffffff" stroke-width=".5"/></svg>`;
-const doubleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.21 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><path d="M47.12.5H15.94C7.4.59.5,7.53.5,16.09s6.9,15.5,15.44,15.58h0s31.18,0,31.18,0c8.61,0,15.59-6.98,15.59-15.59S55.73.5,47.12.5Z" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
+const doubleSquareSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.99 32.18" style="width:100%;height:100%;position:absolute;top:0;pointer-events:none;"><path d="M16.09,.5 A15.59,15.59,0,0,0,16.09,31.68 H42.90 A15.59,15.59,0,0,0,42.90,.5 Z" fill="#fff" stroke="#231f20" stroke-width="1"/></svg>`;
 const frontShapeCornerImageUrlDefault = "https://docs.google.com/drawings/d/e/2PACX-1vTTrBRDVlItQx819qfNEfLfOFnLnWIR_yosYRQKbcWuwWOqpNb3Bgz7cDBYnC4r40hTUE1SVU6NiWPA/pub?w=505&h=368";
 
 export type HoleShape = {

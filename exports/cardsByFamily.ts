@@ -2,7 +2,7 @@ import fs from "fs";
 import {footerStyle, styles} from "../layout/styles";
 import {families} from "../data/families";
 import {Ability, Card, Family, FamilyName} from "../model";
-import {DECK_NUMBER} from "../constants";
+import {DECK_NUMBER, SHOW_HOLE_SHAPES_ON_CARDS} from "../constants";
 import {countCards, findPrimaryAbility, removeUnusedCards} from "../services";
 import {cardTemplate} from "../layout/templates/cardTemplate";
 import {getFamilyIcon, header} from "../layout/components/components";
@@ -95,7 +95,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
                cardsByFamiy[key].map(
                    
                    (card: Card) => `
-                <div class="card-container">${cardTemplate(card, {hideHoleShapes: true})}
+                <div class="card-container">${cardTemplate(card, {hideHoleShapes: !SHOW_HOLE_SHAPES_ON_CARDS})}
                     
                     <div style="display: flex; flex-wrap: wrap; gap:1mm; margin-top: 1mm; margin-bottom: 1mm; align-items: end;">
                     DOS: 

@@ -94,10 +94,10 @@ export const cardTemplate = (
     {id, title, illustration, abilities, handicaps, number, status, allowedTerrain, backTerrain}: Card,
     {hideHoleShapes = false}: CardTemplateOptions = {},
 ): string => {
-    const leftAlignedIllustration: string = illustration
+    const rightAlignedIllustration: string = illustration
         ? stripIllustrationBackground(illustration).replace(/<svg\b([^>]*)>/, (_match, attrs) => {
             const normalized = String(attrs).replace(/\s*preserveAspectRatio="[^"]*"/i, '');
-            return `<svg${normalized} preserveAspectRatio="xMinYMid meet">`;
+            return `<svg${normalized} preserveAspectRatio="xMaxYMid meet">`;
         })
         : illustration;
 
@@ -130,12 +130,12 @@ export const cardTemplate = (
     ${addEffects(sortedAbilities)} 
     <div class="card-content ${hasEffect?'effect':''}">
     <h2 class="title">${title}</h2> 
-    <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;display:flex;justify-content:flex-start;align-items:flex-start;text-align:left;background-color:
+    <div class="card-illustration" style = "flex-grow: 1;overflow: hidden; border:0 solid; border-radius: 2mm 2mm 0 0; position:relative;display:flex;justify-content:flex-end;align-items:flex-start;text-align:right;background-color:
     ${ Color(illustration ? sortedAbilities[0]?.family.color || 'grey' : 'white')}" >
     
-    ${leftAlignedIllustration}
+    ${rightAlignedIllustration}
     ${ (status && false) ?`<div style="background-color:black;position:absolute;top:0; right:0; color:white;">&nbsp;${status.toUpperCase()}&nbsp;</div>`:''}
-    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vRxkh_1PrSTcC_zafkciVF2WtpjBsEM5rxa5T42Yp_1SEDr8YrRkL4x9vP8E8YazpMVp7xUUWncNpWD/pub?w=111&amp;h=111" alt="" style="position:absolute;top:1mm;left:1mm;width:6mm;height:6mm;object-fit:contain;" />` : ''}
+    ${hasAdditionalPopulationsNoEffect ? `<img src="https://docs.google.com/drawings/d/e/2PACX-1vRxkh_1PrSTcC_zafkciVF2WtpjBsEM5rxa5T42Yp_1SEDr8YrRkL4x9vP8E8YazpMVp7xUUWncNpWD/pub?w=111&amp;h=111" alt="" style="position:absolute;top:1mm;right:1mm;width:6mm;height:6mm;object-fit:contain;" />` : ''}
        </div>
     
 ${(handicaps?.length > 0) ? `<ul>

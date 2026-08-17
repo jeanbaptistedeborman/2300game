@@ -12,7 +12,7 @@ const CARD_GAP:string[] = ['0mm', '0mm'];
 export const styles = `
 
 body {
-   font-family:"Roboto Condensed", serif;
+   font-family:"Crimson Pro", "Cambria", serif;
   -webkit-print-color-adjust:exact !important;
   padding: 0;
   print-color-adjust:exact !important;
@@ -223,14 +223,14 @@ div {
 
 .ability_text {
 font-size:9.5pt;
-font-weight:600;
+font-weight:400;
     flex-grow:1;
     width:100%;
     hyphens: auto;
     vertical-align:bottom;
     padding:.35mm;
     color:black;
-    line-height:1.12;
+    line-height:1.1em;
 }
 
 .card-abilities {

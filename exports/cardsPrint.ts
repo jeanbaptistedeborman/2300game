@@ -5,18 +5,19 @@ import {header} from "../layout/components/components";
 import {cardTemplate} from "../layout/templates/cardTemplate";
 import {backTemplate} from "../layout/templates/cardBackTemplate";
 import {holeOverlay} from "../layout/templates/holeOverlay";
+import {SHOW_HOLE_SHAPES_ON_CARDS} from "../constants";
 
 const CARD_WIDTH = "60mm";
 const CARD_HEIGHT = "66mm";
 
 const renderPage = (card: Card): string => `
 <section class="page print-page">
-    ${cardTemplate(card, {hideHoleShapes: true})}
+    ${cardTemplate(card, {hideHoleShapes: !SHOW_HOLE_SHAPES_ON_CARDS})}
 </section>`;
 
 const renderBackPage = (card: Card): string => `
 <section class="page print-page back-page">
-    ${backTemplate(card, {hideHoleShapes: true})}
+    ${backTemplate(card, {hideHoleShapes: !SHOW_HOLE_SHAPES_ON_CARDS})}
 </section>`;
 
 const renderHoleShapeOnlyPage = (terrain: Terrain): string => `

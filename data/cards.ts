@@ -322,7 +322,7 @@ export const cards: Card[] = [
         id: "terraforming_earth_ecolo",
         illustration: getFarmerIllustration(),
         number:2,
-        title: "Terraforming Earth",
+        title: "Terraformeurs radicaux",
         abilities: [terraformer],
         handicaps: [],
         allowedTerrain: Terrain.SAVANNA,

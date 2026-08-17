@@ -29,7 +29,7 @@ const WHEN_YOUR_RESOLUTION = `<b>Après chacunes de vos actions&nbsp;:</b>`;
 const ANY_TIME = `<b>À tout moment&nbsp;:</b>`;
 const AT_YOUR_TURN = `<b>Pendant votre tour&nbsp;:</b>`;
 
-const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller">(RAPPEL&nbsp;: Aussi prendre en compte régions adverses ou inoccupées.)</p>`;
+const reminderOccupiedAndEnemy: string = `<p style="font-size: smaller">(RAPPEL&nbsp;: Aussi prendre en compte les régions adverses ou inoccupées.)</p>`;
 
 const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129`;
 const REUSE_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vTsIS8rpjrUcxWS_nsy9Tu3hS-bU3iTf_Bldk2cKsHO_nUXAFt2zl60_ZMEJyqEulPcCj6OSTzJObCE/pub?w=960&h=720`;
@@ -146,7 +146,7 @@ export const reuse: Ability = {
     name: 'Renoncer au passé',
     family: cleanEarth,
     givesAdditionalPopulations: true,
-    text: `<p><img src="${REUSE_PICTURE_URL}" alt="" style="height:1em;width:1em;object-fit:contain;vertical-align:middle;" />&nbsp;Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur cette carte.</p>`
+    text: `<p><img src="${REUSE_PICTURE_URL}" alt="" style="height:1em;width:1em;object-fit:contain;vertical-align:middle;" />&nbsp;: Vous pouvez poser cette région sur une région que vous occupez.</p><p>Toutes ses ${populationIcon} sont transférées sur cette carte.</p>`
 }
 export const archeolog: Ability = {
     name: 'Green tech',
@@ -170,7 +170,7 @@ export const cartographer: Ability = {
     name: 'Cartographers',
     family: explorer,
     givesAdditionalPopulations: true,
-    text: `<p>${getPopulations(1)} par continent adverse dont vous occupez   au moins une région.</p>
+    text: `<p>${getPopulations(1)} par continent adverse dont vous occupez au moins une région.</p>
     <p>${POPULATION_X2} si tous les continents.</p>`
 }
 

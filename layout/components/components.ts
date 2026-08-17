@@ -48,14 +48,13 @@ export const getTribeDescription  = (family:Family): string =>  {
 
 export const header:string = `<head>
     <title>2300 game card generator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
 <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
@@ -87,7 +86,7 @@ const getFamilyBand = (family: Family, abilityPicture?: string, showIcon: boolea
     <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
         ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
         <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">${family.familyName.toUpperCase()}</span>
-        ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.2mm .3mm;" />` : ''}
+        ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.5mm .3mm;" />` : ''}
     </div>`;
 
 export const getAbilityVignette = (({
@@ -123,7 +122,7 @@ export const getAbilityVignette = (({
                 <span style="display:block;line-height:0;">${family.icon}</span>
             </div>
             <div style="flex-grow:1;padding:.25mm .45mm .3mm .45mm;box-sizing:border-box;line-height:1.12;">
-            ${effect ? `<div style="font-size:8pt;font-weight:bold;flex-grow:1;display:flex;vertical-align:center;line-height:1.5em;width:100%;color:black;justify-content:center;font-weight:700;background-color:white;">
+            ${effect ? `<div style="letter-spacing: -0.1mm;margin-bottom:.2mm;font-size:8pt;font-weight:bold;flex-grow:1;display:flex;line-height:1.1em;width:100%;color:black;justify-content:center;font-weight:700;background-color:white;">
                 ${getEmplacementIcon('right')}
                 EMPLACEMENTS VOISINS
                 ${getEmplacementIcon('left')}
