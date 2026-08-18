@@ -42,8 +42,8 @@ export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]
     ${styles}
     </style>
   
-    <body style="margin:2mm auto;>
-       <header style="break-inside: avoid;"> <h1 style="margin-bottom: 2mm">Les tribus et leurs pouvoirs de base</h1>
+    <body style="zoom:1.2;">
+       <header style="break-inside: avoid;margin-bottom: 4mm;"> <h1>Les tribus et leurs pouvoirs de base</h1>
         
         </header>
         
