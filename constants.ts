@@ -13,4 +13,4 @@ export const VOL_ABILITY_NAME: string = 'Vol';
 
 export const BORDER_WIDTH:string = '.3mm';
 // Temporary toggle: set to false to hide hole shapes again.
-export const SHOW_HOLE_SHAPES_ON_CARDS:boolean = true;
+export const SHOW_HOLE_SHAPES_ON_CARDS:boolean = false;

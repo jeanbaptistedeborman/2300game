@@ -37,6 +37,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 .page.print-page {
@@ -55,6 +56,7 @@ html, body {
     width: 100%;
     height: 100%;
     flex: 0 0 100%;
+    background-color: white;
 }
 </style>
 <BODY>

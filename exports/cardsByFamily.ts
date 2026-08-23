@@ -45,7 +45,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
     ${footerStyle}
     </style>
   
-    <body style="padding:5mm 0 ! important;padding:1cm;max-width:14.8cm;margin:auto;">
+    <body style="padding:5mm 0 ! important;padding:1cm;margin:auto;">
        <header style="break-inside: avoid;"> <h1>Annexe: cartes par tribu (${
             cards.filter(removeUnusedCards)
             .reduce(countCards, 0)*DECK_NUMBER})</h1>

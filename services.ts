@@ -205,6 +205,6 @@ export const generateCompletedCards = () => cards
     .filter(removeUnusedCards)
     .map(generateMultipleCards).flat()
         //.filter (({backTerrain}:Card) => backTerrain === Terrain.SCORCHED)
-    .sort(() => .5 -Math.random())
+    //.sort(() => .5 -Math.random())
     .sort((a, b) => b.backTerrain.localeCompare(a.backTerrain))
 ;
