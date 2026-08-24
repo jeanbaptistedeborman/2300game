@@ -109,7 +109,7 @@ p:last-of-type {
     break-inside: avoid;
     flex-basis:32.5%;
     flex-shrink:1;
-    height:75mm;
+    height:65mm;
     border-color:black;
     border-width:.1mm;
     border-bottom-width:.5mm;
