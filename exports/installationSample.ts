@@ -2,6 +2,7 @@ import fs from "fs";
 import {Card, Terrain} from "../model";
 import {styles} from "../layout/styles";
 import {terrainColors} from "../layout/colors";
+ import {toWhiteTransparentIcon} from "../layout/icons";
 
 const HEADER = `<head>
 <meta charset="UTF-8">
@@ -30,13 +31,14 @@ const renderAbilityCell = (card: Card): string => {
     const icon = (ability?.family.icon || "")
         .replace(/width:[^;"]+;/, "width:100%;")
         .replace(/height:[^;"]+;/, "height:100%;");
+    const transparentIcon = icon ? toWhiteTransparentIcon(icon) : "";
 
-    if (!icon.trim()) {
+    if (!transparentIcon.trim()) {
         return `<div class="installation-icon-only"></div>`;
     }
 
     const iconColor = ability?.family.color || "#333";
-    return `<div class="installation-icon-only" style="--installation-icon-bg:${iconColor};"><span class="installation-icon-badge"><span class="installation-icon-svg">${icon}</span></span></div>`;
+    return `<div class="installation-icon-only" style="--installation-icon-bg:${iconColor};"><span class="installation-icon-badge"><span class="installation-icon-svg">${transparentIcon}</span></span></div>`;
 };
 
 const renderTribeColorDots = (card: Card): string => {
@@ -170,7 +172,6 @@ body { padding: 5mm; }
     width: 100%;
     height: 100%;
     line-height: 0;
-    mix-blend-mode: lighten;
 }
 .installation-card-names {
     list-style: disc;

@@ -1,7 +1,7 @@
 import {Ability, Card, FamilyName, Terrain} from "../../model";
 import {cards} from "../../data/cards";
 import {getAbilityVignette, getTerrainsVignettes} from "../components/components";
-import {getPadlockIcon} from "../icons";
+import {getPadlockIcon, toWhiteTransparentIcon} from "../icons";
 import {addPopulation, evolving, forbid} from "../../data/effects";
 import {none} from "../../data/families";
 import {getFamilyCount, stripIllustrationBackground} from "../../services";
@@ -45,19 +45,22 @@ const addEffects = (abilities: Ability[]) => {
     const color = effect?.color || effectAbility?.family?.color || none.color;
     const forbidIcon: string | undefined = effectAbilities.find(({effect}) => effect?.name === forbid.name)?.effect?.icon;
     const addPopulationIcon: string | undefined = effectAbilities.find(({effect}) => effect?.name === addPopulation.name)?.effect?.icon;
+    const normalizedForbidIcon: string | undefined = forbidIcon ? toWhiteTransparentIcon(forbidIcon) : undefined;
+    const normalizedAddPopulationIcon: string | undefined = addPopulationIcon ? toWhiteTransparentIcon(addPopulationIcon) : undefined;
+    const normalizedEffectIcon: string = effect.icon ? toWhiteTransparentIcon(effect.icon) : '';
     const marginIcon: string = (forbidIcon && addPopulationIcon)
         ? `<span style="position:relative;display:inline-flex;align-items:center;justify-content:center;line-height:0;">
-                ${addPopulationIcon}
-                <span class="with-effect-stroke" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:0;color:${color};transform:translateY(.2mm) scale(0.75);transform-origin:center;">${forbidIcon}</span>
+                ${normalizedAddPopulationIcon}
+                <span class="with-effect-stroke" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;line-height:0;color:${color};transform:translateY(.2mm) scale(0.75);transform-origin:center;">${normalizedForbidIcon}</span>
             </span>`
-        : (effect.icon || '');
+        : normalizedEffectIcon;
     const cornerMarginIcon: string = `<span style="opacity:${cornerOpacity};display:inline-flex;">${marginIcon}</span>`;
 
     const cellStyle:string = `flex:0 0 auto; height:.8mm; border: 1 px solid black;`;
     const rowStyle: string = `display: flex; flex:0 0 8mm; flex-direction: row;  width:100%;justify-content: space-between;`;
 
     const  icons = `
-    <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%; mix-blend-mode:lighten;">
+    <div style="display: flex; flex-direction: column; position: absolute; justify-content: space-between;width:100%;height:100%;">
         <div style="${rowStyle}" >
             <div style="${cellStyle}">${cornerMarginIcon}</div>
             <div style="${cellStyle}">${marginIcon}</div>
@@ -81,7 +84,7 @@ const addEffects = (abilities: Ability[]) => {
     return `${[
         ...getMiddlePositions(backgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${backGroundSize};height:${backGroundSize}; position:absolute;${coords}"></div>`),
         ...getCornerPositions(cornerBackgroundMargin).map(coords => `<div style ="box-sizing:border-box;border:.3mm solid ${Color(color).lighten(.5)};background-color:${color};border-radius:1mm;width:${cornerBackGroundSize};height:${cornerBackGroundSize}; position:absolute;opacity:${cornerOpacity};${coords}"></div>`),
-        ...getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: black;mix-blend-mode:lighten;border:0 solid;border-radius:.5mm;opacity:${cornerOpacity};${coords}">${getPadlockIcon('3.5mm')}</div>`)].join('')}
+        ...getCornerPositions('7.5mm').map(coords => `<div style="position:absolute;background-color: transparent;border:0 solid;border-radius:.5mm;opacity:${cornerOpacity};${coords}">${toWhiteTransparentIcon(getPadlockIcon('3.5mm'))}</div>`)].join('')}
         ${icons}
         `
 }
@@ -142,7 +145,7 @@ ${(handicaps?.length > 0) ? `<ul>
         ${
     handicaps.map(({text, icon, iconNumber}) => `<li style="background-color:#181C14;color:white;padding:.1mm;font-weight: bold;font-size:8.5pt;"> 
         <div>
-            ${icon ? `<span style="mix-blend-mode:lighten;color:white;"> ${Array(iconNumber).fill(icon).join('')}</span>` : ''}&nbsp;${text}
+            ${icon ? `<span style="color:white;"> ${Array(iconNumber).fill(toWhiteTransparentIcon(icon)).join('')}</span>` : ''}&nbsp;${text}
         </div>
         </span>
         </li>`).join('')}</ul>` : ``

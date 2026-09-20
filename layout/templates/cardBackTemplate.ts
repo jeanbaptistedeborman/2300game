@@ -1,5 +1,6 @@
 import {Card, Terrain } from "../../model";
 import {terrainColors} from "../colors";
+import {toWhiteTransparentIcon} from "../icons";
 import {getTerrainIllustration} from "../../services";
 import {
     holeOverlay,
@@ -28,9 +29,10 @@ export const backTemplate = ({ abilities, backTerrain, title}: Card, {badgeSizeM
     const firstVisibleIcon = firstVisibleAbility?.family.icon
         .replace(/width:[^;"]+;/, 'width:100%;')
         .replace(/height:[^;"]+;/, 'height:100%;');
+    const firstVisibleTransparentIcon = firstVisibleIcon ? toWhiteTransparentIcon(firstVisibleIcon) : '';
 
     const buildIconBadge = (positionStyle: string): string => firstVisibleAbility
-        ? `<div style="position:absolute;${positionStyle} list-style:none;display:flex;align-items:center;justify-content:center;width:${badgeSizeMm}mm;height:${badgeSizeMm}mm;border-radius:50%;background-color:${firstVisibleAbility.family.color};border:1mm solid ${firstVisibleAbility.family.color};box-sizing:border-box;overflow:hidden;padding:0;box-shadow:0 0 0 0.5mm rgba(0,0,0,0.9);filter:drop-shadow(0 0 0.4mm rgba(0,0,0,0.95));z-index:3;"><span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;line-height:0;mix-blend-mode:lighten">${firstVisibleIcon}</span></div>`
+        ? `<div style="position:absolute;${positionStyle} list-style:none;display:flex;align-items:center;justify-content:center;width:${badgeSizeMm}mm;height:${badgeSizeMm}mm;border-radius:50%;background-color:${firstVisibleAbility.family.color};border:1mm solid ${firstVisibleAbility.family.color};box-sizing:border-box;overflow:hidden;padding:0;box-shadow:0 0 0 0.5mm rgba(0,0,0,0.9);filter:drop-shadow(0 0 0.4mm rgba(0,0,0,0.95));z-index:3;"><span style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;line-height:0;">${firstVisibleTransparentIcon}</span></div>`
         : '';
 
     const iconBadgeForCenteredPreview: string = buildIconBadge('left:50%;top:calc(50% + 1mm);transform:translate(-50%,-50%);');

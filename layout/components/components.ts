@@ -9,12 +9,13 @@ import {
     getEyeIcon,
     getFistIcon,
     getShipIcon,
-    getTreeIcon
+    getTreeIcon,
+    toWhiteTransparentIcon
 } from "../icons";
 import {BORDER_WIDTH} from "../../constants";
 import Color from "color";
 
-export const wrapIcon = (icon:string, darken: boolean = true):string => `<span style="margin:-1mm 0 0 0.2mm;display:inline-block;transform: translate(0, -.03mm);mix-blend-mode:${darken?'darken':''};filter:invert(1);">${icon}</span>`;
+export const wrapIcon = (icon:string, _darken: boolean = true):string => `<span style="margin:-1mm 0 0 0.2mm;display:inline-block;transform:translate(0,-.03mm);line-height:0;">${toWhiteTransparentIcon(icon).replace(/fill="#fff"/g, 'fill="#000"')}</span>`;
 
 export const getEmplacementIcon = (side: 'left' | 'right' = 'right'):string =>
     `<img src="https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqKcWsCfvBtvPUtRINqpg6hqFcCzdA5qUxfTHfoijxqwgkDL-wRbd8pLXbsJl0vzimYvoxb3zb/pub?w=358&h=129" alt="" style="margin-top:.3mm;height:1em;width:1em;object-fit:contain;position:relative;vertical-align:baseline;margin-${side}:.3mm;" />`;
@@ -64,7 +65,7 @@ export const getFamilyIcon = ({
                                   icon,
                                   color
                               }: Family) => `<div class='text' style="box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;font-family:'Barlow Condensed', sans-serif;font-weight:700;line-height:1em;text-align:center;font-size: 2mm; background-color: ${darkenColor(color, .7)};color:white;padding:.3mm;" >
-               <div style="mix-blend-mode:lighten;font-weight=bold">${icon}</div>
+               <div style="font-weight:700;line-height:0;">${toWhiteTransparentIcon(icon)}</div>
         </div>`;
 
 export const getTerrainVignette = (terrain => {
@@ -84,14 +85,14 @@ export const getTerrainsVignettes = (targetTerrain) => {
 
 const getFamilyBand = (family: Family, abilityPicture?: string, showIcon: boolean = true) => `
     <div style="background-color:${darkenColor(family.color)};color:white;font-weight:700;font-size:9pt;line-height:1.05;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;">
-        ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};"><div style="mix-blend-mode:lighten;">${family.icon}</div></div>` : ''}
+        ${showIcon ? `<div style="flex-shrink:0;display:flex;align-items:center;background-color:${darkenColor(family.color, .7)};"><div style="line-height:0;">${toWhiteTransparentIcon(family.icon)}</div></div>` : ''}
         <span style="flex-grow:1;text-align:center;padding:.35mm .45mm;">${family.familyName.toUpperCase()}</span>
         ${abilityPicture ? `<img src="${abilityPicture}" alt="${family.familyName} ability illustration" style="height:.35cm;object-fit:contain;display:block;flex-shrink:0;margin:.5mm .3mm;" />` : ''}
     </div>`;
 
 export const getAbilityVignette = (({
                                         name,
-                                            isVisible,
+                                        isVisible,
                                         effect,
                                         isPrimary,
                                         text,
@@ -124,7 +125,7 @@ export const getAbilityVignette = (({
             <div style="flex-grow:1;padding:.25mm .45mm .3mm .45mm;box-sizing:border-box;line-height:1.12;">
             ${effect ? `<div style="letter-spacing: -0.1mm;margin-bottom:.2mm;font-size:8pt;font-weight:bold;flex-grow:1;display:flex;line-height:1.1em;width:100%;color:black;justify-content:center;font-weight:700;background-color:white;">
                 ${getEmplacementIcon('right')}
-                EMPLACEMENTS VOISINS
+                &nbsp;EMPLACEMENTS VOISINS&nbsp;
                 ${getEmplacementIcon('left')}
             </div>` : (icon ? `<span style="float:left;margin-right:.5mm;">${icon}</span>` : '')}
             ${text ? `<span>${text}</span>` : ''}

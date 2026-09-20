@@ -217,7 +217,6 @@ div {
 }
 
 .negative {
-    mix-blend-mode:multiply;
     filter:invert(1)
 }
 
@@ -269,7 +268,6 @@ font-weight:400;
 .ability_text.primary {
    background-color:rgba(0, 0, 0, 0.72); 
    color:white;
-   mix-blend-mode: normal; 
    border:none; 
 }
 
@@ -278,9 +276,6 @@ font-weight:400;
         box-shadow:none;
     }
 
-    .negative {
-        mix-blend-mode:normal;
-    }
 }
 
 .back-vignette {
