@@ -12,10 +12,7 @@ const FLIGHT_PICTURE_URL = `https://docs.google.com/drawings/d/e/2PACX-1vQ_oOzqK
 
 const textStyle:string = `line-height:1.2em;;margin-bottom: 1mm;margin-top: 1mm`;
 
-const isSameCard = (cardA:Card, cardB:Card):boolean => {
-    return cardA.title === cardB.title &&
-        cardA.abilities.every((abilityA:Ability) => cardB.abilities.some((abilityB:Ability) => abilityA.family.familyName === abilityB.family.familyName))
-}
+const isSameCard = (cardA:Card, cardB:Card):boolean => cardA.id === cardB.id;
 
 export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
     const cardsWithCorrectCount:Card[] = cards.map (card => ({...card, number:card.number * DECK_NUMBER}));

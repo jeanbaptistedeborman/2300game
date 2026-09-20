@@ -16,11 +16,6 @@ const familyPresentationPageStyle = `
 
 const textStyle: string = `line-height:1.2em;;margin-bottom: 1mm;margin-top: 1mm`;
 
-const isSameCard = (cardA: Card, cardB: Card): boolean => {
-    return cardA.title === cardB.title &&
-        cardA.abilities.every((abilityA: Ability) => cardB.abilities.some((abilityB: Ability) => abilityA.family.familyName === abilityB.family.familyName))
-}
-
 export const generateFamilyPresentation = (cards: Card[], completedCards: Card[]) => {
     const cardsByFamiy: {
         FamilyName: Card[]

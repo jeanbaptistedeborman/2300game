@@ -196,7 +196,7 @@ export const spy: Ability = {
     givesAdditionalPopulations: true,
     text: `
         ${WHEN_PLAYING_THIS_CARD} ${getPlusPopulations(1)}.
-        <p>${AT_YOUR_TURN} Vous pouvez retirer ${getPopulations(1)} de ce pouvoir pour piocher une carte de la main d'un adversaire.</p>`
+        <p>${AT_YOUR_TURN} Vous pouvez retirer cette ${populationIcon} pour piocher une carte de la main d'un adversaire.</p>`
 }
 
 export const harbour: Ability = {
