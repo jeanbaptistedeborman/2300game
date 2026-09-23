@@ -8,7 +8,7 @@ import {cards} from "./cards";
 import {terrainColors} from "../layout/colors";
 
 export const techno:Family = {
-    flavourText:"Ce n'est pas une petite catastrophe qui va détourner la marche du progrès !",
+    flavourText:"Ce n'est pas une petite catastrophe climatique qui va détourner la marche du progrès !",
     tip: "C'est bien beau de reconstruire le monde d'hier. Mais pour trouver du pétrole, il faut creuser .",
     familyName:FamilyName.TECHNO,
     icon:getCogIcon('4mm'),
@@ -73,8 +73,8 @@ export const merchant:Family = {
 
 export const none:Family = {
     flavourText:`Fabriqué en masse dans les laboratoires de The Adaptive Company&#8482; pour son exceptionnelle résistance à la chaleur, l'Humain du Futur&#8482; n'a ni amis ni compétences. Dans son cœur de reptile brûle un regret cuisant&nbsp;: encore quelques degrés et il était maître du monde !
-<br>... Mais son heure viendra.`,
-    tip: "Réprouvés mais résistants à la chaleur, les humains du futur&#8482 sont les seuls qui peuvent occuper la Fournaise. Utilisez-les pour prendre vos adversaires de vitesse. Ils peuvent en outre recevoir des pouvoirs en cours de partie.",
+<br><br>... Mais son heure viendra.`,
+    tip: "Réprouvés mais résistants à la chaleur, les humains du futur&#8482 sont les seuls à pouvoir occuper la Fournaise. Utilisez-les pour prendre vos adversaires de vitesse. Ils peuvent en outre recevoir des pouvoirs en cours de partie.",
     familyName:FamilyName.NONE,
     icon:getCogIcon('4mm'),
     color: "#938c8c",

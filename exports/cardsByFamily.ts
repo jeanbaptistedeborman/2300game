@@ -66,7 +66,7 @@ export const generateCardsByFamiy = (cards: Card[], completedCards: Card[]) => {
             ${family?.tip?`<div style="${textStyle}; background-color:#fee6a0;padding:1mm">${family.tip}</div>`:''}
         
         ${primaryAbility ? `
-                <h3 style="margin:2mm 0 1mm 0;">Pouvoir de base :</h3>
+                <h3 style="margin:2mm 0 1mm 0;font-size:3.5mm;">Pouvoir de base :</h3>
                 <div style="margin-top:2mm; border:.5mm solid ${family.color}; background-color:${family.color}; border-radius:1mm; overflow:hidden;">
                   <div style="display:flex; align-items:stretch;">
                     <div style="flex-grow:1; min-width:0;">
